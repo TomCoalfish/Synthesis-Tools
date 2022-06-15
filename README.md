@@ -11,5 +11,12 @@ Templated Synthesis Toolkit
 # Integrate with Gamma
 * Will work with Gamma no problem
 
+# Pure Data
+* Integrated with LibPD 
+
+# Plugin Host
+* Ladspa
+* Lv2
+
 # Much more
 * Later
