@@ -10,9 +10,7 @@ Templated Synthesis Toolkit
 
 # LuaJIT
 * LuaJIT is embedded script language 
-
-# Octave
-* Embedded Octave interpreter
+* I have a huge number of libraries that can be used with it
 
 # Integrate with Gamma
 * Will work with Gamma no problem
