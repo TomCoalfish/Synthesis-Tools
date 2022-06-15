@@ -8,5 +8,8 @@ Templated Synthesis Toolkit
 # Modernize a few things
 * Rawwaves will be updated 
 
+# Integrate with Gamma
+* Will work with Gamma no problem
+
 # Much more
 * Later
