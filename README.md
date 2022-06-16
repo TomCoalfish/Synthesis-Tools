@@ -18,6 +18,8 @@ Templated Synthesis Toolkit
 * sound file i/o
 * interpolators
 
+* WaveShapers
+
 # Integration
 * LuaJIT scripting
 * Gamma
@@ -54,3 +56,4 @@ Templated Synthesis Toolkit
 * Distortions
 * Wave Digital Filters
 * Tube amps
+* nd-Noise
