@@ -18,9 +18,34 @@ Templated Synthesis Toolkit
 * sound file i/o
 * interpolators
 
-* WaveShapers
+# StkFFT
+* C2R,R2C,C2R,R2R
+* DFT/IDFT
+* DCT/DST
+* STFT/ISTFT
+* Convolution
+* Deconvolution
+* Correlation
+* Autocorrelation
+* Resampler 
+* Convolution Filter
 
-# Integration
+# StkDSP
+* StkQmDSP
+* StkNanoSnap
+* StkWorld
+* StkGeneralizedHarmonicAnalyzer
+* StkBeatDetection
+* StkChordDetection
+* StkOnsetDetection
+* StkKeyFinder
+
+
+
+
+# Sound Alchemy
+* SoundLab
+* SoundWave
 * LuaJIT scripting
 * Gamma
 * Loris
