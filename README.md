@@ -30,7 +30,7 @@ Templated Synthesis Toolkit
 * Resampler 
 * Convolution Filter
 
-# StkDSP
+# StkAnalysis
 * StkQmDSP
 * StkNanoSnap
 * StkWorld
