@@ -40,7 +40,65 @@ Templated Synthesis Toolkit
 * StkOnsetDetection
 * StkKeyFinder
 
+# Oscillators
+* Function Generators
+* Sin
+* Additive 
+* WaveTables
+* Parematric FM/PM 
+* Blit
+* MinBlep
+* PolyBLEP
+* DSF
+* DPW
+* Walsh
+* Waveguides 
 
+# Filters
+* Delays
+* Fractional Delays
+* Modulating Delays
+* Comb Filters
+* Allpass Delays
+* analog
+* ATK
+* audio-dsp
+* CppFilters
+* DSP-Cpp-filters
+* DSPFilters
+* equalizer
+* fastfilter
+* FastFIR
+* FaustFilters
+* fft_band_equalizer
+* Filters
+* fir1
+* FIR
+* Formant
+* iir1
+* libcommoncpp-0.0.1
+* libDSP-5.1.0
+* Oscillator
+* RBJFilter
+* Resampler
+* Resonant
+* Resonators
+* rezonateur
+* sndfilter
+* spuce
+* src
+* transformant    
+
+# Amplifiers
+* Clippers
+* Distortion
+* Wave Shaping
+* Wave Digital Filters
+* Tube Amplifiers
+* Transitors
+* OpAmps
+* Diodes
+* Operational Transconductance Amplifiers
 
 
 # Sound Alchemy
