@@ -5,28 +5,52 @@ Templated Synthesis Toolkit
 * All header only
 * All tempaltes now 
 
-# Modernize a few things
-* Rawwaves will be updated 
+# Samples
+* std::vector
+* std_math
+* kfr dsp 
+* audio fft
+* audio convolution
+* correlation 
+* autocorrelation
+* resamplers
+* up/down sampling
+* sound file i/o
+* interpolators
 
-# LuaJIT
-* LuaJIT is embedded script language 
-* I have a huge number of libraries that can be used with it
-
-# Integrate with Gamma
-* Will work with Gamma no problem
-
-# Pure Data
-* Integrated with LibPD 
-
-# Easy Rack
-* Easily integrated with VCV Rack
-
-# Alsa Modular
-* Easy AMS 
-
-# Plugin Host
-* Ladspa
-* Lv2
-
-# Much more
-* Later
+# Integration
+* LuaJIT scripting
+* Gamma
+* Loris
+* Marsyas
+* Essentia
+* SoondPipes
+* SndKits
+* PureData (libpd)
+* Lv2 Plugins
+* Ladspa Plugins
+* Moog Ladders
+* Faust Filters
+* Curtis Filter
+* State Variable
+* Resonant Biquad
+* Function Generators
+* MinBLEP
+* PolyBLEP
+* DSF
+* DPW
+* Walsh Synthesis
+* TJackSynth
+* TLibFMSynth
+* TGSLib
+* SoundWave
+* SoundAlchemy
+* Parametric Envelopes
+* Gamma Envelopes
+* Tau60 Envelope
+* Modulation 
+* Clippers
+* Waveshapers
+* Distortions
+* Wave Digital Filters
+* Tube amps
