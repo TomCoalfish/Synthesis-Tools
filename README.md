@@ -5,6 +5,19 @@ Templated Synthesis Toolkit
 * All header only
 * No library to link to 
 
+# Core Integration
+* Gamma
+* Essentia
+* Marsyas
+* Loris
+
+# Dissected Bits
+* Tonic
+* SoundTailor
+* SoundPipes
+* SoundKits
+* More
+
 # Samples
 * std::vector
 * std_math
