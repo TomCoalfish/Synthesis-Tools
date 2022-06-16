@@ -3,7 +3,7 @@ Templated Synthesis Toolkit
 
 # Templates
 * All header only
-* All tempaltes now 
+* No library to link to 
 
 # Samples
 * std::vector
