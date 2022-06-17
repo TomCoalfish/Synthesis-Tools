@@ -7,4 +7,6 @@ Templated Synthesis Toolkit
 * Marsyas
 * Loris
 * Essentia
-* Plus many additional fruities
+* Pure Data libpd
+* CSound6 C/C++ API
+* Faust LLVM
