@@ -10,3 +10,5 @@ Templated Synthesis Toolkit
 * Pure Data libpd
 * CSound6 C/C++ API
 * Faust LLVM
+* Ladspa Host
+* Lv2 Host
