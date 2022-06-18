@@ -15,7 +15,7 @@
 #ifndef LILV_LILVMM_HPP
 #define LILV_LILVMM_HPP
 
-#include "lilv/lilv.h"
+#include "lilv.h"
 #include "lv2/core/lv2.h"
 
 #include <cstdarg>

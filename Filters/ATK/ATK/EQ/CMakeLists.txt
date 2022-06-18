@@ -1,0 +1,18 @@
+
+FILE(GLOB
+    ATK_EQ_SRC
+    *.cpp
+)
+
+FILE(GLOB
+    ATK_EQ_HEADERS
+    *.h*
+)
+
+ATK_add_library(ATK_EQ
+  NAME ATKEQ
+  FOLDER EQ
+  LIBRARIES ATKCore ATKUtility
+  SRC ${ATK_EQ_SRC}
+  HEADERS ${ATK_EQ_HEADERS}
+)

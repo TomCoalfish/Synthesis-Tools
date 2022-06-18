@@ -20,12 +20,12 @@ endif
 vpath %.h $(INCLUDE)
 
 CC       = g++ -std=c++11
-DEFS     =   -DHAVE_GETTIMEOFDAY  -D__LINUX_PULSE__
+DEFS     =   -DHAVE_GETTIMEOFDAY -D__LINUX_ALSA__
 DEFS    += -D__LITTLE_ENDIAN__
 CFLAGS   = -O3 -Wall
 CFLAGS  += -I$(INCLUDE) -I$(INCLUDE)/../src/include
 LDFLAGS  = 
-LIBRARY = -lpthread -lpulse-simple -lpulse -lm 
+LIBRARY = -lpthread -lasound -lm 
 
 REALTIME = yes
 ifeq ($(REALTIME),yes)

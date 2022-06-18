@@ -1,8 +1,5 @@
 #pragma once 
 
-#include <cstdint>
-#include <cmath>
-
 namespace SoundWave 
 {
     template<typename T>
@@ -10,7 +7,7 @@ namespace SoundWave
     {
     public:
         
-        TLadderFilterBase(T sampleRate) : sampleRate(sampleRate) {}
+        TLadderFilterBase(fT sampleRate) : sampleRate(sampleRate) {}
         virtual ~TLadderFilterBase() {}
         
         virtual void Process(T * samples, uint32_t n) = 0;

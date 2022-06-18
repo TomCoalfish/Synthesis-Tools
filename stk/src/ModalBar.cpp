@@ -1,4 +1,3 @@
-/***************************************************/
 /*! \class ModalBar
     \brief STK resonant bar instrument class.
 

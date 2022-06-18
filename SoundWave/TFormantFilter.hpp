@@ -3,7 +3,6 @@
 #include <cmath>
 #include <vector>
 
-namespace SoundWave {
 enum
 {
     // ids for all visual controls
@@ -373,7 +372,7 @@ AudioBuffer<T>::~AudioBuffer()
 
 /* public methods */
 template<class T>
-T* AudioBuffer<T>::getBufferForChannel( int aChannelNum )
+T* AudioBuffer::getBufferForChannel( int aChannelNum )
 {
     return _buffers->at( aChannelNum );
 }
@@ -543,16 +542,14 @@ void BitCrusher<T>::setAmount( T value )
     calcBits();
 }
 
-template<typename T>
 void BitCrusher<T>::setInputMix( T value )
 {
-    _inputMix = ( value );
+    _inputMix = Calc::cap( value );
 }
 
-template<typename T>
 void BitCrusher<T>::setOutputMix( T value )
 {
-    _outputMix = ( value );
+    _outputMix = Calc::cap( value );
 }
 
 /* private methods */
@@ -560,7 +557,7 @@ template<typename T>
 void BitCrusher<T>::calcBits()
 {
     // scale T to 1 - 16 bit range
-    _bits = ( int ) floor( scale( _amount, 1, 15 )) + 1;
+    _bits = ( int ) floor( Calc::scale( _amount, 1, 15 )) + 1;
 }
 
 template<class T>
@@ -661,7 +658,7 @@ void Limiter<T>::process( std::vector<T*> outputBuffer, int bufferSize, int numO
 //        return;
 //    }
 
-    T g, at, re, tr, th, lev, ol, or_;
+    SampleType g, at, re, tr, th, lev, ol, or_;
 
     th = thresh;
     g = gain;
@@ -671,8 +668,8 @@ void Limiter<T>::process( std::vector<T*> outputBuffer, int bufferSize, int numO
 
     bool hasRight = ( numOutChannels > 1 );
 
-    T* leftBuffer  = outputBuffer[ 0 ];
-    T* rightBuffer = hasRight ? outputBuffer[ 1 ] : 0;
+    SampleType* leftBuffer  = outputBuffer[ 0 ];
+    SampleType* rightBuffer = hasRight ? outputBuffer[ 1 ] : 0;
 
     if ( pKnee > 0.5 )
     {
@@ -683,7 +680,7 @@ void Limiter<T>::process( std::vector<T*> outputBuffer, int bufferSize, int numO
             ol  = leftBuffer[ i ];
             or_ = hasRight ? rightBuffer[ i ] : 0;
 
-            lev = ( T ) ( 1.f / ( 1.f + th * fabs( ol + or_ )));
+            lev = ( SampleType ) ( 1.f / ( 1.f + th * fabs( ol + or_ )));
 
             if ( g > lev ) {
                 g = g - at * ( g - lev );
@@ -705,14 +702,14 @@ void Limiter<T>::process( std::vector<T*> outputBuffer, int bufferSize, int numO
             ol  = leftBuffer[ i ];
             or_ = hasRight ? rightBuffer[ i ] : 0;
 
-            lev = ( T ) ( 0.5 * g * fabs( ol + or_ ));
+            lev = ( SampleType ) ( 0.5 * g * fabs( ol + or_ ));
 
             if ( lev > th ) {
                 g = g - ( at * ( lev - th ));
             }
             else {
                 // below threshold
-                g = g + ( T )( re * ( 1.f - g ));
+                g = g + ( SampleType )( re * ( 1.f - g ));
             }
 
             leftBuffer[ i ] = ( ol * tr * g );
@@ -1235,4 +1232,3 @@ class FormantFilter
         _dDry   = 1.0f - DYNAMICS_MIX;
         _dTrim *= DYNAMICS_MIX;
     }
-}

@@ -1,0 +1,22 @@
+
+FILE(GLOB
+    ATK_MOCK_SRC
+    *.cpp
+)
+
+FILE(GLOB
+    ATK_MOCK_HEADERS
+    *.h*
+)
+
+if(ENABLE_TESTS)
+  ATK_add_library(ATK_MOCK
+    NAME ATKMock
+    FOLDER Mock
+    DEFINITIONS "-DBOOST_ALL_NO_LIB"
+    INCLUDE ${FFT_INCLUDES}
+    LIBRARIES ATKUtility ATKCore GTest::gtest
+    SRC ${ATK_MOCK_SRC}
+    HEADERS ${ATK_MOCK_HEADERS}
+  )
+endif(ENABLE_TESTS)

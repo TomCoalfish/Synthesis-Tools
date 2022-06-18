@@ -46,12 +46,12 @@ else
 endif
 
 CC       = g++ -std=c++11
-DEFS     =   -DHAVE_GETTIMEOFDAY  -D__LINUX_PULSE__
+DEFS     =   -DHAVE_GETTIMEOFDAY -D__LINUX_ALSA__
 DEFS    += -D__LITTLE_ENDIAN__
-CFLAGS   = -O3 -Wall -march=native -mavx2 -fPIC
+CFLAGS   = -O3 -Wall
 CFLAGS  += $(INCLUDE) -Iinclude -fPIC
 LDFLAGS  = 
-LIBS     = -lpthread -lpulse-simple -lpulse -lm 
+LIBS     = -lpthread -lasound -lm 
 
 REALTIME = yes
 ifeq ($(REALTIME),yes)

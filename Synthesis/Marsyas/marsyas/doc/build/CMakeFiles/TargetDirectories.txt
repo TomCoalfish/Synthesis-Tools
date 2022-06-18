@@ -1,0 +1,4 @@
+/home/quake/Projects/Lua-Marsyas/marsyas/doc/build/CMakeFiles/doxy.dir
+/home/quake/Projects/Lua-Marsyas/marsyas/doc/build/CMakeFiles/docs.dir
+/home/quake/Projects/Lua-Marsyas/marsyas/doc/build/CMakeFiles/edit_cache.dir
+/home/quake/Projects/Lua-Marsyas/marsyas/doc/build/CMakeFiles/rebuild_cache.dir

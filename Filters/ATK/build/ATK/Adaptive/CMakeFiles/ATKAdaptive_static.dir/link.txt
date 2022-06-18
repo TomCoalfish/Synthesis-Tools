@@ -1,0 +1,2 @@
+/usr/bin/ar qc libATKAdaptive_static.a CMakeFiles/ATKAdaptive_static.dir/BlockLMSFilter.cpp.o CMakeFiles/ATKAdaptive_static.dir/LMSFilter.cpp.o CMakeFiles/ATKAdaptive_static.dir/RLSFilter.cpp.o
+/usr/bin/ranlib libATKAdaptive_static.a

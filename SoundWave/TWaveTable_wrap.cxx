@@ -2717,22 +2717,20 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_SoundWave__TWaveTableT_double_t swig_types[0]
 #define SWIGTYPE_p_SoundWave__TWaveTableT_float_t swig_types[1]
 #define SWIGTYPE_p_difference_type swig_types[2]
-#define SWIGTYPE_p_double swig_types[3]
-#define SWIGTYPE_p_float swig_types[4]
-#define SWIGTYPE_p_int swig_types[5]
-#define SWIGTYPE_p_long_long swig_types[6]
-#define SWIGTYPE_p_short swig_types[7]
-#define SWIGTYPE_p_signed_char swig_types[8]
-#define SWIGTYPE_p_size_type swig_types[9]
-#define SWIGTYPE_p_std__vectorT_double_t swig_types[10]
-#define SWIGTYPE_p_std__vectorT_float_t swig_types[11]
-#define SWIGTYPE_p_unsigned_char swig_types[12]
-#define SWIGTYPE_p_unsigned_int swig_types[13]
-#define SWIGTYPE_p_unsigned_long_long swig_types[14]
-#define SWIGTYPE_p_unsigned_short swig_types[15]
-#define SWIGTYPE_p_value_type swig_types[16]
-static swig_type_info *swig_types[18];
-static swig_module_info swig_module = {swig_types, 17, 0, 0, 0, 0};
+#define SWIGTYPE_p_int swig_types[3]
+#define SWIGTYPE_p_long_long swig_types[4]
+#define SWIGTYPE_p_short swig_types[5]
+#define SWIGTYPE_p_signed_char swig_types[6]
+#define SWIGTYPE_p_size_type swig_types[7]
+#define SWIGTYPE_p_std__vectorT_double_t swig_types[8]
+#define SWIGTYPE_p_std__vectorT_float_t swig_types[9]
+#define SWIGTYPE_p_unsigned_char swig_types[10]
+#define SWIGTYPE_p_unsigned_int swig_types[11]
+#define SWIGTYPE_p_unsigned_long_long swig_types[12]
+#define SWIGTYPE_p_unsigned_short swig_types[13]
+#define SWIGTYPE_p_value_type swig_types[14]
+static swig_type_info *swig_types[16];
+static swig_module_info swig_module = {swig_types, 15, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3080,30 +3078,6 @@ fail:
 }
 
 
-static int _wrap_float_vector_data(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
-  float *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< float >::data",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::data",1,"std::vector< float > *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
-    SWIG_fail_ptr("float_vector_data",1,SWIGTYPE_p_std__vectorT_float_t);
-  }
-  
-  result = (float *)(arg1)->data();
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_float,0); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_float_vector_front(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = (std::vector< float > *) 0 ;
@@ -3240,7 +3214,6 @@ static swig_lua_method swig_float_vector_methods[]= {
     { "clear", _wrap_float_vector_clear},
     { "push_back", _wrap_float_vector_push_back},
     { "pop_back", _wrap_float_vector_pop_back},
-    { "data", _wrap_float_vector_data},
     { "front", _wrap_float_vector_front},
     { "back", _wrap_float_vector_back},
     { "__getitem", _wrap_float_vector___getitem},
@@ -3566,30 +3539,6 @@ fail:
 }
 
 
-static int _wrap_double_vector_data(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  double *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< double >::data",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::data",1,"std::vector< double > *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
-    SWIG_fail_ptr("double_vector_data",1,SWIGTYPE_p_std__vectorT_double_t);
-  }
-  
-  result = (double *)(arg1)->data();
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_double,0); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_double_vector_front(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
@@ -3726,7 +3675,6 @@ static swig_lua_method swig_double_vector_methods[]= {
     { "clear", _wrap_double_vector_clear},
     { "push_back", _wrap_double_vector_push_back},
     { "pop_back", _wrap_double_vector_pop_back},
-    { "data", _wrap_double_vector_data},
     { "front", _wrap_double_vector_front},
     { "back", _wrap_double_vector_back},
     { "__getitem", _wrap_double_vector___getitem},
@@ -3960,189 +3908,6 @@ fail:
 }
 
 
-static int _wrap_FloatWaveTable_Tick(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::TWaveTable< float > *arg1 = (SoundWave::TWaveTable< float > *) 0 ;
-  float result;
-  
-  SWIG_check_num_args("SoundWave::TWaveTable< float >::Tick",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::TWaveTable< float >::Tick",1,"SoundWave::TWaveTable< float > *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__TWaveTableT_float_t,0))){
-    SWIG_fail_ptr("FloatWaveTable_Tick",1,SWIGTYPE_p_SoundWave__TWaveTableT_float_t);
-  }
-  
-  result = (float)(arg1)->Tick();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_FloatWaveTable_Process__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::TWaveTable< float > *arg1 = (SoundWave::TWaveTable< float > *) 0 ;
-  size_t arg2 ;
-  float *arg3 = (float *) 0 ;
-  float *arg4 = (float *) 0 ;
-  
-  SWIG_check_num_args("SoundWave::TWaveTable< float >::Process",4,4)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::TWaveTable< float >::Process",1,"SoundWave::TWaveTable< float > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::TWaveTable< float >::Process",2,"size_t");
-  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("SoundWave::TWaveTable< float >::Process",3,"float *");
-  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("SoundWave::TWaveTable< float >::Process",4,"float *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__TWaveTableT_float_t,0))){
-    SWIG_fail_ptr("FloatWaveTable_Process",1,SWIGTYPE_p_SoundWave__TWaveTableT_float_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (size_t)lua_tonumber(L, 2);
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_float,0))){
-    SWIG_fail_ptr("FloatWaveTable_Process",3,SWIGTYPE_p_float);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_float,0))){
-    SWIG_fail_ptr("FloatWaveTable_Process",4,SWIGTYPE_p_float);
-  }
-  
-  (arg1)->Process(arg2,arg3,arg4);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_FloatWaveTable_Process__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::TWaveTable< float > *arg1 = (SoundWave::TWaveTable< float > *) 0 ;
-  float *arg2 = (float *) 0 ;
-  size_t arg3 ;
-  
-  SWIG_check_num_args("SoundWave::TWaveTable< float >::Process",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::TWaveTable< float >::Process",1,"SoundWave::TWaveTable< float > *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("SoundWave::TWaveTable< float >::Process",2,"float *");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("SoundWave::TWaveTable< float >::Process",3,"size_t");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__TWaveTableT_float_t,0))){
-    SWIG_fail_ptr("FloatWaveTable_Process",1,SWIGTYPE_p_SoundWave__TWaveTableT_float_t);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_float,0))){
-    SWIG_fail_ptr("FloatWaveTable_Process",2,SWIGTYPE_p_float);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
-  arg3 = (size_t)lua_tonumber(L, 3);
-  (arg1)->Process(arg2,arg3);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_FloatWaveTable_Process(lua_State* L) {
-  int argc;
-  int argv[5]={
-    1,2,3,4,5
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 3) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__TWaveTableT_float_t, 0)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        void *ptr;
-        if (SWIG_isptrtype(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_float, 0)) {
-          _v = 0;
-        } else {
-          _v = 1;
-        }
-      }
-      if (_v) {
-        {
-          _v = lua_isnumber(L,argv[2]);
-        }
-        if (_v) {
-          return _wrap_FloatWaveTable_Process__SWIG_1(L);
-        }
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__TWaveTableT_float_t, 0)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        {
-          void *ptr;
-          if (SWIG_isptrtype(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_float, 0)) {
-            _v = 0;
-          } else {
-            _v = 1;
-          }
-        }
-        if (_v) {
-          {
-            void *ptr;
-            if (SWIG_isptrtype(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_float, 0)) {
-              _v = 0;
-            } else {
-              _v = 1;
-            }
-          }
-          if (_v) {
-            return _wrap_FloatWaveTable_Process__SWIG_0(L);
-          }
-        }
-      }
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'FloatWaveTable_Process'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::TWaveTable< float >::Process(size_t,float *,float *)\n"
-    "    SoundWave::TWaveTable< float >::Process(float *,size_t)\n");
-  lua_error(L);return 0;
-}
-
-
 static void swig_delete_FloatWaveTable(void *obj) {
 SoundWave::TWaveTable< float > *arg1 = (SoundWave::TWaveTable< float > *) obj;
 delete arg1;
@@ -4165,8 +3930,6 @@ static swig_lua_method swig_FloatWaveTable_methods[]= {
     { "getOutput", _wrap_FloatWaveTable_getOutput},
     { "getOutputMinusOffset", _wrap_FloatWaveTable_getOutputMinusOffset},
     { "addWaveTable", _wrap_FloatWaveTable_addWaveTable},
-    { "Tick", _wrap_FloatWaveTable_Tick},
-    { "Process", _wrap_FloatWaveTable_Process},
     {0,0}
 };
 static swig_lua_method swig_FloatWaveTable_meta[] = {
@@ -4377,189 +4140,6 @@ fail:
 }
 
 
-static int _wrap_DoubleWaveTable_Tick(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::TWaveTable< double > *arg1 = (SoundWave::TWaveTable< double > *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("SoundWave::TWaveTable< double >::Tick",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::TWaveTable< double >::Tick",1,"SoundWave::TWaveTable< double > *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__TWaveTableT_double_t,0))){
-    SWIG_fail_ptr("DoubleWaveTable_Tick",1,SWIGTYPE_p_SoundWave__TWaveTableT_double_t);
-  }
-  
-  result = (double)(arg1)->Tick();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DoubleWaveTable_Process__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::TWaveTable< double > *arg1 = (SoundWave::TWaveTable< double > *) 0 ;
-  size_t arg2 ;
-  double *arg3 = (double *) 0 ;
-  double *arg4 = (double *) 0 ;
-  
-  SWIG_check_num_args("SoundWave::TWaveTable< double >::Process",4,4)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::TWaveTable< double >::Process",1,"SoundWave::TWaveTable< double > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::TWaveTable< double >::Process",2,"size_t");
-  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("SoundWave::TWaveTable< double >::Process",3,"double *");
-  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("SoundWave::TWaveTable< double >::Process",4,"double *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__TWaveTableT_double_t,0))){
-    SWIG_fail_ptr("DoubleWaveTable_Process",1,SWIGTYPE_p_SoundWave__TWaveTableT_double_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (size_t)lua_tonumber(L, 2);
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_double,0))){
-    SWIG_fail_ptr("DoubleWaveTable_Process",3,SWIGTYPE_p_double);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_double,0))){
-    SWIG_fail_ptr("DoubleWaveTable_Process",4,SWIGTYPE_p_double);
-  }
-  
-  (arg1)->Process(arg2,arg3,arg4);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DoubleWaveTable_Process__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::TWaveTable< double > *arg1 = (SoundWave::TWaveTable< double > *) 0 ;
-  double *arg2 = (double *) 0 ;
-  size_t arg3 ;
-  
-  SWIG_check_num_args("SoundWave::TWaveTable< double >::Process",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::TWaveTable< double >::Process",1,"SoundWave::TWaveTable< double > *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("SoundWave::TWaveTable< double >::Process",2,"double *");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("SoundWave::TWaveTable< double >::Process",3,"size_t");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__TWaveTableT_double_t,0))){
-    SWIG_fail_ptr("DoubleWaveTable_Process",1,SWIGTYPE_p_SoundWave__TWaveTableT_double_t);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_double,0))){
-    SWIG_fail_ptr("DoubleWaveTable_Process",2,SWIGTYPE_p_double);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
-  arg3 = (size_t)lua_tonumber(L, 3);
-  (arg1)->Process(arg2,arg3);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DoubleWaveTable_Process(lua_State* L) {
-  int argc;
-  int argv[5]={
-    1,2,3,4,5
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 3) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__TWaveTableT_double_t, 0)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        void *ptr;
-        if (SWIG_isptrtype(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_double, 0)) {
-          _v = 0;
-        } else {
-          _v = 1;
-        }
-      }
-      if (_v) {
-        {
-          _v = lua_isnumber(L,argv[2]);
-        }
-        if (_v) {
-          return _wrap_DoubleWaveTable_Process__SWIG_1(L);
-        }
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__TWaveTableT_double_t, 0)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        {
-          void *ptr;
-          if (SWIG_isptrtype(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_double, 0)) {
-            _v = 0;
-          } else {
-            _v = 1;
-          }
-        }
-        if (_v) {
-          {
-            void *ptr;
-            if (SWIG_isptrtype(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_double, 0)) {
-              _v = 0;
-            } else {
-              _v = 1;
-            }
-          }
-          if (_v) {
-            return _wrap_DoubleWaveTable_Process__SWIG_0(L);
-          }
-        }
-      }
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'DoubleWaveTable_Process'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::TWaveTable< double >::Process(size_t,double *,double *)\n"
-    "    SoundWave::TWaveTable< double >::Process(double *,size_t)\n");
-  lua_error(L);return 0;
-}
-
-
 static void swig_delete_DoubleWaveTable(void *obj) {
 SoundWave::TWaveTable< double > *arg1 = (SoundWave::TWaveTable< double > *) obj;
 delete arg1;
@@ -4582,8 +4162,6 @@ static swig_lua_method swig_DoubleWaveTable_methods[]= {
     { "getOutput", _wrap_DoubleWaveTable_getOutput},
     { "getOutputMinusOffset", _wrap_DoubleWaveTable_getOutputMinusOffset},
     { "addWaveTable", _wrap_DoubleWaveTable_addWaveTable},
-    { "Tick", _wrap_DoubleWaveTable_Tick},
-    { "Process", _wrap_DoubleWaveTable_Process},
     {0,0}
 };
 static swig_lua_method swig_DoubleWaveTable_meta[] = {
@@ -6144,8 +5722,6 @@ static swig_lua_namespace swig_SwigModule = {
 static swig_type_info _swigt__p_SoundWave__TWaveTableT_double_t = {"_p_SoundWave__TWaveTableT_double_t", "SoundWave::TWaveTable< double > *", 0, 0, (void*)&_wrap_class_DoubleWaveTable, 0};
 static swig_type_info _swigt__p_SoundWave__TWaveTableT_float_t = {"_p_SoundWave__TWaveTableT_float_t", "SoundWave::TWaveTable< float > *", 0, 0, (void*)&_wrap_class_FloatWaveTable, 0};
 static swig_type_info _swigt__p_difference_type = {"_p_difference_type", "difference_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_double = {"_p_double", "double *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_float = {"_p_float", "float *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "intptr_t *|int *|int_least32_t *|int_fast32_t *|int32_t *|int_fast16_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_long_long = {"_p_long_long", "int_least64_t *|int_fast64_t *|int64_t *|long long *|intmax_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_short = {"_p_short", "short *|int_least16_t *|int16_t *", 0, 0, (void*)0, 0};
@@ -6163,8 +5739,6 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_SoundWave__TWaveTableT_double_t,
   &_swigt__p_SoundWave__TWaveTableT_float_t,
   &_swigt__p_difference_type,
-  &_swigt__p_double,
-  &_swigt__p_float,
   &_swigt__p_int,
   &_swigt__p_long_long,
   &_swigt__p_short,
@@ -6182,8 +5756,6 @@ static swig_type_info *swig_type_initial[] = {
 static swig_cast_info _swigc__p_SoundWave__TWaveTableT_double_t[] = {  {&_swigt__p_SoundWave__TWaveTableT_double_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundWave__TWaveTableT_float_t[] = {  {&_swigt__p_SoundWave__TWaveTableT_float_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_difference_type[] = {  {&_swigt__p_difference_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_double[] = {  {&_swigt__p_double, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_float[] = {  {&_swigt__p_float, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_long_long[] = {  {&_swigt__p_long_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_short[] = {  {&_swigt__p_short, 0, 0, 0},{0, 0, 0, 0}};
@@ -6201,8 +5773,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_SoundWave__TWaveTableT_double_t,
   _swigc__p_SoundWave__TWaveTableT_float_t,
   _swigc__p_difference_type,
-  _swigc__p_double,
-  _swigc__p_float,
   _swigc__p_int,
   _swigc__p_long_long,
   _swigc__p_short,

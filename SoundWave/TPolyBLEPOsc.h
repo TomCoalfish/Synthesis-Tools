@@ -8,7 +8,7 @@
 
 #pragma once
 
-namespace SoundWave {
+using namespace SoundWave {
 
 template<typename T>
 class PolyBlepOSC {

@@ -59,10 +59,10 @@ namespace SoundWave {
         }
 
         void Process(const size_t n, T* in, T* out) {
-            process(in,out,n);
+            process(in.data(),out.data(),n);
         }
         void Process(T* samples, const size_t n) {
-            process(samples,samples,n);
+            process(samples.data(),samples.data(),n);
         }
 
         T Tick(T input);
@@ -304,7 +304,7 @@ namespace SoundWave {
                 fRec3[1] = fRec3[0];
             }
         }
-        FAUSTPP_VIRTUAL void tick(T& inputs, T &outputs) {            
+        FAUSTPP_VIRTUAL void tick(int count, T& inputs, T &outputs) {            
             T fSlow0 = (0.00100000005f * T(fHslider0));
             T fSlow1 = (0.215215757f * (T(fHslider1) + -0.707000017f));
             T fTemp0 = T(inputs);

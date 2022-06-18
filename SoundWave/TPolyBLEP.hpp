@@ -74,7 +74,7 @@ namespace SoundWave
         void sync(T phase);
 
         T Tick() { return getAndInc(); }
-        T Tick(T in) { return in * getAndInc(); }
+        T Tick(T in) { return T * getAndInc(); }
         void Process(T * samples, size_t n) {
             for(size_t i = 0; i < n; i++) samples[i] = getAndInc();
         }

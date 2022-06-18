@@ -2694,70 +2694,63 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 
 /* ------------------------------ end luarun.swg  ------------------------------ */
 
-/*  Errors in SWIG */
-#define  SWIG_UnknownError    	   -1
-#define  SWIG_IOError        	   -2
-#define  SWIG_RuntimeError   	   -3
-#define  SWIG_IndexError     	   -4
-#define  SWIG_TypeError      	   -5
-#define  SWIG_DivisionByZero 	   -6
-#define  SWIG_OverflowError  	   -7
-#define  SWIG_SyntaxError    	   -8
-#define  SWIG_ValueError     	   -9
-#define  SWIG_SystemError    	   -10
-#define  SWIG_AttributeError 	   -11
-#define  SWIG_MemoryError    	   -12
-#define  SWIG_NullReferenceError   -13
-
-
-
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t swig_types[0]
-#define SWIGTYPE_p_SoundWave__ArrayVectorT_float_t swig_types[1]
-#define SWIGTYPE_p_SoundWave__ColMatrixT_float_t swig_types[2]
-#define SWIGTYPE_p_SoundWave__ColVectorT_float_t swig_types[3]
-#define SWIGTYPE_p_SoundWave__EigenArrayT_float_t swig_types[4]
-#define SWIGTYPE_p_SoundWave__MatrixT_float_t swig_types[5]
-#define SWIGTYPE_p_SoundWave__SampleMatrixT_float_t swig_types[6]
-#define SWIGTYPE_p_SoundWave__SampleVectorT_float_t swig_types[7]
-#define SWIGTYPE_p_SoundWave__ScalarT_float_t swig_types[8]
-#define SWIGTYPE_p_SoundWave__VectorT_float_t swig_types[9]
-#define SWIGTYPE_p_difference_type swig_types[10]
-#define SWIGTYPE_p_float swig_types[11]
-#define SWIGTYPE_p_int swig_types[12]
-#define SWIGTYPE_p_long_long swig_types[13]
-#define SWIGTYPE_p_p_float swig_types[14]
-#define SWIGTYPE_p_p_p_float swig_types[15]
-#define SWIGTYPE_p_short swig_types[16]
-#define SWIGTYPE_p_signed_char swig_types[17]
-#define SWIGTYPE_p_size_type swig_types[18]
-#define SWIGTYPE_p_std__complexT_double_t swig_types[19]
-#define SWIGTYPE_p_std__complexT_float_t swig_types[20]
-#define SWIGTYPE_p_std__vectorT_SoundWave__ArrayVectorT_float_t_t swig_types[21]
-#define SWIGTYPE_p_std__vectorT_SoundWave__SampleVectorT_float_t_t swig_types[22]
-#define SWIGTYPE_p_std__vectorT_double_t swig_types[23]
-#define SWIGTYPE_p_std__vectorT_float_p_t swig_types[24]
-#define SWIGTYPE_p_std__vectorT_float_t swig_types[25]
-#define SWIGTYPE_p_std__vectorT_int_t swig_types[26]
-#define SWIGTYPE_p_std__vectorT_long_t swig_types[27]
-#define SWIGTYPE_p_std__vectorT_short_t swig_types[28]
-#define SWIGTYPE_p_std__vectorT_signed_char_t swig_types[29]
-#define SWIGTYPE_p_std__vectorT_std__complexT_double_t_t swig_types[30]
-#define SWIGTYPE_p_std__vectorT_std__complexT_float_t_t swig_types[31]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_float_t_t swig_types[32]
-#define SWIGTYPE_p_std__vectorT_unsigned_char_t swig_types[33]
-#define SWIGTYPE_p_std__vectorT_unsigned_int_t swig_types[34]
-#define SWIGTYPE_p_std__vectorT_unsigned_long_t swig_types[35]
-#define SWIGTYPE_p_std__vectorT_unsigned_short_t swig_types[36]
-#define SWIGTYPE_p_unsigned_char swig_types[37]
-#define SWIGTYPE_p_unsigned_int swig_types[38]
-#define SWIGTYPE_p_unsigned_long_long swig_types[39]
-#define SWIGTYPE_p_unsigned_short swig_types[40]
-#define SWIGTYPE_p_value_type swig_types[41]
-static swig_type_info *swig_types[43];
-static swig_module_info swig_module = {swig_types, 42, 0, 0, 0, 0};
+#define SWIGTYPE_p_SoundWave__ColMatrixT_float_t swig_types[0]
+#define SWIGTYPE_p_SoundWave__ColVectorT_float_t swig_types[1]
+#define SWIGTYPE_p_SoundWave__EigenArrayT_float_t swig_types[2]
+#define SWIGTYPE_p_SoundWave__MatrixT_float_t swig_types[3]
+#define SWIGTYPE_p_SoundWave__SampleMatrixT_float_t swig_types[4]
+#define SWIGTYPE_p_SoundWave__SampleVectorT_float_t swig_types[5]
+#define SWIGTYPE_p_SoundWave__VectorT_float_t swig_types[6]
+#define SWIGTYPE_p_SoundWave__matrix_index swig_types[7]
+#define SWIGTYPE_p_double swig_types[8]
+#define SWIGTYPE_p_float swig_types[9]
+#define SWIGTYPE_p_int swig_types[10]
+#define SWIGTYPE_p_long swig_types[11]
+#define SWIGTYPE_p_long_long swig_types[12]
+#define SWIGTYPE_p_p_float swig_types[13]
+#define SWIGTYPE_p_p_p_float swig_types[14]
+#define SWIGTYPE_p_short swig_types[15]
+#define SWIGTYPE_p_signed_char swig_types[16]
+#define SWIGTYPE_p_std__complexT_double_t swig_types[17]
+#define SWIGTYPE_p_std__complexT_float_t swig_types[18]
+#define SWIGTYPE_p_std__vectorT_SoundWave__SampleVectorT_float_t_t swig_types[19]
+#define SWIGTYPE_p_std__vectorT_double_t swig_types[20]
+#define SWIGTYPE_p_std__vectorT_float_p_t swig_types[21]
+#define SWIGTYPE_p_std__vectorT_float_t swig_types[22]
+#define SWIGTYPE_p_std__vectorT_int_t swig_types[23]
+#define SWIGTYPE_p_std__vectorT_long_long_t swig_types[24]
+#define SWIGTYPE_p_std__vectorT_long_t swig_types[25]
+#define SWIGTYPE_p_std__vectorT_short_t swig_types[26]
+#define SWIGTYPE_p_std__vectorT_signed_char_t swig_types[27]
+#define SWIGTYPE_p_std__vectorT_std__complexT_double_t_t swig_types[28]
+#define SWIGTYPE_p_std__vectorT_std__complexT_float_t_t swig_types[29]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_float_t_t swig_types[30]
+#define SWIGTYPE_p_std__vectorT_unsigned_char_t swig_types[31]
+#define SWIGTYPE_p_std__vectorT_unsigned_int_t swig_types[32]
+#define SWIGTYPE_p_std__vectorT_unsigned_long_t swig_types[33]
+#define SWIGTYPE_p_std__vectorT_unsigned_short_t swig_types[34]
+#define SWIGTYPE_p_std__vector_iteratorT_double_t swig_types[35]
+#define SWIGTYPE_p_std__vector_iteratorT_float_t swig_types[36]
+#define SWIGTYPE_p_std__vector_iteratorT_int_t swig_types[37]
+#define SWIGTYPE_p_std__vector_iteratorT_long_t swig_types[38]
+#define SWIGTYPE_p_std__vector_iteratorT_short_t swig_types[39]
+#define SWIGTYPE_p_std__vector_iteratorT_signed_char_t swig_types[40]
+#define SWIGTYPE_p_std__vector_iteratorT_std__complexT_double_t_t swig_types[41]
+#define SWIGTYPE_p_std__vector_iteratorT_std__complexT_float_t_t swig_types[42]
+#define SWIGTYPE_p_std__vector_iteratorT_unsigned_char_t swig_types[43]
+#define SWIGTYPE_p_std__vector_iteratorT_unsigned_int_t swig_types[44]
+#define SWIGTYPE_p_std__vector_iteratorT_unsigned_long_t swig_types[45]
+#define SWIGTYPE_p_std__vector_iteratorT_unsigned_short_t swig_types[46]
+#define SWIGTYPE_p_unsigned_char swig_types[47]
+#define SWIGTYPE_p_unsigned_int swig_types[48]
+#define SWIGTYPE_p_unsigned_long swig_types[49]
+#define SWIGTYPE_p_unsigned_long_long swig_types[50]
+#define SWIGTYPE_p_unsigned_short swig_types[51]
+static swig_type_info *swig_types[53];
+static swig_module_info swig_module = {swig_types, 52, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2781,20 +2774,63 @@ typedef struct{} LANGUAGE_OBJ;
 #include <stdint.h>		// Use the C99 official header
 
 
+#include <algorithm>
 #include <vector>
+#include <map>
+#include <string>
+#include <cstdlib>
+#include <cstdio>
+#include <cassert>
+#include <iostream>
+#include <random>
+#include <memory>
 
 
-#include <typeinfo>
-#include <stdexcept>
+namespace std {
+    template<typename T>
+    struct vector_iterator
+    {
+        typename std::vector<T>::iterator iter;
+        std::vector<T> v;
 
+        vector_iterator(const std::vector<T> & vec) {
+            v = vec;
+        }   
+        vector_iterator(const std::vector<T> & vec, const typename std::vector<T>::iterator & i) {
+            iter = i;
+            v = vec;
+        }
 
-#define SWIG_exception(a,b)\
-{ lua_pushfstring(L,"%s:%s",#a,b);SWIG_fail; }
-
-
-#include <typeinfo>
-#include <stdexcept>
-
+        vector_iterator<T>& operator = (const T& val) {
+            *iter = val;
+            return *this;
+        }
+        vector_iterator<T>& operator = (const vector_iterator<T>& val) {
+            iter = val.iter;
+            v    = val.v;
+            return *this;;
+        }
+                
+        void next() {
+            if(iter != v.end()) iter++;
+        }
+        void prev() {
+            if(iter != v.begin()) iter--;
+        }
+        void forward(size_t i) {
+            iter += i;
+        }
+        void backward(size_t i) {
+            iter -= i;
+        }
+        void jump(size_t i) {
+            iter = i;
+        }
+        
+        T value() { return *iter; }
+        void set_value(const T& val) { *iter = val; }
+    };
+}
 
 #include <complex>
 
@@ -2812,131 +2848,1605 @@ SWIGINTERN std::complex< double > std_complex_Sl_double_Sg____mul____SWIG(std::c
 SWIGINTERN std::complex< double > std_complex_Sl_double_Sg____pow____SWIG_0(std::complex< double > *self,std::complex< double > const &b){ return std::pow(*self,b); }
 SWIGINTERN std::complex< double > std_complex_Sl_double_Sg____pow____SWIG_1(std::complex< double > *self,double const &b){ return std::pow(*self,b); }
 SWIGINTERN bool std_complex_Sl_double_Sg____eq____SWIG(std::complex< double > *self,std::complex< double > const &b){ return *self == b; }
-SWIGINTERN float std_vector_Sl_float_Sg____getitem____SWIG(std::vector< float > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_float_Sg____setitem____SWIG(std::vector< float > *self,unsigned int idx,float val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN double std_vector_Sl_double_Sg____getitem____SWIG(std::vector< double > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_double_Sg____setitem____SWIG(std::vector< double > *self,unsigned int idx,double val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN std::complex< float > std_vector_Sl_std_complex_Sl_float_Sg__Sg____getitem____SWIG(std::vector< std::complex< float > > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_std_complex_Sl_float_Sg__Sg____setitem____SWIG(std::vector< std::complex< float > > *self,unsigned int idx,std::complex< float > val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN std::complex< double > std_vector_Sl_std_complex_Sl_double_Sg__Sg____getitem____SWIG(std::vector< std::complex< double > > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_std_complex_Sl_double_Sg__Sg____setitem____SWIG(std::vector< std::complex< double > > *self,unsigned int idx,std::complex< double > val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN signed char std_vector_Sl_signed_SS_char_Sg____getitem____SWIG(std::vector< signed char > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_signed_SS_char_Sg____setitem____SWIG(std::vector< signed char > *self,unsigned int idx,signed char val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN unsigned char std_vector_Sl_unsigned_SS_char_Sg____getitem____SWIG(std::vector< unsigned char > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_unsigned_SS_char_Sg____setitem____SWIG(std::vector< unsigned char > *self,unsigned int idx,unsigned char val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN short std_vector_Sl_short_Sg____getitem____SWIG(std::vector< short > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_short_Sg____setitem____SWIG(std::vector< short > *self,unsigned int idx,short val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN unsigned short std_vector_Sl_unsigned_SS_short_Sg____getitem____SWIG(std::vector< unsigned short > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_unsigned_SS_short_Sg____setitem____SWIG(std::vector< unsigned short > *self,unsigned int idx,unsigned short val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN int std_vector_Sl_int_Sg____getitem____SWIG(std::vector< int > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_int_Sg____setitem____SWIG(std::vector< int > *self,unsigned int idx,int val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN unsigned int std_vector_Sl_unsigned_SS_int_Sg____getitem____SWIG(std::vector< unsigned int > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_unsigned_SS_int_Sg____setitem____SWIG(std::vector< unsigned int > *self,unsigned int idx,unsigned int val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN long std_vector_Sl_long_Sg____getitem____SWIG(std::vector< long > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_long_Sg____setitem____SWIG(std::vector< long > *self,unsigned int idx,long val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN unsigned long std_vector_Sl_unsigned_SS_long_Sg____getitem____SWIG(std::vector< unsigned long > *self,unsigned int idx){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__getitem__()");
-				return (*self)[idx];
-			}
-SWIGINTERN void std_vector_Sl_unsigned_SS_long_Sg____setitem____SWIG(std::vector< unsigned long > *self,unsigned int idx,unsigned long val){
-				if (idx>=self->size())
-					throw std::out_of_range("in vector::__setitem__()");
-				(*self)[idx]=val;
-			}
-SWIGINTERN float SoundWave_SampleVector_Sl_float_Sg____getitem____SWIG(SoundWave::SampleVector< float > *self,size_t i){ return self->vector[i]; }
-SWIGINTERN void SoundWave_SampleVector_Sl_float_Sg____setitem____SWIG(SoundWave::SampleVector< float > *self,size_t i,float val){ self->vector[i] = val; }
+SWIGINTERN float std_vector_Sl_float_Sg____getitem__SWIG(std::vector< float > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_float_Sg____setitem__SWIG(std::vector< float > *self,size_t i,float val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< float > std_vector_Sl_float_Sg__begin__SWIG(std::vector< float > *self){
+                std::vector_iterator<float> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< float > std_vector_Sl_float_Sg__end__SWIG(std::vector< float > *self){
+                std::vector_iterator<float> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_float_Sg__erase__SWIG_0(std::vector< float > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_float_Sg__erase__SWIG_1(std::vector< float > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN double std_vector_Sl_double_Sg____getitem__SWIG(std::vector< double > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_double_Sg____setitem__SWIG(std::vector< double > *self,size_t i,double val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< double > std_vector_Sl_double_Sg__begin__SWIG(std::vector< double > *self){
+                std::vector_iterator<double> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< double > std_vector_Sl_double_Sg__end__SWIG(std::vector< double > *self){
+                std::vector_iterator<double> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_double_Sg__erase__SWIG_0(std::vector< double > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_double_Sg__erase__SWIG_1(std::vector< double > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN std::complex< float > std_vector_Sl_std_complex_Sl_float_Sg__Sg____getitem__SWIG(std::vector< std::complex< float > > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_std_complex_Sl_float_Sg__Sg____setitem__SWIG(std::vector< std::complex< float > > *self,size_t i,std::complex< float > val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< std::complex< float > > std_vector_Sl_std_complex_Sl_float_Sg__Sg__begin__SWIG(std::vector< std::complex< float > > *self){
+                std::vector_iterator<std::complex< float >> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< std::complex< float > > std_vector_Sl_std_complex_Sl_float_Sg__Sg__end__SWIG(std::vector< std::complex< float > > *self){
+                std::vector_iterator<std::complex< float >> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_std_complex_Sl_float_Sg__Sg__erase__SWIG_0(std::vector< std::complex< float > > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_std_complex_Sl_float_Sg__Sg__erase__SWIG_1(std::vector< std::complex< float > > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN std::complex< double > std_vector_Sl_std_complex_Sl_double_Sg__Sg____getitem__SWIG(std::vector< std::complex< double > > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_std_complex_Sl_double_Sg__Sg____setitem__SWIG(std::vector< std::complex< double > > *self,size_t i,std::complex< double > val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< std::complex< double > > std_vector_Sl_std_complex_Sl_double_Sg__Sg__begin__SWIG(std::vector< std::complex< double > > *self){
+                std::vector_iterator<std::complex< double >> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< std::complex< double > > std_vector_Sl_std_complex_Sl_double_Sg__Sg__end__SWIG(std::vector< std::complex< double > > *self){
+                std::vector_iterator<std::complex< double >> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_std_complex_Sl_double_Sg__Sg__erase__SWIG_0(std::vector< std::complex< double > > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_std_complex_Sl_double_Sg__Sg__erase__SWIG_1(std::vector< std::complex< double > > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN signed char std_vector_Sl_signed_SS_char_Sg____getitem__SWIG(std::vector< signed char > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_signed_SS_char_Sg____setitem__SWIG(std::vector< signed char > *self,size_t i,signed char val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< signed char > std_vector_Sl_signed_SS_char_Sg__begin__SWIG(std::vector< signed char > *self){
+                std::vector_iterator<signed char> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< signed char > std_vector_Sl_signed_SS_char_Sg__end__SWIG(std::vector< signed char > *self){
+                std::vector_iterator<signed char> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_signed_SS_char_Sg__erase__SWIG_0(std::vector< signed char > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_signed_SS_char_Sg__erase__SWIG_1(std::vector< signed char > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN unsigned char std_vector_Sl_unsigned_SS_char_Sg____getitem__SWIG(std::vector< unsigned char > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_unsigned_SS_char_Sg____setitem__SWIG(std::vector< unsigned char > *self,size_t i,unsigned char val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< unsigned char > std_vector_Sl_unsigned_SS_char_Sg__begin__SWIG(std::vector< unsigned char > *self){
+                std::vector_iterator<unsigned char> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< unsigned char > std_vector_Sl_unsigned_SS_char_Sg__end__SWIG(std::vector< unsigned char > *self){
+                std::vector_iterator<unsigned char> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_unsigned_SS_char_Sg__erase__SWIG_0(std::vector< unsigned char > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_unsigned_SS_char_Sg__erase__SWIG_1(std::vector< unsigned char > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN short std_vector_Sl_short_Sg____getitem__SWIG(std::vector< short > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_short_Sg____setitem__SWIG(std::vector< short > *self,size_t i,short val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< short > std_vector_Sl_short_Sg__begin__SWIG(std::vector< short > *self){
+                std::vector_iterator<short> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< short > std_vector_Sl_short_Sg__end__SWIG(std::vector< short > *self){
+                std::vector_iterator<short> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_short_Sg__erase__SWIG_0(std::vector< short > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_short_Sg__erase__SWIG_1(std::vector< short > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN unsigned short std_vector_Sl_unsigned_SS_short_Sg____getitem__SWIG(std::vector< unsigned short > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_unsigned_SS_short_Sg____setitem__SWIG(std::vector< unsigned short > *self,size_t i,unsigned short val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< unsigned short > std_vector_Sl_unsigned_SS_short_Sg__begin__SWIG(std::vector< unsigned short > *self){
+                std::vector_iterator<unsigned short> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< unsigned short > std_vector_Sl_unsigned_SS_short_Sg__end__SWIG(std::vector< unsigned short > *self){
+                std::vector_iterator<unsigned short> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_unsigned_SS_short_Sg__erase__SWIG_0(std::vector< unsigned short > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_unsigned_SS_short_Sg__erase__SWIG_1(std::vector< unsigned short > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN int std_vector_Sl_int_Sg____getitem__SWIG(std::vector< int > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_int_Sg____setitem__SWIG(std::vector< int > *self,size_t i,int val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< int > std_vector_Sl_int_Sg__begin__SWIG(std::vector< int > *self){
+                std::vector_iterator<int> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< int > std_vector_Sl_int_Sg__end__SWIG(std::vector< int > *self){
+                std::vector_iterator<int> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_int_Sg__erase__SWIG_0(std::vector< int > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_int_Sg__erase__SWIG_1(std::vector< int > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN unsigned int std_vector_Sl_unsigned_SS_int_Sg____getitem__SWIG(std::vector< unsigned int > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_unsigned_SS_int_Sg____setitem__SWIG(std::vector< unsigned int > *self,size_t i,unsigned int val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< unsigned int > std_vector_Sl_unsigned_SS_int_Sg__begin__SWIG(std::vector< unsigned int > *self){
+                std::vector_iterator<unsigned int> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< unsigned int > std_vector_Sl_unsigned_SS_int_Sg__end__SWIG(std::vector< unsigned int > *self){
+                std::vector_iterator<unsigned int> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_unsigned_SS_int_Sg__erase__SWIG_0(std::vector< unsigned int > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_unsigned_SS_int_Sg__erase__SWIG_1(std::vector< unsigned int > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN long std_vector_Sl_long_Sg____getitem__SWIG(std::vector< long > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_long_Sg____setitem__SWIG(std::vector< long > *self,size_t i,long val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< long > std_vector_Sl_long_Sg__begin__SWIG(std::vector< long > *self){
+                std::vector_iterator<long> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< long > std_vector_Sl_long_Sg__end__SWIG(std::vector< long > *self){
+                std::vector_iterator<long> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_long_Sg__erase__SWIG_0(std::vector< long > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_long_Sg__erase__SWIG_1(std::vector< long > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
+SWIGINTERN unsigned long std_vector_Sl_unsigned_SS_long_Sg____getitem__SWIG(std::vector< unsigned long > *self,size_t i){ return (*self)[i-1]; }
+SWIGINTERN void std_vector_Sl_unsigned_SS_long_Sg____setitem__SWIG(std::vector< unsigned long > *self,size_t i,unsigned long val){ (*self)[i-1] = val; }
+SWIGINTERN std::vector_iterator< unsigned long > std_vector_Sl_unsigned_SS_long_Sg__begin__SWIG(std::vector< unsigned long > *self){
+                std::vector_iterator<unsigned long> r(*self,self->begin());                
+                return r;
+            }
+SWIGINTERN std::vector_iterator< unsigned long > std_vector_Sl_unsigned_SS_long_Sg__end__SWIG(std::vector< unsigned long > *self){
+                std::vector_iterator<unsigned long> r(*self,self->end());                
+                return r;
+            }
+SWIGINTERN void std_vector_Sl_unsigned_SS_long_Sg__erase__SWIG_0(std::vector< unsigned long > *self,size_t i){ self->erase(self->begin()+i-1); }
+SWIGINTERN void std_vector_Sl_unsigned_SS_long_Sg__erase__SWIG_1(std::vector< unsigned long > *self,size_t i,size_t n){ self->erase(self->begin()+i-1,self->begin()+n-1); }
 #ifdef __cplusplus
 extern "C" {
 #endif
+static int _wrap_crealf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  float result;
+  
+  SWIG_check_num_args("std::real< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::real< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("crealf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = (float)std::SWIGTEMPLATEDISAMBIGUATOR real< float >((std::complex< float > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_creald(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  double result;
+  
+  SWIG_check_num_args("std::real< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::real< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("creald",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = (double)std::SWIGTEMPLATEDISAMBIGUATOR real< double >((std::complex< double > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cimagf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  float result;
+  
+  SWIG_check_num_args("std::imag< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::imag< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cimagf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = (float)std::SWIGTEMPLATEDISAMBIGUATOR imag< float >((std::complex< float > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cimagd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  double result;
+  
+  SWIG_check_num_args("std::imag< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::imag< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cimagd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = (double)std::SWIGTEMPLATEDISAMBIGUATOR imag< double >((std::complex< double > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cabsf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  float result;
+  
+  SWIG_check_num_args("std::abs< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::abs< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cabsf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = (float)std::SWIGTEMPLATEDISAMBIGUATOR abs< float >((std::complex< float > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cabsd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  double result;
+  
+  SWIG_check_num_args("std::abs< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::abs< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cabsd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = (double)std::SWIGTEMPLATEDISAMBIGUATOR abs< double >((std::complex< double > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cargf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  float result;
+  
+  SWIG_check_num_args("std::arg< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::arg< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cargf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = (float)std::SWIGTEMPLATEDISAMBIGUATOR arg< float >((std::complex< float > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cargd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  double result;
+  
+  SWIG_check_num_args("std::arg< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::arg< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cargd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = (double)std::SWIGTEMPLATEDISAMBIGUATOR arg< double >((std::complex< double > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cnormf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  float result;
+  
+  SWIG_check_num_args("std::norm< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::norm< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cnormf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = (float)std::SWIGTEMPLATEDISAMBIGUATOR norm< float >((std::complex< float > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cnormd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  double result;
+  
+  SWIG_check_num_args("std::norm< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::norm< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cnormd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = (double)std::SWIGTEMPLATEDISAMBIGUATOR norm< double >((std::complex< double > const &)*arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cprojf__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::proj< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::proj< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cprojf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR proj< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cprojf__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::proj< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::proj< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cprojf",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR proj< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cprojf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__complexT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_cprojf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__complexT_double_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_cprojf__SWIG_1(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'cprojf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::proj< float >(std::complex< float > const &)\n"
+    "    std::proj< double >(std::complex< double > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_cpolarf__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  float *arg1 = 0 ;
+  float *arg2 = 0 ;
+  float temp1 ;
+  float temp2 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::polar< float >",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::polar< float >",1,"float const &");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::polar< float >",2,"float const &");
+  temp1=(float)lua_tonumber(L,1); arg1=&temp1;
+  temp2=(float)lua_tonumber(L,2); arg2=&temp2;
+  result = std::SWIGTEMPLATEDISAMBIGUATOR polar< float >((float const &)*arg1,(float const &)*arg2);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpolarf__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  float *arg1 = 0 ;
+  float temp1 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::polar< float >",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::polar< float >",1,"float const &");
+  temp1=(float)lua_tonumber(L,1); arg1=&temp1;
+  result = std::SWIGTEMPLATEDISAMBIGUATOR polar< float >((float const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpolarf(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      return _wrap_cpolarf__SWIG_1(L);
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_cpolarf__SWIG_0(L);
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'cpolarf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::polar< float >(float const &,float const &)\n"
+    "    std::polar< float >(float const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_cpolard__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  double *arg1 = 0 ;
+  double *arg2 = 0 ;
+  double temp1 ;
+  double temp2 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::polar< double >",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::polar< double >",1,"double const &");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::polar< double >",2,"double const &");
+  temp1=(double)lua_tonumber(L,1); arg1=&temp1;
+  temp2=(double)lua_tonumber(L,2); arg2=&temp2;
+  result = std::SWIGTEMPLATEDISAMBIGUATOR polar< double >((double const &)*arg1,(double const &)*arg2);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpolard__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  double *arg1 = 0 ;
+  double temp1 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::polar< double >",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::polar< double >",1,"double const &");
+  temp1=(double)lua_tonumber(L,1); arg1=&temp1;
+  result = std::SWIGTEMPLATEDISAMBIGUATOR polar< double >((double const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpolard(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      return _wrap_cpolard__SWIG_1(L);
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_cpolard__SWIG_0(L);
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'cpolard'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::polar< double >(double const &,double const &)\n"
+    "    std::polar< double >(double const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_cexpf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::exp< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::exp< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cexpf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR exp< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cexpd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::exp< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::exp< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cexpd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR exp< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_clogf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::log< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::log< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("clogf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR log< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_clogd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::log< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::log< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("clogd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR log< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_clog10f(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::log10< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::log10< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("clog10f",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR log10< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_clog10d(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::log10< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::log10< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("clog10d",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR log10< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpowf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > *arg2 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::pow< float >",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::pow< float >",1,"std::complex< float > const &");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::pow< float >",2,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cpowf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cpowf",2,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR pow< float >((std::complex< float > const &)*arg1,(std::complex< float > const &)*arg2);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpowd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > *arg2 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::pow< double >",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::pow< double >",1,"std::complex< double > const &");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::pow< double >",2,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cpowd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cpowd",2,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR pow< double >((std::complex< double > const &)*arg1,(std::complex< double > const &)*arg2);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_csqrtf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::sqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::sqrt< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("csqrtf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_csqrtd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::sqrt< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::sqrt< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("csqrtd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR sqrt< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_csinf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::sin< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::sin< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("csinf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR sin< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_csind(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::sin< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::sin< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("csind",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR sin< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ccosf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::cos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::cos< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("ccosf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR cos< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ccosd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::cos< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::cos< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("ccosd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR cos< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ctanf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::tan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::tan< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("ctanf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR tan< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ctand(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::tan< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::tan< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("ctand",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR tan< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_casinf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::asin< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::asin< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("casinf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR asin< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_casind(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::asin< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::asin< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("casind",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR asin< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cacosf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::acos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::acos< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cacosf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR acos< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cacosd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::acos< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::acos< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cacosd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR acos< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_catanf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::atan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::atan< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("catanf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR atan< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_catand(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::atan< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::atan< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("catand",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR atan< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_csinhf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::sinh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::sinh< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("csinhf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR sinh< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_csinhd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::sinh< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::sinh< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("csinhd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR sinh< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ccoshf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::cosh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::cosh< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("ccoshf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR cosh< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ccoshd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::cosh< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::cosh< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("ccoshd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR cosh< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ctanhf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::tanh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::tanh< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("ctanhf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR tanh< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ctanhd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::tanh< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::tanh< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("ctanhd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR tanh< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_casinhf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::asinh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::asinh< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("casinhf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR asinh< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_casinhd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::asinh< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::asinh< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("casinhd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR asinh< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cacoshf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::acosh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::acosh< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("cacoshf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR acosh< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cacoshd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::acosh< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::acosh< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("cacoshd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR acosh< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_catanhf(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< float > *arg1 = 0 ;
+  std::complex< float > result;
+  
+  SWIG_check_num_args("std::atanh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::atanh< float >",1,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("catanhf",1,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR atanh< float >((std::complex< float > const &)*arg1);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_catanhd(lua_State* L) {
+  int SWIG_arg = 0;
+  std::complex< double > *arg1 = 0 ;
+  std::complex< double > result;
+  
+  SWIG_check_num_args("std::atanh< double >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::atanh< double >",1,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("catanhd",1,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = std::SWIGTEMPLATEDISAMBIGUATOR atanh< double >((std::complex< double > const &)*arg1);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_new_fcomplex__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   float *arg1 = 0 ;
@@ -4329,10 +5839,18 @@ static swig_lua_class _wrap_class_zcomplex = { "zcomplex", "zcomplex", &SWIGTYPE
 
 static int _wrap_new_float_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  float *arg2 = 0 ;
+  float temp2 ;
   std::vector< float > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< float >::vector",0,0)
-  result = (std::vector< float > *)new std::vector< float >();
+  SWIG_check_num_args("std::vector< float >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< float >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::vector",2,"float const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  temp2=(float)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< float > *)new std::vector< float >(arg1,(float const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -4346,13 +5864,13 @@ fail:
 
 static int _wrap_new_float_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< float > *result = 0 ;
   
   SWIG_check_num_args("std::vector< float >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< float >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< float >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< float > *)new std::vector< float >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -4389,30 +5907,6 @@ fail:
 }
 
 
-static int _wrap_new_float_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  float arg2 ;
-  std::vector< float > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< float >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< float >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::vector",2,"float");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  arg2 = (float)lua_tonumber(L, 2);
-  result = (std::vector< float > *)new std::vector< float >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_float_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -4420,9 +5914,6 @@ static int _wrap_new_float_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_float_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -4456,34 +5947,37 @@ static int _wrap_new_float_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_float_vector__SWIG_3(L);
+        return _wrap_new_float_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_float_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< float >::vector()\n"
-    "    std::vector< float >::vector(unsigned int)\n"
-    "    std::vector< float >::vector(std::vector< float > const &)\n"
-    "    std::vector< float >::vector(unsigned int,float)\n");
+    "    std::vector< float >::vector(size_t,float const &)\n"
+    "    std::vector< float >::vector(size_t)\n"
+    "    std::vector< float >::vector(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_float_vector_size(lua_State* L) {
+static int _wrap_float_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = (std::vector< float > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  float result;
   
-  SWIG_check_num_args("std::vector< float >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::size",1,"std::vector< float > const *");
+  SWIG_check_num_args("std::vector< float >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::__getitem",1,"std::vector< float > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
-    SWIG_fail_ptr("float_vector_size",1,SWIGTYPE_p_std__vectorT_float_t);
+    SWIG_fail_ptr("float_vector___getitem",1,SWIGTYPE_p_std__vectorT_float_t);
   }
   
-  result = (unsigned int)((std::vector< float > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (float)std_vector_Sl_float_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -4495,19 +5989,401 @@ fail:
 }
 
 
-static int _wrap_float_vector_max_size(lua_State* L) {
+static int _wrap_float_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = (std::vector< float > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  float arg3 ;
   
-  SWIG_check_num_args("std::vector< float >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::max_size",1,"std::vector< float > const *");
+  SWIG_check_num_args("std::vector< float >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::__setitem",1,"std::vector< float > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< float >::__setitem",3,"float");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
-    SWIG_fail_ptr("float_vector_max_size",1,SWIGTYPE_p_std__vectorT_float_t);
+    SWIG_fail_ptr("float_vector___setitem",1,SWIGTYPE_p_std__vectorT_float_t);
   }
   
-  result = (unsigned int)((std::vector< float > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  arg3 = (float)lua_tonumber(L, 3);
+  std_vector_Sl_float_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< float > > result;
+  
+  SWIG_check_num_args("std::vector< float >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::begin",1,"std::vector< float > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_begin",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = std_vector_Sl_float_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< float > * resultptr = new std::vector_iterator< float >((const std::vector_iterator< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< float > > result;
+  
+  SWIG_check_num_args("std::vector< float >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::end",1,"std::vector< float > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_c_end",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = std_vector_Sl_float_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< float > * resultptr = new std::vector_iterator< float >((const std::vector_iterator< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< float >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::erase",1,"std::vector< float > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_erase",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_float_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< float >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::erase",1,"std::vector< float > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< float >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_erase",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_float_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_float_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_float_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'float_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< float >::erase(size_t)\n"
+    "    std::vector< float >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_float_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  float *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< float >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::front",1,"std::vector< float > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_front",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = (float *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_float,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  float *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< float >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::back",1,"std::vector< float > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_back",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = (float *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_float,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  float *arg2 = 0 ;
+  float temp2 ;
+  
+  SWIG_check_num_args("std::vector< float >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::push_back",1,"std::vector< float > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::push_back",2,"float const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_push_back",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  temp2=(float)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((float const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< float >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::pop_back",1,"std::vector< float > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_pop_back",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  size_t arg2 ;
+  float *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< float >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::at",1,"std::vector< float > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_at",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (float *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_float,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  size_t arg2 ;
+  float *arg3 = 0 ;
+  float temp3 ;
+  
+  SWIG_check_num_args("std::vector< float >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::assign",1,"std::vector< float > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< float >::assign",3,"float const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_assign",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  temp3=(float)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(float const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  float *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< float >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::data",1,"std::vector< float > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_data",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = (float *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_float,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< float >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::size",1,"std::vector< float > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_size",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -4543,6 +6419,33 @@ fail:
 }
 
 
+static int _wrap_float_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< float >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::resize",1,"std::vector< float > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_resize",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_float_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = (std::vector< float > *) 0 ;
@@ -4566,21 +6469,25 @@ fail:
 }
 
 
-static int _wrap_float_vector_push_back(lua_State* L) {
+static int _wrap_float_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = (std::vector< float > *) 0 ;
-  float arg2 ;
+  std::vector< float > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< float >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::push_back",1,"std::vector< float > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::push_back",2,"float");
+  SWIG_check_num_args("std::vector< float >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::swap",1,"std::vector< float > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< float >::swap",2,"std::vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
-    SWIG_fail_ptr("float_vector_push_back",1,SWIGTYPE_p_std__vectorT_float_t);
+    SWIG_fail_ptr("float_vector_swap",1,SWIGTYPE_p_std__vectorT_float_t);
   }
   
-  arg2 = (float)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_swap",2,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  (arg1)->swap(*arg2);
   
   return SWIG_arg;
   
@@ -4592,18 +6499,18 @@ fail:
 }
 
 
-static int _wrap_float_vector_pop_back(lua_State* L) {
+static int _wrap_float_vector_shrink_to_fit(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = (std::vector< float > *) 0 ;
   
-  SWIG_check_num_args("std::vector< float >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::pop_back",1,"std::vector< float > *");
+  SWIG_check_num_args("std::vector< float >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::shrink_to_fit",1,"std::vector< float > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
-    SWIG_fail_ptr("float_vector_pop_back",1,SWIGTYPE_p_std__vectorT_float_t);
+    SWIG_fail_ptr("float_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_float_t);
   }
   
-  (arg1)->pop_back();
+  (arg1)->shrink_to_fit();
   
   return SWIG_arg;
   
@@ -4615,75 +6522,46 @@ fail:
 }
 
 
-static int _wrap_float_vector_front(lua_State* L) {
+static int _wrap_float_vector_reserve(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = (std::vector< float > *) 0 ;
-  float result;
+  size_t arg2 ;
   
-  SWIG_check_num_args("std::vector< float >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::front",1,"std::vector< float > const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
-    SWIG_fail_ptr("float_vector_front",1,SWIGTYPE_p_std__vectorT_float_t);
-  }
-  
-  result = (float)((std::vector< float > const *)arg1)->front();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_float_vector_back(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
-  float result;
-  
-  SWIG_check_num_args("std::vector< float >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::back",1,"std::vector< float > const *");
+  SWIG_check_num_args("std::vector< float >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::reserve",1,"std::vector< float > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::reserve",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
-    SWIG_fail_ptr("float_vector_back",1,SWIGTYPE_p_std__vectorT_float_t);
-  }
-  
-  result = (float)((std::vector< float > const *)arg1)->back();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_float_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
-  unsigned int arg2 ;
-  float result;
-  
-  SWIG_check_num_args("std::vector< float >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::__getitem__",1,"std::vector< float > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
-    SWIG_fail_ptr("float_vector___getitem",1,SWIGTYPE_p_std__vectorT_float_t);
+    SWIG_fail_ptr("float_vector_reserve",1,SWIGTYPE_p_std__vectorT_float_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (float)std_vector_Sl_float_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_float_vector_max_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = (std::vector< float > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< float >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::max_size",1,"std::vector< float > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("float_vector_max_size",1,SWIGTYPE_p_std__vectorT_float_t);
   }
+  
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -4695,30 +6573,20 @@ fail:
 }
 
 
-static int _wrap_float_vector___setitem(lua_State* L) {
+static int _wrap_float_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = (std::vector< float > *) 0 ;
-  unsigned int arg2 ;
-  float arg3 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< float >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::__setitem__",1,"std::vector< float > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< float >::__setitem__",3,"float");
+  SWIG_check_num_args("std::vector< float >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< float >::capacity",1,"std::vector< float > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
-    SWIG_fail_ptr("float_vector___setitem",1,SWIGTYPE_p_std__vectorT_float_t);
+    SWIG_fail_ptr("float_vector_capacity",1,SWIGTYPE_p_std__vectorT_float_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  arg3 = (float)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_float_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
+  result = (arg1)->capacity();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -4745,16 +6613,27 @@ static swig_lua_attribute swig_float_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_float_vector_methods[]= {
-    { "size", _wrap_float_vector_size},
-    { "max_size", _wrap_float_vector_max_size},
-    { "empty", _wrap_float_vector_empty},
-    { "clear", _wrap_float_vector_clear},
-    { "push_back", _wrap_float_vector_push_back},
-    { "pop_back", _wrap_float_vector_pop_back},
-    { "front", _wrap_float_vector_front},
-    { "back", _wrap_float_vector_back},
     { "__getitem", _wrap_float_vector___getitem},
     { "__setitem", _wrap_float_vector___setitem},
+    { "begin", _wrap_float_vector_begin},
+    { "c_end", _wrap_float_vector_c_end},
+    { "erase", _wrap_float_vector_erase},
+    { "front", _wrap_float_vector_front},
+    { "back", _wrap_float_vector_back},
+    { "push_back", _wrap_float_vector_push_back},
+    { "pop_back", _wrap_float_vector_pop_back},
+    { "at", _wrap_float_vector_at},
+    { "assign", _wrap_float_vector_assign},
+    { "data", _wrap_float_vector_data},
+    { "size", _wrap_float_vector_size},
+    { "empty", _wrap_float_vector_empty},
+    { "resize", _wrap_float_vector_resize},
+    { "clear", _wrap_float_vector_clear},
+    { "swap", _wrap_float_vector_swap},
+    { "shrink_to_fit", _wrap_float_vector_shrink_to_fit},
+    { "reserve", _wrap_float_vector_reserve},
+    { "max_size", _wrap_float_vector_max_size},
+    { "capacity", _wrap_float_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_float_vector_meta[] = {
@@ -4790,10 +6669,18 @@ static swig_lua_class _wrap_class_float_vector = { "float_vector", "float_vector
 
 static int _wrap_new_double_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  double *arg2 = 0 ;
+  double temp2 ;
   std::vector< double > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< double >::vector",0,0)
-  result = (std::vector< double > *)new std::vector< double >();
+  SWIG_check_num_args("std::vector< double >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< double >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::vector",2,"double const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  temp2=(double)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< double > *)new std::vector< double >(arg1,(double const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_double_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -4807,13 +6694,13 @@ fail:
 
 static int _wrap_new_double_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< double > *result = 0 ;
   
   SWIG_check_num_args("std::vector< double >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< double >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< double >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< double > *)new std::vector< double >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_double_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -4850,30 +6737,6 @@ fail:
 }
 
 
-static int _wrap_new_double_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  double arg2 ;
-  std::vector< double > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< double >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< double >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::vector",2,"double");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  arg2 = (double)lua_tonumber(L, 2);
-  result = (std::vector< double > *)new std::vector< double >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_double_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_double_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -4881,9 +6744,6 @@ static int _wrap_new_double_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_double_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -4917,34 +6777,37 @@ static int _wrap_new_double_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_double_vector__SWIG_3(L);
+        return _wrap_new_double_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_double_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< double >::vector()\n"
-    "    std::vector< double >::vector(unsigned int)\n"
-    "    std::vector< double >::vector(std::vector< double > const &)\n"
-    "    std::vector< double >::vector(unsigned int,double)\n");
+    "    std::vector< double >::vector(size_t,double const &)\n"
+    "    std::vector< double >::vector(size_t)\n"
+    "    std::vector< double >::vector(std::vector< double > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_double_vector_size(lua_State* L) {
+static int _wrap_double_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  double result;
   
-  SWIG_check_num_args("std::vector< double >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::size",1,"std::vector< double > const *");
+  SWIG_check_num_args("std::vector< double >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::__getitem",1,"std::vector< double > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
-    SWIG_fail_ptr("double_vector_size",1,SWIGTYPE_p_std__vectorT_double_t);
+    SWIG_fail_ptr("double_vector___getitem",1,SWIGTYPE_p_std__vectorT_double_t);
   }
   
-  result = (unsigned int)((std::vector< double > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (double)std_vector_Sl_double_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -4956,19 +6819,401 @@ fail:
 }
 
 
-static int _wrap_double_vector_max_size(lua_State* L) {
+static int _wrap_double_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  double arg3 ;
   
-  SWIG_check_num_args("std::vector< double >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::max_size",1,"std::vector< double > const *");
+  SWIG_check_num_args("std::vector< double >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::__setitem",1,"std::vector< double > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< double >::__setitem",3,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
-    SWIG_fail_ptr("double_vector_max_size",1,SWIGTYPE_p_std__vectorT_double_t);
+    SWIG_fail_ptr("double_vector___setitem",1,SWIGTYPE_p_std__vectorT_double_t);
   }
   
-  result = (unsigned int)((std::vector< double > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  arg3 = (double)lua_tonumber(L, 3);
+  std_vector_Sl_double_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< double > > result;
+  
+  SWIG_check_num_args("std::vector< double >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::begin",1,"std::vector< double > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_begin",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  result = std_vector_Sl_double_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< double > * resultptr = new std::vector_iterator< double >((const std::vector_iterator< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< double > > result;
+  
+  SWIG_check_num_args("std::vector< double >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::end",1,"std::vector< double > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_c_end",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  result = std_vector_Sl_double_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< double > * resultptr = new std::vector_iterator< double >((const std::vector_iterator< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_double_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< double >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::erase",1,"std::vector< double > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_erase",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_double_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< double >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::erase",1,"std::vector< double > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< double >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_erase",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_double_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_double_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_double_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_double_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_double_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'double_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< double >::erase(size_t)\n"
+    "    std::vector< double >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_double_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  double *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< double >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::front",1,"std::vector< double > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_front",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  result = (double *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_double,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  double *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< double >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::back",1,"std::vector< double > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_back",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  result = (double *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_double,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  double *arg2 = 0 ;
+  double temp2 ;
+  
+  SWIG_check_num_args("std::vector< double >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::push_back",1,"std::vector< double > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::push_back",2,"double const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_push_back",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  temp2=(double)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((double const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< double >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::pop_back",1,"std::vector< double > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_pop_back",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  size_t arg2 ;
+  double *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< double >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::at",1,"std::vector< double > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_at",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (double *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_double,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  size_t arg2 ;
+  double *arg3 = 0 ;
+  double temp3 ;
+  
+  SWIG_check_num_args("std::vector< double >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::assign",1,"std::vector< double > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< double >::assign",3,"double const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_assign",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  temp3=(double)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(double const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  double *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< double >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::data",1,"std::vector< double > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_data",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  result = (double *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_double,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< double >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::size",1,"std::vector< double > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_size",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -5004,6 +7249,33 @@ fail:
 }
 
 
+static int _wrap_double_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< double >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::resize",1,"std::vector< double > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_resize",1,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_double_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
@@ -5027,21 +7299,25 @@ fail:
 }
 
 
-static int _wrap_double_vector_push_back(lua_State* L) {
+static int _wrap_double_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  double arg2 ;
+  std::vector< double > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< double >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::push_back",1,"std::vector< double > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::push_back",2,"double");
+  SWIG_check_num_args("std::vector< double >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::swap",1,"std::vector< double > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< double >::swap",2,"std::vector< double > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
-    SWIG_fail_ptr("double_vector_push_back",1,SWIGTYPE_p_std__vectorT_double_t);
+    SWIG_fail_ptr("double_vector_swap",1,SWIGTYPE_p_std__vectorT_double_t);
   }
   
-  arg2 = (double)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_swap",2,SWIGTYPE_p_std__vectorT_double_t);
+  }
+  
+  (arg1)->swap(*arg2);
   
   return SWIG_arg;
   
@@ -5053,18 +7329,18 @@ fail:
 }
 
 
-static int _wrap_double_vector_pop_back(lua_State* L) {
+static int _wrap_double_vector_shrink_to_fit(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   
-  SWIG_check_num_args("std::vector< double >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::pop_back",1,"std::vector< double > *");
+  SWIG_check_num_args("std::vector< double >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::shrink_to_fit",1,"std::vector< double > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
-    SWIG_fail_ptr("double_vector_pop_back",1,SWIGTYPE_p_std__vectorT_double_t);
+    SWIG_fail_ptr("double_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_double_t);
   }
   
-  (arg1)->pop_back();
+  (arg1)->shrink_to_fit();
   
   return SWIG_arg;
   
@@ -5076,75 +7352,46 @@ fail:
 }
 
 
-static int _wrap_double_vector_front(lua_State* L) {
+static int _wrap_double_vector_reserve(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  double result;
+  size_t arg2 ;
   
-  SWIG_check_num_args("std::vector< double >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::front",1,"std::vector< double > const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
-    SWIG_fail_ptr("double_vector_front",1,SWIGTYPE_p_std__vectorT_double_t);
-  }
-  
-  result = (double)((std::vector< double > const *)arg1)->front();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_double_vector_back(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("std::vector< double >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::back",1,"std::vector< double > const *");
+  SWIG_check_num_args("std::vector< double >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::reserve",1,"std::vector< double > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::reserve",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
-    SWIG_fail_ptr("double_vector_back",1,SWIGTYPE_p_std__vectorT_double_t);
-  }
-  
-  result = (double)((std::vector< double > const *)arg1)->back();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_double_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  unsigned int arg2 ;
-  double result;
-  
-  SWIG_check_num_args("std::vector< double >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::__getitem__",1,"std::vector< double > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
-    SWIG_fail_ptr("double_vector___getitem",1,SWIGTYPE_p_std__vectorT_double_t);
+    SWIG_fail_ptr("double_vector_reserve",1,SWIGTYPE_p_std__vectorT_double_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (double)std_vector_Sl_double_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_double_vector_max_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< double >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::max_size",1,"std::vector< double > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
+    SWIG_fail_ptr("double_vector_max_size",1,SWIGTYPE_p_std__vectorT_double_t);
   }
+  
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -5156,30 +7403,20 @@ fail:
 }
 
 
-static int _wrap_double_vector___setitem(lua_State* L) {
+static int _wrap_double_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  unsigned int arg2 ;
-  double arg3 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< double >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::__setitem__",1,"std::vector< double > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< double >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< double >::__setitem__",3,"double");
+  SWIG_check_num_args("std::vector< double >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< double >::capacity",1,"std::vector< double > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_double_t,0))){
-    SWIG_fail_ptr("double_vector___setitem",1,SWIGTYPE_p_std__vectorT_double_t);
+    SWIG_fail_ptr("double_vector_capacity",1,SWIGTYPE_p_std__vectorT_double_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  arg3 = (double)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_double_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
+  result = (arg1)->capacity();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -5206,16 +7443,27 @@ static swig_lua_attribute swig_double_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_double_vector_methods[]= {
-    { "size", _wrap_double_vector_size},
-    { "max_size", _wrap_double_vector_max_size},
-    { "empty", _wrap_double_vector_empty},
-    { "clear", _wrap_double_vector_clear},
-    { "push_back", _wrap_double_vector_push_back},
-    { "pop_back", _wrap_double_vector_pop_back},
-    { "front", _wrap_double_vector_front},
-    { "back", _wrap_double_vector_back},
     { "__getitem", _wrap_double_vector___getitem},
     { "__setitem", _wrap_double_vector___setitem},
+    { "begin", _wrap_double_vector_begin},
+    { "c_end", _wrap_double_vector_c_end},
+    { "erase", _wrap_double_vector_erase},
+    { "front", _wrap_double_vector_front},
+    { "back", _wrap_double_vector_back},
+    { "push_back", _wrap_double_vector_push_back},
+    { "pop_back", _wrap_double_vector_pop_back},
+    { "at", _wrap_double_vector_at},
+    { "assign", _wrap_double_vector_assign},
+    { "data", _wrap_double_vector_data},
+    { "size", _wrap_double_vector_size},
+    { "empty", _wrap_double_vector_empty},
+    { "resize", _wrap_double_vector_resize},
+    { "clear", _wrap_double_vector_clear},
+    { "swap", _wrap_double_vector_swap},
+    { "shrink_to_fit", _wrap_double_vector_shrink_to_fit},
+    { "reserve", _wrap_double_vector_reserve},
+    { "max_size", _wrap_double_vector_max_size},
+    { "capacity", _wrap_double_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_double_vector_meta[] = {
@@ -5251,10 +7499,21 @@ static swig_lua_class _wrap_class_double_vector = { "double_vector", "double_vec
 
 static int _wrap_new_fcomplex_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  std::complex< float > *arg2 = 0 ;
   std::vector< std::complex< float > > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< std::complex< float > >::vector",0,0)
-  result = (std::vector< std::complex< float > > *)new std::vector< std::complex< float > >();
+  SWIG_check_num_args("std::vector< std::complex< float > >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::vector",1,"size_t");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::vector",2,"std::complex< float > const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("new_fcomplex_vector",2,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  result = (std::vector< std::complex< float > > *)new std::vector< std::complex< float > >(arg1,(std::complex< float > const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -5268,13 +7527,13 @@ fail:
 
 static int _wrap_new_fcomplex_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< std::complex< float > > *result = 0 ;
   
   SWIG_check_num_args("std::vector< std::complex< float > >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< std::complex< float > > *)new std::vector< std::complex< float > >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -5311,36 +7570,6 @@ fail:
 }
 
 
-static int _wrap_new_fcomplex_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  std::complex< float > arg2 ;
-  std::complex< float > *argp2 ;
-  std::vector< std::complex< float > > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< std::complex< float > >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::vector",1,"unsigned int");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::vector",2,"std::complex< float >");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_std__complexT_float_t,0))){
-    SWIG_fail_ptr("new_fcomplex_vector",2,SWIGTYPE_p_std__complexT_float_t);
-  }
-  arg2 = *argp2;
-  
-  result = (std::vector< std::complex< float > > *)new std::vector< std::complex< float > >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_fcomplex_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -5348,9 +7577,6 @@ static int _wrap_new_fcomplex_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_fcomplex_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -5389,35 +7615,41 @@ static int _wrap_new_fcomplex_vector(lua_State* L) {
         }
       }
       if (_v) {
-        return _wrap_new_fcomplex_vector__SWIG_3(L);
+        return _wrap_new_fcomplex_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_fcomplex_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< std::complex< float > >::vector()\n"
-    "    std::vector< std::complex< float > >::vector(unsigned int)\n"
-    "    std::vector< std::complex< float > >::vector(std::vector< std::complex< float > > const &)\n"
-    "    std::vector< std::complex< float > >::vector(unsigned int,std::complex< float >)\n");
+    "    std::vector< std::complex< float > >::vector(size_t,std::complex< float > const &)\n"
+    "    std::vector< std::complex< float > >::vector(size_t)\n"
+    "    std::vector< std::complex< float > >::vector(std::vector< std::complex< float > > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_fcomplex_vector_size(lua_State* L) {
+static int _wrap_fcomplex_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  std::complex< float > result;
   
-  SWIG_check_num_args("std::vector< std::complex< float > >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::size",1,"std::vector< std::complex< float > > const *");
+  SWIG_check_num_args("std::vector< std::complex< float > >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::__getitem",1,"std::vector< std::complex< float > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
-    SWIG_fail_ptr("fcomplex_vector_size",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+    SWIG_fail_ptr("fcomplex_vector___getitem",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
   }
   
-  result = (unsigned int)((std::vector< std::complex< float > > const *)arg1)->size();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = std_vector_Sl_std_complex_Sl_float_Sg__Sg____getitem__SWIG(arg1,arg2);
+  {
+    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
+  }
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -5428,19 +7660,413 @@ fail:
 }
 
 
-static int _wrap_fcomplex_vector_max_size(lua_State* L) {
+static int _wrap_fcomplex_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  std::complex< float > arg3 ;
+  std::complex< float > *argp3 ;
   
-  SWIG_check_num_args("std::vector< std::complex< float > >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::max_size",1,"std::vector< std::complex< float > > const *");
+  SWIG_check_num_args("std::vector< std::complex< float > >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::__setitem",1,"std::vector< std::complex< float > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::__setitem",2,"size_t");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("std::vector< std::complex< float > >::__setitem",3,"std::complex< float >");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
-    SWIG_fail_ptr("fcomplex_vector_max_size",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+    SWIG_fail_ptr("fcomplex_vector___setitem",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
   }
   
-  result = (unsigned int)((std::vector< std::complex< float > > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("fcomplex_vector___setitem",3,SWIGTYPE_p_std__complexT_float_t);
+  }
+  arg3 = *argp3;
+  
+  std_vector_Sl_std_complex_Sl_float_Sg__Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< std::complex< float > > > result;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::begin",1,"std::vector< std::complex< float > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_begin",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  result = std_vector_Sl_std_complex_Sl_float_Sg__Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< std::complex< float > > * resultptr = new std::vector_iterator< std::complex< float > >((const std::vector_iterator< std::complex< float > > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_std__complexT_float_t_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< std::complex< float > > > result;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::end",1,"std::vector< std::complex< float > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_c_end",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  result = std_vector_Sl_std_complex_Sl_float_Sg__Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< std::complex< float > > * resultptr = new std::vector_iterator< std::complex< float > >((const std::vector_iterator< std::complex< float > > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_std__complexT_float_t_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::erase",1,"std::vector< std::complex< float > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_erase",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_std_complex_Sl_float_Sg__Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::erase",1,"std::vector< std::complex< float > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< std::complex< float > >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_erase",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_std_complex_Sl_float_Sg__Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_std__complexT_float_t_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_fcomplex_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_std__complexT_float_t_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_fcomplex_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'fcomplex_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< std::complex< float > >::erase(size_t)\n"
+    "    std::vector< std::complex< float > >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_fcomplex_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  std::complex< float > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::front",1,"std::vector< std::complex< float > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_front",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  result = (std::complex< float > *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__complexT_float_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  std::complex< float > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::back",1,"std::vector< std::complex< float > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_back",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  result = (std::complex< float > *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__complexT_float_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  std::complex< float > *arg2 = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::push_back",1,"std::vector< std::complex< float > > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::push_back",2,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_push_back",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_push_back",2,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  (arg1)->push_back((std::complex< float > const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::pop_back",1,"std::vector< std::complex< float > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_pop_back",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  size_t arg2 ;
+  std::complex< float > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::at",1,"std::vector< std::complex< float > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_at",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (std::complex< float > *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__complexT_float_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  size_t arg2 ;
+  std::complex< float > *arg3 = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::assign",1,"std::vector< std::complex< float > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::assign",2,"size_t");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("std::vector< std::complex< float > >::assign",3,"std::complex< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_assign",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__complexT_float_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_assign",3,SWIGTYPE_p_std__complexT_float_t);
+  }
+  
+  (arg1)->assign(arg2,(std::complex< float > const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  std::complex< float > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::data",1,"std::vector< std::complex< float > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_data",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  result = (std::complex< float > *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__complexT_float_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::size",1,"std::vector< std::complex< float > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_size",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -5476,6 +8102,33 @@ fail:
 }
 
 
+static int _wrap_fcomplex_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::resize",1,"std::vector< std::complex< float > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_resize",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_fcomplex_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
@@ -5499,27 +8152,25 @@ fail:
 }
 
 
-static int _wrap_fcomplex_vector_push_back(lua_State* L) {
+static int _wrap_fcomplex_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
-  std::complex< float > arg2 ;
-  std::complex< float > *argp2 ;
+  std::vector< std::complex< float > > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< std::complex< float > >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::push_back",1,"std::vector< std::complex< float > > *");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::push_back",2,"std::complex< float >");
+  SWIG_check_num_args("std::vector< std::complex< float > >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::swap",1,"std::vector< std::complex< float > > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::swap",2,"std::vector< std::complex< float > > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
-    SWIG_fail_ptr("fcomplex_vector_push_back",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+    SWIG_fail_ptr("fcomplex_vector_swap",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_std__complexT_float_t,0))){
-    SWIG_fail_ptr("fcomplex_vector_push_back",2,SWIGTYPE_p_std__complexT_float_t);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_swap",2,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
   }
-  arg2 = *argp2;
   
-  (arg1)->push_back(arg2);
+  (arg1)->swap(*arg2);
   
   return SWIG_arg;
   
@@ -5531,18 +8182,18 @@ fail:
 }
 
 
-static int _wrap_fcomplex_vector_pop_back(lua_State* L) {
+static int _wrap_fcomplex_vector_shrink_to_fit(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
   
-  SWIG_check_num_args("std::vector< std::complex< float > >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::pop_back",1,"std::vector< std::complex< float > > *");
+  SWIG_check_num_args("std::vector< std::complex< float > >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::shrink_to_fit",1,"std::vector< std::complex< float > > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
-    SWIG_fail_ptr("fcomplex_vector_pop_back",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+    SWIG_fail_ptr("fcomplex_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
   }
   
-  (arg1)->pop_back();
+  (arg1)->shrink_to_fit();
   
   return SWIG_arg;
   
@@ -5554,85 +8205,23 @@ fail:
 }
 
 
-static int _wrap_fcomplex_vector_front(lua_State* L) {
+static int _wrap_fcomplex_vector_reserve(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
-  std::complex< float > result;
+  size_t arg2 ;
   
-  SWIG_check_num_args("std::vector< std::complex< float > >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::front",1,"std::vector< std::complex< float > > const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
-    SWIG_fail_ptr("fcomplex_vector_front",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
-  }
-  
-  result = ((std::vector< std::complex< float > > const *)arg1)->front();
-  {
-    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_fcomplex_vector_back(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
-  std::complex< float > result;
-  
-  SWIG_check_num_args("std::vector< std::complex< float > >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::back",1,"std::vector< std::complex< float > > const *");
+  SWIG_check_num_args("std::vector< std::complex< float > >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::reserve",1,"std::vector< std::complex< float > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::reserve",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
-    SWIG_fail_ptr("fcomplex_vector_back",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
-  }
-  
-  result = ((std::vector< std::complex< float > > const *)arg1)->back();
-  {
-    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_fcomplex_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
-  unsigned int arg2 ;
-  std::complex< float > result;
-  
-  SWIG_check_num_args("std::vector< std::complex< float > >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::__getitem__",1,"std::vector< std::complex< float > > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
-    SWIG_fail_ptr("fcomplex_vector___getitem",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+    SWIG_fail_ptr("fcomplex_vector_reserve",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = std_vector_Sl_std_complex_Sl_float_Sg__Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  {
-    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
-  }
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -5643,36 +8232,44 @@ fail:
 }
 
 
-static int _wrap_fcomplex_vector___setitem(lua_State* L) {
+static int _wrap_fcomplex_vector_max_size(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
-  unsigned int arg2 ;
-  std::complex< float > arg3 ;
-  std::complex< float > *argp3 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< std::complex< float > >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::__setitem__",1,"std::vector< std::complex< float > > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< float > >::__setitem__",2,"unsigned int");
-  if(!lua_isuserdata(L,3)) SWIG_fail_arg("std::vector< std::complex< float > >::__setitem__",3,"std::complex< float >");
+  SWIG_check_num_args("std::vector< std::complex< float > >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::max_size",1,"std::vector< std::complex< float > > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
-    SWIG_fail_ptr("fcomplex_vector___setitem",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
+    SWIG_fail_ptr("fcomplex_vector_max_size",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  result = (arg1)->max_size();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_std__complexT_float_t,0))){
-    SWIG_fail_ptr("fcomplex_vector___setitem",3,SWIGTYPE_p_std__complexT_float_t);
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_fcomplex_vector_capacity(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< float > > *arg1 = (std::vector< std::complex< float > > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< std::complex< float > >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< float > >::capacity",1,"std::vector< std::complex< float > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t,0))){
+    SWIG_fail_ptr("fcomplex_vector_capacity",1,SWIGTYPE_p_std__vectorT_std__complexT_float_t_t);
   }
-  arg3 = *argp3;
   
-  try {
-    std_vector_Sl_std_complex_Sl_float_Sg__Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
+  result = (arg1)->capacity();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -5699,16 +8296,27 @@ static swig_lua_attribute swig_fcomplex_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_fcomplex_vector_methods[]= {
-    { "size", _wrap_fcomplex_vector_size},
-    { "max_size", _wrap_fcomplex_vector_max_size},
-    { "empty", _wrap_fcomplex_vector_empty},
-    { "clear", _wrap_fcomplex_vector_clear},
-    { "push_back", _wrap_fcomplex_vector_push_back},
-    { "pop_back", _wrap_fcomplex_vector_pop_back},
-    { "front", _wrap_fcomplex_vector_front},
-    { "back", _wrap_fcomplex_vector_back},
     { "__getitem", _wrap_fcomplex_vector___getitem},
     { "__setitem", _wrap_fcomplex_vector___setitem},
+    { "begin", _wrap_fcomplex_vector_begin},
+    { "c_end", _wrap_fcomplex_vector_c_end},
+    { "erase", _wrap_fcomplex_vector_erase},
+    { "front", _wrap_fcomplex_vector_front},
+    { "back", _wrap_fcomplex_vector_back},
+    { "push_back", _wrap_fcomplex_vector_push_back},
+    { "pop_back", _wrap_fcomplex_vector_pop_back},
+    { "at", _wrap_fcomplex_vector_at},
+    { "assign", _wrap_fcomplex_vector_assign},
+    { "data", _wrap_fcomplex_vector_data},
+    { "size", _wrap_fcomplex_vector_size},
+    { "empty", _wrap_fcomplex_vector_empty},
+    { "resize", _wrap_fcomplex_vector_resize},
+    { "clear", _wrap_fcomplex_vector_clear},
+    { "swap", _wrap_fcomplex_vector_swap},
+    { "shrink_to_fit", _wrap_fcomplex_vector_shrink_to_fit},
+    { "reserve", _wrap_fcomplex_vector_reserve},
+    { "max_size", _wrap_fcomplex_vector_max_size},
+    { "capacity", _wrap_fcomplex_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_fcomplex_vector_meta[] = {
@@ -5744,10 +8352,21 @@ static swig_lua_class _wrap_class_fcomplex_vector = { "fcomplex_vector", "fcompl
 
 static int _wrap_new_zcomplex_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  std::complex< double > *arg2 = 0 ;
   std::vector< std::complex< double > > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< std::complex< double > >::vector",0,0)
-  result = (std::vector< std::complex< double > > *)new std::vector< std::complex< double > >();
+  SWIG_check_num_args("std::vector< std::complex< double > >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::vector",1,"size_t");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::vector",2,"std::complex< double > const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("new_zcomplex_vector",2,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  result = (std::vector< std::complex< double > > *)new std::vector< std::complex< double > >(arg1,(std::complex< double > const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -5761,13 +8380,13 @@ fail:
 
 static int _wrap_new_zcomplex_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< std::complex< double > > *result = 0 ;
   
   SWIG_check_num_args("std::vector< std::complex< double > >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< std::complex< double > > *)new std::vector< std::complex< double > >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -5804,36 +8423,6 @@ fail:
 }
 
 
-static int _wrap_new_zcomplex_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  std::complex< double > arg2 ;
-  std::complex< double > *argp2 ;
-  std::vector< std::complex< double > > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< std::complex< double > >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::vector",1,"unsigned int");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::vector",2,"std::complex< double >");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_std__complexT_double_t,0))){
-    SWIG_fail_ptr("new_zcomplex_vector",2,SWIGTYPE_p_std__complexT_double_t);
-  }
-  arg2 = *argp2;
-  
-  result = (std::vector< std::complex< double > > *)new std::vector< std::complex< double > >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_zcomplex_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -5841,9 +8430,6 @@ static int _wrap_new_zcomplex_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_zcomplex_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -5882,35 +8468,41 @@ static int _wrap_new_zcomplex_vector(lua_State* L) {
         }
       }
       if (_v) {
-        return _wrap_new_zcomplex_vector__SWIG_3(L);
+        return _wrap_new_zcomplex_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_zcomplex_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< std::complex< double > >::vector()\n"
-    "    std::vector< std::complex< double > >::vector(unsigned int)\n"
-    "    std::vector< std::complex< double > >::vector(std::vector< std::complex< double > > const &)\n"
-    "    std::vector< std::complex< double > >::vector(unsigned int,std::complex< double >)\n");
+    "    std::vector< std::complex< double > >::vector(size_t,std::complex< double > const &)\n"
+    "    std::vector< std::complex< double > >::vector(size_t)\n"
+    "    std::vector< std::complex< double > >::vector(std::vector< std::complex< double > > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_zcomplex_vector_size(lua_State* L) {
+static int _wrap_zcomplex_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  std::complex< double > result;
   
-  SWIG_check_num_args("std::vector< std::complex< double > >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::size",1,"std::vector< std::complex< double > > const *");
+  SWIG_check_num_args("std::vector< std::complex< double > >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::__getitem",1,"std::vector< std::complex< double > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
-    SWIG_fail_ptr("zcomplex_vector_size",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+    SWIG_fail_ptr("zcomplex_vector___getitem",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
   }
   
-  result = (unsigned int)((std::vector< std::complex< double > > const *)arg1)->size();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = std_vector_Sl_std_complex_Sl_double_Sg__Sg____getitem__SWIG(arg1,arg2);
+  {
+    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
+  }
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -5921,19 +8513,413 @@ fail:
 }
 
 
-static int _wrap_zcomplex_vector_max_size(lua_State* L) {
+static int _wrap_zcomplex_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  std::complex< double > arg3 ;
+  std::complex< double > *argp3 ;
   
-  SWIG_check_num_args("std::vector< std::complex< double > >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::max_size",1,"std::vector< std::complex< double > > const *");
+  SWIG_check_num_args("std::vector< std::complex< double > >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::__setitem",1,"std::vector< std::complex< double > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::__setitem",2,"size_t");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("std::vector< std::complex< double > >::__setitem",3,"std::complex< double >");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
-    SWIG_fail_ptr("zcomplex_vector_max_size",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+    SWIG_fail_ptr("zcomplex_vector___setitem",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
   }
   
-  result = (unsigned int)((std::vector< std::complex< double > > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("zcomplex_vector___setitem",3,SWIGTYPE_p_std__complexT_double_t);
+  }
+  arg3 = *argp3;
+  
+  std_vector_Sl_std_complex_Sl_double_Sg__Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< std::complex< double > > > result;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::begin",1,"std::vector< std::complex< double > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_begin",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  result = std_vector_Sl_std_complex_Sl_double_Sg__Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< std::complex< double > > * resultptr = new std::vector_iterator< std::complex< double > >((const std::vector_iterator< std::complex< double > > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_std__complexT_double_t_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< std::complex< double > > > result;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::end",1,"std::vector< std::complex< double > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_c_end",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  result = std_vector_Sl_std_complex_Sl_double_Sg__Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< std::complex< double > > * resultptr = new std::vector_iterator< std::complex< double > >((const std::vector_iterator< std::complex< double > > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_std__complexT_double_t_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::erase",1,"std::vector< std::complex< double > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_erase",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_std_complex_Sl_double_Sg__Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::erase",1,"std::vector< std::complex< double > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< std::complex< double > >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_erase",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_std_complex_Sl_double_Sg__Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_std__complexT_double_t_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_zcomplex_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_std__complexT_double_t_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_zcomplex_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'zcomplex_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< std::complex< double > >::erase(size_t)\n"
+    "    std::vector< std::complex< double > >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_zcomplex_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  std::complex< double > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::front",1,"std::vector< std::complex< double > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_front",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  result = (std::complex< double > *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__complexT_double_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  std::complex< double > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::back",1,"std::vector< std::complex< double > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_back",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  result = (std::complex< double > *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__complexT_double_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  std::complex< double > *arg2 = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::push_back",1,"std::vector< std::complex< double > > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::push_back",2,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_push_back",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_push_back",2,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  (arg1)->push_back((std::complex< double > const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::pop_back",1,"std::vector< std::complex< double > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_pop_back",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  size_t arg2 ;
+  std::complex< double > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::at",1,"std::vector< std::complex< double > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_at",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (std::complex< double > *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__complexT_double_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  size_t arg2 ;
+  std::complex< double > *arg3 = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::assign",1,"std::vector< std::complex< double > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::assign",2,"size_t");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("std::vector< std::complex< double > >::assign",3,"std::complex< double > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_assign",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__complexT_double_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_assign",3,SWIGTYPE_p_std__complexT_double_t);
+  }
+  
+  (arg1)->assign(arg2,(std::complex< double > const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  std::complex< double > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::data",1,"std::vector< std::complex< double > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_data",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  result = (std::complex< double > *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__complexT_double_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::size",1,"std::vector< std::complex< double > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_size",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -5969,6 +8955,33 @@ fail:
 }
 
 
+static int _wrap_zcomplex_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::resize",1,"std::vector< std::complex< double > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_resize",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_zcomplex_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
@@ -5992,27 +9005,25 @@ fail:
 }
 
 
-static int _wrap_zcomplex_vector_push_back(lua_State* L) {
+static int _wrap_zcomplex_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
-  std::complex< double > arg2 ;
-  std::complex< double > *argp2 ;
+  std::vector< std::complex< double > > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< std::complex< double > >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::push_back",1,"std::vector< std::complex< double > > *");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::push_back",2,"std::complex< double >");
+  SWIG_check_num_args("std::vector< std::complex< double > >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::swap",1,"std::vector< std::complex< double > > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::swap",2,"std::vector< std::complex< double > > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
-    SWIG_fail_ptr("zcomplex_vector_push_back",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+    SWIG_fail_ptr("zcomplex_vector_swap",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_std__complexT_double_t,0))){
-    SWIG_fail_ptr("zcomplex_vector_push_back",2,SWIGTYPE_p_std__complexT_double_t);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_swap",2,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
   }
-  arg2 = *argp2;
   
-  (arg1)->push_back(arg2);
+  (arg1)->swap(*arg2);
   
   return SWIG_arg;
   
@@ -6024,18 +9035,18 @@ fail:
 }
 
 
-static int _wrap_zcomplex_vector_pop_back(lua_State* L) {
+static int _wrap_zcomplex_vector_shrink_to_fit(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
   
-  SWIG_check_num_args("std::vector< std::complex< double > >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::pop_back",1,"std::vector< std::complex< double > > *");
+  SWIG_check_num_args("std::vector< std::complex< double > >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::shrink_to_fit",1,"std::vector< std::complex< double > > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
-    SWIG_fail_ptr("zcomplex_vector_pop_back",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+    SWIG_fail_ptr("zcomplex_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
   }
   
-  (arg1)->pop_back();
+  (arg1)->shrink_to_fit();
   
   return SWIG_arg;
   
@@ -6047,85 +9058,23 @@ fail:
 }
 
 
-static int _wrap_zcomplex_vector_front(lua_State* L) {
+static int _wrap_zcomplex_vector_reserve(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
-  std::complex< double > result;
+  size_t arg2 ;
   
-  SWIG_check_num_args("std::vector< std::complex< double > >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::front",1,"std::vector< std::complex< double > > const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
-    SWIG_fail_ptr("zcomplex_vector_front",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
-  }
-  
-  result = ((std::vector< std::complex< double > > const *)arg1)->front();
-  {
-    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_zcomplex_vector_back(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
-  std::complex< double > result;
-  
-  SWIG_check_num_args("std::vector< std::complex< double > >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::back",1,"std::vector< std::complex< double > > const *");
+  SWIG_check_num_args("std::vector< std::complex< double > >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::reserve",1,"std::vector< std::complex< double > > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::reserve",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
-    SWIG_fail_ptr("zcomplex_vector_back",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
-  }
-  
-  result = ((std::vector< std::complex< double > > const *)arg1)->back();
-  {
-    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_zcomplex_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
-  unsigned int arg2 ;
-  std::complex< double > result;
-  
-  SWIG_check_num_args("std::vector< std::complex< double > >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::__getitem__",1,"std::vector< std::complex< double > > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
-    SWIG_fail_ptr("zcomplex_vector___getitem",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+    SWIG_fail_ptr("zcomplex_vector_reserve",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = std_vector_Sl_std_complex_Sl_double_Sg__Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  {
-    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
-  }
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6136,36 +9085,44 @@ fail:
 }
 
 
-static int _wrap_zcomplex_vector___setitem(lua_State* L) {
+static int _wrap_zcomplex_vector_max_size(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
-  unsigned int arg2 ;
-  std::complex< double > arg3 ;
-  std::complex< double > *argp3 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< std::complex< double > >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::__setitem__",1,"std::vector< std::complex< double > > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< std::complex< double > >::__setitem__",2,"unsigned int");
-  if(!lua_isuserdata(L,3)) SWIG_fail_arg("std::vector< std::complex< double > >::__setitem__",3,"std::complex< double >");
+  SWIG_check_num_args("std::vector< std::complex< double > >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::max_size",1,"std::vector< std::complex< double > > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
-    SWIG_fail_ptr("zcomplex_vector___setitem",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
+    SWIG_fail_ptr("zcomplex_vector_max_size",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  result = (arg1)->max_size();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_std__complexT_double_t,0))){
-    SWIG_fail_ptr("zcomplex_vector___setitem",3,SWIGTYPE_p_std__complexT_double_t);
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_zcomplex_vector_capacity(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< std::complex< double > > *arg1 = (std::vector< std::complex< double > > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< std::complex< double > >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< std::complex< double > >::capacity",1,"std::vector< std::complex< double > > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t,0))){
+    SWIG_fail_ptr("zcomplex_vector_capacity",1,SWIGTYPE_p_std__vectorT_std__complexT_double_t_t);
   }
-  arg3 = *argp3;
   
-  try {
-    std_vector_Sl_std_complex_Sl_double_Sg__Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
+  result = (arg1)->capacity();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6192,16 +9149,27 @@ static swig_lua_attribute swig_zcomplex_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_zcomplex_vector_methods[]= {
-    { "size", _wrap_zcomplex_vector_size},
-    { "max_size", _wrap_zcomplex_vector_max_size},
-    { "empty", _wrap_zcomplex_vector_empty},
-    { "clear", _wrap_zcomplex_vector_clear},
-    { "push_back", _wrap_zcomplex_vector_push_back},
-    { "pop_back", _wrap_zcomplex_vector_pop_back},
-    { "front", _wrap_zcomplex_vector_front},
-    { "back", _wrap_zcomplex_vector_back},
     { "__getitem", _wrap_zcomplex_vector___getitem},
     { "__setitem", _wrap_zcomplex_vector___setitem},
+    { "begin", _wrap_zcomplex_vector_begin},
+    { "c_end", _wrap_zcomplex_vector_c_end},
+    { "erase", _wrap_zcomplex_vector_erase},
+    { "front", _wrap_zcomplex_vector_front},
+    { "back", _wrap_zcomplex_vector_back},
+    { "push_back", _wrap_zcomplex_vector_push_back},
+    { "pop_back", _wrap_zcomplex_vector_pop_back},
+    { "at", _wrap_zcomplex_vector_at},
+    { "assign", _wrap_zcomplex_vector_assign},
+    { "data", _wrap_zcomplex_vector_data},
+    { "size", _wrap_zcomplex_vector_size},
+    { "empty", _wrap_zcomplex_vector_empty},
+    { "resize", _wrap_zcomplex_vector_resize},
+    { "clear", _wrap_zcomplex_vector_clear},
+    { "swap", _wrap_zcomplex_vector_swap},
+    { "shrink_to_fit", _wrap_zcomplex_vector_shrink_to_fit},
+    { "reserve", _wrap_zcomplex_vector_reserve},
+    { "max_size", _wrap_zcomplex_vector_max_size},
+    { "capacity", _wrap_zcomplex_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_zcomplex_vector_meta[] = {
@@ -6237,10 +9205,18 @@ static swig_lua_class _wrap_class_zcomplex_vector = { "zcomplex_vector", "zcompl
 
 static int _wrap_new_int8_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  signed char *arg2 = 0 ;
+  signed char temp2 ;
   std::vector< signed char > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< signed char >::vector",0,0)
-  result = (std::vector< signed char > *)new std::vector< signed char >();
+  SWIG_check_num_args("std::vector< signed char >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< signed char >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::vector",2,"signed char const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  temp2=(signed char)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< signed char > *)new std::vector< signed char >(arg1,(signed char const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_signed_char_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -6254,13 +9230,13 @@ fail:
 
 static int _wrap_new_int8_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< signed char > *result = 0 ;
   
   SWIG_check_num_args("std::vector< signed char >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< signed char >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< signed char >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< signed char > *)new std::vector< signed char >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_signed_char_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -6297,30 +9273,6 @@ fail:
 }
 
 
-static int _wrap_new_int8_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  signed char arg2 ;
-  std::vector< signed char > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< signed char >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< signed char >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::vector",2,"signed char");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  arg2 = (signed char)lua_tonumber(L, 2);
-  result = (std::vector< signed char > *)new std::vector< signed char >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_signed_char_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_int8_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -6328,9 +9280,6 @@ static int _wrap_new_int8_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_int8_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -6364,34 +9313,37 @@ static int _wrap_new_int8_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_int8_vector__SWIG_3(L);
+        return _wrap_new_int8_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_int8_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< signed char >::vector()\n"
-    "    std::vector< signed char >::vector(unsigned int)\n"
-    "    std::vector< signed char >::vector(std::vector< signed char > const &)\n"
-    "    std::vector< signed char >::vector(unsigned int,signed char)\n");
+    "    std::vector< signed char >::vector(size_t,signed char const &)\n"
+    "    std::vector< signed char >::vector(size_t)\n"
+    "    std::vector< signed char >::vector(std::vector< signed char > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_int8_vector_size(lua_State* L) {
+static int _wrap_int8_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  signed char result;
   
-  SWIG_check_num_args("std::vector< signed char >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::size",1,"std::vector< signed char > const *");
+  SWIG_check_num_args("std::vector< signed char >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::__getitem",1,"std::vector< signed char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
-    SWIG_fail_ptr("int8_vector_size",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+    SWIG_fail_ptr("int8_vector___getitem",1,SWIGTYPE_p_std__vectorT_signed_char_t);
   }
   
-  result = (unsigned int)((std::vector< signed char > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (signed char)std_vector_Sl_signed_SS_char_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -6403,19 +9355,401 @@ fail:
 }
 
 
-static int _wrap_int8_vector_max_size(lua_State* L) {
+static int _wrap_int8_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  signed char arg3 ;
   
-  SWIG_check_num_args("std::vector< signed char >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::max_size",1,"std::vector< signed char > const *");
+  SWIG_check_num_args("std::vector< signed char >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::__setitem",1,"std::vector< signed char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< signed char >::__setitem",3,"signed char");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
-    SWIG_fail_ptr("int8_vector_max_size",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+    SWIG_fail_ptr("int8_vector___setitem",1,SWIGTYPE_p_std__vectorT_signed_char_t);
   }
   
-  result = (unsigned int)((std::vector< signed char > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  arg3 = (signed char)lua_tonumber(L, 3);
+  std_vector_Sl_signed_SS_char_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< signed char > > result;
+  
+  SWIG_check_num_args("std::vector< signed char >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::begin",1,"std::vector< signed char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_begin",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  result = std_vector_Sl_signed_SS_char_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< signed char > * resultptr = new std::vector_iterator< signed char >((const std::vector_iterator< signed char > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_signed_char_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< signed char > > result;
+  
+  SWIG_check_num_args("std::vector< signed char >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::end",1,"std::vector< signed char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_c_end",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  result = std_vector_Sl_signed_SS_char_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< signed char > * resultptr = new std::vector_iterator< signed char >((const std::vector_iterator< signed char > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_signed_char_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::erase",1,"std::vector< signed char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_erase",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_signed_SS_char_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::erase",1,"std::vector< signed char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< signed char >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_erase",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_signed_SS_char_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_signed_char_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_int8_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_signed_char_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_int8_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'int8_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< signed char >::erase(size_t)\n"
+    "    std::vector< signed char >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_int8_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  signed char *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::front",1,"std::vector< signed char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_front",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  result = (signed char *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_signed_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  signed char *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::back",1,"std::vector< signed char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_back",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  result = (signed char *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_signed_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  signed char *arg2 = 0 ;
+  signed char temp2 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::push_back",1,"std::vector< signed char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::push_back",2,"signed char const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_push_back",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  temp2=(signed char)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((signed char const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::pop_back",1,"std::vector< signed char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_pop_back",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  size_t arg2 ;
+  signed char *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::at",1,"std::vector< signed char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_at",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (signed char *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_signed_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  size_t arg2 ;
+  signed char *arg3 = 0 ;
+  signed char temp3 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::assign",1,"std::vector< signed char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< signed char >::assign",3,"signed char const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_assign",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  temp3=(signed char)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(signed char const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  signed char *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::data",1,"std::vector< signed char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_data",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  result = (signed char *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_signed_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< signed char >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::size",1,"std::vector< signed char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_size",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -6451,6 +9785,33 @@ fail:
 }
 
 
+static int _wrap_int8_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< signed char >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::resize",1,"std::vector< signed char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_resize",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_int8_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
@@ -6474,21 +9835,25 @@ fail:
 }
 
 
-static int _wrap_int8_vector_push_back(lua_State* L) {
+static int _wrap_int8_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
-  signed char arg2 ;
+  std::vector< signed char > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< signed char >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::push_back",1,"std::vector< signed char > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::push_back",2,"signed char");
+  SWIG_check_num_args("std::vector< signed char >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::swap",1,"std::vector< signed char > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< signed char >::swap",2,"std::vector< signed char > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
-    SWIG_fail_ptr("int8_vector_push_back",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+    SWIG_fail_ptr("int8_vector_swap",1,SWIGTYPE_p_std__vectorT_signed_char_t);
   }
   
-  arg2 = (signed char)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_swap",2,SWIGTYPE_p_std__vectorT_signed_char_t);
+  }
+  
+  (arg1)->swap(*arg2);
   
   return SWIG_arg;
   
@@ -6500,18 +9865,18 @@ fail:
 }
 
 
-static int _wrap_int8_vector_pop_back(lua_State* L) {
+static int _wrap_int8_vector_shrink_to_fit(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
   
-  SWIG_check_num_args("std::vector< signed char >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::pop_back",1,"std::vector< signed char > *");
+  SWIG_check_num_args("std::vector< signed char >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::shrink_to_fit",1,"std::vector< signed char > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
-    SWIG_fail_ptr("int8_vector_pop_back",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+    SWIG_fail_ptr("int8_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_signed_char_t);
   }
   
-  (arg1)->pop_back();
+  (arg1)->shrink_to_fit();
   
   return SWIG_arg;
   
@@ -6523,75 +9888,46 @@ fail:
 }
 
 
-static int _wrap_int8_vector_front(lua_State* L) {
+static int _wrap_int8_vector_reserve(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
-  signed char result;
+  size_t arg2 ;
   
-  SWIG_check_num_args("std::vector< signed char >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::front",1,"std::vector< signed char > const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
-    SWIG_fail_ptr("int8_vector_front",1,SWIGTYPE_p_std__vectorT_signed_char_t);
-  }
-  
-  result = (signed char)((std::vector< signed char > const *)arg1)->front();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_int8_vector_back(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
-  signed char result;
-  
-  SWIG_check_num_args("std::vector< signed char >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::back",1,"std::vector< signed char > const *");
+  SWIG_check_num_args("std::vector< signed char >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::reserve",1,"std::vector< signed char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::reserve",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
-    SWIG_fail_ptr("int8_vector_back",1,SWIGTYPE_p_std__vectorT_signed_char_t);
-  }
-  
-  result = (signed char)((std::vector< signed char > const *)arg1)->back();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_int8_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
-  unsigned int arg2 ;
-  signed char result;
-  
-  SWIG_check_num_args("std::vector< signed char >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::__getitem__",1,"std::vector< signed char > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
-    SWIG_fail_ptr("int8_vector___getitem",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+    SWIG_fail_ptr("int8_vector_reserve",1,SWIGTYPE_p_std__vectorT_signed_char_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (signed char)std_vector_Sl_signed_SS_char_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int8_vector_max_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< signed char >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::max_size",1,"std::vector< signed char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
+    SWIG_fail_ptr("int8_vector_max_size",1,SWIGTYPE_p_std__vectorT_signed_char_t);
   }
+  
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -6603,30 +9939,20 @@ fail:
 }
 
 
-static int _wrap_int8_vector___setitem(lua_State* L) {
+static int _wrap_int8_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< signed char > *arg1 = (std::vector< signed char > *) 0 ;
-  unsigned int arg2 ;
-  signed char arg3 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< signed char >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::__setitem__",1,"std::vector< signed char > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< signed char >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< signed char >::__setitem__",3,"signed char");
+  SWIG_check_num_args("std::vector< signed char >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< signed char >::capacity",1,"std::vector< signed char > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_signed_char_t,0))){
-    SWIG_fail_ptr("int8_vector___setitem",1,SWIGTYPE_p_std__vectorT_signed_char_t);
+    SWIG_fail_ptr("int8_vector_capacity",1,SWIGTYPE_p_std__vectorT_signed_char_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  arg3 = (signed char)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_signed_SS_char_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
+  result = (arg1)->capacity();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6653,16 +9979,27 @@ static swig_lua_attribute swig_int8_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_int8_vector_methods[]= {
-    { "size", _wrap_int8_vector_size},
-    { "max_size", _wrap_int8_vector_max_size},
-    { "empty", _wrap_int8_vector_empty},
-    { "clear", _wrap_int8_vector_clear},
-    { "push_back", _wrap_int8_vector_push_back},
-    { "pop_back", _wrap_int8_vector_pop_back},
-    { "front", _wrap_int8_vector_front},
-    { "back", _wrap_int8_vector_back},
     { "__getitem", _wrap_int8_vector___getitem},
     { "__setitem", _wrap_int8_vector___setitem},
+    { "begin", _wrap_int8_vector_begin},
+    { "c_end", _wrap_int8_vector_c_end},
+    { "erase", _wrap_int8_vector_erase},
+    { "front", _wrap_int8_vector_front},
+    { "back", _wrap_int8_vector_back},
+    { "push_back", _wrap_int8_vector_push_back},
+    { "pop_back", _wrap_int8_vector_pop_back},
+    { "at", _wrap_int8_vector_at},
+    { "assign", _wrap_int8_vector_assign},
+    { "data", _wrap_int8_vector_data},
+    { "size", _wrap_int8_vector_size},
+    { "empty", _wrap_int8_vector_empty},
+    { "resize", _wrap_int8_vector_resize},
+    { "clear", _wrap_int8_vector_clear},
+    { "swap", _wrap_int8_vector_swap},
+    { "shrink_to_fit", _wrap_int8_vector_shrink_to_fit},
+    { "reserve", _wrap_int8_vector_reserve},
+    { "max_size", _wrap_int8_vector_max_size},
+    { "capacity", _wrap_int8_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_int8_vector_meta[] = {
@@ -6698,10 +10035,19 @@ static swig_lua_class _wrap_class_int8_vector = { "int8_vector", "int8_vector", 
 
 static int _wrap_new_uint8_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  unsigned char *arg2 = 0 ;
+  unsigned char temp2 ;
   std::vector< unsigned char > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< unsigned char >::vector",0,0)
-  result = (std::vector< unsigned char > *)new std::vector< unsigned char >();
+  SWIG_check_num_args("std::vector< unsigned char >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned char >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::vector",2,"unsigned char const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  temp2=(unsigned char)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< unsigned char > *)new std::vector< unsigned char >(arg1,(unsigned char const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_char_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -6715,13 +10061,13 @@ fail:
 
 static int _wrap_new_uint8_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< unsigned char > *result = 0 ;
   
   SWIG_check_num_args("std::vector< unsigned char >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned char >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned char >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< unsigned char > *)new std::vector< unsigned char >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_char_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -6758,31 +10104,6 @@ fail:
 }
 
 
-static int _wrap_new_uint8_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  unsigned char arg2 ;
-  std::vector< unsigned char > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< unsigned char >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned char >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::vector",2,"unsigned char");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned char)lua_tonumber(L, 2);
-  result = (std::vector< unsigned char > *)new std::vector< unsigned char >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_char_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_uint8_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -6790,9 +10111,6 @@ static int _wrap_new_uint8_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_uint8_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -6826,34 +10144,37 @@ static int _wrap_new_uint8_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_uint8_vector__SWIG_3(L);
+        return _wrap_new_uint8_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_uint8_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< unsigned char >::vector()\n"
-    "    std::vector< unsigned char >::vector(unsigned int)\n"
-    "    std::vector< unsigned char >::vector(std::vector< unsigned char > const &)\n"
-    "    std::vector< unsigned char >::vector(unsigned int,unsigned char)\n");
+    "    std::vector< unsigned char >::vector(size_t,unsigned char const &)\n"
+    "    std::vector< unsigned char >::vector(size_t)\n"
+    "    std::vector< unsigned char >::vector(std::vector< unsigned char > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_uint8_vector_size(lua_State* L) {
+static int _wrap_uint8_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  unsigned char result;
   
-  SWIG_check_num_args("std::vector< unsigned char >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::size",1,"std::vector< unsigned char > const *");
+  SWIG_check_num_args("std::vector< unsigned char >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::__getitem",1,"std::vector< unsigned char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
-    SWIG_fail_ptr("uint8_vector_size",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+    SWIG_fail_ptr("uint8_vector___getitem",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned char > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (unsigned char)std_vector_Sl_unsigned_SS_char_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -6865,19 +10186,404 @@ fail:
 }
 
 
-static int _wrap_uint8_vector_max_size(lua_State* L) {
+static int _wrap_uint8_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  unsigned char arg3 ;
   
-  SWIG_check_num_args("std::vector< unsigned char >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::max_size",1,"std::vector< unsigned char > const *");
+  SWIG_check_num_args("std::vector< unsigned char >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::__setitem",1,"std::vector< unsigned char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned char >::__setitem",3,"unsigned char");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
-    SWIG_fail_ptr("uint8_vector_max_size",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+    SWIG_fail_ptr("uint8_vector___setitem",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned char > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (unsigned char)lua_tonumber(L, 3);
+  std_vector_Sl_unsigned_SS_char_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< unsigned char > > result;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::begin",1,"std::vector< unsigned char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_begin",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  result = std_vector_Sl_unsigned_SS_char_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< unsigned char > * resultptr = new std::vector_iterator< unsigned char >((const std::vector_iterator< unsigned char > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_unsigned_char_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< unsigned char > > result;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::end",1,"std::vector< unsigned char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_c_end",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  result = std_vector_Sl_unsigned_SS_char_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< unsigned char > * resultptr = new std::vector_iterator< unsigned char >((const std::vector_iterator< unsigned char > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_unsigned_char_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::erase",1,"std::vector< unsigned char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_erase",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_unsigned_SS_char_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::erase",1,"std::vector< unsigned char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned char >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_erase",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_unsigned_SS_char_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_unsigned_char_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_uint8_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_unsigned_char_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_uint8_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'uint8_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< unsigned char >::erase(size_t)\n"
+    "    std::vector< unsigned char >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_uint8_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  unsigned char *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::front",1,"std::vector< unsigned char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_front",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  result = (unsigned char *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  unsigned char *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::back",1,"std::vector< unsigned char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_back",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  result = (unsigned char *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  unsigned char *arg2 = 0 ;
+  unsigned char temp2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::push_back",1,"std::vector< unsigned char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::push_back",2,"unsigned char const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_push_back",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  temp2=(unsigned char)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((unsigned char const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::pop_back",1,"std::vector< unsigned char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_pop_back",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  size_t arg2 ;
+  unsigned char *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::at",1,"std::vector< unsigned char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_at",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (unsigned char *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  size_t arg2 ;
+  unsigned char *arg3 = 0 ;
+  unsigned char temp3 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::assign",1,"std::vector< unsigned char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned char >::assign",3,"unsigned char const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_assign",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  temp3=(unsigned char)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(unsigned char const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  unsigned char *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::data",1,"std::vector< unsigned char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_data",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  result = (unsigned char *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::size",1,"std::vector< unsigned char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_size",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -6913,6 +10619,33 @@ fail:
 }
 
 
+static int _wrap_uint8_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::resize",1,"std::vector< unsigned char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_resize",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_uint8_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
@@ -6936,22 +10669,75 @@ fail:
 }
 
 
-static int _wrap_uint8_vector_push_back(lua_State* L) {
+static int _wrap_uint8_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
-  unsigned char arg2 ;
+  std::vector< unsigned char > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< unsigned char >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::push_back",1,"std::vector< unsigned char > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::push_back",2,"unsigned char");
+  SWIG_check_num_args("std::vector< unsigned char >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::swap",1,"std::vector< unsigned char > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< unsigned char >::swap",2,"std::vector< unsigned char > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
-    SWIG_fail_ptr("uint8_vector_push_back",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+    SWIG_fail_ptr("uint8_vector_swap",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_swap",2,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  (arg1)->swap(*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_shrink_to_fit(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::shrink_to_fit",1,"std::vector< unsigned char > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+  }
+  
+  (arg1)->shrink_to_fit();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint8_vector_reserve(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned char >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::reserve",1,"std::vector< unsigned char > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::reserve",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
+    SWIG_fail_ptr("uint8_vector_reserve",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned char)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
   
   return SWIG_arg;
   
@@ -6963,42 +10749,19 @@ fail:
 }
 
 
-static int _wrap_uint8_vector_pop_back(lua_State* L) {
+static int _wrap_uint8_vector_max_size(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< unsigned char >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::pop_back",1,"std::vector< unsigned char > *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
-    SWIG_fail_ptr("uint8_vector_pop_back",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
-  }
-  
-  (arg1)->pop_back();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint8_vector_front(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
-  unsigned char result;
-  
-  SWIG_check_num_args("std::vector< unsigned char >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::front",1,"std::vector< unsigned char > const *");
+  SWIG_check_num_args("std::vector< unsigned char >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::max_size",1,"std::vector< unsigned char > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
-    SWIG_fail_ptr("uint8_vector_front",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+    SWIG_fail_ptr("uint8_vector_max_size",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
   }
   
-  result = (unsigned char)((std::vector< unsigned char > const *)arg1)->front();
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -7010,87 +10773,20 @@ fail:
 }
 
 
-static int _wrap_uint8_vector_back(lua_State* L) {
+static int _wrap_uint8_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
-  unsigned char result;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< unsigned char >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::back",1,"std::vector< unsigned char > const *");
+  SWIG_check_num_args("std::vector< unsigned char >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::capacity",1,"std::vector< unsigned char > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
-    SWIG_fail_ptr("uint8_vector_back",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
+    SWIG_fail_ptr("uint8_vector_capacity",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
   }
   
-  result = (unsigned char)((std::vector< unsigned char > const *)arg1)->back();
+  result = (arg1)->capacity();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint8_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
-  unsigned int arg2 ;
-  unsigned char result;
-  
-  SWIG_check_num_args("std::vector< unsigned char >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::__getitem__",1,"std::vector< unsigned char > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
-    SWIG_fail_ptr("uint8_vector___getitem",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (unsigned char)std_vector_Sl_unsigned_SS_char_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint8_vector___setitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned char > *arg1 = (std::vector< unsigned char > *) 0 ;
-  unsigned int arg2 ;
-  unsigned char arg3 ;
-  
-  SWIG_check_num_args("std::vector< unsigned char >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned char >::__setitem__",1,"std::vector< unsigned char > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned char >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned char >::__setitem__",3,"unsigned char");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_char_t,0))){
-    SWIG_fail_ptr("uint8_vector___setitem",1,SWIGTYPE_p_std__vectorT_unsigned_char_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
-  arg3 = (unsigned char)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_unsigned_SS_char_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -7117,16 +10813,27 @@ static swig_lua_attribute swig_uint8_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_uint8_vector_methods[]= {
-    { "size", _wrap_uint8_vector_size},
-    { "max_size", _wrap_uint8_vector_max_size},
-    { "empty", _wrap_uint8_vector_empty},
-    { "clear", _wrap_uint8_vector_clear},
-    { "push_back", _wrap_uint8_vector_push_back},
-    { "pop_back", _wrap_uint8_vector_pop_back},
-    { "front", _wrap_uint8_vector_front},
-    { "back", _wrap_uint8_vector_back},
     { "__getitem", _wrap_uint8_vector___getitem},
     { "__setitem", _wrap_uint8_vector___setitem},
+    { "begin", _wrap_uint8_vector_begin},
+    { "c_end", _wrap_uint8_vector_c_end},
+    { "erase", _wrap_uint8_vector_erase},
+    { "front", _wrap_uint8_vector_front},
+    { "back", _wrap_uint8_vector_back},
+    { "push_back", _wrap_uint8_vector_push_back},
+    { "pop_back", _wrap_uint8_vector_pop_back},
+    { "at", _wrap_uint8_vector_at},
+    { "assign", _wrap_uint8_vector_assign},
+    { "data", _wrap_uint8_vector_data},
+    { "size", _wrap_uint8_vector_size},
+    { "empty", _wrap_uint8_vector_empty},
+    { "resize", _wrap_uint8_vector_resize},
+    { "clear", _wrap_uint8_vector_clear},
+    { "swap", _wrap_uint8_vector_swap},
+    { "shrink_to_fit", _wrap_uint8_vector_shrink_to_fit},
+    { "reserve", _wrap_uint8_vector_reserve},
+    { "max_size", _wrap_uint8_vector_max_size},
+    { "capacity", _wrap_uint8_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_uint8_vector_meta[] = {
@@ -7162,10 +10869,18 @@ static swig_lua_class _wrap_class_uint8_vector = { "uint8_vector", "uint8_vector
 
 static int _wrap_new_int16_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  short *arg2 = 0 ;
+  short temp2 ;
   std::vector< short > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< short >::vector",0,0)
-  result = (std::vector< short > *)new std::vector< short >();
+  SWIG_check_num_args("std::vector< short >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< short >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::vector",2,"short const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  temp2=(short)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< short > *)new std::vector< short >(arg1,(short const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_short_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -7179,13 +10894,13 @@ fail:
 
 static int _wrap_new_int16_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< short > *result = 0 ;
   
   SWIG_check_num_args("std::vector< short >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< short >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< short >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< short > *)new std::vector< short >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_short_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -7222,30 +10937,6 @@ fail:
 }
 
 
-static int _wrap_new_int16_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  short arg2 ;
-  std::vector< short > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< short >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< short >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::vector",2,"short");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  arg2 = (short)lua_tonumber(L, 2);
-  result = (std::vector< short > *)new std::vector< short >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_short_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_int16_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -7253,9 +10944,6 @@ static int _wrap_new_int16_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_int16_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -7289,34 +10977,37 @@ static int _wrap_new_int16_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_int16_vector__SWIG_3(L);
+        return _wrap_new_int16_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_int16_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< short >::vector()\n"
-    "    std::vector< short >::vector(unsigned int)\n"
-    "    std::vector< short >::vector(std::vector< short > const &)\n"
-    "    std::vector< short >::vector(unsigned int,short)\n");
+    "    std::vector< short >::vector(size_t,short const &)\n"
+    "    std::vector< short >::vector(size_t)\n"
+    "    std::vector< short >::vector(std::vector< short > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_int16_vector_size(lua_State* L) {
+static int _wrap_int16_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< short > *arg1 = (std::vector< short > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  short result;
   
-  SWIG_check_num_args("std::vector< short >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::size",1,"std::vector< short > const *");
+  SWIG_check_num_args("std::vector< short >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::__getitem",1,"std::vector< short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
-    SWIG_fail_ptr("int16_vector_size",1,SWIGTYPE_p_std__vectorT_short_t);
+    SWIG_fail_ptr("int16_vector___getitem",1,SWIGTYPE_p_std__vectorT_short_t);
   }
   
-  result = (unsigned int)((std::vector< short > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (short)std_vector_Sl_short_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -7328,19 +11019,401 @@ fail:
 }
 
 
-static int _wrap_int16_vector_max_size(lua_State* L) {
+static int _wrap_int16_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< short > *arg1 = (std::vector< short > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  short arg3 ;
   
-  SWIG_check_num_args("std::vector< short >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::max_size",1,"std::vector< short > const *");
+  SWIG_check_num_args("std::vector< short >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::__setitem",1,"std::vector< short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< short >::__setitem",3,"short");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
-    SWIG_fail_ptr("int16_vector_max_size",1,SWIGTYPE_p_std__vectorT_short_t);
+    SWIG_fail_ptr("int16_vector___setitem",1,SWIGTYPE_p_std__vectorT_short_t);
   }
   
-  result = (unsigned int)((std::vector< short > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  arg3 = (short)lua_tonumber(L, 3);
+  std_vector_Sl_short_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< short > > result;
+  
+  SWIG_check_num_args("std::vector< short >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::begin",1,"std::vector< short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_begin",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  result = std_vector_Sl_short_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< short > * resultptr = new std::vector_iterator< short >((const std::vector_iterator< short > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_short_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< short > > result;
+  
+  SWIG_check_num_args("std::vector< short >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::end",1,"std::vector< short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_c_end",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  result = std_vector_Sl_short_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< short > * resultptr = new std::vector_iterator< short >((const std::vector_iterator< short > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_short_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< short >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::erase",1,"std::vector< short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_erase",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_short_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< short >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::erase",1,"std::vector< short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< short >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_erase",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_short_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_short_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_int16_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_short_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_int16_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'int16_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< short >::erase(size_t)\n"
+    "    std::vector< short >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_int16_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  short *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< short >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::front",1,"std::vector< short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_front",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  result = (short *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_short,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  short *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< short >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::back",1,"std::vector< short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_back",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  result = (short *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_short,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  short *arg2 = 0 ;
+  short temp2 ;
+  
+  SWIG_check_num_args("std::vector< short >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::push_back",1,"std::vector< short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::push_back",2,"short const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_push_back",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  temp2=(short)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((short const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< short >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::pop_back",1,"std::vector< short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_pop_back",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  size_t arg2 ;
+  short *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< short >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::at",1,"std::vector< short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_at",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (short *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_short,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  size_t arg2 ;
+  short *arg3 = 0 ;
+  short temp3 ;
+  
+  SWIG_check_num_args("std::vector< short >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::assign",1,"std::vector< short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< short >::assign",3,"short const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_assign",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  temp3=(short)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(short const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  short *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< short >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::data",1,"std::vector< short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_data",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  result = (short *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_short,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< short >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::size",1,"std::vector< short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_size",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -7376,6 +11449,33 @@ fail:
 }
 
 
+static int _wrap_int16_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< short >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::resize",1,"std::vector< short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_resize",1,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_int16_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< short > *arg1 = (std::vector< short > *) 0 ;
@@ -7399,21 +11499,25 @@ fail:
 }
 
 
-static int _wrap_int16_vector_push_back(lua_State* L) {
+static int _wrap_int16_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< short > *arg1 = (std::vector< short > *) 0 ;
-  short arg2 ;
+  std::vector< short > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< short >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::push_back",1,"std::vector< short > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::push_back",2,"short");
+  SWIG_check_num_args("std::vector< short >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::swap",1,"std::vector< short > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< short >::swap",2,"std::vector< short > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
-    SWIG_fail_ptr("int16_vector_push_back",1,SWIGTYPE_p_std__vectorT_short_t);
+    SWIG_fail_ptr("int16_vector_swap",1,SWIGTYPE_p_std__vectorT_short_t);
   }
   
-  arg2 = (short)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_swap",2,SWIGTYPE_p_std__vectorT_short_t);
+  }
+  
+  (arg1)->swap(*arg2);
   
   return SWIG_arg;
   
@@ -7425,18 +11529,18 @@ fail:
 }
 
 
-static int _wrap_int16_vector_pop_back(lua_State* L) {
+static int _wrap_int16_vector_shrink_to_fit(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< short > *arg1 = (std::vector< short > *) 0 ;
   
-  SWIG_check_num_args("std::vector< short >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::pop_back",1,"std::vector< short > *");
+  SWIG_check_num_args("std::vector< short >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::shrink_to_fit",1,"std::vector< short > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
-    SWIG_fail_ptr("int16_vector_pop_back",1,SWIGTYPE_p_std__vectorT_short_t);
+    SWIG_fail_ptr("int16_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_short_t);
   }
   
-  (arg1)->pop_back();
+  (arg1)->shrink_to_fit();
   
   return SWIG_arg;
   
@@ -7448,75 +11552,46 @@ fail:
 }
 
 
-static int _wrap_int16_vector_front(lua_State* L) {
+static int _wrap_int16_vector_reserve(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< short > *arg1 = (std::vector< short > *) 0 ;
-  short result;
+  size_t arg2 ;
   
-  SWIG_check_num_args("std::vector< short >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::front",1,"std::vector< short > const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
-    SWIG_fail_ptr("int16_vector_front",1,SWIGTYPE_p_std__vectorT_short_t);
-  }
-  
-  result = (short)((std::vector< short > const *)arg1)->front();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_int16_vector_back(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
-  short result;
-  
-  SWIG_check_num_args("std::vector< short >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::back",1,"std::vector< short > const *");
+  SWIG_check_num_args("std::vector< short >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::reserve",1,"std::vector< short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::reserve",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
-    SWIG_fail_ptr("int16_vector_back",1,SWIGTYPE_p_std__vectorT_short_t);
-  }
-  
-  result = (short)((std::vector< short > const *)arg1)->back();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_int16_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
-  unsigned int arg2 ;
-  short result;
-  
-  SWIG_check_num_args("std::vector< short >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::__getitem__",1,"std::vector< short > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
-    SWIG_fail_ptr("int16_vector___getitem",1,SWIGTYPE_p_std__vectorT_short_t);
+    SWIG_fail_ptr("int16_vector_reserve",1,SWIGTYPE_p_std__vectorT_short_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (short)std_vector_Sl_short_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int16_vector_max_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< short > *arg1 = (std::vector< short > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< short >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::max_size",1,"std::vector< short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
+    SWIG_fail_ptr("int16_vector_max_size",1,SWIGTYPE_p_std__vectorT_short_t);
   }
+  
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -7528,30 +11603,20 @@ fail:
 }
 
 
-static int _wrap_int16_vector___setitem(lua_State* L) {
+static int _wrap_int16_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< short > *arg1 = (std::vector< short > *) 0 ;
-  unsigned int arg2 ;
-  short arg3 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< short >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::__setitem__",1,"std::vector< short > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< short >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< short >::__setitem__",3,"short");
+  SWIG_check_num_args("std::vector< short >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< short >::capacity",1,"std::vector< short > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_short_t,0))){
-    SWIG_fail_ptr("int16_vector___setitem",1,SWIGTYPE_p_std__vectorT_short_t);
+    SWIG_fail_ptr("int16_vector_capacity",1,SWIGTYPE_p_std__vectorT_short_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  arg3 = (short)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_short_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
+  result = (arg1)->capacity();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -7578,16 +11643,27 @@ static swig_lua_attribute swig_int16_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_int16_vector_methods[]= {
-    { "size", _wrap_int16_vector_size},
-    { "max_size", _wrap_int16_vector_max_size},
-    { "empty", _wrap_int16_vector_empty},
-    { "clear", _wrap_int16_vector_clear},
-    { "push_back", _wrap_int16_vector_push_back},
-    { "pop_back", _wrap_int16_vector_pop_back},
-    { "front", _wrap_int16_vector_front},
-    { "back", _wrap_int16_vector_back},
     { "__getitem", _wrap_int16_vector___getitem},
     { "__setitem", _wrap_int16_vector___setitem},
+    { "begin", _wrap_int16_vector_begin},
+    { "c_end", _wrap_int16_vector_c_end},
+    { "erase", _wrap_int16_vector_erase},
+    { "front", _wrap_int16_vector_front},
+    { "back", _wrap_int16_vector_back},
+    { "push_back", _wrap_int16_vector_push_back},
+    { "pop_back", _wrap_int16_vector_pop_back},
+    { "at", _wrap_int16_vector_at},
+    { "assign", _wrap_int16_vector_assign},
+    { "data", _wrap_int16_vector_data},
+    { "size", _wrap_int16_vector_size},
+    { "empty", _wrap_int16_vector_empty},
+    { "resize", _wrap_int16_vector_resize},
+    { "clear", _wrap_int16_vector_clear},
+    { "swap", _wrap_int16_vector_swap},
+    { "shrink_to_fit", _wrap_int16_vector_shrink_to_fit},
+    { "reserve", _wrap_int16_vector_reserve},
+    { "max_size", _wrap_int16_vector_max_size},
+    { "capacity", _wrap_int16_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_int16_vector_meta[] = {
@@ -7623,10 +11699,19 @@ static swig_lua_class _wrap_class_int16_vector = { "int16_vector", "int16_vector
 
 static int _wrap_new_uint16_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  unsigned short *arg2 = 0 ;
+  unsigned short temp2 ;
   std::vector< unsigned short > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< unsigned short >::vector",0,0)
-  result = (std::vector< unsigned short > *)new std::vector< unsigned short >();
+  SWIG_check_num_args("std::vector< unsigned short >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned short >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::vector",2,"unsigned short const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  temp2=(unsigned short)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< unsigned short > *)new std::vector< unsigned short >(arg1,(unsigned short const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_short_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -7640,13 +11725,13 @@ fail:
 
 static int _wrap_new_uint16_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< unsigned short > *result = 0 ;
   
   SWIG_check_num_args("std::vector< unsigned short >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned short >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned short >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< unsigned short > *)new std::vector< unsigned short >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_short_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -7683,31 +11768,6 @@ fail:
 }
 
 
-static int _wrap_new_uint16_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  unsigned short arg2 ;
-  std::vector< unsigned short > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< unsigned short >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned short >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::vector",2,"unsigned short");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned short)lua_tonumber(L, 2);
-  result = (std::vector< unsigned short > *)new std::vector< unsigned short >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_short_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_uint16_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -7715,9 +11775,6 @@ static int _wrap_new_uint16_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_uint16_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -7751,34 +11808,37 @@ static int _wrap_new_uint16_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_uint16_vector__SWIG_3(L);
+        return _wrap_new_uint16_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_uint16_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< unsigned short >::vector()\n"
-    "    std::vector< unsigned short >::vector(unsigned int)\n"
-    "    std::vector< unsigned short >::vector(std::vector< unsigned short > const &)\n"
-    "    std::vector< unsigned short >::vector(unsigned int,unsigned short)\n");
+    "    std::vector< unsigned short >::vector(size_t,unsigned short const &)\n"
+    "    std::vector< unsigned short >::vector(size_t)\n"
+    "    std::vector< unsigned short >::vector(std::vector< unsigned short > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_uint16_vector_size(lua_State* L) {
+static int _wrap_uint16_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  unsigned short result;
   
-  SWIG_check_num_args("std::vector< unsigned short >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::size",1,"std::vector< unsigned short > const *");
+  SWIG_check_num_args("std::vector< unsigned short >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::__getitem",1,"std::vector< unsigned short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
-    SWIG_fail_ptr("uint16_vector_size",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+    SWIG_fail_ptr("uint16_vector___getitem",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned short > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (unsigned short)std_vector_Sl_unsigned_SS_short_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -7790,19 +11850,404 @@ fail:
 }
 
 
-static int _wrap_uint16_vector_max_size(lua_State* L) {
+static int _wrap_uint16_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  unsigned short arg3 ;
   
-  SWIG_check_num_args("std::vector< unsigned short >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::max_size",1,"std::vector< unsigned short > const *");
+  SWIG_check_num_args("std::vector< unsigned short >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::__setitem",1,"std::vector< unsigned short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned short >::__setitem",3,"unsigned short");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
-    SWIG_fail_ptr("uint16_vector_max_size",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+    SWIG_fail_ptr("uint16_vector___setitem",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned short > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (unsigned short)lua_tonumber(L, 3);
+  std_vector_Sl_unsigned_SS_short_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< unsigned short > > result;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::begin",1,"std::vector< unsigned short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_begin",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  result = std_vector_Sl_unsigned_SS_short_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< unsigned short > * resultptr = new std::vector_iterator< unsigned short >((const std::vector_iterator< unsigned short > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_unsigned_short_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< unsigned short > > result;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::end",1,"std::vector< unsigned short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_c_end",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  result = std_vector_Sl_unsigned_SS_short_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< unsigned short > * resultptr = new std::vector_iterator< unsigned short >((const std::vector_iterator< unsigned short > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_unsigned_short_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::erase",1,"std::vector< unsigned short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_erase",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_unsigned_SS_short_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::erase",1,"std::vector< unsigned short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned short >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_erase",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_unsigned_SS_short_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_unsigned_short_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_uint16_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_unsigned_short_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_uint16_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'uint16_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< unsigned short >::erase(size_t)\n"
+    "    std::vector< unsigned short >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_uint16_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  unsigned short *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::front",1,"std::vector< unsigned short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_front",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  result = (unsigned short *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_short,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  unsigned short *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::back",1,"std::vector< unsigned short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_back",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  result = (unsigned short *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_short,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  unsigned short *arg2 = 0 ;
+  unsigned short temp2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::push_back",1,"std::vector< unsigned short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::push_back",2,"unsigned short const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_push_back",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  temp2=(unsigned short)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((unsigned short const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::pop_back",1,"std::vector< unsigned short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_pop_back",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  size_t arg2 ;
+  unsigned short *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::at",1,"std::vector< unsigned short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_at",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (unsigned short *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_short,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  size_t arg2 ;
+  unsigned short *arg3 = 0 ;
+  unsigned short temp3 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::assign",1,"std::vector< unsigned short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned short >::assign",3,"unsigned short const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_assign",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  temp3=(unsigned short)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(unsigned short const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  unsigned short *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::data",1,"std::vector< unsigned short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_data",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  result = (unsigned short *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_short,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::size",1,"std::vector< unsigned short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_size",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -7838,6 +12283,33 @@ fail:
 }
 
 
+static int _wrap_uint16_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::resize",1,"std::vector< unsigned short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_resize",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_uint16_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
@@ -7861,22 +12333,75 @@ fail:
 }
 
 
-static int _wrap_uint16_vector_push_back(lua_State* L) {
+static int _wrap_uint16_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
-  unsigned short arg2 ;
+  std::vector< unsigned short > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< unsigned short >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::push_back",1,"std::vector< unsigned short > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::push_back",2,"unsigned short");
+  SWIG_check_num_args("std::vector< unsigned short >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::swap",1,"std::vector< unsigned short > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< unsigned short >::swap",2,"std::vector< unsigned short > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
-    SWIG_fail_ptr("uint16_vector_push_back",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+    SWIG_fail_ptr("uint16_vector_swap",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_swap",2,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  (arg1)->swap(*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_shrink_to_fit(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::shrink_to_fit",1,"std::vector< unsigned short > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+  }
+  
+  (arg1)->shrink_to_fit();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint16_vector_reserve(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned short >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::reserve",1,"std::vector< unsigned short > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::reserve",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
+    SWIG_fail_ptr("uint16_vector_reserve",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned short)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
   
   return SWIG_arg;
   
@@ -7888,42 +12413,19 @@ fail:
 }
 
 
-static int _wrap_uint16_vector_pop_back(lua_State* L) {
+static int _wrap_uint16_vector_max_size(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< unsigned short >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::pop_back",1,"std::vector< unsigned short > *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
-    SWIG_fail_ptr("uint16_vector_pop_back",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
-  }
-  
-  (arg1)->pop_back();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint16_vector_front(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
-  unsigned short result;
-  
-  SWIG_check_num_args("std::vector< unsigned short >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::front",1,"std::vector< unsigned short > const *");
+  SWIG_check_num_args("std::vector< unsigned short >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::max_size",1,"std::vector< unsigned short > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
-    SWIG_fail_ptr("uint16_vector_front",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+    SWIG_fail_ptr("uint16_vector_max_size",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
   }
   
-  result = (unsigned short)((std::vector< unsigned short > const *)arg1)->front();
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -7935,87 +12437,20 @@ fail:
 }
 
 
-static int _wrap_uint16_vector_back(lua_State* L) {
+static int _wrap_uint16_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
-  unsigned short result;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< unsigned short >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::back",1,"std::vector< unsigned short > const *");
+  SWIG_check_num_args("std::vector< unsigned short >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::capacity",1,"std::vector< unsigned short > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
-    SWIG_fail_ptr("uint16_vector_back",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
+    SWIG_fail_ptr("uint16_vector_capacity",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
   }
   
-  result = (unsigned short)((std::vector< unsigned short > const *)arg1)->back();
+  result = (arg1)->capacity();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint16_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
-  unsigned int arg2 ;
-  unsigned short result;
-  
-  SWIG_check_num_args("std::vector< unsigned short >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::__getitem__",1,"std::vector< unsigned short > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
-    SWIG_fail_ptr("uint16_vector___getitem",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (unsigned short)std_vector_Sl_unsigned_SS_short_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint16_vector___setitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned short > *arg1 = (std::vector< unsigned short > *) 0 ;
-  unsigned int arg2 ;
-  unsigned short arg3 ;
-  
-  SWIG_check_num_args("std::vector< unsigned short >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned short >::__setitem__",1,"std::vector< unsigned short > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned short >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned short >::__setitem__",3,"unsigned short");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_short_t,0))){
-    SWIG_fail_ptr("uint16_vector___setitem",1,SWIGTYPE_p_std__vectorT_unsigned_short_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
-  arg3 = (unsigned short)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_unsigned_SS_short_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -8042,16 +12477,27 @@ static swig_lua_attribute swig_uint16_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_uint16_vector_methods[]= {
-    { "size", _wrap_uint16_vector_size},
-    { "max_size", _wrap_uint16_vector_max_size},
-    { "empty", _wrap_uint16_vector_empty},
-    { "clear", _wrap_uint16_vector_clear},
-    { "push_back", _wrap_uint16_vector_push_back},
-    { "pop_back", _wrap_uint16_vector_pop_back},
-    { "front", _wrap_uint16_vector_front},
-    { "back", _wrap_uint16_vector_back},
     { "__getitem", _wrap_uint16_vector___getitem},
     { "__setitem", _wrap_uint16_vector___setitem},
+    { "begin", _wrap_uint16_vector_begin},
+    { "c_end", _wrap_uint16_vector_c_end},
+    { "erase", _wrap_uint16_vector_erase},
+    { "front", _wrap_uint16_vector_front},
+    { "back", _wrap_uint16_vector_back},
+    { "push_back", _wrap_uint16_vector_push_back},
+    { "pop_back", _wrap_uint16_vector_pop_back},
+    { "at", _wrap_uint16_vector_at},
+    { "assign", _wrap_uint16_vector_assign},
+    { "data", _wrap_uint16_vector_data},
+    { "size", _wrap_uint16_vector_size},
+    { "empty", _wrap_uint16_vector_empty},
+    { "resize", _wrap_uint16_vector_resize},
+    { "clear", _wrap_uint16_vector_clear},
+    { "swap", _wrap_uint16_vector_swap},
+    { "shrink_to_fit", _wrap_uint16_vector_shrink_to_fit},
+    { "reserve", _wrap_uint16_vector_reserve},
+    { "max_size", _wrap_uint16_vector_max_size},
+    { "capacity", _wrap_uint16_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_uint16_vector_meta[] = {
@@ -8087,10 +12533,18 @@ static swig_lua_class _wrap_class_uint16_vector = { "uint16_vector", "uint16_vec
 
 static int _wrap_new_int32_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  int *arg2 = 0 ;
+  int temp2 ;
   std::vector< int > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< int >::vector",0,0)
-  result = (std::vector< int > *)new std::vector< int >();
+  SWIG_check_num_args("std::vector< int >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< int >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::vector",2,"int const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  temp2=(int)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< int > *)new std::vector< int >(arg1,(int const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_int_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -8104,13 +12558,13 @@ fail:
 
 static int _wrap_new_int32_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< int > *result = 0 ;
   
   SWIG_check_num_args("std::vector< int >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< int >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< int >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< int > *)new std::vector< int >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_int_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -8147,30 +12601,6 @@ fail:
 }
 
 
-static int _wrap_new_int32_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  int arg2 ;
-  std::vector< int > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< int >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< int >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::vector",2,"int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  arg2 = (int)lua_tonumber(L, 2);
-  result = (std::vector< int > *)new std::vector< int >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_int_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_int32_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -8178,9 +12608,6 @@ static int _wrap_new_int32_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_int32_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -8214,34 +12641,37 @@ static int _wrap_new_int32_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_int32_vector__SWIG_3(L);
+        return _wrap_new_int32_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_int32_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< int >::vector()\n"
-    "    std::vector< int >::vector(unsigned int)\n"
-    "    std::vector< int >::vector(std::vector< int > const &)\n"
-    "    std::vector< int >::vector(unsigned int,int)\n");
+    "    std::vector< int >::vector(size_t,int const &)\n"
+    "    std::vector< int >::vector(size_t)\n"
+    "    std::vector< int >::vector(std::vector< int > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_int32_vector_size(lua_State* L) {
+static int _wrap_int32_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  int result;
   
-  SWIG_check_num_args("std::vector< int >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::size",1,"std::vector< int > const *");
+  SWIG_check_num_args("std::vector< int >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::__getitem",1,"std::vector< int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
-    SWIG_fail_ptr("int32_vector_size",1,SWIGTYPE_p_std__vectorT_int_t);
+    SWIG_fail_ptr("int32_vector___getitem",1,SWIGTYPE_p_std__vectorT_int_t);
   }
   
-  result = (unsigned int)((std::vector< int > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (int)std_vector_Sl_int_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -8253,19 +12683,401 @@ fail:
 }
 
 
-static int _wrap_int32_vector_max_size(lua_State* L) {
+static int _wrap_int32_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  int arg3 ;
   
-  SWIG_check_num_args("std::vector< int >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::max_size",1,"std::vector< int > const *");
+  SWIG_check_num_args("std::vector< int >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::__setitem",1,"std::vector< int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< int >::__setitem",3,"int");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
-    SWIG_fail_ptr("int32_vector_max_size",1,SWIGTYPE_p_std__vectorT_int_t);
+    SWIG_fail_ptr("int32_vector___setitem",1,SWIGTYPE_p_std__vectorT_int_t);
   }
   
-  result = (unsigned int)((std::vector< int > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  arg3 = (int)lua_tonumber(L, 3);
+  std_vector_Sl_int_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< int > > result;
+  
+  SWIG_check_num_args("std::vector< int >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::begin",1,"std::vector< int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_begin",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  result = std_vector_Sl_int_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< int > * resultptr = new std::vector_iterator< int >((const std::vector_iterator< int > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_int_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< int > > result;
+  
+  SWIG_check_num_args("std::vector< int >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::end",1,"std::vector< int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_c_end",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  result = std_vector_Sl_int_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< int > * resultptr = new std::vector_iterator< int >((const std::vector_iterator< int > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_int_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< int >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::erase",1,"std::vector< int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_erase",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_int_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< int >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::erase",1,"std::vector< int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< int >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_erase",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_int_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_int_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_int32_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_int_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_int32_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'int32_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< int >::erase(size_t)\n"
+    "    std::vector< int >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_int32_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< int >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::front",1,"std::vector< int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_front",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  result = (int *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_int,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< int >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::back",1,"std::vector< int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_back",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  result = (int *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_int,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  
+  SWIG_check_num_args("std::vector< int >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::push_back",1,"std::vector< int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::push_back",2,"int const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_push_back",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  temp2=(int)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((int const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< int >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::pop_back",1,"std::vector< int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_pop_back",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  size_t arg2 ;
+  int *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< int >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::at",1,"std::vector< int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_at",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (int *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_int,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  size_t arg2 ;
+  int *arg3 = 0 ;
+  int temp3 ;
+  
+  SWIG_check_num_args("std::vector< int >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::assign",1,"std::vector< int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< int >::assign",3,"int const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_assign",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  temp3=(int)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(int const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< int >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::data",1,"std::vector< int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_data",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  result = (int *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_int,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< int >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::size",1,"std::vector< int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_size",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -8301,6 +13113,33 @@ fail:
 }
 
 
+static int _wrap_int32_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< int >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::resize",1,"std::vector< int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_resize",1,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_int32_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
@@ -8324,21 +13163,25 @@ fail:
 }
 
 
-static int _wrap_int32_vector_push_back(lua_State* L) {
+static int _wrap_int32_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
+  std::vector< int > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< int >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::push_back",1,"std::vector< int > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::push_back",2,"int");
+  SWIG_check_num_args("std::vector< int >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::swap",1,"std::vector< int > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< int >::swap",2,"std::vector< int > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
-    SWIG_fail_ptr("int32_vector_push_back",1,SWIGTYPE_p_std__vectorT_int_t);
+    SWIG_fail_ptr("int32_vector_swap",1,SWIGTYPE_p_std__vectorT_int_t);
   }
   
-  arg2 = (int)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_swap",2,SWIGTYPE_p_std__vectorT_int_t);
+  }
+  
+  (arg1)->swap(*arg2);
   
   return SWIG_arg;
   
@@ -8350,18 +13193,18 @@ fail:
 }
 
 
-static int _wrap_int32_vector_pop_back(lua_State* L) {
+static int _wrap_int32_vector_shrink_to_fit(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   
-  SWIG_check_num_args("std::vector< int >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::pop_back",1,"std::vector< int > *");
+  SWIG_check_num_args("std::vector< int >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::shrink_to_fit",1,"std::vector< int > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
-    SWIG_fail_ptr("int32_vector_pop_back",1,SWIGTYPE_p_std__vectorT_int_t);
+    SWIG_fail_ptr("int32_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_int_t);
   }
   
-  (arg1)->pop_back();
+  (arg1)->shrink_to_fit();
   
   return SWIG_arg;
   
@@ -8373,75 +13216,46 @@ fail:
 }
 
 
-static int _wrap_int32_vector_front(lua_State* L) {
+static int _wrap_int32_vector_reserve(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int result;
+  size_t arg2 ;
   
-  SWIG_check_num_args("std::vector< int >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::front",1,"std::vector< int > const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
-    SWIG_fail_ptr("int32_vector_front",1,SWIGTYPE_p_std__vectorT_int_t);
-  }
-  
-  result = (int)((std::vector< int > const *)arg1)->front();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_int32_vector_back(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int result;
-  
-  SWIG_check_num_args("std::vector< int >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::back",1,"std::vector< int > const *");
+  SWIG_check_num_args("std::vector< int >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::reserve",1,"std::vector< int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::reserve",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
-    SWIG_fail_ptr("int32_vector_back",1,SWIGTYPE_p_std__vectorT_int_t);
-  }
-  
-  result = (int)((std::vector< int > const *)arg1)->back();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_int32_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  unsigned int arg2 ;
-  int result;
-  
-  SWIG_check_num_args("std::vector< int >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::__getitem__",1,"std::vector< int > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
-    SWIG_fail_ptr("int32_vector___getitem",1,SWIGTYPE_p_std__vectorT_int_t);
+    SWIG_fail_ptr("int32_vector_reserve",1,SWIGTYPE_p_std__vectorT_int_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (int)std_vector_Sl_int_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int32_vector_max_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< int >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::max_size",1,"std::vector< int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
+    SWIG_fail_ptr("int32_vector_max_size",1,SWIGTYPE_p_std__vectorT_int_t);
   }
+  
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -8453,30 +13267,20 @@ fail:
 }
 
 
-static int _wrap_int32_vector___setitem(lua_State* L) {
+static int _wrap_int32_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  unsigned int arg2 ;
-  int arg3 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< int >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::__setitem__",1,"std::vector< int > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< int >::__setitem__",3,"int");
+  SWIG_check_num_args("std::vector< int >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< int >::capacity",1,"std::vector< int > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_int_t,0))){
-    SWIG_fail_ptr("int32_vector___setitem",1,SWIGTYPE_p_std__vectorT_int_t);
+    SWIG_fail_ptr("int32_vector_capacity",1,SWIGTYPE_p_std__vectorT_int_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  arg3 = (int)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_int_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
+  result = (arg1)->capacity();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -8503,16 +13307,27 @@ static swig_lua_attribute swig_int32_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_int32_vector_methods[]= {
-    { "size", _wrap_int32_vector_size},
-    { "max_size", _wrap_int32_vector_max_size},
-    { "empty", _wrap_int32_vector_empty},
-    { "clear", _wrap_int32_vector_clear},
-    { "push_back", _wrap_int32_vector_push_back},
-    { "pop_back", _wrap_int32_vector_pop_back},
-    { "front", _wrap_int32_vector_front},
-    { "back", _wrap_int32_vector_back},
     { "__getitem", _wrap_int32_vector___getitem},
     { "__setitem", _wrap_int32_vector___setitem},
+    { "begin", _wrap_int32_vector_begin},
+    { "c_end", _wrap_int32_vector_c_end},
+    { "erase", _wrap_int32_vector_erase},
+    { "front", _wrap_int32_vector_front},
+    { "back", _wrap_int32_vector_back},
+    { "push_back", _wrap_int32_vector_push_back},
+    { "pop_back", _wrap_int32_vector_pop_back},
+    { "at", _wrap_int32_vector_at},
+    { "assign", _wrap_int32_vector_assign},
+    { "data", _wrap_int32_vector_data},
+    { "size", _wrap_int32_vector_size},
+    { "empty", _wrap_int32_vector_empty},
+    { "resize", _wrap_int32_vector_resize},
+    { "clear", _wrap_int32_vector_clear},
+    { "swap", _wrap_int32_vector_swap},
+    { "shrink_to_fit", _wrap_int32_vector_shrink_to_fit},
+    { "reserve", _wrap_int32_vector_reserve},
+    { "max_size", _wrap_int32_vector_max_size},
+    { "capacity", _wrap_int32_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_int32_vector_meta[] = {
@@ -8548,10 +13363,19 @@ static swig_lua_class _wrap_class_int32_vector = { "int32_vector", "int32_vector
 
 static int _wrap_new_uint32_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int temp2 ;
   std::vector< unsigned int > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< unsigned int >::vector",0,0)
-  result = (std::vector< unsigned int > *)new std::vector< unsigned int >();
+  SWIG_check_num_args("std::vector< unsigned int >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned int >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::vector",2,"unsigned int const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  temp2=(unsigned int)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< unsigned int > *)new std::vector< unsigned int >(arg1,(unsigned int const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_int_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -8565,13 +13389,13 @@ fail:
 
 static int _wrap_new_uint32_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< unsigned int > *result = 0 ;
   
   SWIG_check_num_args("std::vector< unsigned int >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned int >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned int >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< unsigned int > *)new std::vector< unsigned int >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_int_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -8608,31 +13432,6 @@ fail:
 }
 
 
-static int _wrap_new_uint32_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  unsigned int arg2 ;
-  std::vector< unsigned int > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< unsigned int >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned int >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::vector",2,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  result = (std::vector< unsigned int > *)new std::vector< unsigned int >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_int_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_uint32_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -8640,9 +13439,6 @@ static int _wrap_new_uint32_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_uint32_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -8676,34 +13472,37 @@ static int _wrap_new_uint32_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_uint32_vector__SWIG_3(L);
+        return _wrap_new_uint32_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_uint32_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< unsigned int >::vector()\n"
-    "    std::vector< unsigned int >::vector(unsigned int)\n"
-    "    std::vector< unsigned int >::vector(std::vector< unsigned int > const &)\n"
-    "    std::vector< unsigned int >::vector(unsigned int,unsigned int)\n");
+    "    std::vector< unsigned int >::vector(size_t,unsigned int const &)\n"
+    "    std::vector< unsigned int >::vector(size_t)\n"
+    "    std::vector< unsigned int >::vector(std::vector< unsigned int > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_uint32_vector_size(lua_State* L) {
+static int _wrap_uint32_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  size_t arg2 ;
   unsigned int result;
   
-  SWIG_check_num_args("std::vector< unsigned int >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::size",1,"std::vector< unsigned int > const *");
+  SWIG_check_num_args("std::vector< unsigned int >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::__getitem",1,"std::vector< unsigned int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
-    SWIG_fail_ptr("uint32_vector_size",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+    SWIG_fail_ptr("uint32_vector___getitem",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned int > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (unsigned int)std_vector_Sl_unsigned_SS_int_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -8715,19 +13514,404 @@ fail:
 }
 
 
-static int _wrap_uint32_vector_max_size(lua_State* L) {
+static int _wrap_uint32_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  unsigned int arg3 ;
   
-  SWIG_check_num_args("std::vector< unsigned int >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::max_size",1,"std::vector< unsigned int > const *");
+  SWIG_check_num_args("std::vector< unsigned int >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::__setitem",1,"std::vector< unsigned int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned int >::__setitem",3,"unsigned int");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
-    SWIG_fail_ptr("uint32_vector_max_size",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+    SWIG_fail_ptr("uint32_vector___setitem",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned int > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (unsigned int)lua_tonumber(L, 3);
+  std_vector_Sl_unsigned_SS_int_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< unsigned int > > result;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::begin",1,"std::vector< unsigned int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_begin",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  result = std_vector_Sl_unsigned_SS_int_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< unsigned int > * resultptr = new std::vector_iterator< unsigned int >((const std::vector_iterator< unsigned int > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_unsigned_int_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< unsigned int > > result;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::end",1,"std::vector< unsigned int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_c_end",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  result = std_vector_Sl_unsigned_SS_int_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< unsigned int > * resultptr = new std::vector_iterator< unsigned int >((const std::vector_iterator< unsigned int > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_unsigned_int_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::erase",1,"std::vector< unsigned int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_erase",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_unsigned_SS_int_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::erase",1,"std::vector< unsigned int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned int >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_erase",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_unsigned_SS_int_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_unsigned_int_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_uint32_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_unsigned_int_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_uint32_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'uint32_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< unsigned int >::erase(size_t)\n"
+    "    std::vector< unsigned int >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_uint32_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  unsigned int *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::front",1,"std::vector< unsigned int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_front",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  result = (unsigned int *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_int,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  unsigned int *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::back",1,"std::vector< unsigned int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_back",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  result = (unsigned int *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_int,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int temp2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::push_back",1,"std::vector< unsigned int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::push_back",2,"unsigned int const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_push_back",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  temp2=(unsigned int)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((unsigned int const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::pop_back",1,"std::vector< unsigned int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_pop_back",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  size_t arg2 ;
+  unsigned int *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::at",1,"std::vector< unsigned int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_at",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (unsigned int *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_int,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  size_t arg2 ;
+  unsigned int *arg3 = 0 ;
+  unsigned int temp3 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::assign",1,"std::vector< unsigned int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned int >::assign",3,"unsigned int const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_assign",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  temp3=(unsigned int)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(unsigned int const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  unsigned int *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::data",1,"std::vector< unsigned int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_data",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  result = (unsigned int *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_int,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::size",1,"std::vector< unsigned int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_size",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -8763,6 +13947,33 @@ fail:
 }
 
 
+static int _wrap_uint32_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::resize",1,"std::vector< unsigned int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_resize",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_uint32_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
@@ -8786,22 +13997,75 @@ fail:
 }
 
 
-static int _wrap_uint32_vector_push_back(lua_State* L) {
+static int _wrap_uint32_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
-  unsigned int arg2 ;
+  std::vector< unsigned int > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< unsigned int >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::push_back",1,"std::vector< unsigned int > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::push_back",2,"unsigned int");
+  SWIG_check_num_args("std::vector< unsigned int >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::swap",1,"std::vector< unsigned int > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< unsigned int >::swap",2,"std::vector< unsigned int > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
-    SWIG_fail_ptr("uint32_vector_push_back",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+    SWIG_fail_ptr("uint32_vector_swap",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_swap",2,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  (arg1)->swap(*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_shrink_to_fit(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::shrink_to_fit",1,"std::vector< unsigned int > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+  }
+  
+  (arg1)->shrink_to_fit();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint32_vector_reserve(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned int >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::reserve",1,"std::vector< unsigned int > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::reserve",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
+    SWIG_fail_ptr("uint32_vector_reserve",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
   
   return SWIG_arg;
   
@@ -8813,42 +14077,19 @@ fail:
 }
 
 
-static int _wrap_uint32_vector_pop_back(lua_State* L) {
+static int _wrap_uint32_vector_max_size(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< unsigned int >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::pop_back",1,"std::vector< unsigned int > *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
-    SWIG_fail_ptr("uint32_vector_pop_back",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
-  }
-  
-  (arg1)->pop_back();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint32_vector_front(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
-  unsigned int result;
-  
-  SWIG_check_num_args("std::vector< unsigned int >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::front",1,"std::vector< unsigned int > const *");
+  SWIG_check_num_args("std::vector< unsigned int >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::max_size",1,"std::vector< unsigned int > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
-    SWIG_fail_ptr("uint32_vector_front",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+    SWIG_fail_ptr("uint32_vector_max_size",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned int > const *)arg1)->front();
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -8860,87 +14101,20 @@ fail:
 }
 
 
-static int _wrap_uint32_vector_back(lua_State* L) {
+static int _wrap_uint32_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
-  unsigned int result;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< unsigned int >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::back",1,"std::vector< unsigned int > const *");
+  SWIG_check_num_args("std::vector< unsigned int >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::capacity",1,"std::vector< unsigned int > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
-    SWIG_fail_ptr("uint32_vector_back",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
+    SWIG_fail_ptr("uint32_vector_capacity",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned int > const *)arg1)->back();
+  result = (arg1)->capacity();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint32_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  unsigned int result;
-  
-  SWIG_check_num_args("std::vector< unsigned int >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::__getitem__",1,"std::vector< unsigned int > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
-    SWIG_fail_ptr("uint32_vector___getitem",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (unsigned int)std_vector_Sl_unsigned_SS_int_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint32_vector___setitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned int > *arg1 = (std::vector< unsigned int > *) 0 ;
-  unsigned int arg2 ;
-  unsigned int arg3 ;
-  
-  SWIG_check_num_args("std::vector< unsigned int >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned int >::__setitem__",1,"std::vector< unsigned int > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned int >::__setitem__",3,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_int_t,0))){
-    SWIG_fail_ptr("uint32_vector___setitem",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
-  arg3 = (unsigned int)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_unsigned_SS_int_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -8967,16 +14141,27 @@ static swig_lua_attribute swig_uint32_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_uint32_vector_methods[]= {
-    { "size", _wrap_uint32_vector_size},
-    { "max_size", _wrap_uint32_vector_max_size},
-    { "empty", _wrap_uint32_vector_empty},
-    { "clear", _wrap_uint32_vector_clear},
-    { "push_back", _wrap_uint32_vector_push_back},
-    { "pop_back", _wrap_uint32_vector_pop_back},
-    { "front", _wrap_uint32_vector_front},
-    { "back", _wrap_uint32_vector_back},
     { "__getitem", _wrap_uint32_vector___getitem},
     { "__setitem", _wrap_uint32_vector___setitem},
+    { "begin", _wrap_uint32_vector_begin},
+    { "c_end", _wrap_uint32_vector_c_end},
+    { "erase", _wrap_uint32_vector_erase},
+    { "front", _wrap_uint32_vector_front},
+    { "back", _wrap_uint32_vector_back},
+    { "push_back", _wrap_uint32_vector_push_back},
+    { "pop_back", _wrap_uint32_vector_pop_back},
+    { "at", _wrap_uint32_vector_at},
+    { "assign", _wrap_uint32_vector_assign},
+    { "data", _wrap_uint32_vector_data},
+    { "size", _wrap_uint32_vector_size},
+    { "empty", _wrap_uint32_vector_empty},
+    { "resize", _wrap_uint32_vector_resize},
+    { "clear", _wrap_uint32_vector_clear},
+    { "swap", _wrap_uint32_vector_swap},
+    { "shrink_to_fit", _wrap_uint32_vector_shrink_to_fit},
+    { "reserve", _wrap_uint32_vector_reserve},
+    { "max_size", _wrap_uint32_vector_max_size},
+    { "capacity", _wrap_uint32_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_uint32_vector_meta[] = {
@@ -9012,10 +14197,18 @@ static swig_lua_class _wrap_class_uint32_vector = { "uint32_vector", "uint32_vec
 
 static int _wrap_new_int64_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  long *arg2 = 0 ;
+  long temp2 ;
   std::vector< long > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< long >::vector",0,0)
-  result = (std::vector< long > *)new std::vector< long >();
+  SWIG_check_num_args("std::vector< long >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< long >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::vector",2,"long const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  temp2=(long)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< long > *)new std::vector< long >(arg1,(long const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_long_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -9029,13 +14222,13 @@ fail:
 
 static int _wrap_new_int64_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< long > *result = 0 ;
   
   SWIG_check_num_args("std::vector< long >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< long >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< long >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< long > *)new std::vector< long >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_long_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -9072,30 +14265,6 @@ fail:
 }
 
 
-static int _wrap_new_int64_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  long arg2 ;
-  std::vector< long > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< long >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< long >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::vector",2,"long");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  arg2 = (long)lua_tonumber(L, 2);
-  result = (std::vector< long > *)new std::vector< long >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_long_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_int64_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -9103,9 +14272,6 @@ static int _wrap_new_int64_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_int64_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -9139,34 +14305,37 @@ static int _wrap_new_int64_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_int64_vector__SWIG_3(L);
+        return _wrap_new_int64_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_int64_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< long >::vector()\n"
-    "    std::vector< long >::vector(unsigned int)\n"
-    "    std::vector< long >::vector(std::vector< long > const &)\n"
-    "    std::vector< long >::vector(unsigned int,long)\n");
+    "    std::vector< long >::vector(size_t,long const &)\n"
+    "    std::vector< long >::vector(size_t)\n"
+    "    std::vector< long >::vector(std::vector< long > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_int64_vector_size(lua_State* L) {
+static int _wrap_int64_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< long > *arg1 = (std::vector< long > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  long result;
   
-  SWIG_check_num_args("std::vector< long >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::size",1,"std::vector< long > const *");
+  SWIG_check_num_args("std::vector< long >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::__getitem",1,"std::vector< long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
-    SWIG_fail_ptr("int64_vector_size",1,SWIGTYPE_p_std__vectorT_long_t);
+    SWIG_fail_ptr("int64_vector___getitem",1,SWIGTYPE_p_std__vectorT_long_t);
   }
   
-  result = (unsigned int)((std::vector< long > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (long)std_vector_Sl_long_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -9178,19 +14347,401 @@ fail:
 }
 
 
-static int _wrap_int64_vector_max_size(lua_State* L) {
+static int _wrap_int64_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< long > *arg1 = (std::vector< long > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  long arg3 ;
   
-  SWIG_check_num_args("std::vector< long >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::max_size",1,"std::vector< long > const *");
+  SWIG_check_num_args("std::vector< long >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::__setitem",1,"std::vector< long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< long >::__setitem",3,"long");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
-    SWIG_fail_ptr("int64_vector_max_size",1,SWIGTYPE_p_std__vectorT_long_t);
+    SWIG_fail_ptr("int64_vector___setitem",1,SWIGTYPE_p_std__vectorT_long_t);
   }
   
-  result = (unsigned int)((std::vector< long > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  arg3 = (long)lua_tonumber(L, 3);
+  std_vector_Sl_long_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< long > > result;
+  
+  SWIG_check_num_args("std::vector< long >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::begin",1,"std::vector< long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_begin",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  result = std_vector_Sl_long_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< long > * resultptr = new std::vector_iterator< long >((const std::vector_iterator< long > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_long_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< long > > result;
+  
+  SWIG_check_num_args("std::vector< long >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::end",1,"std::vector< long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_c_end",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  result = std_vector_Sl_long_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< long > * resultptr = new std::vector_iterator< long >((const std::vector_iterator< long > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_long_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< long >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::erase",1,"std::vector< long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_erase",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_long_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< long >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::erase",1,"std::vector< long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< long >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_erase",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_long_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_long_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_int64_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_long_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_int64_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'int64_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< long >::erase(size_t)\n"
+    "    std::vector< long >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_int64_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  long *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< long >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::front",1,"std::vector< long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_front",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  result = (long *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_long,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  long *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< long >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::back",1,"std::vector< long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_back",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  result = (long *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_long,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  long *arg2 = 0 ;
+  long temp2 ;
+  
+  SWIG_check_num_args("std::vector< long >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::push_back",1,"std::vector< long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::push_back",2,"long const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_push_back",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  temp2=(long)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((long const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< long >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::pop_back",1,"std::vector< long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_pop_back",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  size_t arg2 ;
+  long *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< long >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::at",1,"std::vector< long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_at",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (long *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_long,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  size_t arg2 ;
+  long *arg3 = 0 ;
+  long temp3 ;
+  
+  SWIG_check_num_args("std::vector< long >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::assign",1,"std::vector< long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< long >::assign",3,"long const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_assign",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  temp3=(long)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(long const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  long *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< long >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::data",1,"std::vector< long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_data",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  result = (long *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_long,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< long >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::size",1,"std::vector< long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_size",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -9226,6 +14777,33 @@ fail:
 }
 
 
+static int _wrap_int64_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< long >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::resize",1,"std::vector< long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_resize",1,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_int64_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< long > *arg1 = (std::vector< long > *) 0 ;
@@ -9249,21 +14827,25 @@ fail:
 }
 
 
-static int _wrap_int64_vector_push_back(lua_State* L) {
+static int _wrap_int64_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< long > *arg1 = (std::vector< long > *) 0 ;
-  long arg2 ;
+  std::vector< long > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< long >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::push_back",1,"std::vector< long > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::push_back",2,"long");
+  SWIG_check_num_args("std::vector< long >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::swap",1,"std::vector< long > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< long >::swap",2,"std::vector< long > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
-    SWIG_fail_ptr("int64_vector_push_back",1,SWIGTYPE_p_std__vectorT_long_t);
+    SWIG_fail_ptr("int64_vector_swap",1,SWIGTYPE_p_std__vectorT_long_t);
   }
   
-  arg2 = (long)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_swap",2,SWIGTYPE_p_std__vectorT_long_t);
+  }
+  
+  (arg1)->swap(*arg2);
   
   return SWIG_arg;
   
@@ -9275,18 +14857,18 @@ fail:
 }
 
 
-static int _wrap_int64_vector_pop_back(lua_State* L) {
+static int _wrap_int64_vector_shrink_to_fit(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< long > *arg1 = (std::vector< long > *) 0 ;
   
-  SWIG_check_num_args("std::vector< long >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::pop_back",1,"std::vector< long > *");
+  SWIG_check_num_args("std::vector< long >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::shrink_to_fit",1,"std::vector< long > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
-    SWIG_fail_ptr("int64_vector_pop_back",1,SWIGTYPE_p_std__vectorT_long_t);
+    SWIG_fail_ptr("int64_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_long_t);
   }
   
-  (arg1)->pop_back();
+  (arg1)->shrink_to_fit();
   
   return SWIG_arg;
   
@@ -9298,75 +14880,46 @@ fail:
 }
 
 
-static int _wrap_int64_vector_front(lua_State* L) {
+static int _wrap_int64_vector_reserve(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< long > *arg1 = (std::vector< long > *) 0 ;
-  long result;
+  size_t arg2 ;
   
-  SWIG_check_num_args("std::vector< long >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::front",1,"std::vector< long > const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
-    SWIG_fail_ptr("int64_vector_front",1,SWIGTYPE_p_std__vectorT_long_t);
-  }
-  
-  result = (long)((std::vector< long > const *)arg1)->front();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_int64_vector_back(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
-  long result;
-  
-  SWIG_check_num_args("std::vector< long >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::back",1,"std::vector< long > const *");
+  SWIG_check_num_args("std::vector< long >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::reserve",1,"std::vector< long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::reserve",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
-    SWIG_fail_ptr("int64_vector_back",1,SWIGTYPE_p_std__vectorT_long_t);
-  }
-  
-  result = (long)((std::vector< long > const *)arg1)->back();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_int64_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
-  unsigned int arg2 ;
-  long result;
-  
-  SWIG_check_num_args("std::vector< long >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::__getitem__",1,"std::vector< long > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
-    SWIG_fail_ptr("int64_vector___getitem",1,SWIGTYPE_p_std__vectorT_long_t);
+    SWIG_fail_ptr("int64_vector_reserve",1,SWIGTYPE_p_std__vectorT_long_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (long)std_vector_Sl_long_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_int64_vector_max_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< long > *arg1 = (std::vector< long > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< long >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::max_size",1,"std::vector< long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
+    SWIG_fail_ptr("int64_vector_max_size",1,SWIGTYPE_p_std__vectorT_long_t);
   }
+  
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -9378,30 +14931,20 @@ fail:
 }
 
 
-static int _wrap_int64_vector___setitem(lua_State* L) {
+static int _wrap_int64_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< long > *arg1 = (std::vector< long > *) 0 ;
-  unsigned int arg2 ;
-  long arg3 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< long >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::__setitem__",1,"std::vector< long > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< long >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< long >::__setitem__",3,"long");
+  SWIG_check_num_args("std::vector< long >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< long >::capacity",1,"std::vector< long > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_long_t,0))){
-    SWIG_fail_ptr("int64_vector___setitem",1,SWIGTYPE_p_std__vectorT_long_t);
+    SWIG_fail_ptr("int64_vector_capacity",1,SWIGTYPE_p_std__vectorT_long_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  arg3 = (long)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_long_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
+  result = (arg1)->capacity();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -9428,16 +14971,27 @@ static swig_lua_attribute swig_int64_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_int64_vector_methods[]= {
-    { "size", _wrap_int64_vector_size},
-    { "max_size", _wrap_int64_vector_max_size},
-    { "empty", _wrap_int64_vector_empty},
-    { "clear", _wrap_int64_vector_clear},
-    { "push_back", _wrap_int64_vector_push_back},
-    { "pop_back", _wrap_int64_vector_pop_back},
-    { "front", _wrap_int64_vector_front},
-    { "back", _wrap_int64_vector_back},
     { "__getitem", _wrap_int64_vector___getitem},
     { "__setitem", _wrap_int64_vector___setitem},
+    { "begin", _wrap_int64_vector_begin},
+    { "c_end", _wrap_int64_vector_c_end},
+    { "erase", _wrap_int64_vector_erase},
+    { "front", _wrap_int64_vector_front},
+    { "back", _wrap_int64_vector_back},
+    { "push_back", _wrap_int64_vector_push_back},
+    { "pop_back", _wrap_int64_vector_pop_back},
+    { "at", _wrap_int64_vector_at},
+    { "assign", _wrap_int64_vector_assign},
+    { "data", _wrap_int64_vector_data},
+    { "size", _wrap_int64_vector_size},
+    { "empty", _wrap_int64_vector_empty},
+    { "resize", _wrap_int64_vector_resize},
+    { "clear", _wrap_int64_vector_clear},
+    { "swap", _wrap_int64_vector_swap},
+    { "shrink_to_fit", _wrap_int64_vector_shrink_to_fit},
+    { "reserve", _wrap_int64_vector_reserve},
+    { "max_size", _wrap_int64_vector_max_size},
+    { "capacity", _wrap_int64_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_int64_vector_meta[] = {
@@ -9473,10 +15027,19 @@ static swig_lua_class _wrap_class_int64_vector = { "int64_vector", "int64_vector
 
 static int _wrap_new_uint64_vector__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
+  size_t arg1 ;
+  unsigned long *arg2 = 0 ;
+  unsigned long temp2 ;
   std::vector< unsigned long > *result = 0 ;
   
-  SWIG_check_num_args("std::vector< unsigned long >::vector",0,0)
-  result = (std::vector< unsigned long > *)new std::vector< unsigned long >();
+  SWIG_check_num_args("std::vector< unsigned long >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned long >::vector",1,"size_t");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::vector",2,"unsigned long const &");
+  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
+  arg1 = (size_t)lua_tonumber(L, 1);
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  temp2=(unsigned long)lua_tonumber(L,2); arg2=&temp2;
+  result = (std::vector< unsigned long > *)new std::vector< unsigned long >(arg1,(unsigned long const &)*arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_long_t,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -9490,13 +15053,13 @@ fail:
 
 static int _wrap_new_uint64_vector__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  unsigned int arg1 ;
+  size_t arg1 ;
   std::vector< unsigned long > *result = 0 ;
   
   SWIG_check_num_args("std::vector< unsigned long >::vector",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned long >::vector",1,"unsigned int");
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned long >::vector",1,"size_t");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  arg1 = (size_t)lua_tonumber(L, 1);
   result = (std::vector< unsigned long > *)new std::vector< unsigned long >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_long_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -9533,31 +15096,6 @@ fail:
 }
 
 
-static int _wrap_new_uint64_vector__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned int arg1 ;
-  unsigned long arg2 ;
-  std::vector< unsigned long > *result = 0 ;
-  
-  SWIG_check_num_args("std::vector< unsigned long >::vector",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned long >::vector",1,"unsigned int");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::vector",2,"unsigned long");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned long)lua_tonumber(L, 2);
-  result = (std::vector< unsigned long > *)new std::vector< unsigned long >(arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_long_t,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_new_uint64_vector(lua_State* L) {
   int argc;
   int argv[3]={
@@ -9565,9 +15103,6 @@ static int _wrap_new_uint64_vector(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 0) {
-    return _wrap_new_uint64_vector__SWIG_0(L);
-  }
   if (argc == 1) {
     int _v = 0;
     {
@@ -9601,34 +15136,37 @@ static int _wrap_new_uint64_vector(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_new_uint64_vector__SWIG_3(L);
+        return _wrap_new_uint64_vector__SWIG_0(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_uint64_vector'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< unsigned long >::vector()\n"
-    "    std::vector< unsigned long >::vector(unsigned int)\n"
-    "    std::vector< unsigned long >::vector(std::vector< unsigned long > const &)\n"
-    "    std::vector< unsigned long >::vector(unsigned int,unsigned long)\n");
+    "    std::vector< unsigned long >::vector(size_t,unsigned long const &)\n"
+    "    std::vector< unsigned long >::vector(size_t)\n"
+    "    std::vector< unsigned long >::vector(std::vector< unsigned long > const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_uint64_vector_size(lua_State* L) {
+static int _wrap_uint64_vector___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  unsigned long result;
   
-  SWIG_check_num_args("std::vector< unsigned long >::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::size",1,"std::vector< unsigned long > const *");
+  SWIG_check_num_args("std::vector< unsigned long >::__getitem",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::__getitem",1,"std::vector< unsigned long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::__getitem",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
-    SWIG_fail_ptr("uint64_vector_size",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+    SWIG_fail_ptr("uint64_vector___getitem",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned long > const *)arg1)->size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (unsigned long)std_vector_Sl_unsigned_SS_long_Sg____getitem__SWIG(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -9640,19 +15178,404 @@ fail:
 }
 
 
-static int _wrap_uint64_vector_max_size(lua_State* L) {
+static int _wrap_uint64_vector___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  unsigned long arg3 ;
   
-  SWIG_check_num_args("std::vector< unsigned long >::max_size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::max_size",1,"std::vector< unsigned long > const *");
+  SWIG_check_num_args("std::vector< unsigned long >::__setitem",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::__setitem",1,"std::vector< unsigned long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::__setitem",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned long >::__setitem",3,"unsigned long");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
-    SWIG_fail_ptr("uint64_vector_max_size",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+    SWIG_fail_ptr("uint64_vector___setitem",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
   }
   
-  result = (unsigned int)((std::vector< unsigned long > const *)arg1)->max_size();
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (unsigned long)lua_tonumber(L, 3);
+  std_vector_Sl_unsigned_SS_long_Sg____setitem__SWIG(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_begin(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< unsigned long > > result;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::begin",1,"std::vector< unsigned long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_begin",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  result = std_vector_Sl_unsigned_SS_long_Sg__begin__SWIG(arg1);
+  {
+    std::vector_iterator< unsigned long > * resultptr = new std::vector_iterator< unsigned long >((const std::vector_iterator< unsigned long > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_unsigned_long_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_c_end(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  SwigValueWrapper< std::vector_iterator< unsigned long > > result;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::end",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::end",1,"std::vector< unsigned long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_c_end",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  result = std_vector_Sl_unsigned_SS_long_Sg__end__SWIG(arg1);
+  {
+    std::vector_iterator< unsigned long > * resultptr = new std::vector_iterator< unsigned long >((const std::vector_iterator< unsigned long > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vector_iteratorT_unsigned_long_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::erase",1,"std::vector< unsigned long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_erase",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  std_vector_Sl_unsigned_SS_long_Sg__erase__SWIG_0(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::erase",1,"std::vector< unsigned long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned long >::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_erase",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  std_vector_Sl_unsigned_SS_long_Sg__erase__SWIG_1(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_unsigned_long_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_uint64_vector_erase__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_unsigned_long_t, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_uint64_vector_erase__SWIG_1(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'uint64_vector_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< unsigned long >::erase(size_t)\n"
+    "    std::vector< unsigned long >::erase(size_t,size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_uint64_vector_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  unsigned long *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::front",1,"std::vector< unsigned long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_front",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  result = (unsigned long *) &(arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_long,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  unsigned long *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::back",1,"std::vector< unsigned long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_back",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  result = (unsigned long *) &(arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_long,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  unsigned long *arg2 = 0 ;
+  unsigned long temp2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::push_back",1,"std::vector< unsigned long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::push_back",2,"unsigned long const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_push_back",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  temp2=(unsigned long)lua_tonumber(L,2); arg2=&temp2;
+  (arg1)->push_back((unsigned long const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::pop_back",1,"std::vector< unsigned long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_pop_back",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_at(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  size_t arg2 ;
+  unsigned long *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::at",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::at",1,"std::vector< unsigned long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::at",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_at",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (unsigned long *) &(arg1)->at(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_long,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_assign(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  size_t arg2 ;
+  unsigned long *arg3 = 0 ;
+  unsigned long temp3 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::assign",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::assign",1,"std::vector< unsigned long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::assign",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned long >::assign",3,"unsigned long const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_assign",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  temp3=(unsigned long)lua_tonumber(L,3); arg3=&temp3;
+  (arg1)->assign(arg2,(unsigned long const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_data(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  unsigned long *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::data",1,"std::vector< unsigned long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_data",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  result = (unsigned long *)(arg1)->data();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_long,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::size",1,"std::vector< unsigned long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_size",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  result = (arg1)->size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -9688,6 +15611,33 @@ fail:
 }
 
 
+static int _wrap_uint64_vector_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::resize",1,"std::vector< unsigned long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_resize",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_uint64_vector_clear(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
@@ -9711,22 +15661,75 @@ fail:
 }
 
 
-static int _wrap_uint64_vector_push_back(lua_State* L) {
+static int _wrap_uint64_vector_swap(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
-  unsigned long arg2 ;
+  std::vector< unsigned long > *arg2 = 0 ;
   
-  SWIG_check_num_args("std::vector< unsigned long >::push_back",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::push_back",1,"std::vector< unsigned long > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::push_back",2,"unsigned long");
+  SWIG_check_num_args("std::vector< unsigned long >::swap",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::swap",1,"std::vector< unsigned long > *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< unsigned long >::swap",2,"std::vector< unsigned long > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
-    SWIG_fail_ptr("uint64_vector_push_back",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+    SWIG_fail_ptr("uint64_vector_swap",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_swap",2,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  (arg1)->swap(*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_shrink_to_fit(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::shrink_to_fit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::shrink_to_fit",1,"std::vector< unsigned long > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_shrink_to_fit",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+  }
+  
+  (arg1)->shrink_to_fit();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_uint64_vector_reserve(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::vector< unsigned long >::reserve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::reserve",1,"std::vector< unsigned long > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::reserve",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
+    SWIG_fail_ptr("uint64_vector_reserve",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
   }
   
   SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned long)lua_tonumber(L, 2);
-  (arg1)->push_back(arg2);
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->reserve(arg2);
   
   return SWIG_arg;
   
@@ -9738,42 +15741,19 @@ fail:
 }
 
 
-static int _wrap_uint64_vector_pop_back(lua_State* L) {
+static int _wrap_uint64_vector_max_size(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< unsigned long >::pop_back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::pop_back",1,"std::vector< unsigned long > *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
-    SWIG_fail_ptr("uint64_vector_pop_back",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
-  }
-  
-  (arg1)->pop_back();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint64_vector_front(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
-  unsigned long result;
-  
-  SWIG_check_num_args("std::vector< unsigned long >::front",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::front",1,"std::vector< unsigned long > const *");
+  SWIG_check_num_args("std::vector< unsigned long >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::max_size",1,"std::vector< unsigned long > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
-    SWIG_fail_ptr("uint64_vector_front",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+    SWIG_fail_ptr("uint64_vector_max_size",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
   }
   
-  result = (unsigned long)((std::vector< unsigned long > const *)arg1)->front();
+  result = (arg1)->max_size();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -9785,87 +15765,20 @@ fail:
 }
 
 
-static int _wrap_uint64_vector_back(lua_State* L) {
+static int _wrap_uint64_vector_capacity(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
-  unsigned long result;
+  size_t result;
   
-  SWIG_check_num_args("std::vector< unsigned long >::back",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::back",1,"std::vector< unsigned long > const *");
+  SWIG_check_num_args("std::vector< unsigned long >::capacity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::capacity",1,"std::vector< unsigned long > *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
-    SWIG_fail_ptr("uint64_vector_back",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
+    SWIG_fail_ptr("uint64_vector_capacity",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
   }
   
-  result = (unsigned long)((std::vector< unsigned long > const *)arg1)->back();
+  result = (arg1)->capacity();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint64_vector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
-  unsigned int arg2 ;
-  unsigned long result;
-  
-  SWIG_check_num_args("std::vector< unsigned long >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::__getitem__",1,"std::vector< unsigned long > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::__getitem__",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
-    SWIG_fail_ptr("uint64_vector___getitem",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  try {
-    result = (unsigned long)std_vector_Sl_unsigned_SS_long_Sg____getitem____SWIG(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_uint64_vector___setitem(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< unsigned long > *arg1 = (std::vector< unsigned long > *) 0 ;
-  unsigned int arg2 ;
-  unsigned long arg3 ;
-  
-  SWIG_check_num_args("std::vector< unsigned long >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< unsigned long >::__setitem__",1,"std::vector< unsigned long > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned long >::__setitem__",2,"unsigned int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::vector< unsigned long >::__setitem__",3,"unsigned long");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_unsigned_long_t,0))){
-    SWIG_fail_ptr("uint64_vector___setitem",1,SWIGTYPE_p_std__vectorT_unsigned_long_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
-  arg3 = (unsigned long)lua_tonumber(L, 3);
-  try {
-    std_vector_Sl_unsigned_SS_long_Sg____setitem____SWIG(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_exception(SWIG_IndexError, (&_e)->what());
-  }
-  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -9892,16 +15805,27 @@ static swig_lua_attribute swig_uint64_vector_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_uint64_vector_methods[]= {
-    { "size", _wrap_uint64_vector_size},
-    { "max_size", _wrap_uint64_vector_max_size},
-    { "empty", _wrap_uint64_vector_empty},
-    { "clear", _wrap_uint64_vector_clear},
-    { "push_back", _wrap_uint64_vector_push_back},
-    { "pop_back", _wrap_uint64_vector_pop_back},
-    { "front", _wrap_uint64_vector_front},
-    { "back", _wrap_uint64_vector_back},
     { "__getitem", _wrap_uint64_vector___getitem},
     { "__setitem", _wrap_uint64_vector___setitem},
+    { "begin", _wrap_uint64_vector_begin},
+    { "c_end", _wrap_uint64_vector_c_end},
+    { "erase", _wrap_uint64_vector_erase},
+    { "front", _wrap_uint64_vector_front},
+    { "back", _wrap_uint64_vector_back},
+    { "push_back", _wrap_uint64_vector_push_back},
+    { "pop_back", _wrap_uint64_vector_pop_back},
+    { "at", _wrap_uint64_vector_at},
+    { "assign", _wrap_uint64_vector_assign},
+    { "data", _wrap_uint64_vector_data},
+    { "size", _wrap_uint64_vector_size},
+    { "empty", _wrap_uint64_vector_empty},
+    { "resize", _wrap_uint64_vector_resize},
+    { "clear", _wrap_uint64_vector_clear},
+    { "swap", _wrap_uint64_vector_swap},
+    { "shrink_to_fit", _wrap_uint64_vector_shrink_to_fit},
+    { "reserve", _wrap_uint64_vector_reserve},
+    { "max_size", _wrap_uint64_vector_max_size},
+    { "capacity", _wrap_uint64_vector_capacity},
     {0,0}
 };
 static swig_lua_method swig_uint64_vector_meta[] = {
@@ -9934,6 +15858,174 @@ static swig_lua_namespace swig_uint64_vector_Sf_SwigStatic = {
 static swig_lua_class *swig_uint64_vector_bases[] = {0};
 static const char *swig_uint64_vector_base_names[] = {0};
 static swig_lua_class _wrap_class_uint64_vector = { "uint64_vector", "uint64_vector", &SWIGTYPE_p_std__vectorT_unsigned_long_t,_proxy__wrap_new_uint64_vector, swig_delete_uint64_vector, swig_uint64_vector_methods, swig_uint64_vector_attributes, &swig_uint64_vector_Sf_SwigStatic, swig_uint64_vector_meta, swig_uint64_vector_bases, swig_uint64_vector_base_names };
+
+static int _wrap_matrix_index_i_set(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::matrix_index *arg1 = (SoundWave::matrix_index *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("SoundWave::matrix_index::i",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::matrix_index::i",1,"SoundWave::matrix_index *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::matrix_index::i",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__matrix_index,0))){
+    SWIG_fail_ptr("matrix_index_i_set",1,SWIGTYPE_p_SoundWave__matrix_index);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  if (arg1) (arg1)->i = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_matrix_index_i_get(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::matrix_index *arg1 = (SoundWave::matrix_index *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("SoundWave::matrix_index::i",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::matrix_index::i",1,"SoundWave::matrix_index *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__matrix_index,0))){
+    SWIG_fail_ptr("matrix_index_i_get",1,SWIGTYPE_p_SoundWave__matrix_index);
+  }
+  
+  result =  ((arg1)->i);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_matrix_index_j_set(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::matrix_index *arg1 = (SoundWave::matrix_index *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("SoundWave::matrix_index::j",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::matrix_index::j",1,"SoundWave::matrix_index *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::matrix_index::j",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__matrix_index,0))){
+    SWIG_fail_ptr("matrix_index_j_set",1,SWIGTYPE_p_SoundWave__matrix_index);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  if (arg1) (arg1)->j = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_matrix_index_j_get(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::matrix_index *arg1 = (SoundWave::matrix_index *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("SoundWave::matrix_index::j",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::matrix_index::j",1,"SoundWave::matrix_index *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__matrix_index,0))){
+    SWIG_fail_ptr("matrix_index_j_get",1,SWIGTYPE_p_SoundWave__matrix_index);
+  }
+  
+  result =  ((arg1)->j);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_matrix_index(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::matrix_index *result = 0 ;
+  
+  SWIG_check_num_args("SoundWave::matrix_index::matrix_index",0,0)
+  result = (SoundWave::matrix_index *)new SoundWave::matrix_index();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_SoundWave__matrix_index,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_matrix_index(void *obj) {
+SoundWave::matrix_index *arg1 = (SoundWave::matrix_index *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_matrix_index(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_matrix_index);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_matrix_index_attributes[] = {
+    { "i", _wrap_matrix_index_i_get, _wrap_matrix_index_i_set },
+    { "j", _wrap_matrix_index_j_get, _wrap_matrix_index_j_set },
+    {0,0,0}
+};
+static swig_lua_method swig_matrix_index_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_matrix_index_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_matrix_index_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_matrix_index_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_matrix_index_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_matrix_index_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_matrix_index_Sf_SwigStatic = {
+    "matrix_index",
+    swig_matrix_index_Sf_SwigStatic_methods,
+    swig_matrix_index_Sf_SwigStatic_attributes,
+    swig_matrix_index_Sf_SwigStatic_constants,
+    swig_matrix_index_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_matrix_index_bases[] = {0};
+static const char *swig_matrix_index_base_names[] = {0};
+static swig_lua_class _wrap_class_matrix_index = { "matrix_index", "matrix_index", &SWIGTYPE_p_SoundWave__matrix_index,_proxy__wrap_new_matrix_index, swig_delete_matrix_index, swig_matrix_index_methods, swig_matrix_index_attributes, &swig_matrix_index_Sf_SwigStatic, swig_matrix_index_meta, swig_matrix_index_bases, swig_matrix_index_base_names };
 
 static int _wrap_FloatSampleVector_vector_set(lua_State* L) {
   int SWIG_arg = 0;
@@ -13625,64 +19717,6 @@ fail:
 }
 
 
-static int _wrap_FloatSampleVector___getitem(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::SampleVector< float > *arg1 = (SoundWave::SampleVector< float > *) 0 ;
-  size_t arg2 ;
-  float result;
-  
-  SWIG_check_num_args("SoundWave::SampleVector< float >::__getitem__",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::SampleVector< float >::__getitem__",1,"SoundWave::SampleVector< float > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::SampleVector< float >::__getitem__",2,"size_t");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,0))){
-    SWIG_fail_ptr("FloatSampleVector___getitem",1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (size_t)lua_tonumber(L, 2);
-  result = (float)SoundWave_SampleVector_Sl_float_Sg____getitem____SWIG(arg1,arg2);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_FloatSampleVector___setitem(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::SampleVector< float > *arg1 = (SoundWave::SampleVector< float > *) 0 ;
-  size_t arg2 ;
-  float arg3 ;
-  
-  SWIG_check_num_args("SoundWave::SampleVector< float >::__setitem__",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundWave::SampleVector< float >::__setitem__",1,"SoundWave::SampleVector< float > *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::SampleVector< float >::__setitem__",2,"size_t");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("SoundWave::SampleVector< float >::__setitem__",3,"float");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,0))){
-    SWIG_fail_ptr("FloatSampleVector___setitem",1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
-  arg2 = (size_t)lua_tonumber(L, 2);
-  arg3 = (float)lua_tonumber(L, 3);
-  SoundWave_SampleVector_Sl_float_Sg____setitem____SWIG(arg1,arg2,arg3);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static void swig_delete_FloatSampleVector(void *obj) {
 SoundWave::SampleVector< float > *arg1 = (SoundWave::SampleVector< float > *) obj;
 delete arg1;
@@ -13764,8 +19798,6 @@ static swig_lua_method swig_FloatSampleVector_methods[]= {
     { "floor", _wrap_FloatSampleVector_floor},
     { "round", _wrap_FloatSampleVector_round},
     { "println", _wrap_FloatSampleVector_println},
-    { "__getitem", _wrap_FloatSampleVector___getitem},
-    { "__setitem", _wrap_FloatSampleVector___setitem},
     {0,0}
 };
 static swig_lua_method swig_FloatSampleVector_meta[] = {
@@ -13775,8 +19807,6 @@ static swig_lua_method swig_FloatSampleVector_meta[] = {
     { "__sub", _wrap_FloatSampleVector___sub},
     { "__div", _wrap_FloatSampleVector___div},
     { "__mul", _wrap_FloatSampleVector___mul},
-    { "__getitem", _wrap_FloatSampleVector___getitem},
-    { "__setitem", _wrap_FloatSampleVector___setitem},
     {0,0}
 };
 
@@ -13808,7 +19838,7 @@ static swig_lua_class _wrap_class_FloatSampleVector = { "FloatSampleVector", "Fl
 static int _wrap_get_left_channel_float__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::get_left_channel< float >",1,1)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::get_left_channel< float >",1,"std::vector< float > const &");
@@ -13836,7 +19866,7 @@ static int _wrap_get_left_channel_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   float *arg2 = (float *) 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::get_left_channel< float >",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::get_left_channel< float >",1,"size_t");
@@ -13852,33 +19882,6 @@ static int _wrap_get_left_channel_float__SWIG_1(lua_State* L) {
   {
     std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_get_left_channel_float__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::SampleVector< float > *arg1 = 0 ;
-  SoundWave::SampleVector< float > result;
-  
-  SWIG_check_num_args("SoundWave::get_left_channel< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::get_left_channel< float >",1,"SoundWave::SampleVector< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,0))){
-    SWIG_fail_ptr("get_left_channel_float",1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR get_left_channel< float >((SoundWave::SampleVector< float > const &)*arg1);
-  {
-    SoundWave::SampleVector< float > * resultptr = new SoundWave::SampleVector< float >((const SoundWave::SampleVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -13911,20 +19914,6 @@ static int _wrap_get_left_channel_float(lua_State* L) {
       return _wrap_get_left_channel_float__SWIG_0(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_get_left_channel_float__SWIG_2(L);
-    }
-  }
   if (argc == 2) {
     int _v = 0;
     {
@@ -13948,8 +19937,7 @@ static int _wrap_get_left_channel_float(lua_State* L) {
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'get_left_channel_float'\n"
     "  Possible C/C++ prototypes are:\n"
     "    SoundWave::get_left_channel< float >(std::vector< float > const &)\n"
-    "    SoundWave::get_left_channel< float >(size_t,float const *)\n"
-    "    SoundWave::get_left_channel< float >(SoundWave::SampleVector< float > const &)\n");
+    "    SoundWave::get_left_channel< float >(size_t,float const *)\n");
   lua_error(L);return 0;
 }
 
@@ -13957,7 +19945,7 @@ static int _wrap_get_left_channel_float(lua_State* L) {
 static int _wrap_get_right_channel_float__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::get_right_channel< float >",1,1)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::get_right_channel< float >",1,"std::vector< float > const &");
@@ -13985,7 +19973,7 @@ static int _wrap_get_right_channel_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   float **arg2 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::get_right_channel< float >",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::get_right_channel< float >",1,"size_t");
@@ -14001,33 +19989,6 @@ static int _wrap_get_right_channel_float__SWIG_1(lua_State* L) {
   {
     std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_get_right_channel_float__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::SampleVector< float > *arg1 = 0 ;
-  SoundWave::SampleVector< float > result;
-  
-  SWIG_check_num_args("SoundWave::get_right_channel< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::get_right_channel< float >",1,"SoundWave::SampleVector< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,0))){
-    SWIG_fail_ptr("get_right_channel_float",1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR get_right_channel< float >((SoundWave::SampleVector< float > const &)*arg1);
-  {
-    SoundWave::SampleVector< float > * resultptr = new SoundWave::SampleVector< float >((const SoundWave::SampleVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -14060,20 +20021,6 @@ static int _wrap_get_right_channel_float(lua_State* L) {
       return _wrap_get_right_channel_float__SWIG_0(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_get_right_channel_float__SWIG_2(L);
-    }
-  }
   if (argc == 2) {
     int _v = 0;
     {
@@ -14097,8 +20044,7 @@ static int _wrap_get_right_channel_float(lua_State* L) {
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'get_right_channel_float'\n"
     "  Possible C/C++ prototypes are:\n"
     "    SoundWave::get_right_channel< float >(std::vector< float > const &)\n"
-    "    SoundWave::get_right_channel< float >(size_t,float const *&)\n"
-    "    SoundWave::get_right_channel< float >(SoundWave::SampleVector< float > const &)\n");
+    "    SoundWave::get_right_channel< float >(size_t,float const *&)\n");
   lua_error(L);return 0;
 }
 
@@ -14107,7 +20053,7 @@ static int _wrap_get_channel_float__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   std::vector< float > *arg2 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::get_channel< float >",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::get_channel< float >",1,"size_t");
@@ -14139,7 +20085,7 @@ static int _wrap_get_channel_float__SWIG_1(lua_State* L) {
   size_t arg1 ;
   size_t arg2 ;
   float *arg3 = (float *) 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::get_channel< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::get_channel< float >",1,"size_t");
@@ -14158,37 +20104,6 @@ static int _wrap_get_channel_float__SWIG_1(lua_State* L) {
   {
     std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_get_channel_float__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  size_t arg1 ;
-  SoundWave::SampleVector< float > *arg2 = 0 ;
-  SoundWave::SampleVector< float > result;
-  
-  SWIG_check_num_args("SoundWave::get_channel< float >",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::get_channel< float >",1,"size_t");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("SoundWave::get_channel< float >",2,"SoundWave::SampleVector< float > const &");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative");
-  arg1 = (size_t)lua_tonumber(L, 1);
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,0))){
-    SWIG_fail_ptr("get_channel_float",2,SWIGTYPE_p_SoundWave__SampleVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR get_channel< float >(arg1,(SoundWave::SampleVector< float > const &)*arg2);
-  {
-    SoundWave::SampleVector< float > * resultptr = new SoundWave::SampleVector< float >((const SoundWave::SampleVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -14226,25 +20141,6 @@ static int _wrap_get_channel_float(lua_State* L) {
       }
     }
   }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      _v = lua_isnumber(L,argv[0]);
-    }
-    if (_v) {
-      {
-        void *ptr;
-        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-          _v = 0;
-        } else {
-          _v = 1;
-        }
-      }
-      if (_v) {
-        return _wrap_get_channel_float__SWIG_2(L);
-      }
-    }
-  }
   if (argc == 3) {
     int _v = 0;
     {
@@ -14273,40 +20169,12 @@ static int _wrap_get_channel_float(lua_State* L) {
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'get_channel_float'\n"
     "  Possible C/C++ prototypes are:\n"
     "    SoundWave::get_channel< float >(size_t,std::vector< float > const &)\n"
-    "    SoundWave::get_channel< float >(size_t,size_t,float *)\n"
-    "    SoundWave::get_channel< float >(size_t,SoundWave::SampleVector< float > const &)\n");
+    "    SoundWave::get_channel< float >(size_t,size_t,float *)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_interleave_float__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< SoundWave::ArrayVector< float > > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::interleave< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::interleave< float >",1,"std::vector< SoundWave::ArrayVector< float > > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_SoundWave__ArrayVectorT_float_t_t,0))){
-    SWIG_fail_ptr("interleave_float",1,SWIGTYPE_p_std__vectorT_SoundWave__ArrayVectorT_float_t_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR interleave< float >((std::vector< SoundWave::ArrayVector< float > > const &)*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_interleave_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -14333,7 +20201,7 @@ fail:
 }
 
 
-static int _wrap_interleave_float__SWIG_2(lua_State* L) {
+static int _wrap_interleave_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   size_t arg2 ;
@@ -14368,12 +20236,12 @@ fail:
 }
 
 
-static int _wrap_interleave_float__SWIG_3(lua_State* L) {
+static int _wrap_interleave_float__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   size_t arg2 ;
   std::vector< std::vector< float > > *arg3 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::interleave< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::interleave< float >",1,"size_t");
@@ -14403,12 +20271,12 @@ fail:
 }
 
 
-static int _wrap_interleave_float__SWIG_4(lua_State* L) {
+static int _wrap_interleave_float__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   size_t arg2 ;
   std::vector< float * > *arg3 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::interleave< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::interleave< float >",1,"size_t");
@@ -14438,12 +20306,12 @@ fail:
 }
 
 
-static int _wrap_interleave_float__SWIG_5(lua_State* L) {
+static int _wrap_interleave_float__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   size_t arg2 ;
   float ***arg3 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::interleave< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::interleave< float >",1,"size_t");
@@ -14484,20 +20352,6 @@ static int _wrap_interleave_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_SoundWave__ArrayVectorT_float_t_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_interleave_float__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
       if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
@@ -14505,7 +20359,7 @@ static int _wrap_interleave_float(lua_State* L) {
       }
     }
     if (_v) {
-      return _wrap_interleave_float__SWIG_1(L);
+      return _wrap_interleave_float__SWIG_0(L);
     }
   }
   if (argc == 3) {
@@ -14527,7 +20381,7 @@ static int _wrap_interleave_float(lua_State* L) {
           }
         }
         if (_v) {
-          return _wrap_interleave_float__SWIG_2(L);
+          return _wrap_interleave_float__SWIG_1(L);
         }
       }
     }
@@ -14551,7 +20405,7 @@ static int _wrap_interleave_float(lua_State* L) {
           }
         }
         if (_v) {
-          return _wrap_interleave_float__SWIG_3(L);
+          return _wrap_interleave_float__SWIG_2(L);
         }
       }
     }
@@ -14575,7 +20429,7 @@ static int _wrap_interleave_float(lua_State* L) {
           }
         }
         if (_v) {
-          return _wrap_interleave_float__SWIG_4(L);
+          return _wrap_interleave_float__SWIG_3(L);
         }
       }
     }
@@ -14599,7 +20453,7 @@ static int _wrap_interleave_float(lua_State* L) {
           }
         }
         if (_v) {
-          return _wrap_interleave_float__SWIG_5(L);
+          return _wrap_interleave_float__SWIG_4(L);
         }
       }
     }
@@ -14607,7 +20461,6 @@ static int _wrap_interleave_float(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'interleave_float'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::interleave< float >(std::vector< SoundWave::ArrayVector< float > > const &)\n"
     "    SoundWave::interleave< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::interleave< float >(size_t,size_t,std::vector< SoundWave::SampleVector< float > > const &)\n"
     "    SoundWave::interleave< float >(size_t,size_t,std::vector< std::vector< float > > const &)\n"
@@ -14618,33 +20471,6 @@ static int _wrap_interleave_float(lua_State* L) {
 
 
 static int _wrap_deinterleave_float__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< SoundWave::ArrayVector< float > > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::interleave< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::interleave< float >",1,"std::vector< SoundWave::ArrayVector< float > > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_SoundWave__ArrayVectorT_float_t_t,0))){
-    SWIG_fail_ptr("deinterleave_float",1,SWIGTYPE_p_std__vectorT_SoundWave__ArrayVectorT_float_t_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR interleave< float >((std::vector< SoundWave::ArrayVector< float > > const &)*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_deinterleave_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -14671,7 +20497,7 @@ fail:
 }
 
 
-static int _wrap_deinterleave_float__SWIG_2(lua_State* L) {
+static int _wrap_deinterleave_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   size_t arg2 ;
@@ -14706,12 +20532,12 @@ fail:
 }
 
 
-static int _wrap_deinterleave_float__SWIG_3(lua_State* L) {
+static int _wrap_deinterleave_float__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   size_t arg2 ;
   std::vector< std::vector< float > > *arg3 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::interleave< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::interleave< float >",1,"size_t");
@@ -14741,12 +20567,12 @@ fail:
 }
 
 
-static int _wrap_deinterleave_float__SWIG_4(lua_State* L) {
+static int _wrap_deinterleave_float__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   size_t arg2 ;
   std::vector< float * > *arg3 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::interleave< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::interleave< float >",1,"size_t");
@@ -14776,12 +20602,12 @@ fail:
 }
 
 
-static int _wrap_deinterleave_float__SWIG_5(lua_State* L) {
+static int _wrap_deinterleave_float__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   size_t arg2 ;
   float ***arg3 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::interleave< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::interleave< float >",1,"size_t");
@@ -14822,20 +20648,6 @@ static int _wrap_deinterleave_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_SoundWave__ArrayVectorT_float_t_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_deinterleave_float__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
       if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
@@ -14843,7 +20655,7 @@ static int _wrap_deinterleave_float(lua_State* L) {
       }
     }
     if (_v) {
-      return _wrap_deinterleave_float__SWIG_1(L);
+      return _wrap_deinterleave_float__SWIG_0(L);
     }
   }
   if (argc == 3) {
@@ -14865,7 +20677,7 @@ static int _wrap_deinterleave_float(lua_State* L) {
           }
         }
         if (_v) {
-          return _wrap_deinterleave_float__SWIG_2(L);
+          return _wrap_deinterleave_float__SWIG_1(L);
         }
       }
     }
@@ -14889,7 +20701,7 @@ static int _wrap_deinterleave_float(lua_State* L) {
           }
         }
         if (_v) {
-          return _wrap_deinterleave_float__SWIG_3(L);
+          return _wrap_deinterleave_float__SWIG_2(L);
         }
       }
     }
@@ -14913,7 +20725,7 @@ static int _wrap_deinterleave_float(lua_State* L) {
           }
         }
         if (_v) {
-          return _wrap_deinterleave_float__SWIG_4(L);
+          return _wrap_deinterleave_float__SWIG_3(L);
         }
       }
     }
@@ -14937,7 +20749,7 @@ static int _wrap_deinterleave_float(lua_State* L) {
           }
         }
         if (_v) {
-          return _wrap_deinterleave_float__SWIG_5(L);
+          return _wrap_deinterleave_float__SWIG_4(L);
         }
       }
     }
@@ -14945,7 +20757,6 @@ static int _wrap_deinterleave_float(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'deinterleave_float'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::interleave< float >(std::vector< SoundWave::ArrayVector< float > > const &)\n"
     "    SoundWave::interleave< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::interleave< float >(size_t,size_t,std::vector< SoundWave::SampleVector< float > > const &)\n"
     "    SoundWave::interleave< float >(size_t,size_t,std::vector< std::vector< float > > const &)\n"
@@ -15093,7 +20904,7 @@ static int _wrap_slice_vector_float(lua_State* L) {
   size_t arg1 ;
   size_t arg2 ;
   std::vector< float > *arg3 = 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::slice_vector< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::slice_vector< float >",1,"size_t");
@@ -15162,7 +20973,7 @@ static int _wrap_slice_buffer_float(lua_State* L) {
   size_t arg1 ;
   size_t arg2 ;
   float *arg3 = (float *) 0 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::slice_buffer< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::slice_buffer< float >",1,"size_t");
@@ -15392,7 +21203,7 @@ fail:
 
 static int _wrap_containsOnlyZeros_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   bool result;
   
@@ -15418,7 +21229,7 @@ fail:
 
 static int _wrap_isAllPositiveOrZero_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   bool result;
   
@@ -15444,7 +21255,7 @@ fail:
 
 static int _wrap_isAllNegativeOrZero_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   bool result;
   
@@ -15470,7 +21281,7 @@ fail:
 
 static int _wrap_contains_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   float arg2 ;
   std::vector< float > *argp1 ;
   bool result;
@@ -15523,7 +21334,7 @@ fail:
 
 static int _wrap_max_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   float result;
   
@@ -15617,7 +21428,7 @@ fail:
 
 static int _wrap_min_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   float result;
   
@@ -15687,7 +21498,7 @@ static int _wrap_min_float(lua_State* L) {
 
 static int _wrap_maxIndex_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   int result;
   
@@ -15713,7 +21524,7 @@ fail:
 
 static int _wrap_minIndex_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   int result;
   
@@ -15739,7 +21550,7 @@ fail:
 
 static int _wrap_printVector_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   
   SWIG_check_num_args("SoundWave::printVector< float >",1,1)
@@ -15764,7 +21575,7 @@ fail:
 
 static int _wrap_getFirstElement_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   float result;
   
@@ -15790,7 +21601,7 @@ fail:
 
 static int _wrap_getLastElement_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   float result;
   
@@ -15816,9 +21627,9 @@ fail:
 
 static int _wrap_getEvenElements_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::getEvenElements< float >",1,1)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::getEvenElements< float >",1,"std::vector< float >");
@@ -15845,9 +21656,9 @@ fail:
 
 static int _wrap_getOddElements_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::getOddElements< float >",1,1)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::getOddElements< float >",1,"std::vector< float >");
@@ -15874,11 +21685,11 @@ fail:
 
 static int _wrap_getEveryNthElementStartingFromK_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   int arg2 ;
   int arg3 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::getEveryNthElementStartingFromK< float >",3,3)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::getEveryNthElementStartingFromK< float >",1,"std::vector< float >");
@@ -15935,7 +21746,7 @@ fail:
 
 static int _wrap_countOccurrencesOf_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   float arg2 ;
   std::vector< float > *argp1 ;
   int result;
@@ -15964,7 +21775,7 @@ fail:
 
 static int _wrap_sum_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   float result;
   
@@ -15990,7 +21801,7 @@ fail:
 
 static int _wrap_product_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   double result;
   
@@ -16016,7 +21827,7 @@ fail:
 
 static int _wrap_mean_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   double result;
   
@@ -16066,7 +21877,7 @@ fail:
 
 static int _wrap_median_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   double result;
   
@@ -16136,7 +21947,7 @@ static int _wrap_median_float(lua_State* L) {
 
 static int _wrap_variance_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   double result;
   
@@ -16162,7 +21973,7 @@ fail:
 
 static int _wrap_standardDeviation_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   double result;
   
@@ -16188,7 +21999,7 @@ fail:
 
 static int _wrap_norm1_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   double result;
   
@@ -16214,7 +22025,7 @@ fail:
 
 static int _wrap_norm2_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   double result;
   
@@ -16240,7 +22051,7 @@ fail:
 
 static int _wrap_normP_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   double arg2 ;
   std::vector< float > *argp1 ;
   double result;
@@ -16269,7 +22080,7 @@ fail:
 
 static int _wrap_magnitude_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
   double result;
   
@@ -16322,7 +22133,7 @@ fail:
 static int _wrap_multiplyInPlace_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = 0 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp2 ;
   
   SWIG_check_num_args("SoundWave::multiplyInPlace< float >",2,2)
@@ -16439,7 +22250,7 @@ fail:
 static int _wrap_divideInPlace_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = 0 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp2 ;
   
   SWIG_check_num_args("SoundWave::divideInPlace< float >",2,2)
@@ -16556,7 +22367,7 @@ fail:
 static int _wrap_addInPlace_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = 0 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp2 ;
   
   SWIG_check_num_args("SoundWave::addInPlace< float >",2,2)
@@ -16673,7 +22484,7 @@ fail:
 static int _wrap_subtractInPlace_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   std::vector< float > *arg1 = 0 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp2 ;
   
   SWIG_check_num_args("SoundWave::subtractInPlace< float >",2,2)
@@ -16878,10 +22689,10 @@ fail:
 
 static int _wrap_multiply_float__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   float arg2 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::multiply< float >",2,2)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::multiply< float >",1,"std::vector< float >");
@@ -16910,11 +22721,11 @@ fail:
 
 static int _wrap_multiply_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp1 ;
   std::vector< float > *argp2 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::multiply< float >",2,2)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::multiply< float >",1,"std::vector< float >");
@@ -17007,10 +22818,10 @@ static int _wrap_multiply_float(lua_State* L) {
 
 static int _wrap_divide_float__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   float arg2 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::divide< float >",2,2)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::divide< float >",1,"std::vector< float >");
@@ -17039,11 +22850,11 @@ fail:
 
 static int _wrap_divide_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp1 ;
   std::vector< float > *argp2 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::divide< float >",2,2)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::divide< float >",1,"std::vector< float >");
@@ -17136,10 +22947,10 @@ static int _wrap_divide_float(lua_State* L) {
 
 static int _wrap_add_float__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   float arg2 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::add< float >",2,2)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::add< float >",1,"std::vector< float >");
@@ -17168,11 +22979,11 @@ fail:
 
 static int _wrap_add_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp1 ;
   std::vector< float > *argp2 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::add< float >",2,2)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::add< float >",1,"std::vector< float >");
@@ -17265,10 +23076,10 @@ static int _wrap_add_float(lua_State* L) {
 
 static int _wrap_subtract_float__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   float arg2 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::subtract< float >",2,2)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::subtract< float >",1,"std::vector< float >");
@@ -17297,11 +23108,11 @@ fail:
 
 static int _wrap_subtract_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp1 ;
   std::vector< float > *argp2 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::subtract< float >",2,2)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::subtract< float >",1,"std::vector< float >");
@@ -17394,195 +23205,6 @@ static int _wrap_subtract_float(lua_State* L) {
 
 static int _wrap_abs_float__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs_float__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs_float__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs_float__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Vector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Vector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Vector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
-  {
-    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs_float__SWIG_4(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Matrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Matrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Matrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::Matrix< float > const &)*arg1);
-  {
-    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs_float__SWIG_5(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ColVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
-  {
-    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs_float__SWIG_6(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ColMatrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::ColMatrix< float > const &)*arg1);
-  {
-    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs_float__SWIG_7(lua_State* L) {
-  int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
   
@@ -17608,7 +23230,7 @@ fail:
 }
 
 
-static int _wrap_abs_float__SWIG_8(lua_State* L) {
+static int _wrap_abs_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -17635,24 +23257,130 @@ fail:
 }
 
 
-static int _wrap_abs_float__SWIG_9(lua_State* L) {
+static int _wrap_abs_float__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SoundWave::Vector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Vector< float > > result;
   
   SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"std::vector< float >");
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Vector< float > &");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_std__vectorT_float_t,0))){
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
+    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
+  {
+    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_abs_float__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Matrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Matrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::abs< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Matrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
+    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::Matrix< float > const &)*arg1);
+  {
+    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_abs_float__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColVector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColVector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::abs< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ColVector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
+    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
+  {
+    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_abs_float__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColMatrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::abs< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ColMatrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
+    SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  {
+    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_abs_float__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< long long > > result;
+  
+  SWIG_check_num_args("SoundWave::abs< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
     SWIG_fail_ptr("abs_float",1,SWIGTYPE_p_std__vectorT_float_t);
   }
-  arg1 = *argp1;
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((std::vector< float > const &)*arg1);
   {
-    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+    std::vector< long long > * resultptr = new std::vector< long long >((const std::vector< long long > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_long_long_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -17675,7 +23403,7 @@ static int _wrap_abs_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -17689,7 +23417,7 @@ static int _wrap_abs_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -17703,7 +23431,7 @@ static int _wrap_abs_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -17717,7 +23445,7 @@ static int _wrap_abs_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -17731,7 +23459,7 @@ static int _wrap_abs_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -17745,7 +23473,7 @@ static int _wrap_abs_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -17759,7 +23487,7 @@ static int _wrap_abs_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -17769,201 +23497,21 @@ static int _wrap_abs_float(lua_State* L) {
       return _wrap_abs_float__SWIG_6(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_abs_float__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_abs_float__SWIG_8(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_abs_float__SWIG_9(L);
-    }
-  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'abs_float'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::abs< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::abs< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::abs< float >(SoundWave::ArrayMatrix< float > &)\n"
+    "    SoundWave::abs< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::abs< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::abs< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::abs< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::abs< float >(SoundWave::ColVector< float > &)\n"
     "    SoundWave::abs< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::abs< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::abs< float >(SoundWave::SampleMatrix< float > &)\n"
-    "    SoundWave::abs< float >(std::vector< float >)\n");
+    "    SoundWave::abs< float >(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_square_float__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::square< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("square_float",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_square_float__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Vector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Vector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::square< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::Vector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("square_float",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >(*arg1);
-  {
-    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_square_float__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Matrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Matrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::square< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::Matrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("square_float",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >((SoundWave::Matrix< float > const &)*arg1);
-  {
-    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_square_float__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::square< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::ColVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("square_float",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >(*arg1);
-  {
-    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_square_float__SWIG_4(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::square< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::ColMatrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("square_float",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >((SoundWave::ColMatrix< float > const &)*arg1);
-  {
-    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_square_float__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -17990,7 +23538,7 @@ fail:
 }
 
 
-static int _wrap_square_float__SWIG_6(lua_State* L) {
+static int _wrap_square_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -18017,11 +23565,119 @@ fail:
 }
 
 
-static int _wrap_square_float__SWIG_7(lua_State* L) {
+static int _wrap_square_float__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SoundWave::Vector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::square< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::Vector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
+    SWIG_fail_ptr("square_float",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >(*arg1);
+  {
+    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_square_float__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Matrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Matrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::square< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::Matrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
+    SWIG_fail_ptr("square_float",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >((SoundWave::Matrix< float > const &)*arg1);
+  {
+    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_square_float__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColVector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColVector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::square< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::ColVector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
+    SWIG_fail_ptr("square_float",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >(*arg1);
+  {
+    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_square_float__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColMatrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::square< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::ColMatrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
+    SWIG_fail_ptr("square_float",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  {
+    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_square_float__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::square< float >",1,1)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"std::vector< float >");
@@ -18057,7 +23713,7 @@ static int _wrap_square_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18071,7 +23727,7 @@ static int _wrap_square_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18085,7 +23741,7 @@ static int _wrap_square_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18099,7 +23755,7 @@ static int _wrap_square_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18113,7 +23769,7 @@ static int _wrap_square_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18127,7 +23783,7 @@ static int _wrap_square_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18141,7 +23797,7 @@ static int _wrap_square_float(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18151,30 +23807,15 @@ static int _wrap_square_float(lua_State* L) {
       return _wrap_square_float__SWIG_6(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_square_float__SWIG_7(L);
-    }
-  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'square_float'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::square< float >(SoundWave::Scalar< float > const &)\n"
+    "    SoundWave::square< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::square< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::square< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::square< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::square< float >(SoundWave::ColVector< float > &)\n"
     "    SoundWave::square< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::square< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::square< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::square< float >(std::vector< float >)\n");
   lua_error(L);return 0;
 }
@@ -18182,9 +23823,9 @@ static int _wrap_square_float(lua_State* L) {
 
 static int _wrap_squareRoot_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::squareRoot< float >",1,1)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::squareRoot< float >",1,"std::vector< float >");
@@ -18211,11 +23852,11 @@ fail:
 
 static int _wrap_scale_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   double arg2 ;
   double arg3 ;
   std::vector< float > *argp1 ;
-  std::vector< double > result;
+  SwigValueWrapper< std::vector< double > > result;
   
   SWIG_check_num_args("SoundWave::scale< float >",3,3)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::scale< float >",1,"std::vector< float >");
@@ -18246,9 +23887,9 @@ fail:
 
 static int _wrap_difference_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::difference< float >",1,1)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::difference< float >",1,"std::vector< float >");
@@ -18276,7 +23917,7 @@ fail:
 static int _wrap_zeros_float(lua_State* L) {
   int SWIG_arg = 0;
   int arg1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::zeros< float >",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::zeros< float >",1,"int");
@@ -18299,7 +23940,7 @@ fail:
 static int _wrap_ones_float(lua_State* L) {
   int SWIG_arg = 0;
   int arg1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::ones< float >",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::ones< float >",1,"int");
@@ -18324,7 +23965,7 @@ static int _wrap_range_float__SWIG_0(lua_State* L) {
   int arg1 ;
   int arg2 ;
   int arg3 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::range< float >",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::range< float >",1,"int");
@@ -18351,7 +23992,7 @@ fail:
 static int _wrap_range_float__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   int arg1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::range< float >",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::range< float >",1,"int");
@@ -18375,7 +24016,7 @@ static int _wrap_range_float__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   int arg1 ;
   int arg2 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::range< float >",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::range< float >",1,"int");
@@ -18458,8 +24099,8 @@ static int _wrap_range_float(lua_State* L) {
 
 static int _wrap_dotProduct_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp1 ;
   std::vector< float > *argp2 ;
   double result;
@@ -18493,8 +24134,8 @@ fail:
 
 static int _wrap_euclideanDistance_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp1 ;
   std::vector< float > *argp2 ;
   double result;
@@ -18528,8 +24169,8 @@ fail:
 
 static int _wrap_cosineSimilarity_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp1 ;
   std::vector< float > *argp2 ;
   double result;
@@ -18563,8 +24204,8 @@ fail:
 
 static int _wrap_cosineDistance_float(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > arg2 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg2 ;
   std::vector< float > *argp1 ;
   std::vector< float > *argp2 ;
   double result;
@@ -18598,195 +24239,6 @@ fail:
 
 static int _wrap_absf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_absf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_absf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_absf__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Vector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Vector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Vector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
-  {
-    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_absf__SWIG_4(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Matrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Matrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Matrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::Matrix< float > const &)*arg1);
-  {
-    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_absf__SWIG_5(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ColVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
-  {
-    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_absf__SWIG_6(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ColMatrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::ColMatrix< float > const &)*arg1);
-  {
-    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_absf__SWIG_7(lua_State* L) {
-  int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
   
@@ -18812,7 +24264,7 @@ fail:
 }
 
 
-static int _wrap_absf__SWIG_8(lua_State* L) {
+static int _wrap_absf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -18839,24 +24291,130 @@ fail:
 }
 
 
-static int _wrap_absf__SWIG_9(lua_State* L) {
+static int _wrap_absf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
-  std::vector< float > arg1 ;
-  std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SoundWave::Vector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Vector< float > > result;
   
   SWIG_check_num_args("SoundWave::abs< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"std::vector< float >");
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Vector< float > &");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_std__vectorT_float_t,0))){
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
+    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
+  {
+    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_absf__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Matrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Matrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::abs< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::Matrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
+    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::Matrix< float > const &)*arg1);
+  {
+    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_absf__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColVector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColVector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::abs< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ColVector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
+    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(*arg1);
+  {
+    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_absf__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColMatrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::abs< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"SoundWave::ColMatrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
+    SWIG_fail_ptr("absf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  {
+    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_absf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< long long > > result;
+  
+  SWIG_check_num_args("SoundWave::abs< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
     SWIG_fail_ptr("absf",1,SWIGTYPE_p_std__vectorT_float_t);
   }
-  arg1 = *argp1;
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >(arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs< float >((std::vector< float > const &)*arg1);
   {
-    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+    std::vector< long long > * resultptr = new std::vector< long long >((const std::vector< long long > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_long_long_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -18879,7 +24437,7 @@ static int _wrap_absf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18893,7 +24451,7 @@ static int _wrap_absf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18907,7 +24465,7 @@ static int _wrap_absf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18921,7 +24479,7 @@ static int _wrap_absf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18935,7 +24493,7 @@ static int _wrap_absf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18949,7 +24507,7 @@ static int _wrap_absf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18963,7 +24521,7 @@ static int _wrap_absf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -18973,174 +24531,21 @@ static int _wrap_absf(lua_State* L) {
       return _wrap_absf__SWIG_6(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_absf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_absf__SWIG_8(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_absf__SWIG_9(L);
-    }
-  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'absf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::abs< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::abs< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::abs< float >(SoundWave::ArrayMatrix< float > &)\n"
+    "    SoundWave::abs< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::abs< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::abs< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::abs< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::abs< float >(SoundWave::ColVector< float > &)\n"
     "    SoundWave::abs< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::abs< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::abs< float >(SoundWave::SampleMatrix< float > &)\n"
-    "    SoundWave::abs< float >(std::vector< float >)\n");
+    "    SoundWave::abs< float >(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_abs2f__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Vector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Vector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs2< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs2< float >",1,"SoundWave::Vector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("abs2f",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs2< float >(*arg1);
-  {
-    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs2f__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Matrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Matrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs2< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs2< float >",1,"SoundWave::Matrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("abs2f",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs2< float >((SoundWave::Matrix< float > const &)*arg1);
-  {
-    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs2f__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs2< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs2< float >",1,"SoundWave::ColVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("abs2f",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs2< float >(*arg1);
-  {
-    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs2f__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::abs2< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs2< float >",1,"SoundWave::ColMatrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("abs2f",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs2< float >((SoundWave::ColMatrix< float > const &)*arg1);
-  {
-    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_abs2f__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -19167,7 +24572,7 @@ fail:
 }
 
 
-static int _wrap_abs2f__SWIG_5(lua_State* L) {
+static int _wrap_abs2f__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -19194,123 +24599,19 @@ fail:
 }
 
 
-static int _wrap_abs2f(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_abs2f__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_abs2f__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_abs2f__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_abs2f__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_abs2f__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_abs2f__SWIG_5(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'abs2f'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::abs2< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::abs2< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::abs2< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::abs2< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::abs2< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::abs2< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_inversef__SWIG_0(lua_State* L) {
+static int _wrap_abs2f__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::inverse< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::inverse< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::abs2< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs2< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("inversef",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("abs2f",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR inverse< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs2< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -19325,19 +24626,19 @@ fail:
 }
 
 
-static int _wrap_inversef__SWIG_1(lua_State* L) {
+static int _wrap_abs2f__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::inverse< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::inverse< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::abs2< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs2< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("inversef",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("abs2f",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR inverse< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs2< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -19352,19 +24653,19 @@ fail:
 }
 
 
-static int _wrap_inversef__SWIG_2(lua_State* L) {
+static int _wrap_abs2f__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::inverse< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::inverse< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::abs2< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs2< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("inversef",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("abs2f",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR inverse< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs2< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -19379,19 +24680,19 @@ fail:
 }
 
 
-static int _wrap_inversef__SWIG_3(lua_State* L) {
+static int _wrap_abs2f__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::inverse< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::inverse< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::abs2< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::abs2< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("inversef",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("abs2f",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR inverse< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR abs2< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -19406,7 +24707,111 @@ fail:
 }
 
 
-static int _wrap_inversef__SWIG_4(lua_State* L) {
+static int _wrap_abs2f(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_abs2f__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_abs2f__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_abs2f__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_abs2f__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_abs2f__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_abs2f__SWIG_5(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'abs2f'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::abs2< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::abs2< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::abs2< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::abs2< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::abs2< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::abs2< float >(SoundWave::ColMatrix< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_inversef__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -19433,7 +24838,7 @@ fail:
 }
 
 
-static int _wrap_inversef__SWIG_5(lua_State* L) {
+static int _wrap_inversef__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -19460,204 +24865,19 @@ fail:
 }
 
 
-static int _wrap_inversef(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_inversef__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_inversef__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_inversef__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_inversef__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_inversef__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_inversef__SWIG_5(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'inversef'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::inverse< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::inverse< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::inverse< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::inverse< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::inverse< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::inverse< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_expf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::exp< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_expf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::exp< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_expf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::exp< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_expf__SWIG_3(lua_State* L) {
+static int _wrap_inversef__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::exp< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::inverse< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::inverse< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("inversef",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR inverse< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -19672,19 +24892,19 @@ fail:
 }
 
 
-static int _wrap_expf__SWIG_4(lua_State* L) {
+static int _wrap_inversef__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::exp< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::inverse< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::inverse< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("inversef",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR inverse< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -19699,19 +24919,19 @@ fail:
 }
 
 
-static int _wrap_expf__SWIG_5(lua_State* L) {
+static int _wrap_inversef__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::exp< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::inverse< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::inverse< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("inversef",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR inverse< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -19726,19 +24946,19 @@ fail:
 }
 
 
-static int _wrap_expf__SWIG_6(lua_State* L) {
+static int _wrap_inversef__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::exp< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::inverse< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::inverse< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("inversef",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR inverse< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -19753,7 +24973,111 @@ fail:
 }
 
 
-static int _wrap_expf__SWIG_7(lua_State* L) {
+static int _wrap_inversef(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_inversef__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_inversef__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_inversef__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_inversef__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_inversef__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_inversef__SWIG_5(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'inversef'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::inverse< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::inverse< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::inverse< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::inverse< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::inverse< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::inverse< float >(SoundWave::ColMatrix< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_expf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -19780,7 +25104,7 @@ fail:
 }
 
 
-static int _wrap_expf__SWIG_8(lua_State* L) {
+static int _wrap_expf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -19807,249 +25131,19 @@ fail:
 }
 
 
-static int _wrap_expf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_expf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_expf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_expf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_expf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_expf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_expf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_expf__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_expf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_expf__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'expf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::exp< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::exp< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::exp< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::exp< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::exp< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::exp< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::exp< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::exp< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::exp< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_logf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::log< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_logf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::log< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_logf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::log< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_logf__SWIG_3(lua_State* L) {
+static int _wrap_expf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::log< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::exp< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -20064,19 +25158,19 @@ fail:
 }
 
 
-static int _wrap_logf__SWIG_4(lua_State* L) {
+static int _wrap_expf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::log< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::exp< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -20091,19 +25185,19 @@ fail:
 }
 
 
-static int _wrap_logf__SWIG_5(lua_State* L) {
+static int _wrap_expf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::log< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::exp< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -20118,19 +25212,19 @@ fail:
 }
 
 
-static int _wrap_logf__SWIG_6(lua_State* L) {
+static int _wrap_expf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::log< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::exp< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("expf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -20145,7 +25239,153 @@ fail:
 }
 
 
-static int _wrap_logf__SWIG_7(lua_State* L) {
+static int _wrap_expf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::exp< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::exp< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("expf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR exp< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_expf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_expf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_expf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_expf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_expf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_expf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_expf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_expf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'expf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::exp< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::exp< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::exp< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::exp< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::exp< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::exp< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::exp< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_logf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -20172,7 +25412,7 @@ fail:
 }
 
 
-static int _wrap_logf__SWIG_8(lua_State* L) {
+static int _wrap_logf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -20199,195 +25439,19 @@ fail:
 }
 
 
-static int _wrap_logf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_logf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_logf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_logf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_logf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_logf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_logf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_logf__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_logf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_logf__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'logf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::log< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::log< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::log< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::log< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::log< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::log< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::log< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::log< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::log< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_log1pf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_log1pf__SWIG_1(lua_State* L) {
+static int _wrap_logf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::log< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -20402,19 +25466,19 @@ fail:
 }
 
 
-static int _wrap_log1pf__SWIG_2(lua_State* L) {
+static int _wrap_logf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::log< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -20429,19 +25493,19 @@ fail:
 }
 
 
-static int _wrap_log1pf__SWIG_3(lua_State* L) {
+static int _wrap_logf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::log< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -20456,19 +25520,19 @@ fail:
 }
 
 
-static int _wrap_log1pf__SWIG_4(lua_State* L) {
+static int _wrap_logf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::log< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("logf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -20483,7 +25547,153 @@ fail:
 }
 
 
-static int _wrap_log1pf__SWIG_5(lua_State* L) {
+static int _wrap_logf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::log< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("logf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_logf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_logf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_logf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_logf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_logf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_logf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_logf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_logf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'logf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::log< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::log< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::log< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::log< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::log< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::log< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::log< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_log1pf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -20510,7 +25720,7 @@ fail:
 }
 
 
-static int _wrap_log1pf__SWIG_6(lua_State* L) {
+static int _wrap_log1pf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -20537,219 +25747,19 @@ fail:
 }
 
 
-static int _wrap_log1pf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log1pf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log1pf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log1pf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log1pf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log1pf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log1pf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log1pf__SWIG_6(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'log1pf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::log1p< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::log1p< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::log1p< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::log1p< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::log1p< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::log1p< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::log1p< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_log10f__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::log10< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_log10f__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::log10< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_log10f__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::log10< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_log10f__SWIG_3(lua_State* L) {
+static int _wrap_log1pf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::log10< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -20764,19 +25774,19 @@ fail:
 }
 
 
-static int _wrap_log10f__SWIG_4(lua_State* L) {
+static int _wrap_log1pf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::log10< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -20791,19 +25801,19 @@ fail:
 }
 
 
-static int _wrap_log10f__SWIG_5(lua_State* L) {
+static int _wrap_log1pf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::log10< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -20818,19 +25828,19 @@ fail:
 }
 
 
-static int _wrap_log10f__SWIG_6(lua_State* L) {
+static int _wrap_log1pf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::log10< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -20845,7 +25855,153 @@ fail:
 }
 
 
-static int _wrap_log10f__SWIG_7(lua_State* L) {
+static int _wrap_log1pf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::log1p< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log1p< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("log1pf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log1p< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_log1pf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log1pf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log1pf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log1pf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log1pf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log1pf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log1pf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log1pf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'log1pf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::log1p< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::log1p< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::log1p< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::log1p< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::log1p< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::log1p< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::log1p< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_log10f__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -20872,7 +26028,7 @@ fail:
 }
 
 
-static int _wrap_log10f__SWIG_8(lua_State* L) {
+static int _wrap_log10f__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -20899,299 +26055,19 @@ fail:
 }
 
 
-static int _wrap_log10f(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log10f__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log10f__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log10f__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log10f__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log10f__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log10f__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log10f__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log10f__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_log10f__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'log10f'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::log10< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::log10< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::log10< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::log10< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::log10< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::log10< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::log10< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::log10< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::log10< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_powf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SoundWave::Scalar< float > *arg2 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::pow< float >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::Scalar< float > const &");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("powf",2,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >((SoundWave::Scalar< float > const &)*arg1,(SoundWave::Scalar< float > const &)*arg2);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_powf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SoundWave::ArrayVector< float > *arg2 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::pow< float >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::ArrayVector< float > &");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"SoundWave::ArrayVector< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("powf",2,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >(*arg1,(SoundWave::ArrayVector< float > const &)*arg2);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_powf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  float arg2 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::pow< float >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::ArrayVector< float > &");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  arg2 = (float const)lua_tonumber(L, 2);
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >(*arg1,arg2);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_powf__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  float arg2 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::pow< float >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::ArrayMatrix< float > &");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  arg2 = (float const)lua_tonumber(L, 2);
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >(*arg1,arg2);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_powf__SWIG_4(lua_State* L) {
+static int _wrap_log10f__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
-  float arg2 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::pow< float >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::Vector< float > &");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
+  SWIG_check_num_args("SoundWave::log10< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  arg2 = (float const)lua_tonumber(L, 2);
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >(*arg1,arg2);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -21206,22 +26082,19 @@ fail:
 }
 
 
-static int _wrap_powf__SWIG_5(lua_State* L) {
+static int _wrap_log10f__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
-  float arg2 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::pow< float >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::Matrix< float > const &");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
+  SWIG_check_num_args("SoundWave::log10< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  arg2 = (float const)lua_tonumber(L, 2);
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >((SoundWave::Matrix< float > const &)*arg1,arg2);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -21236,22 +26109,19 @@ fail:
 }
 
 
-static int _wrap_powf__SWIG_6(lua_State* L) {
+static int _wrap_log10f__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
-  float arg2 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::pow< float >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::ColVector< float > &");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
+  SWIG_check_num_args("SoundWave::log10< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  arg2 = (float const)lua_tonumber(L, 2);
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >(*arg1,arg2);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -21266,22 +26136,19 @@ fail:
 }
 
 
-static int _wrap_powf__SWIG_7(lua_State* L) {
+static int _wrap_log10f__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
-  float arg2 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::pow< float >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::ColMatrix< float > const &");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
+  SWIG_check_num_args("SoundWave::log10< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  arg2 = (float const)lua_tonumber(L, 2);
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >((SoundWave::ColMatrix< float > const &)*arg1,arg2);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -21296,7 +26163,153 @@ fail:
 }
 
 
-static int _wrap_powf__SWIG_8(lua_State* L) {
+static int _wrap_log10f__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::log10< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::log10< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("log10f",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR log10< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_log10f(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log10f__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log10f__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log10f__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log10f__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log10f__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log10f__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_log10f__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'log10f'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::log10< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::log10< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::log10< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::log10< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::log10< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::log10< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::log10< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_powf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > *arg2 = 0 ;
@@ -21330,7 +26343,7 @@ fail:
 }
 
 
-static int _wrap_powf__SWIG_9(lua_State* L) {
+static int _wrap_powf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   float arg2 ;
@@ -21360,7 +26373,7 @@ fail:
 }
 
 
-static int _wrap_powf__SWIG_10(lua_State* L) {
+static int _wrap_powf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   float *arg2 = 0 ;
@@ -21394,6 +26407,220 @@ fail:
 }
 
 
+static int _wrap_powf__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Vector< float > *arg1 = 0 ;
+  float arg2 ;
+  SwigValueWrapper< SoundWave::Vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::pow< float >",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::Vector< float > &");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
+    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+  }
+  
+  arg2 = (float const)lua_tonumber(L, 2);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >(*arg1,arg2);
+  {
+    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_powf__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Matrix< float > *arg1 = 0 ;
+  float arg2 ;
+  SwigValueWrapper< SoundWave::Matrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::pow< float >",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::Matrix< float > const &");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
+    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+  }
+  
+  arg2 = (float const)lua_tonumber(L, 2);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >((SoundWave::Matrix< float > const &)*arg1,arg2);
+  {
+    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_powf__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColVector< float > *arg1 = 0 ;
+  float arg2 ;
+  SwigValueWrapper< SoundWave::ColVector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::pow< float >",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::ColVector< float > &");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
+    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+  }
+  
+  arg2 = (float const)lua_tonumber(L, 2);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >(*arg1,arg2);
+  {
+    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_powf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColMatrix< float > *arg1 = 0 ;
+  float arg2 ;
+  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::pow< float >",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"SoundWave::ColMatrix< float > const &");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
+    SWIG_fail_ptr("powf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+  }
+  
+  arg2 = (float const)lua_tonumber(L, 2);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >((SoundWave::ColMatrix< float > const &)*arg1,arg2);
+  {
+    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_powf__SWIG_7(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  std::vector< float > *arg2 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::pow< float >",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"std::vector< float > const &");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("powf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("powf",2,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >((std::vector< float > const &)*arg1,(std::vector< float > const &)*arg2);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_powf__SWIG_8(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  float arg2 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::pow< float >",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"std::vector< float > const &");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"float const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("powf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  arg2 = (float const)lua_tonumber(L, 2);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >((std::vector< float > const &)*arg1,arg2);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_powf__SWIG_9(lua_State* L) {
+  int SWIG_arg = 0;
+  float arg1 ;
+  std::vector< float > *arg2 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::pow< float >",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("SoundWave::pow< float >",1,"float const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("SoundWave::pow< float >",2,"std::vector< float > const &");
+  arg1 = (float const)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("powf",2,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR pow< float >(arg1,(std::vector< float > const &)*arg2);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_powf(lua_State* L) {
   int argc;
   int argv[3]={
@@ -21401,168 +26628,6 @@ static int _wrap_powf(lua_State* L) {
   };
   
   argc = lua_gettop(L);
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        void *ptr;
-        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-          _v = 0;
-        } else {
-          _v = 1;
-        }
-      }
-      if (_v) {
-        return _wrap_powf__SWIG_0(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        void *ptr;
-        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-          _v = 0;
-        } else {
-          _v = 1;
-        }
-      }
-      if (_v) {
-        return _wrap_powf__SWIG_1(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        return _wrap_powf__SWIG_2(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        return _wrap_powf__SWIG_3(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        return _wrap_powf__SWIG_4(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        return _wrap_powf__SWIG_5(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        return _wrap_powf__SWIG_6(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        return _wrap_powf__SWIG_7(L);
-      }
-    }
-  }
   if (argc == 2) {
     int _v = 0;
     {
@@ -21583,7 +26648,7 @@ static int _wrap_powf(lua_State* L) {
         }
       }
       if (_v) {
-        return _wrap_powf__SWIG_8(L);
+        return _wrap_powf__SWIG_0(L);
       }
     }
   }
@@ -21602,7 +26667,7 @@ static int _wrap_powf(lua_State* L) {
         _v = lua_isnumber(L,argv[1]);
       }
       if (_v) {
-        return _wrap_powf__SWIG_9(L);
+        return _wrap_powf__SWIG_1(L);
       }
     }
   }
@@ -21626,218 +26691,166 @@ static int _wrap_powf(lua_State* L) {
         }
       }
       if (_v) {
-        return _wrap_powf__SWIG_10(L);
+        return _wrap_powf__SWIG_2(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_powf__SWIG_3(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_powf__SWIG_4(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_powf__SWIG_5(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_powf__SWIG_6(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        return _wrap_powf__SWIG_7(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_powf__SWIG_8(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        return _wrap_powf__SWIG_9(L);
       }
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'powf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::pow< float >(SoundWave::Scalar< float > const &,SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::pow< float >(SoundWave::ArrayVector< float > &,SoundWave::ArrayVector< float > const &)\n"
-    "    SoundWave::pow< float >(SoundWave::ArrayVector< float > &,float const)\n"
-    "    SoundWave::pow< float >(SoundWave::ArrayMatrix< float > &,float const)\n"
+    "    SoundWave::pow< float >(SoundWave::SampleVector< float > &,SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::pow< float >(SoundWave::SampleVector< float > &,float)\n"
+    "    SoundWave::pow< float >(SoundWave::SampleMatrix< float > &,float &)\n"
     "    SoundWave::pow< float >(SoundWave::Vector< float > &,float const)\n"
     "    SoundWave::pow< float >(SoundWave::Matrix< float > const &,float const)\n"
     "    SoundWave::pow< float >(SoundWave::ColVector< float > &,float const)\n"
     "    SoundWave::pow< float >(SoundWave::ColMatrix< float > const &,float const)\n"
-    "    SoundWave::pow< float >(SoundWave::SampleVector< float > &,SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::pow< float >(SoundWave::SampleVector< float > &,float)\n"
-    "    SoundWave::pow< float >(SoundWave::SampleMatrix< float > &,float &)\n");
+    "    SoundWave::pow< float >(std::vector< float > const &,std::vector< float > const &)\n"
+    "    SoundWave::pow< float >(std::vector< float > const &,float const)\n"
+    "    SoundWave::pow< float >(float const,std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_sqrtf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sqrtf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sqrtf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sqrtf__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Vector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Vector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::Vector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >(*arg1);
-  {
-    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sqrtf__SWIG_4(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Matrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Matrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::Matrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >((SoundWave::Matrix< float > const &)*arg1);
-  {
-    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sqrtf__SWIG_5(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::ColVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >(*arg1);
-  {
-    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sqrtf__SWIG_6(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::ColMatrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >((SoundWave::ColMatrix< float > const &)*arg1);
-  {
-    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sqrtf__SWIG_7(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -21864,7 +26877,7 @@ fail:
 }
 
 
-static int _wrap_sqrtf__SWIG_8(lua_State* L) {
+static int _wrap_sqrtf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -21891,168 +26904,19 @@ fail:
 }
 
 
-static int _wrap_sqrtf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sqrtf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sqrtf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sqrtf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sqrtf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sqrtf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sqrtf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sqrtf__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sqrtf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sqrtf__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'sqrtf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::sqrt< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::sqrt< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::sqrt< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::sqrt< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::sqrt< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::sqrt< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::sqrt< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::sqrt< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::sqrt< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_rsqrtf__SWIG_0(lua_State* L) {
+static int _wrap_sqrtf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::rsqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::rsqrt< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("rsqrtf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR rsqrt< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -22067,19 +26931,19 @@ fail:
 }
 
 
-static int _wrap_rsqrtf__SWIG_1(lua_State* L) {
+static int _wrap_sqrtf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::rsqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::rsqrt< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("rsqrtf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR rsqrt< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -22094,19 +26958,19 @@ fail:
 }
 
 
-static int _wrap_rsqrtf__SWIG_2(lua_State* L) {
+static int _wrap_sqrtf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::rsqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::rsqrt< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("rsqrtf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR rsqrt< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -22121,19 +26985,19 @@ fail:
 }
 
 
-static int _wrap_rsqrtf__SWIG_3(lua_State* L) {
+static int _wrap_sqrtf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::rsqrt< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::rsqrt< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("rsqrtf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR rsqrt< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -22148,7 +27012,153 @@ fail:
 }
 
 
-static int _wrap_rsqrtf__SWIG_4(lua_State* L) {
+static int _wrap_sqrtf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::sqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sqrt< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("sqrtf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sqrt< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_sqrtf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sqrtf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sqrtf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sqrtf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sqrtf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sqrtf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sqrtf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sqrtf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'sqrtf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::sqrt< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::sqrt< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::sqrt< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::sqrt< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::sqrt< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::sqrt< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::sqrt< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_rsqrtf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -22175,7 +27185,7 @@ fail:
 }
 
 
-static int _wrap_rsqrtf__SWIG_5(lua_State* L) {
+static int _wrap_rsqrtf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -22202,6 +27212,114 @@ fail:
 }
 
 
+static int _wrap_rsqrtf__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Vector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::rsqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::rsqrt< float >",1,"SoundWave::Vector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
+    SWIG_fail_ptr("rsqrtf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR rsqrt< float >(*arg1);
+  {
+    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_rsqrtf__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Matrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Matrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::rsqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::rsqrt< float >",1,"SoundWave::Matrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
+    SWIG_fail_ptr("rsqrtf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR rsqrt< float >((SoundWave::Matrix< float > const &)*arg1);
+  {
+    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_rsqrtf__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColVector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColVector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::rsqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::rsqrt< float >",1,"SoundWave::ColVector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
+    SWIG_fail_ptr("rsqrtf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR rsqrt< float >(*arg1);
+  {
+    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_rsqrtf__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColMatrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::rsqrt< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::rsqrt< float >",1,"SoundWave::ColMatrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
+    SWIG_fail_ptr("rsqrtf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR rsqrt< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  {
+    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_rsqrtf(lua_State* L) {
   int argc;
   int argv[2]={
@@ -22213,7 +27331,7 @@ static int _wrap_rsqrtf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -22227,7 +27345,7 @@ static int _wrap_rsqrtf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -22241,7 +27359,7 @@ static int _wrap_rsqrtf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -22255,7 +27373,7 @@ static int _wrap_rsqrtf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -22269,7 +27387,7 @@ static int _wrap_rsqrtf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -22283,7 +27401,7 @@ static int _wrap_rsqrtf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -22296,32 +27414,59 @@ static int _wrap_rsqrtf(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'rsqrtf'\n"
     "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::rsqrt< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::rsqrt< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::rsqrt< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::rsqrt< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::rsqrt< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::rsqrt< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::rsqrt< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::rsqrt< float >(SoundWave::SampleMatrix< float > &)\n");
+    "    SoundWave::rsqrt< float >(SoundWave::ColMatrix< float > const &)\n");
   lua_error(L);return 0;
+}
+
+
+static int _wrap_square__SWIG_7(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::SampleVector< float > *arg1 = 0 ;
+  SoundWave::SampleVector< float > result;
+  
+  SWIG_check_num_args("SoundWave::square< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::SampleVector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,0))){
+    SWIG_fail_ptr("square",1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >(*arg1);
+  {
+    SoundWave::SampleVector< float > * resultptr = new SoundWave::SampleVector< float >((const SoundWave::SampleVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
 }
 
 
 static int _wrap_square__SWIG_8(lua_State* L) {
   int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
+  SoundWave::SampleMatrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
   
   SWIG_check_num_args("SoundWave::square< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::Scalar< float > const &");
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::SampleMatrix< float > &");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("square",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t,0))){
+    SWIG_fail_ptr("square",1,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >((SoundWave::Scalar< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >(*arg1);
   {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
+    SoundWave::SampleMatrix< float > * resultptr = new SoundWave::SampleMatrix< float >((const SoundWave::SampleMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -22443,63 +27588,9 @@ fail:
 
 static int _wrap_square__SWIG_13(lua_State* L) {
   int SWIG_arg = 0;
-  SoundWave::SampleVector< float > *arg1 = 0 ;
-  SoundWave::SampleVector< float > result;
-  
-  SWIG_check_num_args("SoundWave::square< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::SampleVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,0))){
-    SWIG_fail_ptr("square",1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >(*arg1);
-  {
-    SoundWave::SampleVector< float > * resultptr = new SoundWave::SampleVector< float >((const SoundWave::SampleVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_square__SWIG_14(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::SampleMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::square< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"SoundWave::SampleMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t,0))){
-    SWIG_fail_ptr("square",1,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR square< float >(*arg1);
-  {
-    SoundWave::SampleMatrix< float > * resultptr = new SoundWave::SampleMatrix< float >((const SoundWave::SampleMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_square__SWIG_15(lua_State* L) {
-  int SWIG_arg = 0;
-  std::vector< float > arg1 ;
+  SwigValueWrapper< std::vector< float > > arg1 ;
   std::vector< float > *argp1 ;
-  std::vector< float > result;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::square< float >",1,1)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::square< float >",1,"std::vector< float >");
@@ -22535,7 +27626,21 @@ static int _wrap_square(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_square__SWIG_7(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -22605,7 +27710,7 @@ static int _wrap_square(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -22615,77 +27720,21 @@ static int _wrap_square(lua_State* L) {
       return _wrap_square__SWIG_13(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_square__SWIG_14(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_square__SWIG_15(L);
-    }
-  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'square'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::square< float >(SoundWave::Scalar< float > const &)\n"
+    "    SoundWave::square< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::square< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::square< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::square< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::square< float >(SoundWave::ColVector< float > &)\n"
     "    SoundWave::square< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::square< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::square< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::square< float >(std::vector< float >)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_cube__SWIG_5(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::cube< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cube< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("cube",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cube< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_cube__SWIG_6(lua_State* L) {
+static int _wrap_cube__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
@@ -22712,7 +27761,7 @@ fail:
 }
 
 
-static int _wrap_cube__SWIG_7(lua_State* L) {
+static int _wrap_cube__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
@@ -22739,7 +27788,7 @@ fail:
 }
 
 
-static int _wrap_cube__SWIG_8(lua_State* L) {
+static int _wrap_cube__SWIG_6(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
@@ -22766,7 +27815,7 @@ fail:
 }
 
 
-static int _wrap_cube__SWIG_9(lua_State* L) {
+static int _wrap_cube__SWIG_7(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
@@ -22804,20 +27853,6 @@ static int _wrap_cube(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cube__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
       if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
@@ -22825,7 +27860,7 @@ static int _wrap_cube(lua_State* L) {
       }
     }
     if (_v) {
-      return _wrap_cube__SWIG_6(L);
+      return _wrap_cube__SWIG_4(L);
     }
   }
   if (argc == 1) {
@@ -22839,7 +27874,7 @@ static int _wrap_cube(lua_State* L) {
       }
     }
     if (_v) {
-      return _wrap_cube__SWIG_7(L);
+      return _wrap_cube__SWIG_5(L);
     }
   }
   if (argc == 1) {
@@ -22853,7 +27888,7 @@ static int _wrap_cube(lua_State* L) {
       }
     }
     if (_v) {
-      return _wrap_cube__SWIG_8(L);
+      return _wrap_cube__SWIG_6(L);
     }
   }
   if (argc == 1) {
@@ -22867,13 +27902,12 @@ static int _wrap_cube(lua_State* L) {
       }
     }
     if (_v) {
-      return _wrap_cube__SWIG_9(L);
+      return _wrap_cube__SWIG_7(L);
     }
   }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'cube'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::cube< float >(SoundWave::Scalar< float > const &)\n"
     "    SoundWave::cube< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::cube< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::cube< float >(SoundWave::ColVector< float > &)\n"
@@ -22883,195 +27917,6 @@ static int _wrap_cube(lua_State* L) {
 
 
 static int _wrap_sinf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinf__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Vector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Vector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::Vector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >(*arg1);
-  {
-    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinf__SWIG_4(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Matrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Matrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::Matrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >((SoundWave::Matrix< float > const &)*arg1);
-  {
-    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinf__SWIG_5(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::ColVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >(*arg1);
-  {
-    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinf__SWIG_6(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::ColMatrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >((SoundWave::ColMatrix< float > const &)*arg1);
-  {
-    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinf__SWIG_7(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -23098,7 +27943,7 @@ fail:
 }
 
 
-static int _wrap_sinf__SWIG_8(lua_State* L) {
+static int _wrap_sinf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -23125,249 +27970,19 @@ fail:
 }
 
 
-static int _wrap_sinf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinf__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinf__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'sinf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::sin< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::sin< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::sin< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::sin< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::sin< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::sin< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::sin< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::sin< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::sin< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_cosf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::cos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_cosf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::cos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_cosf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::cos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_cosf__SWIG_3(lua_State* L) {
+static int _wrap_sinf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::cos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::sin< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -23382,19 +27997,19 @@ fail:
 }
 
 
-static int _wrap_cosf__SWIG_4(lua_State* L) {
+static int _wrap_sinf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::cos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::sin< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -23409,19 +28024,19 @@ fail:
 }
 
 
-static int _wrap_cosf__SWIG_5(lua_State* L) {
+static int _wrap_sinf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::cos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::sin< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -23436,19 +28051,19 @@ fail:
 }
 
 
-static int _wrap_cosf__SWIG_6(lua_State* L) {
+static int _wrap_sinf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::cos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::sin< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -23463,7 +28078,153 @@ fail:
 }
 
 
-static int _wrap_cosf__SWIG_7(lua_State* L) {
+static int _wrap_sinf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::sin< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sin< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("sinf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sin< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_sinf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'sinf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::sin< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::sin< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::sin< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::sin< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::sin< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::sin< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::sin< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_cosf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -23490,7 +28251,7 @@ fail:
 }
 
 
-static int _wrap_cosf__SWIG_8(lua_State* L) {
+static int _wrap_cosf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -23517,249 +28278,19 @@ fail:
 }
 
 
-static int _wrap_cosf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cosf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cosf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cosf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cosf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cosf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cosf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cosf__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cosf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_cosf__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'cosf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::cos< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::cos< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::cos< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::cos< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::cos< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::cos< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::cos< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::cos< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::cos< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_tanf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::tan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_tanf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::tan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_tanf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::tan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_tanf__SWIG_3(lua_State* L) {
+static int _wrap_cosf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::tan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::cos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -23774,19 +28305,19 @@ fail:
 }
 
 
-static int _wrap_tanf__SWIG_4(lua_State* L) {
+static int _wrap_cosf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::tan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::cos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -23801,19 +28332,19 @@ fail:
 }
 
 
-static int _wrap_tanf__SWIG_5(lua_State* L) {
+static int _wrap_cosf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::tan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::cos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -23828,19 +28359,19 @@ fail:
 }
 
 
-static int _wrap_tanf__SWIG_6(lua_State* L) {
+static int _wrap_cosf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::tan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::cos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -23855,7 +28386,153 @@ fail:
 }
 
 
-static int _wrap_tanf__SWIG_7(lua_State* L) {
+static int _wrap_cosf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::cos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cos< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("cosf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cos< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cosf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_cosf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_cosf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_cosf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_cosf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_cosf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_cosf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_cosf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'cosf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::cos< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::cos< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::cos< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::cos< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::cos< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::cos< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::cos< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_tanf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -23882,7 +28559,7 @@ fail:
 }
 
 
-static int _wrap_tanf__SWIG_8(lua_State* L) {
+static int _wrap_tanf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -23909,6 +28586,141 @@ fail:
 }
 
 
+static int _wrap_tanf__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Vector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::Vector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
+    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >(*arg1);
+  {
+    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_tanf__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Matrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Matrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::Matrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
+    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >((SoundWave::Matrix< float > const &)*arg1);
+  {
+    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_tanf__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColVector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColVector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::ColVector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
+    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >(*arg1);
+  {
+    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_tanf__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColMatrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"SoundWave::ColMatrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
+    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  {
+    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_tanf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tan< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("tanf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tan< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_tanf(lua_State* L) {
   int argc;
   int argv[2]={
@@ -23920,7 +28732,7 @@ static int _wrap_tanf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -23934,7 +28746,7 @@ static int _wrap_tanf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -23948,7 +28760,7 @@ static int _wrap_tanf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -23962,7 +28774,7 @@ static int _wrap_tanf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -23976,7 +28788,7 @@ static int _wrap_tanf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -23990,7 +28802,7 @@ static int _wrap_tanf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -24004,7 +28816,7 @@ static int _wrap_tanf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -24014,66 +28826,36 @@ static int _wrap_tanf(lua_State* L) {
       return _wrap_tanf__SWIG_6(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_tanf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_tanf__SWIG_8(L);
-    }
-  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'tanf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::tan< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::tan< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::tan< float >(SoundWave::ArrayMatrix< float > &)\n"
+    "    SoundWave::tan< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::tan< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::tan< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::tan< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::tan< float >(SoundWave::ColVector< float > &)\n"
     "    SoundWave::tan< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::tan< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::tan< float >(SoundWave::SampleMatrix< float > &)\n");
+    "    SoundWave::tan< float >(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_asinf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
+  SoundWave::SampleVector< float > *arg1 = 0 ;
+  SoundWave::SampleVector< float > result;
   
   SWIG_check_num_args("SoundWave::asin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::asin< float >",1,"SoundWave::ArrayVector< float > &");
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::asin< float >",1,"SoundWave::SampleVector< float > &");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("asinf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,0))){
+    SWIG_fail_ptr("asinf",1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t);
   }
   
   result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR asin< float >(*arg1);
   {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
+    SoundWave::SampleVector< float > * resultptr = new SoundWave::SampleVector< float >((const SoundWave::SampleVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -24087,20 +28869,20 @@ fail:
 
 static int _wrap_asinf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
+  SoundWave::SampleMatrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
   
   SWIG_check_num_args("SoundWave::asin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::asin< float >",1,"SoundWave::ArrayMatrix< float > &");
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::asin< float >",1,"SoundWave::SampleMatrix< float > &");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("asinf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t,0))){
+    SWIG_fail_ptr("asinf",1,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t);
   }
   
   result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR asin< float >(*arg1);
   {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
+    SoundWave::SampleMatrix< float > * resultptr = new SoundWave::SampleMatrix< float >((const SoundWave::SampleMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -24222,47 +29004,20 @@ fail:
 
 static int _wrap_asinf__SWIG_6(lua_State* L) {
   int SWIG_arg = 0;
-  SoundWave::SampleVector< float > *arg1 = 0 ;
-  SoundWave::SampleVector< float > result;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
   
   SWIG_check_num_args("SoundWave::asin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::asin< float >",1,"SoundWave::SampleVector< float > &");
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::asin< float >",1,"std::vector< float > const &");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,0))){
-    SWIG_fail_ptr("asinf",1,SWIGTYPE_p_SoundWave__SampleVectorT_float_t);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("asinf",1,SWIGTYPE_p_std__vectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR asin< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR asin< float >((std::vector< float > const &)*arg1);
   {
-    SoundWave::SampleVector< float > * resultptr = new SoundWave::SampleVector< float >((const SoundWave::SampleVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_asinf__SWIG_7(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::SampleMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::asin< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::asin< float >",1,"SoundWave::SampleMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t,0))){
-    SWIG_fail_ptr("asinf",1,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR asin< float >(*arg1);
-  {
-    SoundWave::SampleMatrix< float > * resultptr = new SoundWave::SampleMatrix< float >((const SoundWave::SampleMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__SampleMatrixT_float_t,1); SWIG_arg++;
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -24285,7 +29040,7 @@ static int _wrap_asinf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -24299,7 +29054,7 @@ static int _wrap_asinf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -24369,7 +29124,7 @@ static int _wrap_asinf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -24379,225 +29134,21 @@ static int _wrap_asinf(lua_State* L) {
       return _wrap_asinf__SWIG_6(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_asinf__SWIG_7(L);
-    }
-  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'asinf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::asin< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::asin< float >(SoundWave::ArrayMatrix< float > &)\n"
+    "    SoundWave::asin< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::asin< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::asin< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::asin< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::asin< float >(SoundWave::ColVector< float > &)\n"
     "    SoundWave::asin< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::asin< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::asin< float >(SoundWave::SampleMatrix< float > &)\n");
+    "    SoundWave::asin< float >(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_acosf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::acos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_acosf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::acos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_acosf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::acos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_acosf__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Vector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Vector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::acos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::Vector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >(*arg1);
-  {
-    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_acosf__SWIG_4(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Matrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Matrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::acos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::Matrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >((SoundWave::Matrix< float > const &)*arg1);
-  {
-    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_acosf__SWIG_5(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::acos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::ColVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >(*arg1);
-  {
-    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_acosf__SWIG_6(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::acos< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::ColMatrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >((SoundWave::ColMatrix< float > const &)*arg1);
-  {
-    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_acosf__SWIG_7(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -24624,7 +29175,7 @@ fail:
 }
 
 
-static int _wrap_acosf__SWIG_8(lua_State* L) {
+static int _wrap_acosf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -24651,249 +29202,19 @@ fail:
 }
 
 
-static int _wrap_acosf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_acosf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_acosf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_acosf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_acosf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_acosf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_acosf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_acosf__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_acosf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_acosf__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'acosf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::acos< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::acos< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::acos< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::acos< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::acos< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::acos< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::acos< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::acos< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::acos< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_atanf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::atan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_atanf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::atan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_atanf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::atan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_atanf__SWIG_3(lua_State* L) {
+static int _wrap_acosf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::atan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::acos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -24908,19 +29229,19 @@ fail:
 }
 
 
-static int _wrap_atanf__SWIG_4(lua_State* L) {
+static int _wrap_acosf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::atan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::acos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -24935,19 +29256,19 @@ fail:
 }
 
 
-static int _wrap_atanf__SWIG_5(lua_State* L) {
+static int _wrap_acosf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::atan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::acos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -24962,19 +29283,19 @@ fail:
 }
 
 
-static int _wrap_atanf__SWIG_6(lua_State* L) {
+static int _wrap_acosf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::atan< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::acos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -24989,7 +29310,153 @@ fail:
 }
 
 
-static int _wrap_atanf__SWIG_7(lua_State* L) {
+static int _wrap_acosf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::acos< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acos< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("acosf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acos< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_acosf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_acosf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_acosf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_acosf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_acosf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_acosf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_acosf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_acosf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'acosf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::acos< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::acos< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::acos< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::acos< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::acos< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::acos< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::acos< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_atanf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -25016,7 +29483,7 @@ fail:
 }
 
 
-static int _wrap_atanf__SWIG_8(lua_State* L) {
+static int _wrap_atanf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -25043,249 +29510,19 @@ fail:
 }
 
 
-static int _wrap_atanf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_atanf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_atanf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_atanf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_atanf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_atanf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_atanf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_atanf__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_atanf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_atanf__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'atanf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::atan< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::atan< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::atan< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::atan< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::atan< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::atan< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::atan< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::atan< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::atan< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_sinhf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinhf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinhf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_sinhf__SWIG_3(lua_State* L) {
+static int _wrap_atanf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::atan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -25300,19 +29537,19 @@ fail:
 }
 
 
-static int _wrap_sinhf__SWIG_4(lua_State* L) {
+static int _wrap_atanf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::atan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -25327,19 +29564,19 @@ fail:
 }
 
 
-static int _wrap_sinhf__SWIG_5(lua_State* L) {
+static int _wrap_atanf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::atan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -25354,19 +29591,19 @@ fail:
 }
 
 
-static int _wrap_sinhf__SWIG_6(lua_State* L) {
+static int _wrap_atanf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::atan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -25381,7 +29618,153 @@ fail:
 }
 
 
-static int _wrap_sinhf__SWIG_7(lua_State* L) {
+static int _wrap_atanf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::atan< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atan< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("atanf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atan< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_atanf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_atanf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_atanf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_atanf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_atanf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_atanf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_atanf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_atanf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'atanf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::atan< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::atan< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::atan< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::atan< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::atan< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::atan< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::atan< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_sinhf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -25408,7 +29791,7 @@ fail:
 }
 
 
-static int _wrap_sinhf__SWIG_8(lua_State* L) {
+static int _wrap_sinhf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -25435,249 +29818,19 @@ fail:
 }
 
 
-static int _wrap_sinhf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinhf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinhf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinhf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinhf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinhf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinhf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinhf__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinhf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_sinhf__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'sinhf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::sinh< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::sinh< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::sinh< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::sinh< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::sinh< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::sinh< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::sinh< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::sinh< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::sinh< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_coshf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_coshf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_coshf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_coshf__SWIG_3(lua_State* L) {
+static int _wrap_sinhf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -25692,19 +29845,19 @@ fail:
 }
 
 
-static int _wrap_coshf__SWIG_4(lua_State* L) {
+static int _wrap_sinhf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -25719,19 +29872,19 @@ fail:
 }
 
 
-static int _wrap_coshf__SWIG_5(lua_State* L) {
+static int _wrap_sinhf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -25746,19 +29899,19 @@ fail:
 }
 
 
-static int _wrap_coshf__SWIG_6(lua_State* L) {
+static int _wrap_sinhf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -25773,7 +29926,153 @@ fail:
 }
 
 
-static int _wrap_coshf__SWIG_7(lua_State* L) {
+static int _wrap_sinhf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::sinh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::sinh< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("sinhf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR sinh< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_sinhf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinhf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinhf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinhf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinhf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinhf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinhf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_sinhf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'sinhf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::sinh< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::sinh< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::sinh< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::sinh< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::sinh< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::sinh< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::sinh< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_coshf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -25800,7 +30099,7 @@ fail:
 }
 
 
-static int _wrap_coshf__SWIG_8(lua_State* L) {
+static int _wrap_coshf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -25827,249 +30126,19 @@ fail:
 }
 
 
-static int _wrap_coshf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_coshf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_coshf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_coshf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_coshf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_coshf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_coshf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_coshf__SWIG_6(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_coshf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_coshf__SWIG_8(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'coshf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::cosh< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::cosh< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::cosh< float >(SoundWave::ArrayMatrix< float > &)\n"
-    "    SoundWave::cosh< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::cosh< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::cosh< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::cosh< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::cosh< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::cosh< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_tanhf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_tanhf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::ArrayVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,0))){
-    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >(*arg1);
-  {
-    SoundWave::ArrayVector< float > * resultptr = new SoundWave::ArrayVector< float >((const SoundWave::ArrayVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_tanhf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ArrayMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ArrayMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::ArrayMatrix< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,0))){
-    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >(*arg1);
-  {
-    SoundWave::ArrayMatrix< float > * resultptr = new SoundWave::ArrayMatrix< float >((const SoundWave::ArrayMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_tanhf__SWIG_3(lua_State* L) {
+static int _wrap_coshf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -26084,19 +30153,19 @@ fail:
 }
 
 
-static int _wrap_tanhf__SWIG_4(lua_State* L) {
+static int _wrap_coshf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -26111,19 +30180,19 @@ fail:
 }
 
 
-static int _wrap_tanhf__SWIG_5(lua_State* L) {
+static int _wrap_coshf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -26138,19 +30207,19 @@ fail:
 }
 
 
-static int _wrap_tanhf__SWIG_6(lua_State* L) {
+static int _wrap_coshf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -26165,7 +30234,153 @@ fail:
 }
 
 
-static int _wrap_tanhf__SWIG_7(lua_State* L) {
+static int _wrap_coshf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::cosh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::cosh< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("coshf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR cosh< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_coshf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_coshf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_coshf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_coshf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_coshf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_coshf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_coshf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_coshf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'coshf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::cosh< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::cosh< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::cosh< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::cosh< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::cosh< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::cosh< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::cosh< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_tanhf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -26192,7 +30407,7 @@ fail:
 }
 
 
-static int _wrap_tanhf__SWIG_8(lua_State* L) {
+static int _wrap_tanhf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -26219,6 +30434,141 @@ fail:
 }
 
 
+static int _wrap_tanhf__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Vector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::Vector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
+    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >(*arg1);
+  {
+    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_tanhf__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Matrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Matrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::Matrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
+    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >((SoundWave::Matrix< float > const &)*arg1);
+  {
+    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_tanhf__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColVector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColVector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::ColVector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
+    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >(*arg1);
+  {
+    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_tanhf__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColMatrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"SoundWave::ColMatrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
+    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  {
+    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_tanhf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::tanh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::tanh< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("tanhf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR tanh< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_tanhf(lua_State* L) {
   int argc;
   int argv[2]={
@@ -26230,7 +30580,7 @@ static int _wrap_tanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26244,7 +30594,7 @@ static int _wrap_tanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26258,7 +30608,7 @@ static int _wrap_tanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ArrayMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26272,7 +30622,7 @@ static int _wrap_tanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26286,7 +30636,7 @@ static int _wrap_tanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26300,7 +30650,7 @@ static int _wrap_tanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26314,7 +30664,7 @@ static int _wrap_tanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26324,78 +30674,21 @@ static int _wrap_tanhf(lua_State* L) {
       return _wrap_tanhf__SWIG_6(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_tanhf__SWIG_7(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_tanhf__SWIG_8(L);
-    }
-  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'tanhf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::tanh< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::tanh< float >(SoundWave::ArrayVector< float > &)\n"
-    "    SoundWave::tanh< float >(SoundWave::ArrayMatrix< float > &)\n"
+    "    SoundWave::tanh< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::tanh< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::tanh< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::tanh< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::tanh< float >(SoundWave::ColVector< float > &)\n"
     "    SoundWave::tanh< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::tanh< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::tanh< float >(SoundWave::SampleMatrix< float > &)\n");
+    "    SoundWave::tanh< float >(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_asinhf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::asinh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::asinh< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("asinhf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR asinh< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_asinhf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
@@ -26422,7 +30715,7 @@ fail:
 }
 
 
-static int _wrap_asinhf__SWIG_2(lua_State* L) {
+static int _wrap_asinhf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
@@ -26449,6 +30742,33 @@ fail:
 }
 
 
+static int _wrap_asinhf__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::asinh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::asinh< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("asinhf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR asinh< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_asinhf(lua_State* L) {
   int argc;
   int argv[2]={
@@ -26460,7 +30780,7 @@ static int _wrap_asinhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26474,7 +30794,7 @@ static int _wrap_asinhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26488,7 +30808,7 @@ static int _wrap_asinhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26501,41 +30821,14 @@ static int _wrap_asinhf(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'asinhf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::asinh< float >(SoundWave::Scalar< float > const &)\n"
     "    SoundWave::asinh< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::asinh< float >(SoundWave::ColMatrix< float > const &)\n");
+    "    SoundWave::asinh< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::asinh< float >(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_acoshf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::acosh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acosh< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("acoshf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acosh< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_acoshf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
@@ -26562,7 +30855,7 @@ fail:
 }
 
 
-static int _wrap_acoshf__SWIG_2(lua_State* L) {
+static int _wrap_acoshf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
@@ -26589,6 +30882,33 @@ fail:
 }
 
 
+static int _wrap_acoshf__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::acosh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::acosh< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("acoshf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR acosh< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_acoshf(lua_State* L) {
   int argc;
   int argv[2]={
@@ -26600,7 +30920,7 @@ static int _wrap_acoshf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26614,7 +30934,7 @@ static int _wrap_acoshf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26628,7 +30948,7 @@ static int _wrap_acoshf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26641,41 +30961,14 @@ static int _wrap_acoshf(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'acoshf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::acosh< float >(SoundWave::Scalar< float > const &)\n"
     "    SoundWave::acosh< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::acosh< float >(SoundWave::ColMatrix< float > const &)\n");
+    "    SoundWave::acosh< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::acosh< float >(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_atanhf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::atanh< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atanh< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("atanhf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atanh< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_atanhf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
@@ -26702,7 +30995,7 @@ fail:
 }
 
 
-static int _wrap_atanhf__SWIG_2(lua_State* L) {
+static int _wrap_atanhf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
@@ -26729,6 +31022,33 @@ fail:
 }
 
 
+static int _wrap_atanhf__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::atanh< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::atanh< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("atanhf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR atanh< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_atanhf(lua_State* L) {
   int argc;
   int argv[2]={
@@ -26740,7 +31060,7 @@ static int _wrap_atanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26754,7 +31074,7 @@ static int _wrap_atanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26768,7 +31088,7 @@ static int _wrap_atanhf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -26781,149 +31101,14 @@ static int _wrap_atanhf(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'atanhf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::atanh< float >(SoundWave::Scalar< float > const &)\n"
     "    SoundWave::atanh< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::atanh< float >(SoundWave::ColMatrix< float > const &)\n");
+    "    SoundWave::atanh< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::atanh< float >(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_floorf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::floor< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_floorf__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Vector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Vector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::floor< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"SoundWave::Vector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >(*arg1);
-  {
-    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_floorf__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Matrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Matrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::floor< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"SoundWave::Matrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >((SoundWave::Matrix< float > const &)*arg1);
-  {
-    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_floorf__SWIG_3(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColVector< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColVector< float > > result;
-  
-  SWIG_check_num_args("SoundWave::floor< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"SoundWave::ColVector< float > &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >(*arg1);
-  {
-    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_floorf__SWIG_4(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::ColMatrix< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
-  
-  SWIG_check_num_args("SoundWave::floor< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"SoundWave::ColMatrix< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >((SoundWave::ColMatrix< float > const &)*arg1);
-  {
-    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_floorf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -26950,7 +31135,7 @@ fail:
 }
 
 
-static int _wrap_floorf__SWIG_6(lua_State* L) {
+static int _wrap_floorf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -26977,165 +31162,19 @@ fail:
 }
 
 
-static int _wrap_floorf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_floorf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_floorf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_floorf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_floorf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_floorf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_floorf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_floorf__SWIG_6(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'floorf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::floor< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::floor< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::floor< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::floor< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::floor< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::floor< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::floor< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_ceilf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_ceilf__SWIG_1(lua_State* L) {
+static int _wrap_floorf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::floor< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -27150,19 +31189,19 @@ fail:
 }
 
 
-static int _wrap_ceilf__SWIG_2(lua_State* L) {
+static int _wrap_floorf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::floor< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -27177,19 +31216,19 @@ fail:
 }
 
 
-static int _wrap_ceilf__SWIG_3(lua_State* L) {
+static int _wrap_floorf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::floor< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -27204,19 +31243,19 @@ fail:
 }
 
 
-static int _wrap_ceilf__SWIG_4(lua_State* L) {
+static int _wrap_floorf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::floor< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -27231,7 +31270,153 @@ fail:
 }
 
 
-static int _wrap_ceilf__SWIG_5(lua_State* L) {
+static int _wrap_floorf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::floor< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::floor< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("floorf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR floor< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_floorf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_floorf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_floorf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_floorf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_floorf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_floorf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_floorf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_floorf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'floorf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::floor< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::floor< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::floor< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::floor< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::floor< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::floor< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::floor< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_ceilf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -27258,7 +31443,7 @@ fail:
 }
 
 
-static int _wrap_ceilf__SWIG_6(lua_State* L) {
+static int _wrap_ceilf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -27285,165 +31470,19 @@ fail:
 }
 
 
-static int _wrap_ceilf(lua_State* L) {
-  int argc;
-  int argv[2]={
-    1,2
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_ceilf__SWIG_0(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_ceilf__SWIG_1(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_ceilf__SWIG_2(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_ceilf__SWIG_3(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_ceilf__SWIG_4(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_ceilf__SWIG_5(L);
-    }
-  }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_ceilf__SWIG_6(L);
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'ceilf'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::ceil< float >(SoundWave::Scalar< float > const &)\n"
-    "    SoundWave::ceil< float >(SoundWave::Vector< float > &)\n"
-    "    SoundWave::ceil< float >(SoundWave::Matrix< float > const &)\n"
-    "    SoundWave::ceil< float >(SoundWave::ColVector< float > &)\n"
-    "    SoundWave::ceil< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::ceil< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::ceil< float >(SoundWave::SampleMatrix< float > &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_roundf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::round< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_roundf__SWIG_1(lua_State* L) {
+static int _wrap_ceilf__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Vector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Vector< float > > result;
   
-  SWIG_check_num_args("SoundWave::round< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"SoundWave::Vector< float > &");
+  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"SoundWave::Vector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
-    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >(*arg1);
   {
     SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
@@ -27458,19 +31497,19 @@ fail:
 }
 
 
-static int _wrap_roundf__SWIG_2(lua_State* L) {
+static int _wrap_ceilf__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::round< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"SoundWave::Matrix< float > const &");
+  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"SoundWave::Matrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
-    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >((SoundWave::Matrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >((SoundWave::Matrix< float > const &)*arg1);
   {
     SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
@@ -27485,19 +31524,19 @@ fail:
 }
 
 
-static int _wrap_roundf__SWIG_3(lua_State* L) {
+static int _wrap_ceilf__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColVector< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColVector< float > > result;
   
-  SWIG_check_num_args("SoundWave::round< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"SoundWave::ColVector< float > &");
+  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"SoundWave::ColVector< float > &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
-    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >(*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >(*arg1);
   {
     SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
@@ -27512,19 +31551,19 @@ fail:
 }
 
 
-static int _wrap_roundf__SWIG_4(lua_State* L) {
+static int _wrap_ceilf__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
   
-  SWIG_check_num_args("SoundWave::round< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"SoundWave::ColMatrix< float > const &");
+  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"SoundWave::ColMatrix< float > const &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
-    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
   }
   
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >((SoundWave::ColMatrix< float > const &)*arg1);
   {
     SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
     SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
@@ -27539,7 +31578,153 @@ fail:
 }
 
 
-static int _wrap_roundf__SWIG_5(lua_State* L) {
+static int _wrap_ceilf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::ceil< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::ceil< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("ceilf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR ceil< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ceilf(lua_State* L) {
+  int argc;
+  int argv[2]={
+    1,2
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_ceilf__SWIG_0(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_ceilf__SWIG_1(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_ceilf__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_ceilf__SWIG_3(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_ceilf__SWIG_4(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_ceilf__SWIG_5(L);
+    }
+  }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_ceilf__SWIG_6(L);
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'ceilf'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundWave::ceil< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::ceil< float >(SoundWave::SampleMatrix< float > &)\n"
+    "    SoundWave::ceil< float >(SoundWave::Vector< float > &)\n"
+    "    SoundWave::ceil< float >(SoundWave::Matrix< float > const &)\n"
+    "    SoundWave::ceil< float >(SoundWave::ColVector< float > &)\n"
+    "    SoundWave::ceil< float >(SoundWave::ColMatrix< float > const &)\n"
+    "    SoundWave::ceil< float >(std::vector< float > const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_roundf__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleVector< float > *arg1 = 0 ;
   SoundWave::SampleVector< float > result;
@@ -27566,7 +31751,7 @@ fail:
 }
 
 
-static int _wrap_roundf__SWIG_6(lua_State* L) {
+static int _wrap_roundf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::SampleMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::SampleMatrix< float > > result;
@@ -27593,6 +31778,141 @@ fail:
 }
 
 
+static int _wrap_roundf__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Vector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::round< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"SoundWave::Vector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__VectorT_float_t,0))){
+    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_SoundWave__VectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >(*arg1);
+  {
+    SoundWave::Vector< float > * resultptr = new SoundWave::Vector< float >((const SoundWave::Vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__VectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_roundf__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::Matrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::Matrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::round< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"SoundWave::Matrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__MatrixT_float_t,0))){
+    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_SoundWave__MatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >((SoundWave::Matrix< float > const &)*arg1);
+  {
+    SoundWave::Matrix< float > * resultptr = new SoundWave::Matrix< float >((const SoundWave::Matrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__MatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_roundf__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColVector< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColVector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::round< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"SoundWave::ColVector< float > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColVectorT_float_t,0))){
+    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_SoundWave__ColVectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >(*arg1);
+  {
+    SoundWave::ColVector< float > * resultptr = new SoundWave::ColVector< float >((const SoundWave::ColVector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColVectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_roundf__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundWave::ColMatrix< float > *arg1 = 0 ;
+  SwigValueWrapper< SoundWave::ColMatrix< float > > result;
+  
+  SWIG_check_num_args("SoundWave::round< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"SoundWave::ColMatrix< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,0))){
+    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_SoundWave__ColMatrixT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >((SoundWave::ColMatrix< float > const &)*arg1);
+  {
+    SoundWave::ColMatrix< float > * resultptr = new SoundWave::ColMatrix< float >((const SoundWave::ColMatrix< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ColMatrixT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_roundf__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< float > *arg1 = 0 ;
+  SwigValueWrapper< std::vector< float > > result;
+  
+  SWIG_check_num_args("SoundWave::round< float >",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::round< float >",1,"std::vector< float > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_float_t,0))){
+    SWIG_fail_ptr("roundf",1,SWIGTYPE_p_std__vectorT_float_t);
+  }
+  
+  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR round< float >((std::vector< float > const &)*arg1);
+  {
+    std::vector< float > * resultptr = new std::vector< float >((const std::vector< float > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_roundf(lua_State* L) {
   int argc;
   int argv[2]={
@@ -27604,7 +31924,7 @@ static int _wrap_roundf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -27618,7 +31938,7 @@ static int _wrap_roundf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -27632,7 +31952,7 @@ static int _wrap_roundf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__VectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -27646,7 +31966,7 @@ static int _wrap_roundf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -27660,7 +31980,7 @@ static int _wrap_roundf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColVectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -27674,7 +31994,7 @@ static int _wrap_roundf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleVectorT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -27688,7 +32008,7 @@ static int _wrap_roundf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__SampleMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -27701,45 +32021,18 @@ static int _wrap_roundf(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'roundf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::round< float >(SoundWave::Scalar< float > const &)\n"
+    "    SoundWave::round< float >(SoundWave::SampleVector< float > &)\n"
+    "    SoundWave::round< float >(SoundWave::SampleMatrix< float > &)\n"
     "    SoundWave::round< float >(SoundWave::Vector< float > &)\n"
     "    SoundWave::round< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::round< float >(SoundWave::ColVector< float > &)\n"
     "    SoundWave::round< float >(SoundWave::ColMatrix< float > const &)\n"
-    "    SoundWave::round< float >(SoundWave::SampleVector< float > &)\n"
-    "    SoundWave::round< float >(SoundWave::SampleMatrix< float > &)\n");
+    "    SoundWave::round< float >(std::vector< float > const &)\n");
   lua_error(L);return 0;
 }
 
 
 static int _wrap_rintf__SWIG_0(lua_State* L) {
-  int SWIG_arg = 0;
-  SoundWave::Scalar< float > *arg1 = 0 ;
-  SwigValueWrapper< SoundWave::Scalar< float > > result;
-  
-  SWIG_check_num_args("SoundWave::rint< float >",1,1)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("SoundWave::rint< float >",1,"SoundWave::Scalar< float > const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundWave__ScalarT_float_t,0))){
-    SWIG_fail_ptr("rintf",1,SWIGTYPE_p_SoundWave__ScalarT_float_t);
-  }
-  
-  result = SoundWave::SWIGTEMPLATEDISAMBIGUATOR rint< float >((SoundWave::Scalar< float > const &)*arg1);
-  {
-    SoundWave::Scalar< float > * resultptr = new SoundWave::Scalar< float >((const SoundWave::Scalar< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SoundWave__ScalarT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_rintf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::Matrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::Matrix< float > > result;
@@ -27766,7 +32059,7 @@ fail:
 }
 
 
-static int _wrap_rintf__SWIG_2(lua_State* L) {
+static int _wrap_rintf__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundWave::ColMatrix< float > *arg1 = 0 ;
   SwigValueWrapper< SoundWave::ColMatrix< float > > result;
@@ -27804,7 +32097,7 @@ static int _wrap_rintf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ScalarT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -27818,7 +32111,7 @@ static int _wrap_rintf(lua_State* L) {
     int _v = 0;
     {
       void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__MatrixT_float_t, SWIG_POINTER_NO_NULL)) {
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
         _v = 0;
       } else {
         _v = 1;
@@ -27828,24 +32121,9 @@ static int _wrap_rintf(lua_State* L) {
       return _wrap_rintf__SWIG_1(L);
     }
   }
-  if (argc == 1) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundWave__ColMatrixT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      return _wrap_rintf__SWIG_2(L);
-    }
-  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'rintf'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundWave::rint< float >(SoundWave::Scalar< float > const &)\n"
     "    SoundWave::rint< float >(SoundWave::Matrix< float > const &)\n"
     "    SoundWave::rint< float >(SoundWave::ColMatrix< float > const &)\n");
   lua_error(L);return 0;
@@ -28748,7 +33026,7 @@ fail:
 }
 
 
-static int _wrap_cfpow__SWIG_0(lua_State* L) {
+static int _wrap_cfpow(lua_State* L) {
   int SWIG_arg = 0;
   std::complex< float > *arg1 = 0 ;
   std::complex< float > *arg2 = 0 ;
@@ -28782,148 +33060,7 @@ fail:
 }
 
 
-static int _wrap_cfpow__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  std::complex< float > *arg1 = 0 ;
-  float *arg2 = 0 ;
-  float temp2 ;
-  std::complex< float > result;
-  
-  SWIG_check_num_args("std::pow< float >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::pow< float >",1,"std::complex< float > const &");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::pow< float >",2,"float const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_float_t,0))){
-    SWIG_fail_ptr("cfpow",1,SWIGTYPE_p_std__complexT_float_t);
-  }
-  
-  temp2=(float)lua_tonumber(L,2); arg2=&temp2;
-  result = std::SWIGTEMPLATEDISAMBIGUATOR pow< float >((std::complex< float > const &)*arg1,(float const &)*arg2);
-  {
-    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_cfpow__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  float *arg1 = 0 ;
-  std::complex< float > *arg2 = 0 ;
-  float temp1 ;
-  std::complex< float > result;
-  
-  SWIG_check_num_args("std::pow< float >",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::pow< float >",1,"float const &");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::pow< float >",2,"std::complex< float > const &");
-  temp1=(float)lua_tonumber(L,1); arg1=&temp1;
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__complexT_float_t,0))){
-    SWIG_fail_ptr("cfpow",2,SWIGTYPE_p_std__complexT_float_t);
-  }
-  
-  result = std::SWIGTEMPLATEDISAMBIGUATOR pow< float >((float const &)*arg1,(std::complex< float > const &)*arg2);
-  {
-    std::complex< float > * resultptr = new std::complex< float >((const std::complex< float > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_float_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_cfpow(lua_State* L) {
-  int argc;
-  int argv[3]={
-    1,2,3
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__complexT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        void *ptr;
-        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__complexT_float_t, SWIG_POINTER_NO_NULL)) {
-          _v = 0;
-        } else {
-          _v = 1;
-        }
-      }
-      if (_v) {
-        return _wrap_cfpow__SWIG_0(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__complexT_float_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        return _wrap_cfpow__SWIG_1(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      _v = lua_isnumber(L,argv[0]);
-    }
-    if (_v) {
-      {
-        void *ptr;
-        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__complexT_float_t, SWIG_POINTER_NO_NULL)) {
-          _v = 0;
-        } else {
-          _v = 1;
-        }
-      }
-      if (_v) {
-        return _wrap_cfpow__SWIG_2(L);
-      }
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'cfpow'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    std::pow< float >(std::complex< float > const &,std::complex< float > const &)\n"
-    "    std::pow< float >(std::complex< float > const &,float const &)\n"
-    "    std::pow< float >(float const &,std::complex< float > const &)\n");
-  lua_error(L);return 0;
-}
-
-
-static int _wrap_czpow__SWIG_0(lua_State* L) {
+static int _wrap_czpow(lua_State* L) {
   int SWIG_arg = 0;
   std::complex< double > *arg1 = 0 ;
   std::complex< double > *arg2 = 0 ;
@@ -28954,147 +33091,6 @@ static int _wrap_czpow__SWIG_0(lua_State* L) {
 fail:
   lua_error(L);
   return SWIG_arg;
-}
-
-
-static int _wrap_czpow__SWIG_1(lua_State* L) {
-  int SWIG_arg = 0;
-  std::complex< double > *arg1 = 0 ;
-  double *arg2 = 0 ;
-  double temp2 ;
-  std::complex< double > result;
-  
-  SWIG_check_num_args("std::pow< double >",2,2)
-  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::pow< double >",1,"std::complex< double > const &");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::pow< double >",2,"double const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__complexT_double_t,0))){
-    SWIG_fail_ptr("czpow",1,SWIGTYPE_p_std__complexT_double_t);
-  }
-  
-  temp2=(double)lua_tonumber(L,2); arg2=&temp2;
-  result = std::SWIGTEMPLATEDISAMBIGUATOR pow< double >((std::complex< double > const &)*arg1,(double const &)*arg2);
-  {
-    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_czpow__SWIG_2(lua_State* L) {
-  int SWIG_arg = 0;
-  double *arg1 = 0 ;
-  std::complex< double > *arg2 = 0 ;
-  double temp1 ;
-  std::complex< double > result;
-  
-  SWIG_check_num_args("std::pow< double >",2,2)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::pow< double >",1,"double const &");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::pow< double >",2,"std::complex< double > const &");
-  temp1=(double)lua_tonumber(L,1); arg1=&temp1;
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__complexT_double_t,0))){
-    SWIG_fail_ptr("czpow",2,SWIGTYPE_p_std__complexT_double_t);
-  }
-  
-  result = std::SWIGTEMPLATEDISAMBIGUATOR pow< double >((double const &)*arg1,(std::complex< double > const &)*arg2);
-  {
-    std::complex< double > * resultptr = new std::complex< double >((const std::complex< double > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__complexT_double_t,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_czpow(lua_State* L) {
-  int argc;
-  int argv[3]={
-    1,2,3
-  };
-  
-  argc = lua_gettop(L);
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__complexT_double_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        void *ptr;
-        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__complexT_double_t, SWIG_POINTER_NO_NULL)) {
-          _v = 0;
-        } else {
-          _v = 1;
-        }
-      }
-      if (_v) {
-        return _wrap_czpow__SWIG_0(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      void *ptr;
-      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__complexT_double_t, SWIG_POINTER_NO_NULL)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = lua_isnumber(L,argv[1]);
-      }
-      if (_v) {
-        return _wrap_czpow__SWIG_1(L);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v = 0;
-    {
-      _v = lua_isnumber(L,argv[0]);
-    }
-    if (_v) {
-      {
-        void *ptr;
-        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__complexT_double_t, SWIG_POINTER_NO_NULL)) {
-          _v = 0;
-        } else {
-          _v = 1;
-        }
-      }
-      if (_v) {
-        return _wrap_czpow__SWIG_2(L);
-      }
-    }
-  }
-  
-  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'czpow'\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    std::pow< double >(std::complex< double > const &,std::complex< double > const &)\n"
-    "    std::pow< double >(std::complex< double > const &,double const &)\n"
-    "    std::pow< double >(double const &,std::complex< double > const &)\n");
-  lua_error(L);return 0;
 }
 
 
@@ -29807,6 +33803,53 @@ static swig_lua_const_info swig_SwigModule_constants[]= {
     {0,0,0,0,0,0}
 };
 static swig_lua_method swig_SwigModule_methods[]= {
+    { "crealf", _wrap_crealf},
+    { "creald", _wrap_creald},
+    { "cimagf", _wrap_cimagf},
+    { "cimagd", _wrap_cimagd},
+    { "cabsf", _wrap_cabsf},
+    { "cabsd", _wrap_cabsd},
+    { "cargf", _wrap_cargf},
+    { "cargd", _wrap_cargd},
+    { "cnormf", _wrap_cnormf},
+    { "cnormd", _wrap_cnormd},
+    { "cprojf", _wrap_cprojf},
+    { "cpolarf", _wrap_cpolarf},
+    { "cpolard", _wrap_cpolard},
+    { "cexpf", _wrap_cexpf},
+    { "cexpd", _wrap_cexpd},
+    { "clogf", _wrap_clogf},
+    { "clogd", _wrap_clogd},
+    { "clog10f", _wrap_clog10f},
+    { "clog10d", _wrap_clog10d},
+    { "cpowf", _wrap_cpowf},
+    { "cpowd", _wrap_cpowd},
+    { "csqrtf", _wrap_csqrtf},
+    { "csqrtd", _wrap_csqrtd},
+    { "csinf", _wrap_csinf},
+    { "csind", _wrap_csind},
+    { "ccosf", _wrap_ccosf},
+    { "ccosd", _wrap_ccosd},
+    { "ctanf", _wrap_ctanf},
+    { "ctand", _wrap_ctand},
+    { "casinf", _wrap_casinf},
+    { "casind", _wrap_casind},
+    { "cacosf", _wrap_cacosf},
+    { "cacosd", _wrap_cacosd},
+    { "catanf", _wrap_catanf},
+    { "catand", _wrap_catand},
+    { "csinhf", _wrap_csinhf},
+    { "csinhd", _wrap_csinhd},
+    { "ccoshf", _wrap_ccoshf},
+    { "ccoshd", _wrap_ccoshd},
+    { "ctanhf", _wrap_ctanhf},
+    { "ctanhd", _wrap_ctanhd},
+    { "casinhf", _wrap_casinhf},
+    { "casinhd", _wrap_casinhd},
+    { "cacoshf", _wrap_cacoshf},
+    { "cacoshd", _wrap_cacoshd},
+    { "catanhf", _wrap_catanhf},
+    { "catanhd", _wrap_catanhd},
     { "get_left_channel_float", _wrap_get_left_channel_float},
     { "get_right_channel_float", _wrap_get_right_channel_float},
     { "get_channel_float", _wrap_get_channel_float},
@@ -29966,6 +34009,7 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_uint32_vector,
 &_wrap_class_int64_vector,
 &_wrap_class_uint64_vector,
+&_wrap_class_matrix_index,
 &_wrap_class_FloatSampleVector,
     0
 };
@@ -29987,33 +34031,31 @@ static swig_lua_namespace swig_SwigModule = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
-static swig_type_info _swigt__p_SoundWave__ArrayMatrixT_float_t = {"_p_SoundWave__ArrayMatrixT_float_t", "SoundWave::ArrayMatrix< float > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_SoundWave__ArrayVectorT_float_t = {"_p_SoundWave__ArrayVectorT_float_t", "SoundWave::ArrayVector< float > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SoundWave__ColMatrixT_float_t = {"_p_SoundWave__ColMatrixT_float_t", "SoundWave::ColMatrix< float > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SoundWave__ColVectorT_float_t = {"_p_SoundWave__ColVectorT_float_t", "SoundWave::ColVector< float > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SoundWave__EigenArrayT_float_t = {"_p_SoundWave__EigenArrayT_float_t", "SoundWave::EigenArray< float > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SoundWave__MatrixT_float_t = {"_p_SoundWave__MatrixT_float_t", "SoundWave::Matrix< float > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SoundWave__SampleMatrixT_float_t = {"_p_SoundWave__SampleMatrixT_float_t", "SoundWave::SampleMatrix< float > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SoundWave__SampleVectorT_float_t = {"_p_SoundWave__SampleVectorT_float_t", "SoundWave::SampleVector< float > *", 0, 0, (void*)&_wrap_class_FloatSampleVector, 0};
-static swig_type_info _swigt__p_SoundWave__ScalarT_float_t = {"_p_SoundWave__ScalarT_float_t", "SoundWave::Scalar< float > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SoundWave__VectorT_float_t = {"_p_SoundWave__VectorT_float_t", "SoundWave::Vector< float > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_difference_type = {"_p_difference_type", "difference_type *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_SoundWave__matrix_index = {"_p_SoundWave__matrix_index", "SoundWave::matrix_index *", 0, 0, (void*)&_wrap_class_matrix_index, 0};
+static swig_type_info _swigt__p_double = {"_p_double", "double *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_float = {"_p_float", "SoundWave::SampleType *|float *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "intptr_t *|int *|int_least32_t *|int_fast32_t *|int32_t *|int_fast16_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_long = {"_p_long", "long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_long_long = {"_p_long_long", "int_least64_t *|int_fast64_t *|int64_t *|long long *|intmax_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_float = {"_p_p_float", "float **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_p_float = {"_p_p_p_float", "float ***", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_short = {"_p_short", "short *|int_least16_t *|int16_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_signed_char = {"_p_signed_char", "signed char *|int_least8_t *|int_fast8_t *|int8_t *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_size_type = {"_p_size_type", "size_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__complexT_double_t = {"_p_std__complexT_double_t", "std::complex< double > *", 0, 0, (void*)&_wrap_class_zcomplex, 0};
 static swig_type_info _swigt__p_std__complexT_float_t = {"_p_std__complexT_float_t", "std::complex< float > *", 0, 0, (void*)&_wrap_class_fcomplex, 0};
-static swig_type_info _swigt__p_std__vectorT_SoundWave__ArrayVectorT_float_t_t = {"_p_std__vectorT_SoundWave__ArrayVectorT_float_t_t", "std::vector< SoundWave::ArrayVector< float > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_SoundWave__SampleVectorT_float_t_t = {"_p_std__vectorT_SoundWave__SampleVectorT_float_t_t", "std::vector< SoundWave::SampleVector< float > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_double_t = {"_p_std__vectorT_double_t", "std::vector< double > *", 0, 0, (void*)&_wrap_class_double_vector, 0};
 static swig_type_info _swigt__p_std__vectorT_float_p_t = {"_p_std__vectorT_float_p_t", "std::vector< float * > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_float_t = {"_p_std__vectorT_float_t", "std::vector< float > *", 0, 0, (void*)&_wrap_class_float_vector, 0};
 static swig_type_info _swigt__p_std__vectorT_int_t = {"_p_std__vectorT_int_t", "std::vector< int > *", 0, 0, (void*)&_wrap_class_int32_vector, 0};
+static swig_type_info _swigt__p_std__vectorT_long_long_t = {"_p_std__vectorT_long_long_t", "std::vector< long long > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_long_t = {"_p_std__vectorT_long_t", "std::vector< long > *", 0, 0, (void*)&_wrap_class_int64_vector, 0};
 static swig_type_info _swigt__p_std__vectorT_short_t = {"_p_std__vectorT_short_t", "std::vector< short > *", 0, 0, (void*)&_wrap_class_int16_vector, 0};
 static swig_type_info _swigt__p_std__vectorT_signed_char_t = {"_p_std__vectorT_signed_char_t", "std::vector< signed char > *", 0, 0, (void*)&_wrap_class_int8_vector, 0};
@@ -30024,40 +34066,50 @@ static swig_type_info _swigt__p_std__vectorT_unsigned_char_t = {"_p_std__vectorT
 static swig_type_info _swigt__p_std__vectorT_unsigned_int_t = {"_p_std__vectorT_unsigned_int_t", "std::vector< unsigned int > *", 0, 0, (void*)&_wrap_class_uint32_vector, 0};
 static swig_type_info _swigt__p_std__vectorT_unsigned_long_t = {"_p_std__vectorT_unsigned_long_t", "std::vector< unsigned long > *", 0, 0, (void*)&_wrap_class_uint64_vector, 0};
 static swig_type_info _swigt__p_std__vectorT_unsigned_short_t = {"_p_std__vectorT_unsigned_short_t", "std::vector< unsigned short > *", 0, 0, (void*)&_wrap_class_uint16_vector, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_double_t = {"_p_std__vector_iteratorT_double_t", "std::vector_iterator< double > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_float_t = {"_p_std__vector_iteratorT_float_t", "std::vector_iterator< float > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_int_t = {"_p_std__vector_iteratorT_int_t", "std::vector_iterator< int > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_long_t = {"_p_std__vector_iteratorT_long_t", "std::vector_iterator< long > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_short_t = {"_p_std__vector_iteratorT_short_t", "std::vector_iterator< short > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_signed_char_t = {"_p_std__vector_iteratorT_signed_char_t", "std::vector_iterator< signed char > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_std__complexT_double_t_t = {"_p_std__vector_iteratorT_std__complexT_double_t_t", "std::vector_iterator< std::complex< double > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_std__complexT_float_t_t = {"_p_std__vector_iteratorT_std__complexT_float_t_t", "std::vector_iterator< std::complex< float > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_unsigned_char_t = {"_p_std__vector_iteratorT_unsigned_char_t", "std::vector_iterator< unsigned char > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_unsigned_int_t = {"_p_std__vector_iteratorT_unsigned_int_t", "std::vector_iterator< unsigned int > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_unsigned_long_t = {"_p_std__vector_iteratorT_unsigned_long_t", "std::vector_iterator< unsigned long > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vector_iteratorT_unsigned_short_t = {"_p_std__vector_iteratorT_unsigned_short_t", "std::vector_iterator< unsigned short > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *|uint_least8_t *|uint_fast8_t *|uint8_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "uintptr_t *|uint_least32_t *|uint_fast32_t *|uint32_t *|unsigned int *|uint_fast16_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_unsigned_long = {"_p_unsigned_long", "unsigned long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_long_long = {"_p_unsigned_long_long", "uint_least64_t *|uint_fast64_t *|uint64_t *|unsigned long long *|uintmax_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "unsigned short *|uint_least16_t *|uint16_t *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
-  &_swigt__p_SoundWave__ArrayMatrixT_float_t,
-  &_swigt__p_SoundWave__ArrayVectorT_float_t,
   &_swigt__p_SoundWave__ColMatrixT_float_t,
   &_swigt__p_SoundWave__ColVectorT_float_t,
   &_swigt__p_SoundWave__EigenArrayT_float_t,
   &_swigt__p_SoundWave__MatrixT_float_t,
   &_swigt__p_SoundWave__SampleMatrixT_float_t,
   &_swigt__p_SoundWave__SampleVectorT_float_t,
-  &_swigt__p_SoundWave__ScalarT_float_t,
   &_swigt__p_SoundWave__VectorT_float_t,
-  &_swigt__p_difference_type,
+  &_swigt__p_SoundWave__matrix_index,
+  &_swigt__p_double,
   &_swigt__p_float,
   &_swigt__p_int,
+  &_swigt__p_long,
   &_swigt__p_long_long,
   &_swigt__p_p_float,
   &_swigt__p_p_p_float,
   &_swigt__p_short,
   &_swigt__p_signed_char,
-  &_swigt__p_size_type,
   &_swigt__p_std__complexT_double_t,
   &_swigt__p_std__complexT_float_t,
-  &_swigt__p_std__vectorT_SoundWave__ArrayVectorT_float_t_t,
   &_swigt__p_std__vectorT_SoundWave__SampleVectorT_float_t_t,
   &_swigt__p_std__vectorT_double_t,
   &_swigt__p_std__vectorT_float_p_t,
   &_swigt__p_std__vectorT_float_t,
   &_swigt__p_std__vectorT_int_t,
+  &_swigt__p_std__vectorT_long_long_t,
   &_swigt__p_std__vectorT_long_t,
   &_swigt__p_std__vectorT_short_t,
   &_swigt__p_std__vectorT_signed_char_t,
@@ -30068,40 +34120,50 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__vectorT_unsigned_int_t,
   &_swigt__p_std__vectorT_unsigned_long_t,
   &_swigt__p_std__vectorT_unsigned_short_t,
+  &_swigt__p_std__vector_iteratorT_double_t,
+  &_swigt__p_std__vector_iteratorT_float_t,
+  &_swigt__p_std__vector_iteratorT_int_t,
+  &_swigt__p_std__vector_iteratorT_long_t,
+  &_swigt__p_std__vector_iteratorT_short_t,
+  &_swigt__p_std__vector_iteratorT_signed_char_t,
+  &_swigt__p_std__vector_iteratorT_std__complexT_double_t_t,
+  &_swigt__p_std__vector_iteratorT_std__complexT_float_t_t,
+  &_swigt__p_std__vector_iteratorT_unsigned_char_t,
+  &_swigt__p_std__vector_iteratorT_unsigned_int_t,
+  &_swigt__p_std__vector_iteratorT_unsigned_long_t,
+  &_swigt__p_std__vector_iteratorT_unsigned_short_t,
   &_swigt__p_unsigned_char,
   &_swigt__p_unsigned_int,
+  &_swigt__p_unsigned_long,
   &_swigt__p_unsigned_long_long,
   &_swigt__p_unsigned_short,
-  &_swigt__p_value_type,
 };
 
-static swig_cast_info _swigc__p_SoundWave__ArrayMatrixT_float_t[] = {  {&_swigt__p_SoundWave__ArrayMatrixT_float_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_SoundWave__ArrayVectorT_float_t[] = {  {&_swigt__p_SoundWave__ArrayVectorT_float_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundWave__ColMatrixT_float_t[] = {  {&_swigt__p_SoundWave__ColMatrixT_float_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundWave__ColVectorT_float_t[] = {  {&_swigt__p_SoundWave__ColVectorT_float_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundWave__EigenArrayT_float_t[] = {  {&_swigt__p_SoundWave__EigenArrayT_float_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundWave__MatrixT_float_t[] = {  {&_swigt__p_SoundWave__MatrixT_float_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundWave__SampleMatrixT_float_t[] = {  {&_swigt__p_SoundWave__SampleMatrixT_float_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundWave__SampleVectorT_float_t[] = {  {&_swigt__p_SoundWave__SampleVectorT_float_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_SoundWave__ScalarT_float_t[] = {  {&_swigt__p_SoundWave__ScalarT_float_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundWave__VectorT_float_t[] = {  {&_swigt__p_SoundWave__VectorT_float_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_difference_type[] = {  {&_swigt__p_difference_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_SoundWave__matrix_index[] = {  {&_swigt__p_SoundWave__matrix_index, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_double[] = {  {&_swigt__p_double, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_float[] = {  {&_swigt__p_float, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_long[] = {  {&_swigt__p_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_long_long[] = {  {&_swigt__p_long_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_float[] = {  {&_swigt__p_p_float, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_p_float[] = {  {&_swigt__p_p_p_float, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_short[] = {  {&_swigt__p_short, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_signed_char[] = {  {&_swigt__p_signed_char, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_size_type[] = {  {&_swigt__p_size_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__complexT_double_t[] = {  {&_swigt__p_std__complexT_double_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__complexT_float_t[] = {  {&_swigt__p_std__complexT_float_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_SoundWave__ArrayVectorT_float_t_t[] = {  {&_swigt__p_std__vectorT_SoundWave__ArrayVectorT_float_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_SoundWave__SampleVectorT_float_t_t[] = {  {&_swigt__p_std__vectorT_SoundWave__SampleVectorT_float_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_double_t[] = {  {&_swigt__p_std__vectorT_double_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_float_p_t[] = {  {&_swigt__p_std__vectorT_float_p_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_float_t[] = {  {&_swigt__p_std__vectorT_float_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_int_t[] = {  {&_swigt__p_std__vectorT_int_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_long_long_t[] = {  {&_swigt__p_std__vectorT_long_long_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_long_t[] = {  {&_swigt__p_std__vectorT_long_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_short_t[] = {  {&_swigt__p_std__vectorT_short_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_signed_char_t[] = {  {&_swigt__p_std__vectorT_signed_char_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -30112,40 +34174,50 @@ static swig_cast_info _swigc__p_std__vectorT_unsigned_char_t[] = {  {&_swigt__p_
 static swig_cast_info _swigc__p_std__vectorT_unsigned_int_t[] = {  {&_swigt__p_std__vectorT_unsigned_int_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_unsigned_long_t[] = {  {&_swigt__p_std__vectorT_unsigned_long_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_unsigned_short_t[] = {  {&_swigt__p_std__vectorT_unsigned_short_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_double_t[] = {  {&_swigt__p_std__vector_iteratorT_double_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_float_t[] = {  {&_swigt__p_std__vector_iteratorT_float_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_int_t[] = {  {&_swigt__p_std__vector_iteratorT_int_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_long_t[] = {  {&_swigt__p_std__vector_iteratorT_long_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_short_t[] = {  {&_swigt__p_std__vector_iteratorT_short_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_signed_char_t[] = {  {&_swigt__p_std__vector_iteratorT_signed_char_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_std__complexT_double_t_t[] = {  {&_swigt__p_std__vector_iteratorT_std__complexT_double_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_std__complexT_float_t_t[] = {  {&_swigt__p_std__vector_iteratorT_std__complexT_float_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_unsigned_char_t[] = {  {&_swigt__p_std__vector_iteratorT_unsigned_char_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_unsigned_int_t[] = {  {&_swigt__p_std__vector_iteratorT_unsigned_int_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_unsigned_long_t[] = {  {&_swigt__p_std__vector_iteratorT_unsigned_long_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vector_iteratorT_unsigned_short_t[] = {  {&_swigt__p_std__vector_iteratorT_unsigned_short_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_unsigned_long[] = {  {&_swigt__p_unsigned_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_long_long[] = {  {&_swigt__p_unsigned_long_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_short[] = {  {&_swigt__p_unsigned_short, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
-  _swigc__p_SoundWave__ArrayMatrixT_float_t,
-  _swigc__p_SoundWave__ArrayVectorT_float_t,
   _swigc__p_SoundWave__ColMatrixT_float_t,
   _swigc__p_SoundWave__ColVectorT_float_t,
   _swigc__p_SoundWave__EigenArrayT_float_t,
   _swigc__p_SoundWave__MatrixT_float_t,
   _swigc__p_SoundWave__SampleMatrixT_float_t,
   _swigc__p_SoundWave__SampleVectorT_float_t,
-  _swigc__p_SoundWave__ScalarT_float_t,
   _swigc__p_SoundWave__VectorT_float_t,
-  _swigc__p_difference_type,
+  _swigc__p_SoundWave__matrix_index,
+  _swigc__p_double,
   _swigc__p_float,
   _swigc__p_int,
+  _swigc__p_long,
   _swigc__p_long_long,
   _swigc__p_p_float,
   _swigc__p_p_p_float,
   _swigc__p_short,
   _swigc__p_signed_char,
-  _swigc__p_size_type,
   _swigc__p_std__complexT_double_t,
   _swigc__p_std__complexT_float_t,
-  _swigc__p_std__vectorT_SoundWave__ArrayVectorT_float_t_t,
   _swigc__p_std__vectorT_SoundWave__SampleVectorT_float_t_t,
   _swigc__p_std__vectorT_double_t,
   _swigc__p_std__vectorT_float_p_t,
   _swigc__p_std__vectorT_float_t,
   _swigc__p_std__vectorT_int_t,
+  _swigc__p_std__vectorT_long_long_t,
   _swigc__p_std__vectorT_long_t,
   _swigc__p_std__vectorT_short_t,
   _swigc__p_std__vectorT_signed_char_t,
@@ -30156,11 +34228,23 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__vectorT_unsigned_int_t,
   _swigc__p_std__vectorT_unsigned_long_t,
   _swigc__p_std__vectorT_unsigned_short_t,
+  _swigc__p_std__vector_iteratorT_double_t,
+  _swigc__p_std__vector_iteratorT_float_t,
+  _swigc__p_std__vector_iteratorT_int_t,
+  _swigc__p_std__vector_iteratorT_long_t,
+  _swigc__p_std__vector_iteratorT_short_t,
+  _swigc__p_std__vector_iteratorT_signed_char_t,
+  _swigc__p_std__vector_iteratorT_std__complexT_double_t_t,
+  _swigc__p_std__vector_iteratorT_std__complexT_float_t_t,
+  _swigc__p_std__vector_iteratorT_unsigned_char_t,
+  _swigc__p_std__vector_iteratorT_unsigned_int_t,
+  _swigc__p_std__vector_iteratorT_unsigned_long_t,
+  _swigc__p_std__vector_iteratorT_unsigned_short_t,
   _swigc__p_unsigned_char,
   _swigc__p_unsigned_int,
+  _swigc__p_unsigned_long,
   _swigc__p_unsigned_long_long,
   _swigc__p_unsigned_short,
-  _swigc__p_value_type,
 };
 
 

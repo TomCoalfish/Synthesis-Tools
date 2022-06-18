@@ -1,0 +1,3 @@
+/home/quake/Projects/DSP/FFTW3/pitchshifterpp/build/CMakeFiles/pitchshifterpp.dir
+/home/quake/Projects/DSP/FFTW3/pitchshifterpp/build/CMakeFiles/edit_cache.dir
+/home/quake/Projects/DSP/FFTW3/pitchshifterpp/build/CMakeFiles/rebuild_cache.dir

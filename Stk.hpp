@@ -423,11 +423,6 @@ template<typename T> std::ostringstream Stk<T> :: oStream_;
 */
 /***************************************************/
 
-template<typename T>
-class StkFrames;
-
-template<typename T>
-StkFrames<T> operator*(T v, const StkFrames<T>& f);
 
 template<typename T>
 class StkFrames
@@ -548,10 +543,7 @@ public:
   //! Scaling operator (StkFrames<T>&* T).
   StkFrames<T> operator* ( T v ) const;
 
-  //! Scaling operator (T * StkFrame)  
-  // I don't know what this things problem is right now.
-  friend StkFrames<T> operator *(T v, const StkFrames<T>& f);
-
+  
   //! Scaling operator (inline).
   StkFrames<T>& operator*= ( T v );
 
@@ -790,7 +782,18 @@ public:
             std::cout << "]\n";
         }
     }
-            
+
+    // friends just don't work with templates (can't do this, needs to be closed, blah blah blah)
+    StkFrames<T> operator *(T v) {
+      StkFrames<T> res((unsigned int)nFrames_, nChannels_);
+      T *resPtr = &res[0];
+      T *dPtr = data_;
+      for (unsigned int i = 0; i < size_; i++) {
+        *resPtr++ = v * *dPtr++;
+      }
+      return res;
+    }
+          
 protected:
 
   T *data_;
@@ -800,6 +803,7 @@ protected:
   size_t size_;
   size_t bufferSize_;
 
+  
 };
 
 template<typename T>
@@ -936,6 +940,7 @@ inline StkFrames<T> StkFrames<T>::operator*(T v) const
 template<typename T>
 StkFrames<T> operator*(T v, const StkFrames<T>& f)
 {
+  /*
   StkFrames<T> res((unsigned int)f.nFrames_, f.nChannels_);
   T *resPtr = &res[0];
   T *dPtr = f.data_;
@@ -943,6 +948,8 @@ StkFrames<T> operator*(T v, const StkFrames<T>& f)
     *resPtr++ = v * *dPtr++;
   }
   return res;
+  */
+  return v * f;
 }
 
 template<typename T>

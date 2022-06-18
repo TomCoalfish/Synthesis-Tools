@@ -2694,23 +2694,6 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 
 /* ------------------------------ end luarun.swg  ------------------------------ */
 
-/*  Errors in SWIG */
-#define  SWIG_UnknownError    	   -1
-#define  SWIG_IOError        	   -2
-#define  SWIG_RuntimeError   	   -3
-#define  SWIG_IndexError     	   -4
-#define  SWIG_TypeError      	   -5
-#define  SWIG_DivisionByZero 	   -6
-#define  SWIG_OverflowError  	   -7
-#define  SWIG_SyntaxError    	   -8
-#define  SWIG_ValueError     	   -9
-#define  SWIG_SystemError    	   -10
-#define  SWIG_AttributeError 	   -11
-#define  SWIG_MemoryError    	   -12
-#define  SWIG_NullReferenceError   -13
-
-
-
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
@@ -2770,22 +2753,67 @@ using namespace ladspamm1;
 #include <stdint.h>		// Use the C99 official header
 
 
+#include <algorithm>
 #include <vector>
+#include <map>
+#include <string>
+#include <cstdlib>
+#include <cstdio>
+#include <cassert>
+#include <iostream>
+#include <random>
+#include <memory>
 
 
-#include <typeinfo>
-#include <stdexcept>
+namespace std {
+    template<typename T>
+    struct vector_iterator
+    {
+        typename std::vector<T>::iterator iter;
+        std::vector<T> v;
 
+        vector_iterator(const std::vector<T> & vec) {
+            v = vec;
+        }   
+        vector_iterator(const std::vector<T> & vec, const typename std::vector<T>::iterator & i) {
+            iter = i;
+            v = vec;
+        }
 
-#define SWIG_exception(a,b)\
-{ lua_pushfstring(L,"%s:%s",#a,b);SWIG_fail; }
-
-
-#include <typeinfo>
-#include <stdexcept>
-
+        vector_iterator<T>& operator = (const T& val) {
+            *iter = val;
+            return *this;
+        }
+        vector_iterator<T>& operator = (const vector_iterator<T>& val) {
+            iter = val.iter;
+            v    = val.v;
+            return *this;;
+        }
+                
+        void next() {
+            if(iter != v.end()) iter++;
+        }
+        void prev() {
+            if(iter != v.begin()) iter--;
+        }
+        void forward(size_t i) {
+            iter += i;
+        }
+        void backward(size_t i) {
+            iter -= i;
+        }
+        void jump(size_t i) {
+            iter = i;
+        }
+        
+        T value() { return *iter; }
+        void set_value(const T& val) { *iter = val; }
+    };
+}
 
 #include <string>
+#include <algorithm>
+#include <iostream>
 
 
 SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
@@ -2795,6 +2823,23 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
   return ret;
 }
 
+SWIGINTERN char std_string___getitem____SWIG(std::string *self,size_t i){ return (*self)[i]; }
+SWIGINTERN void std_string___setitem____SWIG(std::string *self,size_t i,char c){ (*self)[i] = c; }
+SWIGINTERN char const *std_string___str____SWIG(std::string *self){ return self->c_str(); }
+SWIGINTERN int32_t std_string_to_int32__SWIG_0(std::string *self,int base=10){ return std::stoi(self->c_str(),nullptr,base); }
+SWIGINTERN int64_t std_string_to_int64__SWIG_0(std::string *self,int base=10){ return std::stoll(self->c_str(),nullptr,base); }
+SWIGINTERN float std_string_to_float__SWIG(std::string *self){ return std::stof(*self); }
+SWIGINTERN double std_string_to_double__SWIG(std::string *self){ return std::stod(*self); }
+SWIGINTERN void std_string_reverse__SWIG(std::string *self){ std::reverse(self->begin(),self->end()); }
+SWIGINTERN void std_string_sort__SWIG(std::string *self){ std::sort(self->begin(),self->end()); }
+SWIGINTERN void std_string_shuffle__SWIG(std::string *self){ std::random_shuffle(self->begin(),self->end()); }
+SWIGINTERN void std_string_getline__SWIG(std::string *self){
+                std::getline(std::cin, *self);
+            }
+SWIGINTERN void std_string_fill__SWIG(std::string *self,size_t i,char c){
+                self->resize(i);
+                for(size_t n = 0; n < i; n++) (*self)[i] = c;
+            }
 SWIGINTERN ladspamm1::plugin &ladspamm1_library___getitem__SWIG(ladspamm1::library *self,size_t i){
         return *(self->plugins[i].get());
     }
@@ -2849,6 +2894,27 @@ fail:
 }
 
 
+static int _wrap_new_string__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = 0 ;
+  std::string temp1 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("std::string::string",1,1)
+  if(!lua_isstring(L,1)) SWIG_fail_arg("std::string::string",1,"std::string const &");
+  temp1.assign(lua_tostring(L,1),lua_rawlen(L,1)); arg1=&temp1;
+  result = (std::string *)new std::string((std::string const &)*arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__string,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_new_string(lua_State* L) {
   int argc;
   int argv[2]={
@@ -2868,29 +2934,43 @@ static int _wrap_new_string(lua_State* L) {
       return _wrap_new_string__SWIG_1(L);
     }
   }
+  if (argc == 1) {
+    int _v = 0;
+    {
+      _v = lua_isstring(L,argv[0]);
+    }
+    if (_v) {
+      return _wrap_new_string__SWIG_2(L);
+    }
+  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_string'\n"
     "  Possible C/C++ prototypes are:\n"
     "    std::string::string()\n"
-    "    std::string::string(char const *)\n");
+    "    std::string::string(char const *)\n"
+    "    std::string::string(std::string const &)\n");
   lua_error(L);return 0;
 }
 
 
-static int _wrap_string_size(lua_State* L) {
+static int _wrap_string___getitem(lua_State* L) {
   int SWIG_arg = 0;
   std::string *arg1 = (std::string *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  char result;
   
-  SWIG_check_num_args("std::string::size",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::size",1,"std::string const *");
+  SWIG_check_num_args("std::string::__getitem__",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::__getitem__",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::__getitem__",2,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
-    SWIG_fail_ptr("string_size",1,SWIGTYPE_p_std__string);
+    SWIG_fail_ptr("string___getitem",1,SWIGTYPE_p_std__string);
   }
   
-  result = (unsigned int)((std::string const *)arg1)->size();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (char)std_string___getitem____SWIG(arg1,arg2);
+  lua_pushlstring(L, &result, 1); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -2901,20 +2981,26 @@ fail:
 }
 
 
-static int _wrap_string_length(lua_State* L) {
+static int _wrap_string___setitem(lua_State* L) {
   int SWIG_arg = 0;
   std::string *arg1 = (std::string *) 0 ;
-  unsigned int result;
+  size_t arg2 ;
+  char arg3 ;
   
-  SWIG_check_num_args("std::string::length",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::length",1,"std::string const *");
+  SWIG_check_num_args("std::string::__setitem__",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::__setitem__",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::__setitem__",2,"size_t");
+  if(!SWIG_lua_isnilstring(L,3)) SWIG_fail_arg("std::string::__setitem__",3,"char");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
-    SWIG_fail_ptr("string_length",1,SWIGTYPE_p_std__string);
+    SWIG_fail_ptr("string___setitem",1,SWIGTYPE_p_std__string);
   }
   
-  result = (unsigned int)((std::string const *)arg1)->length();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  arg3 = (lua_tostring(L, 3))[0];
+  std_string___setitem____SWIG(arg1,arg2,arg3);
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -2925,44 +3011,390 @@ fail:
 }
 
 
-static int _wrap_string_empty(lua_State* L) {
-  int SWIG_arg = 0;
-  std::string *arg1 = (std::string *) 0 ;
-  bool result;
-  
-  SWIG_check_num_args("std::string::empty",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::empty",1,"std::string const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
-    SWIG_fail_ptr("string_empty",1,SWIGTYPE_p_std__string);
-  }
-  
-  result = (bool)((std::string const *)arg1)->empty();
-  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_string_c_str(lua_State* L) {
+static int _wrap_string___tostring(lua_State* L) {
   int SWIG_arg = 0;
   std::string *arg1 = (std::string *) 0 ;
   char *result = 0 ;
   
-  SWIG_check_num_args("std::string::c_str",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::c_str",1,"std::string const *");
+  SWIG_check_num_args("std::string::__str__",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::__str__",1,"std::string *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
-    SWIG_fail_ptr("string_c_str",1,SWIGTYPE_p_std__string);
+    SWIG_fail_ptr("string___tostring",1,SWIGTYPE_p_std__string);
   }
   
-  result = (char *)((std::string const *)arg1)->c_str();
+  result = (char *)std_string___str____SWIG(arg1);
   lua_pushstring(L,(const char *)result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_to_int32__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  int arg2 ;
+  int32_t result;
+  
+  SWIG_check_num_args("std::string::to_int32",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::to_int32",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::to_int32",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_to_int32",1,SWIGTYPE_p_std__string);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = (int32_t)std_string_to_int32__SWIG_0(arg1,arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_to_int32__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  int32_t result;
+  
+  SWIG_check_num_args("std::string::to_int32",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::to_int32",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_to_int32",1,SWIGTYPE_p_std__string);
+  }
+  
+  result = (int32_t)std_string_to_int32__SWIG_0(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_to_int32(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_string_to_int32__SWIG_1(L);
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_string_to_int32__SWIG_0(L);
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'string_to_int32'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::string::to_int32(int)\n"
+    "    std::string::to_int32()\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_string_to_int64__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  int arg2 ;
+  int64_t result;
+  
+  SWIG_check_num_args("std::string::to_int64",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::to_int64",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::to_int64",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_to_int64",1,SWIGTYPE_p_std__string);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = (int64_t)std_string_to_int64__SWIG_0(arg1,arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_to_int64__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  int64_t result;
+  
+  SWIG_check_num_args("std::string::to_int64",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::to_int64",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_to_int64",1,SWIGTYPE_p_std__string);
+  }
+  
+  result = (int64_t)std_string_to_int64__SWIG_0(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_to_int64(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_string_to_int64__SWIG_1(L);
+    }
+  }
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_string_to_int64__SWIG_0(L);
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'string_to_int64'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::string::to_int64(int)\n"
+    "    std::string::to_int64()\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_string_to_float(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  float result;
+  
+  SWIG_check_num_args("std::string::to_float",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::to_float",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_to_float",1,SWIGTYPE_p_std__string);
+  }
+  
+  result = (float)std_string_to_float__SWIG(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_to_double(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("std::string::to_double",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::to_double",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_to_double",1,SWIGTYPE_p_std__string);
+  }
+  
+  result = (double)std_string_to_double__SWIG(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_reverse(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  
+  SWIG_check_num_args("std::string::reverse",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::reverse",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_reverse",1,SWIGTYPE_p_std__string);
+  }
+  
+  std_string_reverse__SWIG(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_sort(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  
+  SWIG_check_num_args("std::string::sort",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::sort",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_sort",1,SWIGTYPE_p_std__string);
+  }
+  
+  std_string_sort__SWIG(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_shuffle(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  
+  SWIG_check_num_args("std::string::shuffle",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::shuffle",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_shuffle",1,SWIGTYPE_p_std__string);
+  }
+  
+  std_string_shuffle__SWIG(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_getline(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  
+  SWIG_check_num_args("std::string::getline",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::getline",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_getline",1,SWIGTYPE_p_std__string);
+  }
+  
+  std_string_getline__SWIG(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_fill(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  size_t arg2 ;
+  char arg3 ;
+  
+  SWIG_check_num_args("std::string::fill",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::fill",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::fill",2,"size_t");
+  if(!SWIG_lua_isnilstring(L,3)) SWIG_fail_arg("std::string::fill",3,"char");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_fill",1,SWIGTYPE_p_std__string);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  arg3 = (lua_tostring(L, 3))[0];
+  std_string_fill__SWIG(arg1,arg2,arg3);
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -2997,22 +3429,595 @@ fail:
 }
 
 
-static int _wrap_string_assign(lua_State* L) {
+static int _wrap_string_size(lua_State* L) {
   int SWIG_arg = 0;
   std::string *arg1 = (std::string *) 0 ;
-  char *arg2 = (char *) 0 ;
+  size_t result;
   
-  SWIG_check_num_args("std::string::assign",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::assign",1,"std::string *");
-  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("std::string::assign",2,"char const *");
+  SWIG_check_num_args("std::string::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::size",1,"std::string const *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
-    SWIG_fail_ptr("string_assign",1,SWIGTYPE_p_std__string);
+    SWIG_fail_ptr("string_size",1,SWIGTYPE_p_std__string);
   }
   
-  arg2 = (char *)lua_tostring(L, 2);
-  (arg1)->assign((char const *)arg2);
+  result = ((std::string const *)arg1)->size();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
   
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_empty(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("std::string::empty",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::empty",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_empty",1,SWIGTYPE_p_std__string);
+  }
+  
+  result = (bool)(arg1)->empty();
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_clear(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  
+  SWIG_check_num_args("std::string::clear",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::clear",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_clear",1,SWIGTYPE_p_std__string);
+  }
+  
+  (arg1)->clear();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_erase__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("std::string::erase",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::erase",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::erase",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::string::erase",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_erase",1,SWIGTYPE_p_std__string);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  (arg1)->erase(arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_erase__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::string::erase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::erase",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::erase",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_erase",1,SWIGTYPE_p_std__string);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->erase(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_erase(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_string_erase__SWIG_1(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_string_erase__SWIG_0(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'string_erase'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::string::erase(size_t,size_t)\n"
+    "    std::string::erase(size_t)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_string_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::string::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::push_back",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::push_back",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_push_back",1,SWIGTYPE_p_std__string);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->push_back(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  
+  SWIG_check_num_args("std::string::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::pop_back",1,"std::string *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_pop_back",1,SWIGTYPE_p_std__string);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_replace(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  std::string *arg4 = 0 ;
+  std::string temp4 ;
+  std::string result;
+  
+  SWIG_check_num_args("std::string::replace",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::replace",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::replace",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::string::replace",3,"size_t");
+  if(!lua_isstring(L,4)) SWIG_fail_arg("std::string::replace",4,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_replace",1,SWIGTYPE_p_std__string);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  temp4.assign(lua_tostring(L,4),lua_rawlen(L,4)); arg4=&temp4;
+  result = (arg1)->replace(arg2,arg3,(std::string const &)*arg4);
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_resize(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("std::string::resize",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::resize",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::resize",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_resize",1,SWIGTYPE_p_std__string);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->resize(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_substr(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  std::string result;
+  
+  SWIG_check_num_args("std::string::substr",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::substr",1,"std::string *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::string::substr",2,"size_t");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::string::substr",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_substr",1,SWIGTYPE_p_std__string);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative");
+  arg2 = (size_t)lua_tonumber(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  result = (arg1)->substr(arg2,arg3);
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_find__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  std::string *arg2 = 0 ;
+  size_t arg3 ;
+  std::string temp2 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::string::find",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::find",1,"std::string *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("std::string::find",2,"std::string const &");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::string::find",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_find",1,SWIGTYPE_p_std__string);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  result = (arg1)->find((std::string const &)*arg2,arg3);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_find__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::string::find",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::find",1,"std::string *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("std::string::find",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_find",1,SWIGTYPE_p_std__string);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = (arg1)->find((std::string const &)*arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_find(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isstring(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_string_find__SWIG_1(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isstring(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_string_find__SWIG_0(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'string_find'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::string::find(std::string const &,size_t)\n"
+    "    std::string::find(std::string const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_string_rfind__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  std::string *arg2 = 0 ;
+  size_t arg3 ;
+  std::string temp2 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::string::rfind",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::rfind",1,"std::string *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("std::string::rfind",2,"std::string const &");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("std::string::rfind",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_rfind",1,SWIGTYPE_p_std__string);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative");
+  arg3 = (size_t)lua_tonumber(L, 3);
+  result = (arg1)->rfind((std::string const &)*arg2,arg3);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_rfind__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  size_t result;
+  
+  SWIG_check_num_args("std::string::rfind",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::rfind",1,"std::string *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("std::string::rfind",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_rfind",1,SWIGTYPE_p_std__string);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = (arg1)->rfind((std::string const &)*arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_string_rfind(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isstring(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_string_rfind__SWIG_1(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v = 0;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isstring(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_string_rfind__SWIG_0(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'string_rfind'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::string::rfind(std::string const &,size_t)\n"
+    "    std::string::rfind(std::string const &)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_string_compare(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = (std::string *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  int result;
+  
+  SWIG_check_num_args("std::string::compare",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::string::compare",1,"std::string *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("std::string::compare",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("string_compare",1,SWIGTYPE_p_std__string);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = (int)(arg1)->compare((std::string const &)*arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -3039,15 +4044,37 @@ static swig_lua_attribute swig_string_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_string_methods[]= {
-    { "size", _wrap_string_size},
-    { "length", _wrap_string_length},
-    { "empty", _wrap_string_empty},
-    { "c_str", _wrap_string_c_str},
+    { "__getitem", _wrap_string___getitem},
+    { "__setitem", _wrap_string___setitem},
+    { "__tostring", _wrap_string___tostring},
+    { "to_int32", _wrap_string_to_int32},
+    { "to_int64", _wrap_string_to_int64},
+    { "to_float", _wrap_string_to_float},
+    { "to_double", _wrap_string_to_double},
+    { "reverse", _wrap_string_reverse},
+    { "sort", _wrap_string_sort},
+    { "shuffle", _wrap_string_shuffle},
+    { "getline", _wrap_string_getline},
+    { "fill", _wrap_string_fill},
     { "data", _wrap_string_data},
-    { "assign", _wrap_string_assign},
+    { "size", _wrap_string_size},
+    { "empty", _wrap_string_empty},
+    { "clear", _wrap_string_clear},
+    { "erase", _wrap_string_erase},
+    { "push_back", _wrap_string_push_back},
+    { "pop_back", _wrap_string_pop_back},
+    { "replace", _wrap_string_replace},
+    { "resize", _wrap_string_resize},
+    { "substr", _wrap_string_substr},
+    { "find", _wrap_string_find},
+    { "rfind", _wrap_string_rfind},
+    { "compare", _wrap_string_compare},
     {0,0}
 };
 static swig_lua_method swig_string_meta[] = {
+    { "__getitem", _wrap_string___getitem},
+    { "__setitem", _wrap_string___setitem},
+    { "__tostring", _wrap_string___tostring},
     {0,0}
 };
 

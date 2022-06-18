@@ -1,0 +1,18 @@
+
+FILE(GLOB
+    ATK_TOOLS_SRC
+    *.cpp
+)
+
+FILE(GLOB
+    ATK_TOOLS_HEADERS
+    *.h*
+)
+
+ATK_add_library(ATK_TOOLS
+  NAME ATKTools
+  FOLDER Tools
+  LIBRARIES ATKCore
+  SRC ${ATK_TOOLS_SRC}
+  HEADERS ${ATK_TOOLS_HEADERS}
+)

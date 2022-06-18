@@ -1,0 +1,2 @@
+/usr/bin/ar qc libATKReverberation_static.a CMakeFiles/ATKReverberation_static.dir/AllPassReverbFilter.cpp.o CMakeFiles/ATKReverberation_static.dir/LowPassReverbFilter.cpp.o
+/usr/bin/ranlib libATKReverberation_static.a

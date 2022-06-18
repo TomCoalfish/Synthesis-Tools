@@ -1,14 +1,12 @@
 #include "TLadderBase.hpp"
 
-#define MOOG_PI M_PI
-
-namespace SoundWave {
+namspace SoundWave {
     template<typename T>
-    class THouvilainenMoog : public TLadderFilterBase<T>
+    class THuovilainenMoog : public TLadderFilterBase<T>
     {
     public:
         
-        THouvilainenMoog(T sampleRate) : TLadderFilterBase<T>(sampleRate), thermal(0.000025)
+        THuovilainenMoog(Tt sampleRate) : TLadderFilterBase<T>(sampleRate), thermal(0.000025)
         {
             memset(stage, 0, sizeof(stage));
             memset(delay, 0, sizeof(delay));
@@ -17,7 +15,7 @@ namespace SoundWave {
             SetResonance(0.10f);
         }
         
-        virtual ~THouvilainenMoog()
+        virtual ~THuovilainenMoog()
         {
             
         }
@@ -30,11 +28,11 @@ namespace SoundWave {
                 for (int j = 0; j < 2; j++) 
                 {
                     float input = _input[s] - resQuad * delay[5];
-                    delay[0] = stage[0] = delay[0] + tune * (std::tanh(input * thermal) - stageTanh[0]);
+                    delay[0] = stage[0] = delay[0] + tune * (tanh(input * thermal) - stageTanh[0]);
                     for (int k = 1; k < 4; k++) 
                     {
                         input = stage[k-1];
-                        stage[k] = delay[k] + tune * ((stageTanh[k-1] = std::tanh(input * thermal)) - (k != 3 ? stageTanh[k] : std::tanh(delay[k] * thermal)));
+                        stage[k] = delay[k] + tune * ((stageTanh[k-1] = tanh(input * thermal)) - (k != 3 ? stageTanh[k] : tanh(delay[k] * thermal)));
                         delay[k] = stage[k];
                     }
                     // 0.5 sample delay for phase compensation
@@ -76,15 +74,15 @@ namespace SoundWave {
         
         virtual void SetResonance(T r) override
         {
-            this->resonance = r;
-            resQuad = 4.0 * this->resonance * acr;
+            resonance = r;
+            resQuad = 4.0 * resonance * acr;
         }
         
         virtual void SetCutoff(T c) override
         {
-            this->cutoff = c;
+            cutoff = c;
 
-            double fc =  this->cutoff / this->sampleRate;
+            double fc =  cutoff / sampleRate;
             double f  =  fc * 0.5; // oversampled 
             double fc2 = fc * fc;
             double fc3 = fc * fc * fc;
@@ -94,7 +92,7 @@ namespace SoundWave {
 
             tune = (1.0 - exp(-((2 * MOOG_PI) * f * fcr))) / thermal; 
 
-            SetResonance(this->resonance);
+            SetResonance(resonance);
         }
         
         

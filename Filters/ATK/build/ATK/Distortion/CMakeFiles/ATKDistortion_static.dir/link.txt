@@ -1,0 +1,2 @@
+/usr/bin/ar qc libATKDistortion_static.a CMakeFiles/ATKDistortion_static.dir/DiodeClipperFilter.cpp.o CMakeFiles/ATKDistortion_static.dir/HalfTanhShaperFilter.cpp.o CMakeFiles/ATKDistortion_static.dir/SD1OverdriveFilter.cpp.o CMakeFiles/ATKDistortion_static.dir/SimpleOverdriveFilter.cpp.o CMakeFiles/ATKDistortion_static.dir/TS9OverdriveFilter.cpp.o CMakeFiles/ATKDistortion_static.dir/TanhShaperFilter.cpp.o
+/usr/bin/ranlib libATKDistortion_static.a

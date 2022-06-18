@@ -1,0 +1,18 @@
+
+FILE(GLOB
+  ATK_DELAY_SRC
+  *.cpp
+)
+
+FILE(GLOB
+  ATK_DELAY_HEADERS
+  *.h*
+)
+
+ATK_add_library(ATK_DELAY
+  NAME ATKDelay
+  FOLDER Delay
+  LIBRARIES ATKCore
+  SRC ${ATK_DELAY_SRC}
+  HEADERS ${ATK_DELAY_HEADERS}
+)

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libATKCore_static.a CMakeFiles/ATKCore_static.dir/BaseFilter.cpp.o CMakeFiles/ATKCore_static.dir/ComplexConvertFilter.cpp.o CMakeFiles/ATKCore_static.dir/InPointerFilter.cpp.o CMakeFiles/ATKCore_static.dir/OutCircularPointerFilter.cpp.o CMakeFiles/ATKCore_static.dir/OutPointerFilter.cpp.o CMakeFiles/ATKCore_static.dir/PipelineGlobalSinkFilter.cpp.o CMakeFiles/ATKCore_static.dir/TypedBaseFilter.cpp.o CMakeFiles/ATKCore_static.dir/Utilities.cpp.o CMakeFiles/ATKCore_static.dir/WrapFilter.cpp.o
+/usr/bin/ranlib libATKCore_static.a
