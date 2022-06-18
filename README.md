@@ -1,7 +1,10 @@
 # TStk
 Templated Synthesis Toolkit
 
-# Ultimate MusicDSP Systemized
+# It's not finished
+* Working on it
+
+# Kit
 * Stk
 * Gamma
 * Marsyas
