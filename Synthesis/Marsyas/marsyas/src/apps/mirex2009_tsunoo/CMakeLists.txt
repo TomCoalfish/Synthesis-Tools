@@ -1,5 +1,0 @@
-
-marsyas_app(extractRhythmFeatures extractRhythmFeatures.cpp)
-marsyas_app(extractBassFeatures extractBassFeatures.cpp)
-marsyas_app(extractMoodFeatures extractMoodFeatures.cpp)
-

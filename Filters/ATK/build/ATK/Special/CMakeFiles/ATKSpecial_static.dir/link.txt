@@ -1,2 +1,0 @@
-/usr/bin/ar qc libATKSpecial_static.a CMakeFiles/ATKSpecial_static.dir/ConvolutionFilter.cpp.o
-/usr/bin/ranlib libATKSpecial_static.a

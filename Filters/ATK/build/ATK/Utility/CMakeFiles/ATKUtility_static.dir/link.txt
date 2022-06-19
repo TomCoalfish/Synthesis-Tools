@@ -1,2 +1,0 @@
-/usr/bin/ar qc libATKUtility_static.a CMakeFiles/ATKUtility_static.dir/FFT.cpp.o CMakeFiles/ATKUtility_static.dir/FlushToZero.cpp.o
-/usr/bin/ranlib libATKUtility_static.a

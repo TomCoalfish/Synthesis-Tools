@@ -1,2 +1,0 @@
-/usr/bin/ar qc libATKPreamplifier_static.a CMakeFiles/ATKPreamplifier_static.dir/FollowerTransistorClassAFilter.cpp.o CMakeFiles/ATKPreamplifier_static.dir/TransistorClassAFilter.cpp.o CMakeFiles/ATKPreamplifier_static.dir/Triode2Filter.cpp.o CMakeFiles/ATKPreamplifier_static.dir/TriodeFilter.cpp.o
-/usr/bin/ranlib libATKPreamplifier_static.a

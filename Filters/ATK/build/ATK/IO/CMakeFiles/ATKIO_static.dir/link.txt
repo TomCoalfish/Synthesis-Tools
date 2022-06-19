@@ -1,2 +1,0 @@
-/usr/bin/ar qc libATKIO_static.a CMakeFiles/ATKIO_static.dir/InWavFilter.cpp.o CMakeFiles/ATKIO_static.dir/OutWavFilter.cpp.o CMakeFiles/ATKIO_static.dir/libsndfile/InSndFileFilter.cpp.o CMakeFiles/ATKIO_static.dir/libsndfile/OutSndFileFilter.cpp.o
-/usr/bin/ranlib libATKIO_static.a

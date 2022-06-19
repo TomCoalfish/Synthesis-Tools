@@ -1,5 +1,0 @@
-
-# pybind11
-fun:*make_function_record*
-fun:*initialize_generic*
-

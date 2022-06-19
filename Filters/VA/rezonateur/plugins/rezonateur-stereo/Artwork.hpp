@@ -1,1 +1,0 @@
-#include "../rezonateur/Artwork.hpp"
