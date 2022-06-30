@@ -1,10 +1,7 @@
 # TStk
 Templated Synthesis Toolkit
 
-# It's not finished
-* Working on it
+# It's not really important
+* You only use float or double anyways
+* It can't use fixed point integers 
 
-# I use Stk as the foundation classes
-* It works
-* It's been around for a long long time
-* Hope you guessed my name
