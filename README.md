@@ -6,6 +6,9 @@ Templated Synthesis Toolkit
 * You can use long doubles but I don't think it has any kind of advantage
 * It can't use fixed point integers 
 
+# Fixed point
+* STK doesn't seem to support it at all anyways
+
 # With the template you could use SSE or AVX registers
 * if you have a class that works like a floating point number
 
