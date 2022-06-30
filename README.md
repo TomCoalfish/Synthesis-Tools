@@ -1,5 +1,13 @@
-# TStk
+# Synthesis Tools
 Templated Synthesis Toolkit
+
+# It is Stk + Gamma
+* Stk has all the basics and the class hierarchy is nice and simple
+* Gamma has all the functions that Stk is missing like FFT
+
+# Templated
+* Most of Stk is now templated
+* It's not finished
 
 # It's not really important
 * You only use float or double anyways
