@@ -10,3 +10,8 @@ Templated Synthesis Toolkit
 
 # Not going to include them all in here
 * Just download them and install them
+
+# Gui
+* FLTK
+* Qt5
+* Gtk/mm
