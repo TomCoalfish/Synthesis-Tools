@@ -1,17 +1,17 @@
-# Synthesis Tools
-Templated Synthesis Toolkit 
+# TStk
+Templated Synthesis Toolkit
 
-# Tools
+# It's not finished
+* Working on it
+
+# Kit
 * Stk
 * Gamma
 * Marsyas
 * Loris
 * Essentia
-
-# Not going to include them all in here
-* Just download them and install them
-
-# Gui
-* FLTK
-* Qt5
-* Gtk/mm
+* Pure Data libpd
+* CSound6 C/C++ API
+* Faust LLVM
+* Ladspa Host
+* Lv2 Host

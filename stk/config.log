@@ -27,19 +27,6 @@ uname -v = #49~20.04.1-Ubuntu SMP Wed May 18 18:44:28 UTC 2022
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
-PATH: /opt/intel/oneapi/vtune/2022.1.0/bin64
-PATH: /opt/intel/oneapi/mpi/2021.5.1//libfabric/bin
-PATH: /opt/intel/oneapi/mpi/2021.5.1//bin
-PATH: /opt/intel/oneapi/mkl/2022.0.2/bin/intel64
-PATH: /opt/intel/oneapi/intelpython/latest/bin
-PATH: /opt/intel/oneapi/intelpython/latest/condabin
-PATH: /opt/intel/oneapi/dpcpp-ct/2022.0.0/bin
-PATH: /opt/intel/oneapi/dev-utilities/2021.5.2/bin
-PATH: /opt/intel/oneapi/debugger/2021.5.0/gdb/intel64/bin
-PATH: /opt/intel/oneapi/compiler/2022.0.2/linux/lib/oclfpga/bin
-PATH: /opt/intel/oneapi/compiler/2022.0.2/linux/bin/intel64
-PATH: /opt/intel/oneapi/compiler/2022.0.2/linux/bin
-PATH: /opt/intel/oneapi/advisor/2022.0.0/bin64
 PATH: /home/quake/bin
 PATH: /home/quake/torch/install/bin
 PATH: /home/quake/torch/install/bin
@@ -106,27 +93,27 @@ g++: fatal error: no input files
 compilation terminated.
 configure:2498: $? = 1
 configure:2518: checking whether the C++ compiler works
-configure:2540: g++ -O2 -fPIC -march=native -mavx2   conftest.cpp  >&5
+configure:2540: g++ -O3 -march=native -mavx2 -fPIC   conftest.cpp  >&5
 configure:2544: $? = 0
 configure:2592: result: yes
 configure:2595: checking for C++ compiler default output file name
 configure:2597: result: a.out
 configure:2603: checking for suffix of executables
-configure:2610: g++ -o conftest -O2 -fPIC -march=native -mavx2   conftest.cpp  >&5
+configure:2610: g++ -o conftest -O3 -march=native -mavx2 -fPIC   conftest.cpp  >&5
 configure:2614: $? = 0
 configure:2636: result: 
 configure:2658: checking whether we are cross compiling
-configure:2666: g++ -o conftest -O2 -fPIC -march=native -mavx2   conftest.cpp  >&5
+configure:2666: g++ -o conftest -O3 -march=native -mavx2 -fPIC   conftest.cpp  >&5
 configure:2670: $? = 0
 configure:2677: ./conftest
 configure:2681: $? = 0
 configure:2669: result: no
 configure:2674: checking for suffix of object files
-configure:2696: g++ -c -O2 -fPIC -march=native -mavx2  conftest.cpp >&5
+configure:2696: g++ -c -O3 -march=native -mavx2 -fPIC  conftest.cpp >&5
 configure:2700: $? = 0
 configure:2721: result: o
 configure:2725: checking whether we are using the GNU C++ compiler
-configure:2744: g++ -c -O2 -fPIC -march=native -mavx2  conftest.cpp >&5
+configure:2744: g++ -c -O3 -march=native -mavx2 -fPIC  conftest.cpp >&5
 configure:2744: $? = 0
 configure:2753: result: yes
 configure:2762: checking whether g++ accepts -g
@@ -134,7 +121,7 @@ configure:2782: g++ -c -g  conftest.cpp >&5
 configure:2782: $? = 0
 configure:2823: result: yes
 configure:2861: checking whether g++ supports C++11 features with -std=c++11
-configure:3159: g++ -std=c++11 -c -O2 -fPIC -march=native -mavx2  conftest.cpp >&5
+configure:3159: g++ -std=c++11 -c -O3 -march=native -mavx2 -fPIC  conftest.cpp >&5
 configure:3159: $? = 0
 configure:3168: result: yes
 configure:3321: checking for C++ compiler version
@@ -209,7 +196,7 @@ gcc: fatal error: no input files
 compilation terminated.
 configure:3928: $? = 1
 configure:3932: checking whether we are using the GNU C compiler
-configure:3951: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:3951: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:3951: $? = 0
 configure:3960: result: yes
 configure:3969: checking whether gcc accepts -g
@@ -217,7 +204,7 @@ configure:3989: gcc -c -g  conftest.c >&5
 configure:3989: $? = 0
 configure:4030: result: yes
 configure:4047: checking for gcc option to accept ISO C89
-configure:4110: gcc  -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4110: gcc  -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4110: $? = 0
 configure:4123: result: none needed
 configure:4149: checking how to run the C preprocessor
@@ -265,51 +252,51 @@ configure:4340: result: /usr/bin/grep
 configure:4345: checking for egrep
 configure:4407: result: /usr/bin/grep -E
 configure:4412: checking for ANSI C header files
-configure:4432: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4432: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4432: $? = 0
-configure:4505: gcc -o conftest -O3 -fPIC -march=native -mavx2   conftest.c  >&5
+configure:4505: gcc -o conftest -O3 -march=native -mavx2 -fPIC   conftest.c  >&5
 configure:4505: $? = 0
 configure:4505: ./conftest
 configure:4505: $? = 0
 configure:4516: result: yes
 configure:4529: checking for sys/types.h
-configure:4529: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4529: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4529: $? = 0
 configure:4529: result: yes
 configure:4529: checking for sys/stat.h
-configure:4529: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4529: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4529: $? = 0
 configure:4529: result: yes
 configure:4529: checking for stdlib.h
-configure:4529: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4529: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4529: $? = 0
 configure:4529: result: yes
 configure:4529: checking for string.h
-configure:4529: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4529: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4529: $? = 0
 configure:4529: result: yes
 configure:4529: checking for memory.h
-configure:4529: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4529: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4529: $? = 0
 configure:4529: result: yes
 configure:4529: checking for strings.h
-configure:4529: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4529: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4529: $? = 0
 configure:4529: result: yes
 configure:4529: checking for inttypes.h
-configure:4529: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4529: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4529: $? = 0
 configure:4529: result: yes
 configure:4529: checking for stdint.h
-configure:4529: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4529: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4529: $? = 0
 configure:4529: result: yes
 configure:4529: checking for unistd.h
-configure:4529: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4529: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4529: $? = 0
 configure:4529: result: yes
 configure:4544: checking fcntl.h usability
-configure:4544: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4544: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4544: $? = 0
 configure:4544: result: yes
 configure:4544: checking fcntl.h presence
@@ -319,7 +306,7 @@ configure:4544: result: yes
 configure:4544: checking for fcntl.h
 configure:4544: result: yes
 configure:4544: checking sys/ioctl.h usability
-configure:4544: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4544: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4544: $? = 0
 configure:4544: result: yes
 configure:4544: checking sys/ioctl.h presence
@@ -329,7 +316,7 @@ configure:4544: result: yes
 configure:4544: checking for sys/ioctl.h
 configure:4544: result: yes
 configure:4544: checking sys/time.h usability
-configure:4544: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4544: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4544: $? = 0
 configure:4544: result: yes
 configure:4544: checking sys/time.h presence
@@ -339,7 +326,7 @@ configure:4544: result: yes
 configure:4544: checking for sys/time.h
 configure:4544: result: yes
 configure:4544: checking termio.h usability
-configure:4544: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4544: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4544: $? = 0
 configure:4544: result: yes
 configure:4544: checking termio.h presence
@@ -351,13 +338,13 @@ configure:4544: result: yes
 configure:4544: checking for unistd.h
 configure:4544: result: yes
 configure:4556: checking for an ANSI C-conforming const
-configure:4622: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4622: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4622: $? = 0
 configure:4629: result: yes
 configure:4637: checking for size_t
-configure:4637: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4637: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4637: $? = 0
-configure:4637: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4637: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:61:21: error: expected expression before ')' token
    61 | if (sizeof ((size_t)))
@@ -431,11 +418,11 @@ configure: failed program was:
 | }
 configure:4637: result: yes
 configure:4648: checking whether time.h and sys/time.h may both be included
-configure:4668: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4668: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4668: $? = 0
 configure:4675: result: yes
 configure:4683: checking whether byte ordering is bigendian
-configure:4698: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4698: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 conftest.c:27:9: error: unknown type name 'not'
    27 |         not a universal capable compiler
       |         ^~~
@@ -475,9 +462,9 @@ configure: failed program was:
 | 	     #endif
 | 	     typedef int dummy;
 | 
-configure:4743: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4743: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 configure:4743: $? = 0
-configure:4761: gcc -c -O3 -fPIC -march=native -mavx2  conftest.c >&5
+configure:4761: gcc -c -O3 -march=native -mavx2 -fPIC  conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:33:4: error: unknown type name 'not'; did you mean 'ino_t'?
    33 |    not big endian
@@ -538,7 +525,7 @@ configure:4964: result: yes
 configure:4967: checking whether to build the shared library
 configure:4977: result: no
 configure:4985: checking for cos in -lm
-configure:5010: gcc -o conftest -O3 -fPIC -march=native -mavx2   conftest.c -lm   >&5
+configure:5010: gcc -o conftest -O3 -march=native -mavx2 -fPIC   conftest.c -lm   >&5
 conftest.c:33:6: warning: conflicting types for built-in function 'cos'; expected 'double(double)' [-Wbuiltin-declaration-mismatch]
    33 | char cos ();
       |      ^~~
@@ -549,15 +536,15 @@ configure:5019: result: yes
 configure:5034: checking whether to compile debug version
 configure:5058: result: no
 configure:5066: checking for select
-configure:5066: gcc -o conftest -O3 -fPIC -march=native -mavx2   conftest.c -lm  >&5
+configure:5066: gcc -o conftest -O3 -march=native -mavx2 -fPIC   conftest.c -lm  >&5
 configure:5066: $? = 0
 configure:5066: result: yes
 configure:5066: checking for socket
-configure:5066: gcc -o conftest -O3 -fPIC -march=native -mavx2   conftest.c -lm  >&5
+configure:5066: gcc -o conftest -O3 -march=native -mavx2 -fPIC   conftest.c -lm  >&5
 configure:5066: $? = 0
 configure:5066: result: yes
 configure:5075: checking for gettimeofday
-configure:5075: gcc -o conftest -O3 -fPIC -march=native -mavx2   conftest.c -lm  >&5
+configure:5075: gcc -o conftest -O3 -march=native -mavx2 -fPIC   conftest.c -lm  >&5
 configure:5075: $? = 0
 configure:5075: result: yes
 configure:5100: checking build system type
@@ -567,11 +554,11 @@ configure:5147: result: x86_64-pc-linux-gnu
 configure:5188: checking for audio API
 configure:5600: result: using ALSA
 configure:5604: checking for snd_pcm_open in -lasound
-configure:5629: gcc -o conftest -O3 -fPIC -march=native -mavx2   -DHAVE_GETTIMEOFDAY  conftest.c -lasound  -lm  >&5
+configure:5629: gcc -o conftest -O3 -march=native -mavx2 -fPIC   -DHAVE_GETTIMEOFDAY  conftest.c -lasound  -lm  >&5
 configure:5629: $? = 0
 configure:5638: result: yes
 configure:5654: checking for pthread_create in -lpthread
-configure:5679: gcc -o conftest -O3 -fPIC -march=native -mavx2   -DHAVE_GETTIMEOFDAY  conftest.c -lpthread  -lasound -lm  >&5
+configure:5679: gcc -o conftest -O3 -march=native -mavx2 -fPIC   -DHAVE_GETTIMEOFDAY  conftest.c -lpthread  -lasound -lm  >&5
 configure:5679: $? = 0
 configure:5688: result: yes
 configure:6009: creating ./config.status
@@ -614,13 +601,13 @@ ac_cv_env_CCC_value=
 ac_cv_env_CC_set=
 ac_cv_env_CC_value=
 ac_cv_env_CFLAGS_set=set
-ac_cv_env_CFLAGS_value='-O3 -fPIC -march=native -mavx2'
+ac_cv_env_CFLAGS_value='-O3 -march=native -mavx2 -fPIC'
 ac_cv_env_CPPFLAGS_set=
 ac_cv_env_CPPFLAGS_value=
 ac_cv_env_CPP_set=
 ac_cv_env_CPP_value=
 ac_cv_env_CXXFLAGS_set=set
-ac_cv_env_CXXFLAGS_value='-O2 -fPIC -march=native -mavx2'
+ac_cv_env_CXXFLAGS_value='-O3 -march=native -mavx2 -fPIC'
 ac_cv_env_CXX_set=
 ac_cv_env_CXX_value=
 ac_cv_env_LDFLAGS_set=
@@ -675,7 +662,7 @@ ax_cv_cxx_compile_cxx11__std_cpp11=yes
 
 AR='/usr/bin/ar'
 CC='gcc'
-CFLAGS='-O3 -fPIC -march=native -mavx2'
+CFLAGS='-O3 -march=native -mavx2 -fPIC'
 CPP='gcc -E'
 CPPFLAGS='  -DHAVE_GETTIMEOFDAY -D__LINUX_ALSA__'
 CXX='g++ -std=c++11'
