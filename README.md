@@ -9,5 +9,6 @@ Templated Synthesis Toolkit
 * Gamma
 * Marsyas
 * Essentia
+* Faust LLVM
 * Mini Stk Ladspa Host
 * Mini Stk Lv2 Host
