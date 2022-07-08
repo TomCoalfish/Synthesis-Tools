@@ -25,3 +25,7 @@ Templated Synthesis Toolkit
 # GPU
 * I have tiny linear algebra I made with cublas called Viperfish
 * I will eventually try to use it and see if I can accelerate Stk with the GPU
+
+# Gamma
+* this might work with gamma as well as it's mostly all templates
+* I think it should work with Gamma without alot of effort
