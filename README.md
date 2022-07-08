@@ -9,6 +9,12 @@ Templated Synthesis Toolkit
 * Fixed point, SIMD, GPU
 * I haven't tested the idea at all yet with it but that is the Gist
 
+# Fixed point
+* Need a class to encapsulate the fixed point type
+* I dont have one right now
+* It should pretend to be like a floating point number
+* So anything that Stk does will work as if it was a normal float
+
 # Simd
 * I have some classes to start with for SSE and AVX
 * float4 and float8
