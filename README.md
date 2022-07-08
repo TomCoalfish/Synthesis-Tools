@@ -1,14 +1,10 @@
 # TStk
 Templated Synthesis Toolkit
 
-# It's not finished
+# Almost finished
 * Working on it
  
-# Kit
-* Stk
-* Gamma
-* Marsyas
-* Essentia
-* Faust LLVM
-* Mini Stk Ladspa Host
-* Mini Stk Lv2 Host
+# Templates
+* With template you can use it for all kinds of types
+* Fixed point, SIMD, GPU
+* I haven't tested the idea at all yet with it but that is the Gist
