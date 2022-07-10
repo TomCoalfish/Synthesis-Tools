@@ -180,7 +180,7 @@ bool inRange( T value, T min, T max ) {
 // I've removing all the static members soon it's not really sense with templates at all.
 // Then you won't have multiple sample rates
 
-template<class T = float>
+
 class Stk
 {
 public:
@@ -200,7 +200,7 @@ public:
 
 protected:
 
-  static std::vector<Stk<T> *> alertList_;
+  static std::vector<Stk*> alertList_;
   bool   ignoreSampleRateChange_;
 
   void setSampleRate( double rate )
@@ -221,11 +221,11 @@ protected:
   //! Static method that frees memory from alertList_.
   void  clear_alertList()
   {
-      std::vector<Stk<T>*>().swap(alertList_);
+      std::vector<Stk*>().swap(alertList_);
   }
 
   //! This function should be implemented in subclasses that depend on the sample rate.
-  virtual void sampleRateChanged( T newRate, T oldRate ) {
+  virtual void sampleRateChanged( double newRate, double oldRate ) {
 
   }
 
@@ -267,7 +267,7 @@ const double SRATE = 44100.0;
   #define RAWWAVE_PATH "../../rawwaves/"
 #endif
 
-template<typename T> std::vector<Stk<T> *> Stk<T> :: alertList_;
+
 
 
 

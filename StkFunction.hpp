@@ -17,7 +17,7 @@ namespace stk
 /***************************************************/
 
 template<typename T>
-class Function : public Stk<T>
+class Function : public Stk
 {
  public:
   //! Class constructor.

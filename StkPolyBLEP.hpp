@@ -26,7 +26,7 @@ public:
         return frames;
     }
 
-    virtual void sampleRateChanged(T newRate, T oldRate) override {
+    virtual void sampleRateChanged(double newRate, double oldRate) override {
         PolyBLEP::setSampleRate(newRate);
     }
 

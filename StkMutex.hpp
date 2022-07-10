@@ -32,7 +32,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Mutex : public Stk<T>
+class Mutex : public Stk
 {
  public:
   //! Default constructor.

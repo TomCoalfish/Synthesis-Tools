@@ -56,7 +56,7 @@ namespace stk {
 const int DEFAULT_QUEUE_LIMIT = 200;
 
 template<typename T>
-class Messager : public Stk<T>
+class Messager : public Stk
 {
  public:
 
@@ -445,7 +445,7 @@ THREAD_RETURN THREAD_TYPE stdinHandler(void *ptr)
       data->queue.push( message );
     data->mutex.unlock();
 
-    while ( data->queue.size() >= data->queueLimit ) Stk<T>::sleep( 50 );
+    while ( data->queue.size() >= data->queueLimit ) stk::sleep( 50 );
   }
 
   // We assume here that if someone types an "exit" message in the
@@ -485,7 +485,7 @@ void midiHandler( double timeStamp, std::vector<unsigned char> *bytes, void *ptr
       message.floatValues[1] = (T) message.intValues[1];
   }
 
-  while ( data->queue.size() >= data->queueLimit ) Stk<T>::sleep( 50 );
+  while ( data->queue.size() >= data->queueLimit ) stk::sleep( 50 );
 
   data->mutex.lock();
   data->queue.push( message );
@@ -604,7 +604,7 @@ THREAD_RETURN THREAD_TYPE socketHandler(void *ptr)
     }
 
     // Wait until we're below the queue limit.
-    while ( data->queue.size() >= data->queueLimit ) Stk<T>::sleep( 50 );
+    while ( data->queue.size() >= data->queueLimit ) stk::sleep( 50 );
   }
 
   return NULL;

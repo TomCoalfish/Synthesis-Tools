@@ -38,7 +38,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Skini : public Stk<T>
+class Skini : public Stk
 {
  public:
 

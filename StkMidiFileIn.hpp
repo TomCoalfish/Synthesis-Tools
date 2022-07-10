@@ -28,7 +28,7 @@ namespace stk {
 
 
 template<typename T>
-class MidiFileIn : public Stk<T>
+class MidiFileIn : public Stk
 {
  public:
   //! Default constructor.

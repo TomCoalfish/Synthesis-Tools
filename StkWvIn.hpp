@@ -15,7 +15,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class WvIn : public Stk<T>
+class WvIn : public Stk
 {
 public:
   //! Return the number of audio channels in the data or stream.

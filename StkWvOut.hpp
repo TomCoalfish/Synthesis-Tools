@@ -11,14 +11,14 @@ namespace stk {
     data output subclasses.
 
     Currently, WvOut is non-interpolating and the output rate is
-    always Stk<T>::sampleRate().
+    always stk::sampleRate().
 
     by Perry R. Cook and Gary P. Scavone, 1995--2021.
 */
 /***************************************************/
 
 template<typename T>
-class WvOut : public Stk<T>
+class WvOut : public Stk
 {
  public:
 
@@ -29,7 +29,7 @@ class WvOut : public Stk<T>
   unsigned long getFrameCount( void ) const { return frameCounter_; };
 
   //! Return the number of seconds of data output.
-  T getTime( void ) const { return (T) frameCounter_ / Stk<T>::sampleRate(); };
+  T getTime( void ) const { return (T) frameCounter_ / stk::sampleRate(); };
 
   //! Returns \c true if clipping has been detected during output since instantiation or the last reset.
   bool clipStatus( void ) { return clipping_; };

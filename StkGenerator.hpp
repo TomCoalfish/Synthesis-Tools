@@ -16,7 +16,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Generator : public Stk<T>
+class Generator : public Stk
 {
  public:
 

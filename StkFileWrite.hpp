@@ -39,7 +39,7 @@ enum FILE_TYPE {
     };
 
 template<typename T>
-class FileWrite : public Stk<T>
+class FileWrite : public Stk
 {
  public:
 

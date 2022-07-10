@@ -18,7 +18,7 @@ namespace stk
 /***************************************************/
 
 template<typename T>
-class Filter : public Stk<T>
+class Filter : public Stk
 {
 public:
   //! Class constructor.

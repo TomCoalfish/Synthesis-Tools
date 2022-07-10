@@ -15,7 +15,7 @@ namespace stk
 /***************************************************/
 
 template<typename T>
-class Instrmnt : public Stk<T>
+class Instrmnt : public Stk
 {
  public:
   //! Class constructor.

@@ -42,7 +42,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class FileRead : public Stk<T>
+class FileRead : public Stk
 {
 public:
   //! Default constructor.

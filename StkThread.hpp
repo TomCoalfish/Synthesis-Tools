@@ -45,7 +45,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Thread : public Stk<T>
+class Thread : public Stk
 {
  public:
   //! Default constructor.

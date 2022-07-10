@@ -16,7 +16,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Phonemes : public Stk<T>
+class Phonemes : public Stk
 {
 public:
 

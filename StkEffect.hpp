@@ -17,7 +17,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Effect : public Stk<T>
+class Effect : public Stk
 {
  public:
   //! Class constructor.

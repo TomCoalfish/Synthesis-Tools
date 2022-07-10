@@ -30,7 +30,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Twang : public Stk<T>
+class Twang : public Stk
 {
  public:
   //! Class constructor, taking the lowest desired playing frequency.

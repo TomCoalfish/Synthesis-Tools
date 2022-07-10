@@ -4,6 +4,7 @@
 namespace stk 
 {
 
+std::vector<Stk*> Stk::alertList_;
 static double srate_ = 44100.0f;
 static std::string rawwavepath_;
 static bool showWarnings_;

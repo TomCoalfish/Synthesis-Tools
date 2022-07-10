@@ -39,7 +39,7 @@ enum ProtocolType {
   };
 
 template<typename T>
-class Socket : public Stk<T>
+class Socket : public Stk
 {
  public:
 

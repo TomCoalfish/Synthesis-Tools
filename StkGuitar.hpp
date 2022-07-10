@@ -43,7 +43,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Guitar : public Stk<T>
+class Guitar : public Stk
 {
  public:
   //! Class constructor, specifying an arbitrary number of strings (default = 6).
