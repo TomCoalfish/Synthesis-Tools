@@ -33,6 +33,7 @@ Templated Synthesis Toolkit
 
 # FaustGTK
 * can run Faust scripts as Stk class with GTK gui
+* YOu don't have to have the GUI if you don't want it
 
 # LuaJIT
 * embed LuaJIT 
