@@ -15,6 +15,12 @@ Templated Synthesis Toolkit
 * Possible library you can use like Vc with Gcc 
 * We can modify to work on ARM too later
 
+# Mkl/IPP
+* I will hook it into Stk with some codes I have
+* Some linear algebra vector/matrix
+* Arrays and aligned std::vector
+* You can use Intel IPP DSP functions
+
 # CSound
 * Can run CSound files
 * Set ksmps to the size of the audio buffer
