@@ -4,7 +4,7 @@
 #include <iostream>
 #include "TWaveTable.hpp"
 
-namespace SoundAlchemy
+namespace SoundAlchemy::WaveTables
 {
     template<typename T>
     struct TFourierWave : public Object<T>

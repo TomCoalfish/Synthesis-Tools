@@ -1,5 +1,24 @@
 #pragma once
 
+#if defined(__WINDOWS_DS__) || defined(__WINDOWS_ASIO__) || defined(__WINDOWS_MM__)
+  #define __OS_WINDOWS__
+  #define __STK_REALTIME__
+#elif defined(__LINUX_OSS__) || defined(__LINUX_ALSA__) || defined(__UNIX_JACK__) || defined(__LINUX_PULSE__)
+  #define __OS_LINUX__
+  #define __STK_REALTIME__
+#elif defined(__IRIX_AL__)
+  #define __OS_IRIX__
+#elif defined(__MACOSX_CORE__) || defined(__UNIX_JACK__)
+  #define __OS_MACOSX__
+  #define __STK_REALTIME__
+#endif
+
+#if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
+  #include <unistd.h>
+#elif defined(__OS_WINDOWS__)
+  #include <windows.h>
+#endif
+
 
 #include <string>
 #include <cstring>
@@ -9,11 +28,6 @@
 #include <stdexcept>
 //#include <cstdlib>
 
-#if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
-  #include <unistd.h>
-#elif defined(__OS_WINDOWS__)
-  #include <windows.h>
-#endif
 
 /*! \namespace stk
     \brief The STK namespace.
@@ -123,8 +137,7 @@ public:
 };
 
 
-// if you make an Stk<float> and Stk<double> they have seperate sample rates and other data
-// I kept it like this because it can be useful for different audio stream types
+
 enum StkFormat {
     STK_NONE=0,
     STK_SINT8=0x1,
@@ -134,6 +147,38 @@ enum StkFormat {
     STK_FLOAT32=0x10,
     STK_FLOAT64=0x20,
   };
+
+
+extern std::ostringstream oStream_;
+
+// these really dont need to be in the class anymore and the tempalte makes it awkward
+double sampleRate( void );
+void SetSampleRate( double rate );
+std::string rawwavePath(void);
+void setRawwavePath( std::string path );
+void swap16( unsigned char *ptr );
+void swap32( unsigned char *ptr );
+void swap64( unsigned char *ptr );
+void sleep( unsigned long milliseconds );
+void handleError( StkError::Type type );
+void handleError( const char *message, StkError::Type type );
+void handleError( std::string message, StkError::Type type );
+void showWarnings( bool status );
+void printErrors( bool status );
+
+
+//! Static method to check whether a value is within a specified range.
+template<typename T>
+bool inRange( T value, T min, T max ) {
+  if ( value < min ) return false;
+  else if ( value > max ) return false;
+  else return true;
+}
+
+
+
+// I've removing all the static members soon it's not really sense with templates at all.
+// Then you won't have multiple sample rates
 
 template<class T = float>
 class Stk
@@ -152,204 +197,33 @@ public:
   {
 
   }
-public:
-
-  //! Static method that returns the current STK sample rate.
-  static T sampleRate( void ) { return srate_; }
-
-  //! Static method that sets the STK sample rate.
-  /*!
-    The sample rate set using this method is queried by all STK
-    classes that depend on its value.  It is initialized to the
-    default SRATE set in Stk.h.  Many STK classes use the sample rate
-    during instantiation.  Therefore, if you wish to use a rate that
-    is different from the default rate, it is imperative that it be
-    set \e BEFORE STK objects are instantiated.  A few classes that
-    make use of the global STK sample rate are automatically notified
-    when the rate changes so that internal class data can be
-    appropriately updated.  However, this has not been fully
-    implemented.  Specifically, classes that appropriately update
-    their own data when either a setFrequency() or noteOn() function
-    is called do not currently receive the automatic notification of
-    rate change.  If the user wants a specific class instance to
-    ignore such notifications, perhaps in a multi-rate context, the
-    function Stk<T>::ignoreSampleRateChange() should be called.
-  */
-  static void setSampleRate( T rate )
-  {
-    if ( rate > 0.0 && rate != srate_ ) {
-      T oldRate = srate_;
-      srate_ = rate;
-
-      for ( unsigned int i=0; i<alertList_.size(); i++ )
-        alertList_[i]->sampleRateChanged( srate_, oldRate );
-    }
-  }
-
-  //! A function to enable/disable the automatic updating of class data when the STK sample rate changes.
-  /*!
-    This function allows the user to enable or disable class data
-    updates in response to global sample rate changes on a class by
-    class basis.
-  */
-  void ignoreSampleRateChange( bool ignore = true ) { ignoreSampleRateChange_ = ignore; };
-  
-  //! Static method that frees memory from alertList_.
-  static void  clear_alertList(){std::vector<Stk *>().swap(alertList_);}
-  
-  //! Static method that returns the current rawwave path.
-  static std::string rawwavePath(void) { return rawwavepath_; }
-
-  //! Static method that sets the STK rawwave path.
-  static void setRawwavePath( std::string path )
-  {
-    if ( !path.empty() )
-      rawwavepath_ = path;
-
-    // Make sure the path includes a "/"
-    if ( rawwavepath_[rawwavepath_.length()-1] != '/' )
-      rawwavepath_ += "/";
-  }
-
-
-  //! Static method that byte-swaps a 16-bit data type.
-  static void swap16( unsigned char *ptr )
-  {
-    unsigned char val;
-
-    // Swap 1st and 2nd bytes
-    val = *(ptr);
-    *(ptr) = *(ptr+1);
-    *(ptr+1) = val;
-  }
-
-
-  //! Static method that byte-swaps a 32-bit data type.
-  static void swap32( unsigned char *ptr )
-  {
-    unsigned char val;
-
-    // Swap 1st and 4th bytes
-    val = *(ptr);
-    *(ptr) = *(ptr+3);
-    *(ptr+3) = val;
-
-    //Swap 2nd and 3rd bytes
-    ptr += 1;
-    val = *(ptr);
-    *(ptr) = *(ptr+1);
-    *(ptr+1) = val;
-  }
-
-
-  //! Static method that byte-swaps a 64-bit data type.
-  static void swap64( unsigned char *ptr ) 
-  {
-    unsigned char val;
-
-    // Swap 1st and 8th bytes
-    val = *(ptr);
-    *(ptr) = *(ptr+7);
-    *(ptr+7) = val;
-
-    // Swap 2nd and 7th bytes
-    ptr += 1;
-    val = *(ptr);
-    *(ptr) = *(ptr+5);
-    *(ptr+5) = val;
-
-    // Swap 3rd and 6th bytes
-    ptr += 1;
-    val = *(ptr);
-    *(ptr) = *(ptr+3);
-    *(ptr+3) = val;
-
-    // Swap 4th and 5th bytes
-    ptr += 1;
-    val = *(ptr);
-    *(ptr) = *(ptr+1);
-    *(ptr+1) = val;
-  }
-
-
-  //! Static cross-platform method to sleep for a number of milliseconds.
-  static void sleep( unsigned long milliseconds )
-  {
-    #if defined(__OS_WINDOWS__)
-      Sleep((DWORD) milliseconds);
-    #elif (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
-      usleep( (unsigned long) (milliseconds * 1000.0) );
-    #endif
-  }
-
-
-  //! Static method to check whether a value is within a specified range.
-  static bool inRange( T value, T min, T max ) {
-    if ( value < min ) return false;
-    else if ( value > max ) return false;
-    else return true;
-  }
-
-  //! Internal function for error reporting that assumes message in \c oStream_ variable.
-  void handleError( StkError::Type type ) const
-  {
-    handleError( oStream_.str(), type );
-    oStream_.str( std::string() ); // reset the ostringstream buffer
-  }
-
-  //! Static function for error reporting and handling using c-strings.
-  static void handleError( const char *message, StkError::Type type )
-  {
-    std::string msg( message );
-    handleError( msg, type );    
-  }
-
-
-  //! Static function for error reporting and handling using c++ strings.
-  static void handleError( std::string message, StkError::Type type )
-  {
-    if ( type == StkError::WARNING || type == StkError::STATUS ) {
-      if ( !showWarnings_ ) return;
-      std::cerr << '\n' << message << '\n' << std::endl;
-    }
-    else if (type == StkError::DEBUG_PRINT) {
-    #if defined(_STK_DEBUG_)
-        std::cerr << '\n' << message << '\n' << std::endl;
-    #endif
-    }
-    else {
-      if ( printErrors_ ) {
-        // Print error message before throwing.
-        std::cerr << '\n' << message << '\n' << std::endl;
-      }
-      throw StkError(message, type);
-    }
-  }
-
-
-
-  //! Toggle display of WARNING and STATUS messages.
-  static void showWarnings( bool status ) { showWarnings_ = status; }
-
-  //! Toggle display of error messages before throwing exceptions.
-  static void printErrors( bool status ) { printErrors_ = status; }
-
-private:
-
-  static T srate_;
-  static std::string rawwavepath_;
-  static bool showWarnings_;
-  static bool printErrors_;
-  static std::vector<Stk<T> *> alertList_;
-
-
 
 protected:
 
-  static std::ostringstream oStream_;
-  bool ignoreSampleRateChange_;
+  static std::vector<Stk<T> *> alertList_;
+  bool   ignoreSampleRateChange_;
 
-  
+  void setSampleRate( double rate )
+  {
+    double oldRate = stk::sampleRate();
+    if ( rate > 0.0 && rate != oldRate ) {
+      
+      stk::SetSampleRate(rate);
+
+      for ( unsigned int i=0; i<alertList_.size(); i++ )
+        alertList_[i]->sampleRateChanged( rate, oldRate );
+    }
+  }
+
+
+  void ignoreSampleRateChange( bool ignore = true ) { ignoreSampleRateChange_ = ignore; };
+    
+  //! Static method that frees memory from alertList_.
+  void  clear_alertList()
+  {
+      std::vector<Stk<T>*>().swap(alertList_);
+  }
+
   //! This function should be implemented in subclasses that depend on the sample rate.
   virtual void sampleRateChanged( T newRate, T oldRate ) {
 
@@ -393,12 +267,8 @@ const double SRATE = 44100.0;
   #define RAWWAVE_PATH "../../rawwaves/"
 #endif
 
-template<typename T> T Stk<T>::srate_ = SRATE;
-template<typename T> std::string Stk<T>::rawwavepath_ = RAWWAVE_PATH;
-template<typename T> bool Stk<T> :: showWarnings_ = true;
-template<typename T> bool Stk<T> :: printErrors_ = true;
 template<typename T> std::vector<Stk<T> *> Stk<T> :: alertList_;
-template<typename T> std::ostringstream Stk<T> :: oStream_;
+
 
 
 /***************************************************/
@@ -446,7 +316,7 @@ public:
           #endif
         }
 
-  dataRate_ = Stk<T>::sampleRate();
+  dataRate_ = stk::sampleRate();
 }
 
 
@@ -467,7 +337,7 @@ public:
       for ( long i=0; i<(long)size_; i++ ) data_[i] = value;
     }
 
-    dataRate_ = Stk<T>::sampleRate();
+    dataRate_ = sampleRate();
   }
 
 
@@ -482,7 +352,7 @@ public:
   : data_(0), size_(0), bufferSize_(0)
   {
     resize( f.frames(), f.channels() );
-    dataRate_ = Stk<T>::sampleRate();
+    dataRate_ = sampleRate();
     for ( unsigned int i=0; i<size_; i++ ) data_[i] = f[i];
   }
 
@@ -495,7 +365,7 @@ public:
     size_ = 0;
     bufferSize_ = 0;
     resize( f.frames(), f.channels() );
-    dataRate_ = Stk<T>::sampleRate();
+    dataRate_ = sampleRate();
     for ( unsigned int i=0; i<size_; i++ ) data_[i] = f[i];
     return *this;
   }
@@ -982,17 +852,5 @@ const double PI           = 3.14159265358979;
 const double TWO_PI       = 2 * PI;
 const double ONE_OVER_128 = 0.0078125;
 
-#if defined(__WINDOWS_DS__) || defined(__WINDOWS_ASIO__) || defined(__WINDOWS_MM__)
-  #define __OS_WINDOWS__
-  #define __STK_REALTIME__
-#elif defined(__LINUX_OSS__) || defined(__LINUX_ALSA__) || defined(__UNIX_JACK__) || defined(__LINUX_PULSE__)
-  #define __OS_LINUX__
-  #define __STK_REALTIME__
-#elif defined(__IRIX_AL__)
-  #define __OS_IRIX__
-#elif defined(__MACOSX_CORE__) || defined(__UNIX_JACK__)
-  #define __OS_MACOSX__
-  #define __STK_REALTIME__
-#endif
 
 } // stk namespace

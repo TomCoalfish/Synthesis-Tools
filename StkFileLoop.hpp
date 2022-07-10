@@ -98,7 +98,7 @@ class FileLoop : protected FileWvIn<T>
     corresponds to file cycles per second.  The frequency can be
     negative, in which case the loop is read in reverse order.
   */
-  void setFrequency( T frequency ) { this->setRate( this-> fileSize_ * frequency / Stk<T>::sampleRate() ); };
+  void setFrequency( T frequency ) { this->setRate( this-> fileSize_ * frequency / sampleRate() ); };
 
   //! Increment the read pointer by \e time samples, modulo file size.
   void addTime( T time );
@@ -182,7 +182,7 @@ template<typename T>
 FileLoop<T>::FileLoop( unsigned long chunkThreshold, unsigned long chunkSize )
   : FileWvIn<T>( chunkThreshold, chunkSize ), phaseOffset_(0.0)
 {
-  Stk<T>::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
@@ -192,13 +192,13 @@ FileLoop<T>::FileLoop( std::string fileName, bool raw, bool doNormalize,
   : FileWvIn<T>( chunkThreshold, chunkSize ), phaseOffset_(0.0)
 {
   this->openFile( fileName, raw, doNormalize, doInt2FloatScaling );
-  Stk<T>::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 FileLoop<T>::~FileLoop( void )
 {
-  Stk<T>::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
@@ -247,7 +247,7 @@ void FileLoop<T>::openFile( std::string fileName, bool raw, bool doNormalize, bo
   if ( ! this->chunking_ ) this->file_.close();
 
   // Set default rate based on file sampling rate.
-  this->setRate( this->data_.dataRate() / Stk<T>::sampleRate() );
+  this->setRate( this->data_.dataRate() / sampleRate() );
 
   if ( doNormalize & ! this->chunking_ ) this->normalize();
 
@@ -299,8 +299,8 @@ T FileLoop<T>::tick( unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
   if ( channel >= data_.channels() ) {
-    this->oStream_ << "FileLoop::tick(): channel argument and soundfile data are incompatible!";
-    this->handleError( StkError::FUNCTION_ARGUMENT );
+    oStream_ << "FileLoop::tick(): channel argument and soundfile data are incompatible!";
+    handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
@@ -370,8 +370,8 @@ StkFrames<T>& FileLoop<T>::tick( StkFrames<T>& frames, unsigned int channel)
 {
   if ( this->finished_ ) {
 #if defined(_STK_DEBUG_)
-    this->oStream_ << "FileLoop::tick(): no file data is loaded!";
-    this->handleError( StkError::DEBUG_PRINT );
+    oStream_ << "FileLoop::tick(): no file data is loaded!";
+    handleError( StkError::DEBUG_PRINT );
 #endif
   return frames;
   }
@@ -379,8 +379,8 @@ StkFrames<T>& FileLoop<T>::tick( StkFrames<T>& frames, unsigned int channel)
   unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
-    this->oStream_ << "FileLoop::tick(): channel and StkFrames<T> arguments are incompatible!";
-    this->handleError( StkError::FUNCTION_ARGUMENT );
+    oStream_ << "FileLoop::tick(): channel and StkFrames<T> arguments are incompatible!";
+    handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
         

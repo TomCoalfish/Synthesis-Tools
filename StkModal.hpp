@@ -15,7 +15,7 @@ namespace stk {
 
     This class contains an excitation wavetable,
     an envelope, an oscillator, and N resonances
-    (non-sweeping BiQuad filters), where N is set
+    (non-sweeping BiQuad<T>filters), where N is set
     during instantiation.
 
     by Perry R. Cook and Gary P. Scavone, 1995--2021.
@@ -83,11 +83,11 @@ public:
 
 protected:
 
-  Envelope envelope_; 
-  FileWvIn *wave_;
-  BiQuad **filters_;
-  OnePole  onepole_;
-  SineWave vibrato_;
+  Envelope<T> envelope_; 
+  FileWvIn<T> *wave_;
+  BiQuad<T> **filters_;
+  OnePole<T>  onepole_;
+  SineWave<T> vibrato_;
 
   unsigned int nModes_;
   std::vector<T> ratios_;
@@ -101,6 +101,7 @@ protected:
   T baseFrequency_;
 };
 
+template<typename T>
 inline T Modal<T>::tick( unsigned int )
 {
   T temp = masterGain_ * onepole_.tick( wave_->tick() * envelope_.tick() );
@@ -118,13 +119,14 @@ inline T Modal<T>::tick( unsigned int )
     temp2 = temp * temp2;
   }
     
-  lastFrame_[0] = temp2;
-  return lastFrame_[0];
+  this->lastFrame_[0] = temp2;
+  return this->lastFrame_[0];
 }
 
+template<typename T>
 inline StkFrames<T>& Modal<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Modal::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -142,7 +144,7 @@ inline StkFrames<T>& Modal<T>::tick( StkFrames<T>& frames, unsigned int channel 
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -155,7 +157,7 @@ inline StkFrames<T>& Modal<T>::tick( StkFrames<T>& frames, unsigned int channel 
 
     This class contains an excitation wavetable,
     an envelope, an oscillator, and N resonances
-    (non-sweeping BiQuad filters), where N is set
+    (non-sweeping BiQuad<T>filters), where N is set
     during instantiation.
 
     by Perry R. Cook and Gary P. Scavone, 1995--2021.
@@ -176,9 +178,9 @@ Modal<T>::Modal( unsigned int modes )
 
   ratios_.resize( nModes_ );
   radii_.resize( nModes_ );
-  filters_ = (BiQuad **) calloc( nModes_, sizeof(BiQuad *) );
+  filters_ = (BiQuad<T>**) calloc( nModes_, sizeof(BiQuad<T>*) );
   for (unsigned int i=0; i<nModes_; i++ ) {
-    filters_[i] = new BiQuad;
+    filters_[i] = new BiQuad<T>;
     filters_[i]->setEqualGainZeroes();
   }
 
@@ -235,7 +237,7 @@ void Modal<T>::setRatioAndRadius( unsigned int modeIndex, T ratio, T radius )
     handleError( StkError::WARNING ); return;
   }
 
-  T nyquist = Stk::sampleRate() / 2.0;
+  T nyquist = stk::sampleRate() / 2.0;
   T temp;
 
   if ( ratio * baseFrequency_ < nyquist ) {

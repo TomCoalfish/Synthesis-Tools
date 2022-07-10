@@ -27,9 +27,9 @@ Permission has been granted to release this port under the WDL/IPlug license:
 #include <math.h>
 #include <cmath>
 #include <cstdint>
+#include "SoundAlchemy.hpp"
 
-
-namespace SoundWave 
+namespace SoundAlchemy::Oscillators
 {
     template<typename T>
     class TPolyBLEP {

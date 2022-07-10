@@ -124,7 +124,7 @@ class Guitar : public Stk<T>
 
  protected:
 
-  std::vector< stk::Twang > strings_;
+  std::vector< stk::Twang<T> > strings_;
   std::vector< int > stringState_; // 0 = off, 1 = decaying, 2 = on
   std::vector< unsigned int > decayCounter_;
   std::vector< unsigned int > filePointer_;
@@ -158,7 +158,7 @@ inline T Guitar<T>::tick( T input )
       if ( stringState_[i] == 1 ) {
         if ( fabs( strings_[i].lastOut() ) < 0.001 ) decayCounter_[i]++;
         else decayCounter_[i] = 0;
-        if ( decayCounter_[i] > (unsigned int) floor( 0.1 * Stk::sampleRate() ) ) {
+        if ( decayCounter_[i] > (unsigned int) floor( 0.1 * stk::sampleRate() ) ) {
           stringState_[i] = 0;
           decayCounter_[i] = 0;
         }
@@ -269,11 +269,11 @@ void Guitar<T>::setBodyFile( std::string bodyfile )
   bool fileLoaded = false;
   if ( bodyfile != "" ) {
     try {
-      FileWvIn file( bodyfile );
+      FileWvIn<T> file( bodyfile );
   
       // Fill the StkFrames<T> variable with the (possibly interpolated)
       // file data.
-      excitation_.resize( (unsigned long) ( 0.5 + ( file.getSize() * Stk::sampleRate() / file.getFileRate() ) ) );
+      excitation_.resize( (unsigned long) ( 0.5 + ( file.getSize() * stk::sampleRate() / file.getFileRate() ) ) );
       file.tick( excitation_ );
       fileLoaded = true;
     }
@@ -286,7 +286,7 @@ void Guitar<T>::setBodyFile( std::string bodyfile )
   if ( !fileLoaded ) {
     unsigned int M = 200;  // arbitrary value
     excitation_.resize( M );
-    Noise noise;
+    Noise<T> noise;
     noise.tick( excitation_ );
     // Smooth the start and end of the noise.
     unsigned int N = (unsigned int) M * 0.2; // arbitrary value
@@ -382,7 +382,7 @@ void Guitar<T>::noteOn( T frequency, T amplitude, unsigned int string )
     handleError( StkError::WARNING ); return;
   }
 
-  if ( Stk::inRange( amplitude, 0.0, 1.0 ) == false ) {
+  if ( stk::inRange( amplitude, 0.0, 1.0 ) == false ) {
     oStream_ << "Guitar::noteOn: amplitude parameter is outside range 0.0 - 1.0!";
     handleError( StkError::WARNING ); return;
   }
@@ -404,7 +404,7 @@ void Guitar<T>::noteOff( T amplitude, unsigned int string )
     handleError( StkError::WARNING ); return;
   }
 
-  if ( Stk::inRange( amplitude, 0.0, 1.0 ) == false ) {
+  if ( stk::inRange( amplitude, 0.0, 1.0 ) == false ) {
     oStream_ << "Guitar::noteOff: amplitude parameter is outside range 0.0 - 1.0!";
     handleError( StkError::WARNING ); return;
   }
@@ -418,7 +418,7 @@ template<typename T>
 void Guitar<T>::controlChange( int number, T value, int string )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( stk::inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Guitar::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }

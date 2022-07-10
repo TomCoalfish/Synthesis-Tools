@@ -171,9 +171,10 @@ inline T FreeVerb<T>::lastOut( unsigned int channel )
   }
 #endif
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
+template<typename T>
 inline T FreeVerb<T>::tick( T inputL, T inputR, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
@@ -224,26 +225,26 @@ inline T FreeVerb<T>::tick( T inputL, T inputR, unsigned int channel )
   }
 
   // Mix output
-  lastFrame_[0] = outL*wet1_ + outR*wet2_ + inputL*dry_;
-  lastFrame_[1] = outR*wet1_ + outL*wet2_ + inputR*dry_;
+  this->lastFrame_[0] = outL*wet1_ + outR*wet2_ + inputL*dry_;
+  this->lastFrame_[1] = outR*wet1_ + outL*wet2_ + inputR*dry_;
 
   /*
   // Hard limiter ... there's not much else we can do at this point
-  if ( lastFrame_[0] >= 1.0 ) {
-    lastFrame_[0] = 0.9999;
+  if ( this->lastFrame_[0] >= 1.0 ) {
+    this->lastFrame_[0] = 0.9999;
   }
-  if ( lastFrame_[0] <= -1.0 ) {
-    lastFrame_[0] = -0.9999;
+  if ( this->lastFrame_[0] <= -1.0 ) {
+    this->lastFrame_[0] = -0.9999;
   }
-  if ( lastFrame_[1] >= 1.0 ) {
-    lastFrame_[1] = 0.9999;
+  if ( this->lastFrame_[1] >= 1.0 ) {
+    this->lastFrame_[1] = 0.9999;
   }
-  if ( lastFrame_[1] <= -1.0 ) {
-    lastFrame_[1] = -0.9999;
+  if ( this->lastFrame_[1] <= -1.0 ) {
+    this->lastFrame_[1] = -0.9999;
   }
   */
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 // Set static delay line lengths
@@ -259,11 +260,11 @@ template<typename T> int FreeVerb<T>::aDelayLengths[] = {225, 556, 441, 341};
 template<typename T>
 FreeVerb<T>::FreeVerb( void )
 {
-  // Resize lastFrame_ for stereo output
-  lastFrame_.resize( 1, 2, 0.0 );
+  // Resize this->lastFrame_ for stereo output
+  this->lastFrame_.resize( 1, 2, 0.0 );
 
   // Initialize parameters
-  Effect::setEffectMix( 0.75 ); // set initially to 3/4 wet 1/4 dry signal (different than original freeverb) 
+  Effect<T>::setEffectMix( 0.75 ); // set initially to 3/4 wet 1/4 dry signal (different than original freeverb) 
   roomSizeMem_ = (0.75 * scaleRoom) + offsetRoom; // feedback attenuation in LBFC
   dampMem_ = 0.25 * scaleDamp;                    // pole of lowpass filters in the LBFC
   width_ = 1.0;
@@ -274,7 +275,7 @@ FreeVerb<T>::FreeVerb( void )
   g_ = 0.5;               // allpass coefficient, immutable in FreeVerb
 
   // Scale delay line lengths according to the current sampling rate
-  double fsScale = Stk::sampleRate() / 44100.0;
+  double fsScale = stk::sampleRate() / 44100.0;
   if ( fsScale != 1.0 ) {
     // scale comb filter delay lines
     for ( int i = 0; i < nCombs; i++ ) {
@@ -312,7 +313,7 @@ FreeVerb<T>::~FreeVerb()
 template<typename T>
 void FreeVerb<T>::setEffectMix( T mix )
 {
-  Effect::setEffectMix( mix );
+  Effect<T>::setEffectMix( mix );
   update();    
 }
 
@@ -371,8 +372,8 @@ T FreeVerb<T>::getMode()
 template<typename T>
 void FreeVerb<T>::update()
 {
-  T wet = scaleWet * effectMix_;
-  dry_ = scaleDry * (1.0-effectMix_);
+  T wet = scaleWet * this->effectMix_;
+  dry_ = scaleDry * (1.0-this->effectMix_);
 
   // Use the L1 norm so the output gain will sum to one while still
   // preserving the ratio of scalings in original FreeVerb
@@ -416,8 +417,8 @@ void FreeVerb<T>::clear()
     allPassDelayR_[i].clear();
   }
 
-  lastFrame_[0] = 0.0;
-  lastFrame_[1] = 0.0;
+  this->lastFrame_[0] = 0.0;
+  this->lastFrame_[1] = 0.0;
 }
 
 template<typename T>
@@ -434,7 +435,7 @@ StkFrames<T>& FreeVerb<T>::tick( StkFrames<T>& frames, unsigned int channel )
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
     *samples = tick( *samples, *(samples+1) );
-    *(samples+1) = lastFrame_[1];
+    *(samples+1) = this->lastFrame_[1];
   }
 
   return frames;
@@ -461,7 +462,7 @@ StkFrames<T>& FreeVerb<T>::tick( StkFrames<T>& iFrames, StkFrames<T> &oFrames, u
     else
       *oSamples = tick( *iSamples );
 
-    *(oSamples+1) = lastFrame_[1];
+    *(oSamples+1) = this->lastFrame_[1];
   }
 
   return oFrames;

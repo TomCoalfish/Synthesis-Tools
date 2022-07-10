@@ -4,8 +4,10 @@
 #include "TLadderBase.hpp"
 #include "Util.h"
 
+namespace SoundAlchemy::MoogFilters
+{
 template<typename T>
-class MusicDSPMoog : public TLadderFilterBase<T>
+class TMusicDSPMoog : public TLadderFilterBase<T>
 {
 	
 public:
@@ -27,7 +29,7 @@ public:
 	{
 		for (int s = 0; s < n; ++s)
 		{
-			T x = samples[s] - resonance * stage[3];
+			T x = samples[s] - this->resonance * stage[3];
 
 			// Four cascaded one-pole filters (bilinear transform)
 			stage[0] = x * p + delay[0]  * p - k * stage[0];
@@ -51,7 +53,7 @@ public:
 	{
 		for (int s = 0; s < n; ++s)
 		{
-			T x = samples[s] - resonance * stage[3];
+			T x = samples[s] - this->resonance * stage[3];
 
 			// Four cascaded one-pole filters (bilinear transform)
 			stage[0] = x * p + delay[0]  * p - k * stage[0];
@@ -79,19 +81,19 @@ public:
 	
 	virtual void SetResonance(T r) override
 	{
-		resonance = r * (t2 + 6.0 * t1) / (t2 - 6.0 * t1);
+		this->resonance = r * (t2 + 6.0 * t1) / (t2 - 6.0 * t1);
 	}
 	
 	virtual void SetCutoff(T c) override
 	{
-		cutoff = 2.0 * c / sampleRate;
+		this->cutoff = 2.0 * c / sampleRate;
 
-		p = cutoff * (1.8 - 0.8 * cutoff);
-		k = 2.0 * sin(cutoff * MOOG_PI * 0.5) - 1.0;
+		p = this->cutoff * (1.8 - 0.8 * this->cutoff);
+		k = 2.0 * sin(this->cutoff * MOOG_PI * 0.5) - 1.0;
 		t1 = (1.0 - p) * 1.386249;
 		t2 = 12.0 + t1 * t1;
 
-		SetResonance(resonance);
+		SetResonance(this->resonance);
 	}
 	
 private:
@@ -106,3 +108,4 @@ private:
 
 };
 
+}

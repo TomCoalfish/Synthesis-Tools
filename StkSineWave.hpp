@@ -188,13 +188,13 @@ SineWave<T>::SineWave( void )
       table_[i] = sin( TWO_PI * i * temp );
   }
 
-  Stk<T>::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 SineWave<T>::~SineWave()
 {
-  Stk<T>::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
@@ -215,7 +215,7 @@ template<typename T>
 void SineWave<T>::setFrequency( T frequency )
 {
   // This is a looping frequency.
-  this->setRate( TABLE_SIZE * frequency / Stk<T>::sampleRate() );
+  this->setRate( TABLE_SIZE * frequency / sampleRate() );
 }
 
 template<typename T>

@@ -21,8 +21,9 @@
 #define doLinearInterp 1
 #include <vector>
 #include <cmath>
+#include "SoundAlchemy.hpp"
 
-namespace SoundAlchemy {
+namespace SoundAlchemy::WaveTable {
         
     //TODO: use vectors instead of an array
     template<typename T>

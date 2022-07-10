@@ -1,5 +1,8 @@
 
-namespace SoundAlchemy
+#pragma once
+#include "SoundAlchemy.hpp"
+
+namespace SoundAlchemy::Filters
 {
     template<typename T>
     class TRBJFilter

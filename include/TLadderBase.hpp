@@ -2,12 +2,13 @@
 
 #include <cstdint>
 #include <cmath>
+
 #include "SoundAlchemy.hpp"
 
-namespace SoundAlchemy
+namespace SoundAlchemy::MoogFilters
 {
     template<typename T>
-    class TLadderFilterBase : public Object<T>
+    class TLadderFilterBase
     {
     public:
         

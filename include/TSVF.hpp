@@ -2,13 +2,13 @@
 
 #include "SoundAlchemy.hpp"
     
-namespace SoundAlchemy
+namespace SoundAlchemy::Filters
 {    
     template<typename T>
     struct TChamberlinSVF 
     {
-    /*
-    //Input/Output
+        /*
+        //Input/Output
         I - input sample
         L - lowpass output sample
         B - bandpass output sample
@@ -18,39 +18,24 @@ namespace SoundAlchemy
         Q1 - Q control parameter
         D1 - delay associated with bandpass output
         D2 - delay associated with low-pass output
-    */
-        T L;
-        T H;
-        T B;
-        T N;
-        T Q;
-        T Fs;
-        T F;
-        T D1,D2;
-
-        TChamberlinSVF(T sr=44100.0f)
-        {
-            L = H = B = N = 0.0f;
-            D1 = D2 = 0.0f;
-            F = 1;
+        */
+        T x,L,B,H,N,F1,Q1,D1,D2;
+        T Fc,Fs,R;
+        TChamberlinSVF(T sr, T fc, T q) {        
+            Fc = fc;
             Fs = sr;
+            R  = q;
+            Q1 = 1.5*q + 0.5;
+            F1 = 2 * std::sin( M_PI * Fc / Fs );
+            x=L=B=H=N=F1=Q1=D1=D2 = 0;
         }
-        void SetCutoff(T freq) { F = freq; }
-        void SetQ(T q) { Q = 2*q; }
+        void setCutoff(T fc) { Fc = fc; F1 = 2 * std::sin( M_PI * Fc / Fs );}
+        void setResonance(T r) { R = r; Q1 = 1.0-r; }
 
-        T Tick(T I)
-        {
-            // parameters:
-            T Q1 = 1/Q;
-            // where Q1 goes from 2 to 0, ie Q goes from .5 to infinity
-
-            // simple frequency tuning with error towards nyquist
-            // F is the filter's center frequency, and Fs is the sampling rate
-            T F1 = 2*M_PI*F/Fs;
-
-            // ideal tuning:
-            F1 = 2 * std::sin( M_PI * F / Fs );
-
+        T Tick(T I, T A=1, T X=0, T Y=0)
+        {    
+            Undenormal denormal;
+            x = I;
             // algorithm
             // loop
             L = D2 + F1 * D1;
@@ -60,60 +45,12 @@ namespace SoundAlchemy
 
             // store delays
             D1 = B;
-            D2 = L;       
+            D2 = L;
+
+            // outputs
+            //L,H,B,N
             return L;
         }
-
-        T Variabilize(T lp, T I)
-        {
-            // parameters:
-            T Q1 = 1/Q;
-            // where Q1 goes from 2 to 0, ie Q goes from .5 to infinity
-
-            // simple frequency tuning with error towards nyquist
-            // F is the filter's center frequency, and Fs is the sampling rate
-            T F1 = 2*M_PI*F/Fs;
-
-            // ideal tuning:
-            F1 = 2 * std::sin( M_PI * F / Fs );
-
-            // algorithm
-            // loop
-            L = lp*D2 + F1 * D1;
-            H = I - L - Q1*D1;
-            B = F1 * H + D1;
-            N = H + L;
-
-            // store delays
-            D1 = B;
-            D2 = L;       
-            return L;
-        }
-        
-        void Process(vector<T> & buffer, vector<T>  amp = {}, vector<T> cutoff = {}, vector<T> q = {})
-        {
-            T freq = F;
-            T res  = Q;
-            T A = 1.0f;
-            for(size_t i = 0; i < buffer.size(); i++)
-            {
-                if(cutoff.size() > 0) {
-                    T tc = freq*cutoff[i];            
-                    SetCutoff(freq+tc);
-                }
-                if(q.size() > 0) {
-                    T tq = res*q[i];
-                    SetQ(res + tq);
-                }
-                if(amp.size() > 0) {
-                    A = amp[i];
-                }
-                buffer[i] = A*Tick(buffer[i]);
-            }
-            SetCutoff(freq);
-            SetQ(Q);        
-        }
-
         T GetLowPassOut()  { return L; }
         T GetHighPassOut() { return H; }
         T GetBandPassOut() { return B; }
@@ -121,7 +58,7 @@ namespace SoundAlchemy
     };
 
     template<typename T>
-    struct TStateVariable
+    struct TStateVariableFilter
     {
         /*
         cutoff = cutoff freq in Hz
@@ -132,43 +69,33 @@ namespace SoundAlchemy
         high = highpass output
         band = bandpass output
         notch = notch output
-        scale = q
-        low=high=band=0;
         */
-        
-        T fs;
-        T cutoff;
-        T q;
-        T low;
-        T high;
-        T band;
-        T notch;
-        
-
-        TStateVariable(T sr, T cutoff, T q) {
-            fs = sr;
-            this->cutoff = clamp(cutoff,0,sr/2);
-            this->q = clamp(q,0,1);        
+        T cutoff,scale,fs,low,high,band,notch;
+            
+        TStateVariableFilter( T Fs, T Fc, T Q) {
+            scale = Q;
+            cutoff= Fc;
+            fs    = Fs;
             low=high=band=notch=0;
         }
-
-        T Tick(T I, T A = 1, T F = 0, T Q = 0) {
-            //--beginloop        
-            T ft = 2 * std::sin(M_PI * (cutoff + F*cutoff)/fs);
-            T scale = q + (Q*q);
-            A = clamp(A,-1,1);
-            F = clamp(F,-1,1);
-            Q = clamp(Q,-1,1);
-            low = low + ft * band;
-            high = scale * I - low - q*band;
-            band = ft * high + band;
+        void setCutoff(T F) { cutoff = F; }
+        void setResonance(T R) { scale = 1.25*(1.0-R); }
+        T Tick(T I, T A = 1, T X=0, T Y=0)
+        {
+            Undenormal denormal;
+            T f     = 2 * std::sin(2 * M_PI * cutoff/fs);        
+            //--beginloop
+            I = tanhify(I);
+            low = low + f * band;
+            high = scale * I - low - scale*band;
+            band = f * high + band;
             notch = high + low;
-            low *= A;
-            high *= A;
-            band *= A;
-            notch *= A;
-            //--endloop
             return low;
-        }        
+        }
+        T GetLowPassOut()  { return low; }
+        T GetHighPassOut() { return high; }
+        T GetBandPassOut() { return band; }
+        T GetNotchOUt()    { return notch; }
+
     };
 }

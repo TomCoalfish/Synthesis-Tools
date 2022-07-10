@@ -42,8 +42,8 @@ class InetWvOut : public WvOut<T>
   /*!
     An StkError is thrown if a socket error occurs or an invalid argument is specified.
   */
-  InetWvOut( int port, Socket::ProtocolType protocol = Socket::PROTO_TCP,
-             std::string hostname = "localhost", unsigned int nChannels = 1, Stk::StkFormat format = STK_SINT16,
+  InetWvOut( int port, ProtocolType protocol = PROTO_TCP,
+             std::string hostname = "localhost", unsigned int nChannels = 1, StkFormat format = STK_SINT16,
              unsigned long packetFrames = 1024 );
 
   //! Class destructor.
@@ -53,8 +53,8 @@ class InetWvOut : public WvOut<T>
   /*!
     An StkError is thrown if a socket error occurs or an invalid argument is specified.
   */
-  void connect( int port, Socket::ProtocolType protocol = Socket::PROTO_TCP,
-                std::string hostname = "localhost", unsigned int nChannels = 1, Stk::StkFormat format = STK_SINT16 );
+  void connect( int port, ProtocolType protocol = PROTO_TCP,
+                std::string hostname = "localhost", unsigned int nChannels = 1, StkFormat format = STK_SINT16 );
 
   //! If a connection is open, write out remaining samples in the queue and then disconnect.
   void disconnect( void );
@@ -87,13 +87,13 @@ class InetWvOut : public WvOut<T>
   void writeData( unsigned long frames );
 
   char *buffer_;
-  Socket *soket_;
+  Socket<T> *soket_;
   unsigned long bufferFrames_;
   unsigned long bufferBytes_;
   unsigned long bufferIndex_;
   unsigned long iData_;
   unsigned int dataBytes_;
-  Stk::StkFormat dataType_;
+  StkFormat dataType_;
 };
 
 /***************************************************/
@@ -126,8 +126,8 @@ InetWvOut<T>::InetWvOut( unsigned long packetFrames )
 }
 
 template<typename T>
-InetWvOut<T>::InetWvOut( int port, Socket::ProtocolType protocol, std::string hostname,
-                        unsigned int nChannels, Stk::StkFormat format, unsigned long packetFrames )
+InetWvOut<T>::InetWvOut( int port, ProtocolType protocol, std::string hostname,
+                        unsigned int nChannels, StkFormat format, unsigned long packetFrames )
   : buffer_(0), soket_(0), bufferFrames_(packetFrames), bufferBytes_(0)
 {
   connect( port, protocol, hostname, nChannels, format );
@@ -143,8 +143,8 @@ InetWvOut<T>::~InetWvOut()
 
 
 template<typename T>
-void InetWvOut<T>::connect( int port, Socket::ProtocolType protocol, std::string hostname,
-                           unsigned int nChannels, Stk::StkFormat format )
+void InetWvOut<T>::connect( int port, ProtocolType protocol, std::string hostname,
+                           unsigned int nChannels, StkFormat format )
 {
   if ( soket_ && soket_->isValid( soket_->id() ) )
     disconnect();
@@ -164,7 +164,7 @@ void InetWvOut<T>::connect( int port, Socket::ProtocolType protocol, std::string
   } 
   dataType_ = format;
 
-  if ( protocol == Socket::PROTO_TCP ) {
+  if ( protocol == PROTO_TCP ) {
     soket_ = new TcpClient( port, hostname );
   }
   else {
@@ -173,20 +173,20 @@ void InetWvOut<T>::connect( int port, Socket::ProtocolType protocol, std::string
     // the destination port, we will associate this socket instance
     // with a different port number (arbitrarily determined as port -
     // 1).
-    UdpSocket *socket = new UdpSocket( port - 1 );
+    UdpSocket<T> *socket = new UdpSocket<T>( port - 1 );
     socket->setDestination( port, hostname );
-    soket_ = (Socket *) socket;
+    soket_ = (Socket<T>*) socket;
   }
 
   // Allocate new memory if necessary.
-  data_.resize( bufferFrames_, nChannels );
+  this->data_.resize( bufferFrames_, nChannels );
   unsigned long bufferBytes = dataBytes_ * bufferFrames_ * nChannels;
   if ( bufferBytes > bufferBytes_ ) {
     if ( buffer_) delete [] buffer_;
     buffer_ = (char *) new char[ bufferBytes ];
     bufferBytes_ = bufferBytes;
   }
-  frameCounter_ = 0;
+  this->frameCounter_ = 0;
   bufferIndex_ = 0;
   iData_ = 0;
 }
@@ -205,19 +205,19 @@ void InetWvOut<T>::disconnect(void)
 template<typename T>
 void InetWvOut<T>::writeData( unsigned long frames )
 {
-  unsigned long samples = frames * data_.channels();
+  unsigned long samples = frames * this->data_.channels();
   if ( dataType_ == STK_SINT8 ) {
     signed char *ptr = (signed char *) buffer_;
     for ( unsigned long k=0; k<samples; k++ ) {
-      this->clipTest( data_[k] );
-      *ptr++ = (signed char) (data_[k] * 127.0);
+      this->clipTest( this->data_[k] );
+      *ptr++ = (signed char) (this->data_[k] * 127.0);
     }
   }
   else if ( dataType_ == STK_SINT16 ) {
     SINT16 *ptr = (SINT16 *) buffer_;
     for ( unsigned long k=0; k<samples; k++ ) {
-      this->clipTest( data_[k] );
-      *ptr = (SINT16) (data_[k] * 32767.0);
+      this->clipTest( this->data_[k] );
+      *ptr = (SINT16) (this->data_[k] * 32767.0);
 #ifdef __LITTLE_ENDIAN__
       swap16 ((unsigned char *)ptr);
 #endif
@@ -227,8 +227,8 @@ void InetWvOut<T>::writeData( unsigned long frames )
   else if ( dataType_ == STK_SINT32 ) {
     SINT32 *ptr = (SINT32 *) buffer_;
     for ( unsigned long k=0; k<samples; k++ ) {
-      this->clipTest( data_[k] );
-      *ptr = (SINT32) (data_[k] * 2147483647.0);
+      this->clipTest( this->data_[k] );
+      *ptr = (SINT32) (this->data_[k] * 2147483647.0);
 #ifdef __LITTLE_ENDIAN__
       swap32 ((unsigned char *)ptr);
 #endif
@@ -238,8 +238,8 @@ void InetWvOut<T>::writeData( unsigned long frames )
   else if ( dataType_ == STK_FLOAT32 ) {
     FLOAT32 *ptr = (FLOAT32 *) buffer_;
     for ( unsigned long k=0; k<samples; k++ ) {
-      this->clipTest( data_[k] );
-      *ptr = (FLOAT32) data_[k];
+      this->clipTest( this->data_[k] );
+      *ptr = (FLOAT32) this->data_[k];
 #ifdef __LITTLE_ENDIAN__
       swap32 ((unsigned char *)ptr);
 #endif
@@ -249,8 +249,8 @@ void InetWvOut<T>::writeData( unsigned long frames )
   else if ( dataType_ == STK_FLOAT64 ) {
     FLOAT64 *ptr = (FLOAT64 *) buffer_;
     for ( unsigned long k=0; k<samples; k++ ) {
-      this->clipTest( data_[k] );
-      *ptr = (FLOAT64) data_[k];
+      this->clipTest( this->data_[k] );
+      *ptr = (FLOAT64) this->data_[k];
 #ifdef __LITTLE_ENDIAN__
       swap64 ((unsigned char *)ptr);
 #endif
@@ -268,7 +268,7 @@ void InetWvOut<T>::writeData( unsigned long frames )
 template<typename T>
 void InetWvOut<T>::incrementFrame( void )
 {
-  frameCounter_++;
+  this->frameCounter_++;
   bufferIndex_++;
 
   if ( bufferIndex_ == bufferFrames_ ) {
@@ -289,11 +289,11 @@ void InetWvOut<T>::tick( const T sample )
     return;
   }
 
-  unsigned int nChannels = data_.channels();
+  unsigned int nChannels = this->data_.channels();
   T input = sample;
-  clipTest( input );
+  this->clipTest( input );
   for ( unsigned int j=0; j<nChannels; j++ )
-    data_[iData_++] = input;
+    this->data_[iData_++] = input;
 
   this->incrementFrame();
 }
@@ -310,19 +310,19 @@ void InetWvOut<T>::tick( const StkFrames<T>& frames )
   }
 
 #if defined(_STK_DEBUG_)
-  if ( data_.channels() != frames.channels() ) {
+  if ( this->data_.channels() != frames.channels() ) {
     oStream_ << "InetWvOut::tick(): incompatible channel value in StkFrames<T> argument!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
-  unsigned int j, nChannels = data_.channels();
+  unsigned int j, nChannels = this->data_.channels();
   unsigned int iFrames = 0;
   for ( unsigned int i=0; i<frames.frames(); i++ ) {
 
     for ( j=0; j<nChannels; j++ ) {
-      data_[iData_] = frames[iFrames++];
-      clipTest( data_[iData_++] );
+      this->data_[iData_] = frames[iFrames++];
+      this->clipTest( this->data_[iData_++] );
     }
 
     this->incrementFrame();

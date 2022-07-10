@@ -6,8 +6,10 @@
 #include <algorithm>
 #include <math.h>
 
-namespace SoundWave {
-    
+#include "SoundAlchemy.hpp"
+
+namespace SoundAlchemy:Oberheim
+{
     template<typename T>
     struct ParameterRange {
         T init;

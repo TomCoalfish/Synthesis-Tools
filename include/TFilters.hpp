@@ -1,6 +1,16 @@
 #pragma once
-#include "TIIRFilters.hpp"
-#include "TFIRFilters.hpp"
+
+// this is now in Kfr DSP-1
+// KfrFilters
+//#include "TIIRFilters.hpp"
+//#include "TFIRFilters.hpp"
+
+
+// nigel_biquad = zolzer
+// rbj biquad 
+// cppfilters.hpp
+// massberg biquad
+
 #include "TBiquadFilter.hpp"
 #include "TRBJFilter.hpp"
 #include "TSVF.hpp"
@@ -26,6 +36,7 @@
 
 /////////////////////////////////////////////////////////////////
 // C++ Filters
+// now in cppfilters.hpp
 /////////////////////////////////////////////////////////////////
 #include "fo_apf.h"
 #include "fo_lpf.h"

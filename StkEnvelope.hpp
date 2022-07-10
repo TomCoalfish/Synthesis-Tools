@@ -61,7 +61,7 @@ class Envelope : public Generator<T>
   int getState( void ) const { return state_; };
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Compute and return one output sample.
   T tick( void );
@@ -104,7 +104,7 @@ inline T Envelope<T>::tick( void )
         state_ = 0;
       }
     }
-    lastFrame_[0] = value_;
+    this->lastFrame_[0] = value_;
   }
 
   return value_;
@@ -145,23 +145,23 @@ inline StkFrames<T>& Envelope<T>::tick( StkFrames<T>& frames, unsigned int chann
 
 
 template<typename T>
-Envelope<T>::Envelope( void ) : Generator()
+Envelope<T>::Envelope( void ) : Generator<T>()
 {    
   target_ = 0.0;
   value_ = 0.0;
   rate_ = 0.001;
   state_ = 0;
-  Stk::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 Envelope<T>::~Envelope( void )
 {
-  Stk::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
-Envelope& Envelope<T>::operator= ( const Envelope& e )
+Envelope<T>& Envelope<T>::operator= ( const Envelope<T>& e )
 {
   if ( this != &e ) {
     target_ = e.target_;
@@ -176,7 +176,7 @@ Envelope& Envelope<T>::operator= ( const Envelope& e )
 template<typename T>
 void Envelope<T>::sampleRateChanged( T newRate, T oldRate )
 {
-  if ( !ignoreSampleRateChange_ )
+  if ( !this->ignoreSampleRateChange_ )
     rate_ = oldRate * rate_ / newRate;
 }
 
@@ -200,7 +200,7 @@ void Envelope<T>::setTime( T time )
   }
 
   //rate_ = 1.0 / ( time * Stk::sampleRate() );
-  rate_ = fabs(target_ - value_) / ( time * Stk::sampleRate() );
+  rate_ = fabs(target_ - value_) / ( time * sampleRate() );
 }
 
 template<typename T>
@@ -216,7 +216,7 @@ void Envelope<T>::setValue( T value )
   state_ = 0;
   target_ = value;
   value_ = value;
-  lastFrame_[0] = value_;
+  this->lastFrame_[0] = value_;
 }
 
 } // stk namespace

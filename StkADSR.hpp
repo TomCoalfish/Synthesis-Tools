@@ -186,13 +186,13 @@ ADSR<T>:: ADSR( void )
   releaseTime_ = -1.0;
   sustainLevel_ = 0.5;
   state_ = IDLE;
-  Stk<T>::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 ADSR<T>:: ~ADSR( void )
 {
-  Stk<T>::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
@@ -223,15 +223,15 @@ void ADSR<T>:: keyOff()
   // Only update if we have set a TIME rather than a RATE,
   // in which case releaseTime_ will be -1
   if ( releaseTime_ > 0.0 )
-	  releaseRate_ = value_ / ( releaseTime_ * Stk<T>::sampleRate() );
+	  releaseRate_ = value_ / ( releaseTime_ * sampleRate() );
 }
 
 template<typename T>
 void ADSR<T>:: setAttackRate( T rate )
 {
   if ( rate < 0.0 ) {
-    this->oStream_ << "ADSR::setAttackRate: argument must be >= 0.0!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "ADSR::setAttackRate: argument must be >= 0.0!";
+    handleError( StkError::WARNING ); return;
   }
 
   attackRate_ = rate;
@@ -241,8 +241,8 @@ template<typename T>
 void ADSR<T>:: setAttackTarget( T target )
 {
   if ( target < 0.0 ) {
-    this->oStream_ << "ADSR::setAttackTarget: negative target not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "ADSR::setAttackTarget: negative target not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
   target_ = target;
@@ -252,8 +252,8 @@ template<typename T>
 void ADSR<T>:: setDecayRate( T rate )
 {
   if ( rate < 0.0 ) {
-    this->oStream_ << "ADSR::setDecayRate: negative rates not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "ADSR::setDecayRate: negative rates not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
   decayRate_ = rate;
@@ -263,8 +263,8 @@ template<typename T>
 void ADSR<T>:: setSustainLevel( T level )
 {
   if ( level < 0.0 ) {
-    this->oStream_ << "ADSR::setSustainLevel: negative level not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "ADSR::setSustainLevel: negative level not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
   sustainLevel_ = level;
@@ -274,8 +274,8 @@ template<typename T>
 void ADSR<T>:: setReleaseRate( T rate )
 {
   if ( rate < 0.0 ) {
-    this->oStream_ << "ADSR::setReleaseRate: negative rates not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "ADSR::setReleaseRate: negative rates not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
   releaseRate_ = rate;
@@ -288,33 +288,33 @@ template<typename T>
 void ADSR<T>:: setAttackTime( T time )
 {
   if ( time <= 0.0 ) {
-    this->oStream_ << "ADSR::setAttackTime: negative or zero times not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "ADSR::setAttackTime: negative or zero times not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
-  attackRate_ = 1.0 / ( time * Stk<T>::sampleRate() );
+  attackRate_ = 1.0 / ( time * sampleRate() );
 }
 
 template<typename T>
 void ADSR<T>:: setDecayTime( T time )
 {
   if ( time <= 0.0 ) {
-    this->oStream_ << "ADSR::setDecayTime: negative or zero times not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "ADSR::setDecayTime: negative or zero times not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
-  decayRate_ = (1.0 - sustainLevel_) / ( time * Stk<T>::sampleRate() );
+  decayRate_ = (1.0 - sustainLevel_) / ( time * sampleRate() );
 }
 
 template<typename T>
 void ADSR<T>:: setReleaseTime( T time )
 {
   if ( time <= 0.0 ) {
-    this->oStream_ << "ADSR::setReleaseTime: negative or zero times not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "ADSR::setReleaseTime: negative or zero times not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
-  releaseRate_ = sustainLevel_ / ( time * Stk<T>::sampleRate() );
+  releaseRate_ = sustainLevel_ / ( time * sampleRate() );
   releaseTime_ = time;
 }
 
@@ -331,8 +331,8 @@ template<typename T>
 void ADSR<T>:: setTarget( T target )
 {
   if ( target < 0.0 ) {
-    this->oStream_ << "ADSR::setTarget: negative target not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "ADSR::setTarget: negative target not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
   target_ = target;

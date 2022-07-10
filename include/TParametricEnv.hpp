@@ -2,8 +2,9 @@
 
 #include <cstdlib>
 #include <math.h>
+#include "SoundAlchemy.hpp"
 
-namespace SoundAlchemy
+namespace SoundAlchemy::Envelopes
 {
     enum state_enum {
         idle, attack, decay, sustain, release

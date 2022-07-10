@@ -116,7 +116,7 @@ class Mesh2D : public Instrmnt<T>
 template<typename T>
 inline StkFrames<T>& Mesh2D<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Mesh2D::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -134,7 +134,7 @@ inline StkFrames<T>& Mesh2D<T>::tick( StkFrames<T>& frames, unsigned int channel
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -373,24 +373,24 @@ T Mesh2D<T>::inputTick( T input )
   if ( counter_ & 1 ) {
     vxp1_[xInput_][yInput_] += input;
     vyp1_[xInput_][yInput_] += input;
-    lastFrame_[0] = tick1();
+    this->lastFrame_[0] = tick1();
   }
   else {
     vxp_[xInput_][yInput_] += input;
     vyp_[xInput_][yInput_] += input;
-    lastFrame_[0] = tick0();
+    this->lastFrame_[0] = tick0();
   }
 
   counter_++;
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 T Mesh2D<T>::tick( unsigned int )
 {
-  lastFrame_[0] = ((counter_ & 1) ? this->tick1() : this->tick0());
+  this->lastFrame_[0] = ((counter_ & 1) ? this->tick1() : this->tick0());
   counter_++;
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 

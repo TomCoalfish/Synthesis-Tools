@@ -66,10 +66,10 @@ class Twang : public Stk<T>
   void setLoopFilter( std::vector<T> coefficients );
 
   //! Return an StkFrames<T> reference to the last output sample frame.
-  //const StkFrames<T>& lastFrame( void ) const { return lastFrame_; };
+  //const StkFrames<T>& lastFrame( void ) const { return this->lastFrame_; };
 
   //! Return the last computed output value.
-  // T lastOut( void ) { return lastFrame_[0]; };
+  // T lastOut( void ) { return this->lastFrame_[0]; };
   T lastOut( void ) { return lastOutput_; };
 
   //! Compute and return one output sample.
@@ -214,7 +214,7 @@ void Twang<T>::clear( void )
 template<typename T>
 void Twang<T>::setLowestFrequency( T frequency )
 {
-  unsigned long nDelays = (unsigned long) ( Stk::sampleRate() / frequency );
+  unsigned long nDelays = (unsigned long) ( stk::sampleRate() / frequency );
   delayLine_.setMaximumDelay( nDelays + 1 );
   combDelay_.setMaximumDelay( nDelays + 1 );
 }
@@ -231,7 +231,7 @@ void Twang<T>::setFrequency( T frequency )
 
   frequency_ = frequency;
   // Delay = length - filter delay.
-  T delay = ( Stk::sampleRate() / frequency ) - loopFilter_.phaseDelay( frequency );
+  T delay = ( stk::sampleRate() / frequency ) - loopFilter_.phaseDelay( frequency );
   delayLine_.setDelay( delay );
 
   this->setLoopGain( loopGain_ );

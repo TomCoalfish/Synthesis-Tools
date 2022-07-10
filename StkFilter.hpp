@@ -93,12 +93,12 @@ inline void Filter<T>::clear( void )
 template<typename T>
 inline T Filter<T>::phaseDelay( T frequency )
 {
-  if ( frequency <= 0.0 || frequency > 0.5 * Stk<T>::sampleRate() ) {
-    this->template oStream_ << "Filter::phaseDelay: argument (" << frequency << ") is out of range!";
-    this->handleError( StkError::WARNING ); return 0.0;
+  if ( frequency <= 0.0 || frequency > 0.5 * sampleRate() ) {
+    oStream_ << "Filter::phaseDelay: argument (" << frequency << ") is out of range!";
+    handleError( StkError::WARNING ); return 0.0;
   }
 
-  T omegaT = 2 * PI * frequency / Stk<T>::sampleRate();
+  T omegaT = 2 * PI * frequency / sampleRate();
   T real = 0.0, imag = 0.0;
   for ( unsigned int i=0; i<b_.size(); i++ ) {
     real += b_[i] * std::cos( i * omegaT );

@@ -1,20 +1,15 @@
 #pragma once
 #include <cmath>
-#include "SABase.hpp"
 
-namespace SoundAlchemy {
-
+namespace SoundAlchemy::Filters 
+{
     template<typename T>
-    class TCurtisVCF : public TObject<T>
+    class TCurtisVCF
     {
     public:
 
         //constructor
         TCurtisVCF() noexcept;
-
-        TCurtisVCF(T sampleRate, T frequency, T resonance) {
-            makeCurtis(sampleRate,frequency,resonance);
-        }
 
         //destructor
         ~TCurtisVCF() noexcept;
@@ -32,51 +27,19 @@ namespace SoundAlchemy {
         //processes all samples fed via buffer
         void processSamples (T* samples, int numSamples) noexcept;
         
-        /*
         T Tick(T in) {
             T r = in;
             processSamples(&r,1);
             return r;
         }
-        */
-        
-        T Tick(T I, T A = 1, T F = 1, T P = 1) { 
-            A = clamp(A,-1,1);
-            F = clamp(F,-1,1);
-            P = clamp(P,-1,1);
-        
-            T ft = cutoff;
-            T rt = res;
-            T kt = k;
-            T pt = p;
-            T st = scale;   
-            
-            //intermediate variables
-            f = 2.f * (T)(cutoff + cutoff*F) / (T)fs;    //should range 0 - 1
-            k = 3.6f * f - 1.6f * f * f - 1.f;      //empirical tuning
-            p = (k + 1.f) * 0.5f;
-            scale = exp((1.f - p) * 1.386249f);
-            r = (T)clamp(res + P,0,1) * scale;
-        
-            T q = A * Tick(I);
-          
-            f = ft;
-            k = kt;
-            p = pt;
-            scale = st;
-            r = rt;
-            return q;
-        }
-        
         void Process(size_t n, T* input, T * output) {
             memcpy(output,input,n*sizeof(T));
             processSamples(output,n);
         }
-        void Process(T * samples, size_t n) {
+        void Inplace(size_t n, T * samples) {
             processSamples(samples,n);
         }
         
-
     private:
         
         //core variables

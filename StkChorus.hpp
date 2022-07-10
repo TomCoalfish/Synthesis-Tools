@@ -82,15 +82,15 @@ class Chorus : public Effect<T>
 
  protected:
 
-  DelayL delayLine_[2];
-  SineWave mods_[2];
+  DelayL<T> delayLine_[2];
+  SineWave<T> mods_[2];
   T baseLength_;
   T modDepth_;
 
 };
 
 template<typename T>
-inline T Chorus<T>lastOut( unsigned int channel )
+inline T Chorus<T>::lastOut( unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
   if ( channel > 1 ) {
@@ -99,11 +99,11 @@ inline T Chorus<T>lastOut( unsigned int channel )
   }
 #endif
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 template<typename T>
-inline T Chorus<T>tick( T input, unsigned int channel )
+inline T Chorus<T>::tick( T input, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
   if ( channel > 1 ) {
@@ -114,13 +114,13 @@ inline T Chorus<T>tick( T input, unsigned int channel )
 
   delayLine_[0].setDelay( baseLength_ * 0.707 * ( 1.0 + modDepth_ * mods_[0].tick() ) );
   delayLine_[1].setDelay( baseLength_  * 0.5 *  ( 1.0 - modDepth_ * mods_[1].tick() ) );
-  lastFrame_[0] = effectMix_ * ( delayLine_[0].tick( input ) - input ) + input;
-  lastFrame_[1] = effectMix_ * ( delayLine_[1].tick( input ) - input ) + input;
-  return lastFrame_[channel];
+  this->lastFrame_[0] = this->effectMix_ * ( delayLine_[0].tick( input ) - input ) + input;
+  this->lastFrame_[1] = this->effectMix_ * ( delayLine_[1].tick( input ) - input ) + input;
+  return this->lastFrame_[channel];
 }
 
 template<typename T>
-inline StkFrames<T>& Chorus<T>tick( StkFrames<T>& frames, unsigned int channel )
+inline StkFrames<T>& Chorus<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
   if ( channel >= frames.channels() - 1 ) {
@@ -134,18 +134,18 @@ inline StkFrames<T>& Chorus<T>tick( StkFrames<T>& frames, unsigned int channel )
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
     delayLine_[0].setDelay( baseLength_ * 0.707 * ( 1.0 + modDepth_ * mods_[0].tick() ) );
     delayLine_[1].setDelay( baseLength_  * 0.5 *  ( 1.0 - modDepth_ * mods_[1].tick() ) );
-    *samples = effectMix_ * ( delayLine_[0].tick( *samples ) - *samples ) + *samples;
+    *samples = this->effectMix_ * ( delayLine_[0].tick( *samples ) - *samples ) + *samples;
     samples++;
-    *samples = effectMix_ * ( delayLine_[1].tick( *samples ) - *samples ) + *samples;
+    *samples = this->effectMix_ * ( delayLine_[1].tick( *samples ) - *samples ) + *samples;
   }
 
-  lastFrame_[0] = *(samples-hop);
-  lastFrame_[1] = *(samples-hop+1);
+  this->lastFrame_[0] = *(samples-hop);
+  this->lastFrame_[1] = *(samples-hop+1);
   return frames;
 }
 
 template<typename T>
-inline StkFrames<T>& Chorus<T>tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames, unsigned int iChannel, unsigned int oChannel )
+inline StkFrames<T>& Chorus<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames, unsigned int iChannel, unsigned int oChannel )
 {
 #if defined(_STK_DEBUG_)
   if ( iChannel >= iFrames.channels() || oChannel >= oFrames.channels() - 1 ) {
@@ -160,12 +160,12 @@ inline StkFrames<T>& Chorus<T>tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames
   for ( unsigned int i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
     delayLine_[0].setDelay( baseLength_ * 0.707 * ( 1.0 + modDepth_ * mods_[0].tick() ) );
     delayLine_[1].setDelay( baseLength_  * 0.5 *  ( 1.0 - modDepth_ * mods_[1].tick() ) );
-    *oSamples = effectMix_ * ( delayLine_[0].tick( *iSamples ) - *iSamples ) + *iSamples;
-    *(oSamples+1) = effectMix_ * ( delayLine_[1].tick( *iSamples ) - *iSamples ) + *iSamples;
+    *oSamples = this->effectMix_ * ( delayLine_[0].tick( *iSamples ) - *iSamples ) + *iSamples;
+    *(oSamples+1) = this->effectMix_ * ( delayLine_[1].tick( *iSamples ) - *iSamples ) + *iSamples;
   }
 
-  lastFrame_[0] = *(oSamples-oHop);
-  lastFrame_[1] = *(oSamples-oHop+1);
+  this->lastFrame_[0] = *(oSamples-oHop);
+  this->lastFrame_[1] = *(oSamples-oHop+1);
   return iFrames;
 }
 
@@ -181,9 +181,9 @@ inline StkFrames<T>& Chorus<T>tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames
 /***************************************************/
 
 template<typename T>
-Chorus<T>Chorus( T baseDelay )
+Chorus<T>::Chorus( T baseDelay )
 {
-  lastFrame_.resize( 1, 2, 0.0 ); // resize lastFrame_ for stereo output
+  this->lastFrame_.resize( 1, 2, 0.0 ); // resize this->lastFrame_ for stereo output
   delayLine_[0].setMaximumDelay( (unsigned long) (baseDelay * 1.414) + 2);
   delayLine_[0].setDelay( baseDelay );
   delayLine_[1].setMaximumDelay( (unsigned long) (baseDelay * 1.414) + 2);
@@ -193,21 +193,21 @@ Chorus<T>Chorus( T baseDelay )
   mods_[0].setFrequency( 0.2 );
   mods_[1].setFrequency( 0.222222 );
   modDepth_ = 0.05;
-  effectMix_ = 0.5;
+  this->effectMix_ = 0.5;
   this->clear();
 }
 
 template<typename T>
-void Chorus<T>clear( void )
+void Chorus<T>::clear( void )
 {
   delayLine_[0].clear();
   delayLine_[1].clear();
-  lastFrame_[0] = 0.0;
-  lastFrame_[1] = 0.0;
+  this->lastFrame_[0] = 0.0;
+  this->lastFrame_[1] = 0.0;
 }
 
 template<typename T>
-void Chorus<T>setModDepth( T depth )
+void Chorus<T>::setModDepth( T depth )
 {
   if ( depth < 0.0 || depth > 1.0 ) {
     oStream_ << "Chorus::setModDepth(): depth argument must be between 0.0 - 1.0!";
@@ -218,7 +218,7 @@ void Chorus<T>setModDepth( T depth )
 };
 
 template<typename T>
-void Chorus<T>setModFrequency( T frequency )
+void Chorus<T>::setModFrequency( T frequency )
 {
   mods_[0].setFrequency( frequency );
   mods_[1].setFrequency( frequency * 1.1111 );

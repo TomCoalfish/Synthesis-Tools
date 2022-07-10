@@ -131,8 +131,7 @@ class Granulate: public Generator<T>
   };
 
  protected:
- 
-  template<typename T>
+   
   struct Grain {
     T eScaler;
     T eRate;
@@ -153,10 +152,10 @@ class Granulate: public Generator<T>
        delayCount(0), counter(0), pointer(0), startPointer(0), repeats(0), state(GRAIN_STOPPED) {}
   };
 
-  void calculateGrain( Granulate<T>::Grain<T>& grain );
+  void calculateGrain( Granulate<T>::Grain& grain );
 
   StkFrames<T> data_;
-  std::vector<Grain<T>> grains_;
+  std::vector<Grain> grains_;
   Noise<T> noise;
   //long gPointer_;
   T gPointer_;
@@ -177,19 +176,19 @@ template<typename T>
 inline T Granulate<T>::lastOut( unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
-  if ( channel >= lastFrame_.channels() ) {
+  if ( channel >= this->lastFrame_.channels() ) {
     oStream_ << "Granulate::lastOut(): channel argument is invalid!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 template<typename T>
 inline StkFrames<T>& Granulate<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Granulate::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -202,7 +201,7 @@ inline StkFrames<T>& Granulate<T>::tick( StkFrames<T>& frames, unsigned int chan
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
     *samples++ = tick();
     for ( j=1; j<nChannels; j++ )
-      *samples++ = lastFrame_[j];
+      *samples++ = this->lastFrame_[j];
   }
 
   return frames;
@@ -299,7 +298,7 @@ void Granulate<T>::openFile( std::string fileName, bool typeRaw )
   FileRead file( fileName, typeRaw );
   data_.resize( file.fileSize(), file.channels() );
   file.read( data_ );
-  lastFrame_.resize( 1, file.channels(), 0.0 );
+  this->lastFrame_.resize( 1, file.channels(), 0.0 );
 
   this->reset();
 
@@ -321,13 +320,13 @@ void Granulate<T>::reset( void )
   size_t nVoices = (unsigned int)grains_.size();
   for ( unsigned int i=0; i<grains_.size(); i++ ) {
     grains_[i].repeats = 0;
-    count = ( i * gDuration_ * 0.001 * Stk::sampleRate() / nVoices );
+    count = ( i * gDuration_ * 0.001 * stk::sampleRate() / nVoices );
     grains_[i].counter = count;
     grains_[i].state = GRAIN_STOPPED;
   }
 
-  for ( unsigned int i=0; i<lastFrame_.channels(); i++ )
-    lastFrame_[i] = 0.0;
+  for ( unsigned int i=0; i<this->lastFrame_.channels(); i++ )
+    this->lastFrame_[i] = 0.0;
 }
 
 template<typename T>
@@ -346,7 +345,7 @@ void Granulate<T>::setVoices( unsigned int nVoices )
   size_t count;
   for ( size_t i=oldSize; i<nVoices; i++ ) {
     grains_[i].repeats = 0;
-    count = ( i * gDuration_ * 0.001 * Stk::sampleRate() / nVoices );
+    count = ( i * gDuration_ * 0.001 * stk::sampleRate() / nVoices );
     grains_[i].counter = count;
     grains_[i].pointer = gPointer_;
     grains_[i].state = GRAIN_STOPPED;
@@ -356,7 +355,7 @@ void Granulate<T>::setVoices( unsigned int nVoices )
 }
 
 template<typename T>
-void Granulate<T>::calculateGrain( Granulate<T>::Grain<T>& grain )
+void Granulate<T>::calculateGrain( Granulate<T>::Grain& grain )
 {
   if ( grain.repeats > 0 ) {
     grain.repeats--;
@@ -377,7 +376,7 @@ void Granulate<T>::calculateGrain( Granulate<T>::Grain<T>& grain )
   // Calculate duration and envelope parameters.
   T seconds = gDuration_ * 0.001;
   seconds += ( seconds * gRandomFactor_ * noise.tick() );
-  unsigned long count = (unsigned long) ( seconds * Stk::sampleRate() );
+  unsigned long count = (unsigned long) ( seconds * stk::sampleRate() );
   grain.attackCount = (unsigned int) ( gRampPercent_ * 0.005 * count );
   grain.decayCount = grain.attackCount;
   grain.sustainCount = count - 2 * grain.attackCount;
@@ -395,7 +394,7 @@ void Granulate<T>::calculateGrain( Granulate<T>::Grain<T>& grain )
   // Calculate delay parameter.
   seconds = gDelay_ * 0.001;
   seconds += ( seconds * gRandomFactor_ * noise.tick() );
-  count = (unsigned long) ( seconds * Stk::sampleRate() );
+  count = (unsigned long) ( seconds * stk::sampleRate() );
   grain.delayCount = count;
 
   // Save stretch parameter.
@@ -404,11 +403,11 @@ void Granulate<T>::calculateGrain( Granulate<T>::Grain<T>& grain )
   // Calculate offset parameter.
   seconds = gOffset_ * 0.001;
   seconds += ( seconds * gRandomFactor_ * std::abs( noise.tick() ) );
-  int offset = (int) ( seconds * Stk::sampleRate() );
+  int offset = (int) ( seconds * stk::sampleRate() );
 
   // Add some randomization to the pointer start position.
   seconds = gDuration_ * 0.001 * gRandomFactor_ * noise.tick();
-  offset += (int) ( seconds * Stk::sampleRate() );
+  offset += (int) ( seconds * stk::sampleRate() );
   grain.pointer += offset;
   while ( grain.pointer >= data_.frames() ) grain.pointer -= data_.frames();
   if ( grain.pointer <  0 ) grain.pointer = 0;
@@ -425,8 +424,8 @@ T Granulate<T>::tick( unsigned int channel )
   }
 #endif
 
-  unsigned int i, j, nChannels = lastFrame_.channels();
-  for ( j=0; j<nChannels; j++ ) lastFrame_[j] = 0.0;
+  unsigned int i, j, nChannels = this->lastFrame_.channels();
+  for ( j=0; j<nChannels; j++ ) this->lastFrame_[j] = 0.0;
 
   if ( data_.size() == 0 ) return 0.0;
 
@@ -484,7 +483,7 @@ T Granulate<T>::tick( unsigned int channel )
           grains_[i].eScaler += grains_[i].eRate;
         }
 
-        lastFrame_[j] += sample;
+        this->lastFrame_[j] += sample;
       }
 
 
@@ -505,7 +504,7 @@ T Granulate<T>::tick( unsigned int channel )
     stretchCounter_ = 0;
   }
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 } // stk namespace

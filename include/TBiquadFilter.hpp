@@ -5,7 +5,7 @@
 #include <cfloat>
 #define SPN FLT_MIN
 
-namespace SoundAlchemy
+namespace SoundAlchemy::Biquads
 {
     template<typename T>
     struct TBiquadFilter : public Object<T>
@@ -36,9 +36,9 @@ namespace SoundAlchemy
             SR = fs;
         }
 
-        double bw2angle(T a,T bw)    
+        T bw2angle(T a,T bw)    
         {
-            double t,d,sn,cs,mag,delta,theta,tmp,a2,a4,asnd;
+            T t,d,sn,cs,mag,delta,theta,tmp,a2,a4,asnd;
 
             t = std::tan(2.0*M_PI*bw);
             a2 = a*a;
@@ -58,7 +58,7 @@ namespace SoundAlchemy
 
         void presence(T cf,T boost,T bw)    
         {
-            double a,A,F,xfmbw,C,tmp,alphan,alphad,b0,recipb0,asq,F2,a2plus1,ma2plus1;
+            T a,A,F,xfmbw,C,tmp,alphan,alphad,b0,recipb0,asq,F2,a2plus1,ma2plus1;
 
             a = std::tan(M_PI*(cf-0.25));
             asq = a*a;
@@ -94,8 +94,8 @@ namespace SoundAlchemy
 
         void shelve(T cf,T boost)    
         {
-            double a,A,F,tmp,b0,recipb0,asq,F2,gamma2,siggam2,gam2p1;
-            double gamman,gammad,ta0,ta1,ta2,tb0,tb1,tb2,aa1,ab1;
+            T a,A,F,tmp,b0,recipb0,asq,F2,gamma2,siggam2,gam2p1;
+            T gamman,gammad,ta0,ta1,ta2,tb0,tb1,tb2,aa1,ab1;
 
             a = std::tan(M_PI*(cf-0.25));
             asq = a*a;
@@ -145,24 +145,24 @@ namespace SoundAlchemy
         
         void setfilter_presence(T freq,T boost,T bw)        
             {
-            presence(freq/(double)SR,boost,bw/(double)SR);
+            presence(freq/(T)SR,boost,bw/(T)SR);
             cy1 = cy1;
             cy2 = cy2;
         }
 
         void setfilter_shelve(T freq, T boost)        
         {
-            shelve(freq/(double)SR,boost);
+            shelve(freq/(T)SR,boost);
             cy1 = cy1;
             y2 =  cy2;
         }
         
         void setfilter_shelvelowpass(T freq, T boost)    
         {
-            double gain;
+            T gain;
 
             gain = std::pow(10.0,boost/20.0);
-            shelve(freq/(double)SR,boost);
+            shelve(freq/(T)SR,boost);
             cx /= gain; 
             cx1 /= gain; 
             cx2 /= gain; 
@@ -177,9 +177,9 @@ namespace SoundAlchemy
         */
         void setfilter_2polebp(T freq, T R)
         {
-            double theta;
+            T theta;
 
-            theta = 2.0*M_PI*freq/(double)SR;
+            theta = 2.0*M_PI*freq/(T)SR;
             cx = 1.0-R;
             cx1 = 0.0;
             cx2 = -(1.0-R)*R;
@@ -197,19 +197,19 @@ namespace SoundAlchemy
         */
         void setfilter_peaknotch(T freq,T M,T bw)    
         {
-            double w0,p,om,ta,d;
+            T w0,p,om,ta,d;
 
             w0 = 2.0*M_PI*freq;
             assert(!(1.0/std::sqrt(2.0) < M) && (M < std::sqrt(2.0)));            
             if (M <= 1.0/std::sqrt(2.0)) p = std::sqrt(1.0-2.0*M*M);
             if (std::sqrt(2.0) <= M) p = std::sqrt(M*M-2.0);
             om = 2.0*M_PI*bw;
-            ta = std::tan(om/((double)SR*2.0));
+            ta = std::tan(om/((T)SR*2.0));
             d = p+ta;
             cx = (p+M*ta)/d;
-            cx1 = -2.0*p*std::cos(w0/(double)SR)/d;
+            cx1 = -2.0*p*std::cos(w0/(T)SR)/d;
             cx2 = (p-M*ta)/d;
-            cy1 = 2.0*p*std::cos(w0/(double)SR)/d;
+            cy1 = 2.0*p*std::cos(w0/(T)SR)/d;
             cy2 = -(p-ta)/d;
         }
 
@@ -220,11 +220,11 @@ namespace SoundAlchemy
         */
         void setfilter_peaknotch2(T freq,T gdb,T bw)
         {
-            double k,w,bwr,abw,gain;
+            T k,w,bwr,abw,gain;
 
             k = std::pow(10.0,gdb/20.0);
-            w = 2.0*M_PI*freq/(double)SR;
-            bwr = 2.0*M_PI*bw/(double)SR;
+            w = 2.0*M_PI*freq/(T)SR;
+            bwr = 2.0*M_PI*bw/(T)SR;
             abw = (1.0-std::tan(bwr/2.0))/(1.0+std::tan(bwr/2.0));
             gain = 0.5*(1.0+k+abw-k*abw);
             cx = 1.0*gain;
@@ -234,7 +234,7 @@ namespace SoundAlchemy
             cy2 = -abw;
         }
 
-        double Tick(T x, T A = 1, T F = 1, T P = 1)    
+        T Tick(T x, T A = 1, T F = 1, T P = 1)    
         {
             last = x;
             y = cx * A*(input_gain*x) + cx1 * x1 + cx2 * x2;

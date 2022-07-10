@@ -52,7 +52,7 @@ public:
   void setCoefficients( std::vector<T> &coefficients, bool clearState = false );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Input one sample to the filter and return one output.
   T tick( T input );
@@ -86,16 +86,16 @@ protected:
 template<typename T>
 inline T Fir<T>::tick( T input )
 {
-  lastFrame_[0] = 0.0;
-  inputs_[0] = gain_ * input;
+  this->lastFrame_[0] = 0.0;
+  this->inputs_[0] = this->gain_ * input;
 
-  for ( unsigned int i=(unsigned int)(b_.size())-1; i>0; i-- ) {
-    lastFrame_[0] += b_[i] * inputs_[i];
-    inputs_[i] = inputs_[i-1];
+  for ( unsigned int i=(unsigned int)(this->b_.size())-1; i>0; i-- ) {
+    this->lastFrame_[0] += this->b_[i] * this->inputs_[i];
+    this->inputs_[i] = this->inputs_[i-1];
   }
-  lastFrame_[0] += b_[0] * inputs_[0];
+  this->lastFrame_[0] += this->b_[0] * this->inputs_[0];
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -111,17 +111,17 @@ inline StkFrames<T>& Fir<T>::tick( StkFrames<T>& frames, unsigned int channel )
   T *samples = &frames[channel];
   unsigned int i, hop = frames.channels();
   for ( unsigned int j=0; j<frames.frames(); j++, samples += hop ) {
-    inputs_[0] = gain_ * *samples;
+    this->inputs_[0] = this->gain_ * *samples;
     *samples = 0.0;
 
-    for ( i=(unsigned int)b_.size()-1; i>0; i-- ) {
-      *samples += b_[i] * inputs_[i];
-      inputs_[i] = inputs_[i-1];
+    for ( i=(unsigned int)this->b_.size()-1; i>0; i-- ) {
+      *samples += this->b_[i] * this->inputs_[i];
+      this->inputs_[i] = this->inputs_[i-1];
     }
-    *samples += b_[0] * inputs_[0];
+    *samples += this->b_[0] * this->inputs_[0];
   }
 
-  lastFrame_[0] = *(samples-hop);
+  this->lastFrame_[0] = *(samples-hop);
   return frames;
 }
 
@@ -139,17 +139,17 @@ inline StkFrames<T>& Fir<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames,
   T *oSamples = &oFrames[oChannel];
   unsigned int i, iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int j=0; j<iFrames.frames(); j++, iSamples += iHop, oSamples += oHop ) {
-    inputs_[0] = gain_ * *iSamples;
+    this->inputs_[0] = this->gain_ * *iSamples;
     *oSamples = 0.0;
 
-    for ( i=(unsigned int)b_.size()-1; i>0; i-- ) {
-      *oSamples += b_[i] * inputs_[i];
-      inputs_[i] = inputs_[i-1];
+    for ( i=(unsigned int)this->b_.size()-1; i>0; i-- ) {
+      *oSamples += this->b_[i] * this->inputs_[i];
+      this->inputs_[i] = this->inputs_[i-1];
     }
-    *oSamples += b_[0] * inputs_[0];
+    *oSamples += this->b_[0] * this->inputs_[0];
   }
 
-  lastFrame_[0] = *(oSamples-oHop);
+  this->lastFrame_[0] = *(oSamples-oHop);
   return iFrames;
 }
 
@@ -180,9 +180,9 @@ template<typename T>
 Fir<T>::Fir()
 {
   // The default constructor should setup for pass-through.
-  b_.push_back( 1.0 );
+  this->b_.push_back( 1.0 );
 
-  inputs_.resize( 1, 1, 0.0 );
+  this->inputs_.resize( 1, 1, 0.0 );
 }
 
 template<typename T>
@@ -194,10 +194,10 @@ Fir<T>::Fir( std::vector<T> &coefficients )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  gain_ = 1.0;
-  b_ = coefficients;
+  this->gain_ = 1.0;
+  this->b_ = coefficients;
 
-  inputs_.resize( b_.size(), 1, 0.0 );
+  this->inputs_.resize( this->b_.size(), 1, 0.0 );
   this->clear();
 }
 
@@ -215,12 +215,12 @@ void Fir<T>::setCoefficients( std::vector<T> &coefficients, bool clearState )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  if ( b_.size() != coefficients.size() ) {
-    b_ = coefficients;
-    inputs_.resize( b_.size(), 1, 0.0 );
+  if ( this->b_.size() != coefficients.size() ) {
+    this->b_ = coefficients;
+    this->inputs_.resize( this->b_.size(), 1, 0.0 );
   }
   else {
-    for ( unsigned int i=0; i<b_.size(); i++ ) b_[i] = coefficients[i];
+    for ( unsigned int i=0; i<this->b_.size(); i++ ) this->b_[i] = coefficients[i];
   }
 
   if ( clearState ) this->clear();

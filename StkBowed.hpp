@@ -85,13 +85,13 @@ class Bowed : public Instrmnt<T>
 
  protected:
 
-  DelayL   neckDelay_;
-  DelayL   bridgeDelay_;
-  BowTable bowTable_;
-  OnePole  stringFilter_;
-  BiQuad   bodyFilters_[6];
-  SineWave vibrato_;
-  ADSR     adsr_;
+  DelayL<T>   neckDelay_;
+  DelayL<T>   bridgeDelay_;
+  BowTable<T> bowTable_;
+  OnePole<T>  stringFilter_;
+  BiQuad<T>   bodyFilters_[6];
+  SineWave<T> vibrato_;
+  ADSR<T>     adsr_;
 
   bool     bowDown_;
   T maxVelocity_;
@@ -121,15 +121,15 @@ inline T Bowed<T>::tick( unsigned int )
                          (baseDelay_ * vibratoGain_ * vibrato_.tick()) );
   }
 
-  lastFrame_[0] = 0.1248 * bodyFilters_[5].tick( bodyFilters_[4].tick( bodyFilters_[3].tick( bodyFilters_[2].tick( bodyFilters_[1].tick( bodyFilters_[0].tick( bridgeDelay_.lastOut() ) ) ) ) ) );
+  this->lastFrame_[0] = 0.1248 * bodyFilters_[5].tick( bodyFilters_[4].tick( bodyFilters_[3].tick( bodyFilters_[2].tick( bodyFilters_[1].tick( bodyFilters_[0].tick( bridgeDelay_.lastOut() ) ) ) ) ) );
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& Bowed<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Bowed::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -147,7 +147,7 @@ inline StkFrames<T>& Bowed<T>::tick( StkFrames<T>& frames, unsigned int channel 
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -190,7 +190,7 @@ Bowed<T>::Bowed( T lowestFrequency )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  unsigned long nDelays = (unsigned long) ( Stk::sampleRate() / lowestFrequency );
+  unsigned long nDelays = (unsigned long) ( sampleRate() / lowestFrequency );
 
   neckDelay_.setMaximumDelay( nDelays + 1 );
   neckDelay_.setDelay( 100.0 );
@@ -206,7 +206,7 @@ Bowed<T>::Bowed( T lowestFrequency )
   vibrato_.setFrequency( 6.12723 );
   vibratoGain_ = 0.0;
 
-  stringFilter_.setPole( 0.75 - (0.2 * 22050.0 / Stk::sampleRate()) );
+  stringFilter_.setPole( 0.75 - (0.2 * 22050.0 / sampleRate()) );
   stringFilter_.setGain( 0.95 );
 
   // Old single body filter
@@ -255,7 +255,7 @@ void Bowed<T>::setFrequency( T frequency )
 #endif
 
   // Delay = length - approximate filter delay.
-  baseDelay_ = Stk::sampleRate() / frequency - 4.0;
+  baseDelay_ = sampleRate() / frequency - 4.0;
   if ( baseDelay_ <= 0.0 ) baseDelay_ = 0.3;
   bridgeDelay_.setDelay( baseDelay_ * betaRatio_ ); 	     // bow to bridge length
   neckDelay_.setDelay( baseDelay_ * (1.0 - betaRatio_) );  // bow to nut (finger) length

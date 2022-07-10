@@ -333,7 +333,7 @@ void BandedWG<T>::setFrequency( T frequency )
   if (frequency > 1568.0) frequency = 1568.0;
 
   T radius;
-  T base = Stk<T>::sampleRate() / frequency;
+  T base = sampleRate() / frequency;
   T length;
   for (int i=0; i<presetModes_; i++) {
     // Calculate the delay line lengths for each mode.
@@ -351,7 +351,7 @@ void BandedWG<T>::setFrequency( T frequency )
     //	std::cerr << std::endl;
 
     // Set the bandpass filter resonances
-    radius = 1.0 - PI * 32 / Stk<T>::sampleRate(); //frequency_ * modes_[i] / Stk::sampleRate()/32;
+    radius = 1.0 - PI * 32 / sampleRate(); //frequency_ * modes_[i] / Stk::sampleRate()/32;
     if ( radius < 0.0 ) radius = 0.0;
     bandpass_[i].setResonance(frequency * modes_[i], radius, true);
 

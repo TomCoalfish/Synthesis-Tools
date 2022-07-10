@@ -135,8 +135,8 @@ inline StkFrames<T>& Blit<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
   if ( channel >= frames.channels() ) {
-    this->oStream_ << "Blit::tick(): channel and StkFrames<T> arguments are incompatible!";
-    this->handleError( StkError::FUNCTION_ARGUMENT );
+    oStream_ << "Blit::tick(): channel and StkFrames<T> arguments are incompatible!";
+    handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
@@ -175,8 +175,8 @@ template<typename T>
 Blit<T>::Blit( T frequency )
 {
   if ( frequency <= 0.0 ) {
-    this->oStream_ << "Blit::Blit: argument (" << frequency << ") must be positive!";
-    this->handleError( StkError::FUNCTION_ARGUMENT );
+    oStream_ << "Blit::Blit: argument (" << frequency << ") must be positive!";
+    handleError( StkError::FUNCTION_ARGUMENT );
   }
 
   nHarmonics_ = 0;
@@ -200,11 +200,11 @@ template<typename T>
 void Blit<T>::setFrequency( T frequency )
 {
   if ( frequency <= 0.0 ) {
-    this->oStream_ << "Blit::setFrequency: argument (" << frequency << ") must be positive!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "Blit::setFrequency: argument (" << frequency << ") must be positive!";
+    handleError( StkError::WARNING ); return;
   }
 
-  p_ = Stk<T>::sampleRate() / frequency;
+  p_ = sampleRate() / frequency;
   rate_ = PI / p_;
   this->updateHarmonics();
 }

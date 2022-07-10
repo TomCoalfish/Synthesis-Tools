@@ -1,15 +1,18 @@
 #pragma once
 
+
 #include "TLadderBase.hpp"
 #include "Util.h"
 
+namespace SoundAlchemy::MoogFilters
+{
 template<typename T>
-class TRKSimulationMoog : public LadderFilterBase<T>
+class TRKSimulationMoog : public TLadderFilterBase<T>
 {
 	
 public:
 	
-	TRKSimulationMoog(T sampleRate) : LadderFilterBase<T>(sampleRate)
+	TRKSimulationMoog(T sampleRate) : TLadderFilterBase<T>(sampleRate)
 	{
 		memset(state, 0, sizeof(state));
 		
@@ -60,12 +63,12 @@ public:
 	virtual void SetResonance(T r) override
 	{
 		// 0 to 10
-		resonance = r;
+		this->resonance = r;
 	}
 	
 	virtual void SetCutoff(T c) override
 	{
-		cutoff = (2.0 * MOOG_PI * c);
+		this->cutoff = (2.0 * MOOG_PI * c);
 	}
 	
 private:
@@ -76,10 +79,10 @@ private:
 		double satstate1 = clip(state[1], saturation, saturationInv);
 		double satstate2 = clip(state[2], saturation, saturationInv);
 		
-		dstate[0] = cutoff * (clip(input - resonance * state[3], saturation, saturationInv) - satstate0);
-		dstate[1] = cutoff * (satstate0 - satstate1);
-		dstate[2] = cutoff * (satstate1 - satstate2);
-		dstate[3] = cutoff * (satstate2 - clip(state[3], saturation, saturationInv));
+		dstate[0] = this->cutoff * (clip(input - this->resonance * state[3], saturation, saturationInv) - satstate0);
+		dstate[1] = this->cutoff * (satstate0 - satstate1);
+		dstate[2] = this->cutoff * (satstate1 - satstate2);
+		dstate[3] = this->cutoff * (satstate2 - clip(state[3], saturation, saturationInv));
 	}
 
 	void rungekutteSolver(T input, double * state)
@@ -115,4 +118,4 @@ private:
 
 };
 
-
+}

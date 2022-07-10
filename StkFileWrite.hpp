@@ -30,12 +30,7 @@ namespace stk {
 */
 /***************************************************/
 
-template<typename T>
-class FileWrite : public Stk<T>
-{
- public:
-
-  enum FILE_TYPE {
+enum FILE_TYPE {
         FILE_RAW,
         FILE_WAV,
         FILE_SND,
@@ -43,6 +38,12 @@ class FileWrite : public Stk<T>
         FILE_MAT,
     };
 
+template<typename T>
+class FileWrite : public Stk<T>
+{
+ public:
+
+  
 
   //! Default constructor.
   FileWrite( void );
@@ -51,7 +52,7 @@ class FileWrite : public Stk<T>
   /*!
     An StkError is thrown for invalid argument values or if an error occurs when initializing the output file.
   */
-  FileWrite( std::string fileName, unsigned int nChannels = 1, FILE_TYPE type = FILE_WAV, Stk::StkFormat format = STK_SINT16 );
+  FileWrite( std::string fileName, unsigned int nChannels = 1, FILE_TYPE type = FILE_WAV, StkFormat format = STK_SINT16 );
 
   //! Class destructor.
   virtual ~FileWrite();
@@ -61,7 +62,7 @@ class FileWrite : public Stk<T>
     An StkError is thrown for invalid argument values or if an error occurs when initializing the output file.
   */
   void open( std::string fileName, unsigned int nChannels = 1,
-             FileWrite::FILE_TYPE type = FILE_WAV, Stk::StkFormat format = STK_SINT16 );
+             FILE_TYPE type = FILE_WAV, StkFormat format = STK_SINT16 );
 
   //! If a file is open, write out samples in the queue and then close it.
   void close( void );
@@ -214,7 +215,7 @@ FileWrite<T>::FileWrite()
 }
 
 template<typename T>
-FileWrite::FileWrite( std::string fileName, unsigned int nChannels, FILE_TYPE type, Stk::StkFormat format )
+FileWrite<T>::FileWrite( std::string fileName, unsigned int nChannels, FILE_TYPE type, StkFormat format )
   : fd_( 0 )
 {
   this->open( fileName, nChannels, type, format );
@@ -253,7 +254,7 @@ bool FileWrite<T>::isOpen( void )
 }
 
 template<typename T>
-void FileWrite<T>::open( std::string fileName, unsigned int nChannels, FileWrite::FILE_TYPE type, Stk::StkFormat format )
+void FileWrite<T>::open( std::string fileName, unsigned int nChannels, FILE_TYPE type, StkFormat format )
 {
   // Call close() in case another file is already open.
   this->close();
@@ -338,7 +339,7 @@ bool FileWrite<T>::setWavFile( std::string fileName )
   }
 
   struct WaveHeader hdr = { {'R','I','F','F'}, 44, {'W','A','V','E'}, {'f','m','t',' '}, 16, 1, 1,
-                            (SINT32) Stk::sampleRate(), 0, 2, 16, 0, 0, 0, 
+                            (SINT32) sampleRate(), 0, 2, 16, 0, 0, 0, 
                             {'\x01','\x00','\x00','\x00','\x00','\x00','\x10','\x00','\x80','\x00','\x00','\xAA','\x00','\x38','\x9B','\x71'},
                             {'f','a','c','t'}, 4, 0 };
   hdr.nChannels = (SINT16) channels_;
@@ -456,6 +457,7 @@ void FileWrite<T>::closeWavFile( void )
   fclose( fd_ );
 }
 
+template<typename T>
 bool FileWrite<T>::setSndFile( std::string fileName )
 {
   std::string name( fileName );
@@ -466,7 +468,7 @@ bool FileWrite<T>::setSndFile( std::string fileName )
     return false;
   }
 
-  struct SndHeader hdr = {".sn", 40, 0, 3, (SINT32) Stk::sampleRate(), 1, "Created by STK"};
+  struct SndHeader hdr = {".sn", 40, 0, 3, (SINT32) sampleRate(), 1, "Created by STK"};
   hdr.pref[3] = 'd';
   hdr.nChannels = channels_;
   if ( dataType_ == STK_SINT8 )
@@ -564,7 +566,7 @@ bool FileWrite<T>::setAifFile( std::string fileName )
   // convert to that.
   SINT16 i;
   unsigned long exp;
-  unsigned long rate = (unsigned long) Stk::sampleRate();
+  unsigned long rate = (unsigned long) sampleRate();
   memset( hdr.srate, 0, 10 );
   exp = rate;
   for ( i=0; i<32; i++ ) {
@@ -721,7 +723,7 @@ bool FileWrite<T>::setMatFile( std::string fileName )
   hdr.fs[12] = 9;             // Matlab IEEE 754 double data type
   hdr.fs[13] = 8;             // 8 bytes of data to follow
   FLOAT64 *sampleRate = (FLOAT64 *)&hdr.fs[14];
-  *sampleRate = (FLOAT64) Stk::sampleRate();
+  *sampleRate = (FLOAT64) stk::sampleRate();
 
   // Write audio samples in array data element
   hdr.adf[0] = (SINT32) 14;       // Matlab array data type value
@@ -829,6 +831,7 @@ close_file:
   fclose(fd_);
 }
 
+template<typename T>
 void FileWrite<T>::write( StkFrames<T>& buffer )
 {
   if ( fd_ == 0 ) {

@@ -4,16 +4,16 @@
 #include "PolyBLEP.h"
 
 template<typename T>
-class PolyBLEPStk : public stk::Generator<T>, public PolyBLEP {
+class StkPolyBLEP : public stk::Generator<T>, public PolyBLEP {
 public:
-    PolyBLEPStk(T sampleRate, Waveform waveform = SINE, T initialFrequency = 440.0)
+    StkPolyBLEP(T sampleRate, Waveform waveform = SINE, T initialFrequency = 440.0)
             : PolyBLEP(sampleRate, waveform, initialFrequency) {
         const int numFrames = 1;
         const int numChannels = 1;
-        lastFrame_.resize(numFrames, numChannels, 0.0);
+        this->lastFrame_.resize(numFrames, numChannels, 0.0);
     }
 
-    virtual ~PolyBLEPStk() {
+    virtual ~StkPolyBLEP() {
     }
 
     virtual T tick() {
@@ -26,7 +26,7 @@ public:
         return frames;
     }
 
-    virtual void sampleRateChanged(stk::StkFloat newRate, stk::StkFloat oldRate) override {
+    virtual void sampleRateChanged(T newRate, T oldRate) override {
         PolyBLEP::setSampleRate(newRate);
     }
 

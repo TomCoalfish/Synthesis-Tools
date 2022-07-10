@@ -7,7 +7,7 @@
 #include <math.h>
 #include <vector>
 #include "SoundAlchemy.hpp"
-namespace SoundAlchemy
+namespace SoundAlchemy::MoogHalfLadder
 {
     template<typename T>
     struct ParameterRange {
@@ -20,7 +20,7 @@ namespace SoundAlchemy
     template<typename T> class mydsp;
 
     template<typename T>
-    class TMoogHalfLadder : public Object<T> {
+    class TMoogHalfLadder {
     public:
         TMoogHalfLadder();
         ~TMoogHalfLadder();
@@ -72,9 +72,8 @@ namespace SoundAlchemy
             process(in.data(),out.data(),n);
         }
 
-        T Tick(T input, T A = 1, T F = 0, T R = 0);
-        T sr;
-
+        T Tick(T input);
+        
         mydsp<T> * fDsp;
     };
 
@@ -346,7 +345,6 @@ namespace SoundAlchemy
         mydsp<T> &dsp = static_cast<mydsp<T> &>(*fDsp);
         dsp.classInit(sample_rate);
         dsp.instanceConstants(sample_rate);
-        sr = sample_rate;
         clear();
     }
 
@@ -573,16 +571,10 @@ namespace SoundAlchemy
     }
 
     template<typename T>
-    T TMoogHalfLadder<T>::Tick(T input, T A, T F, T R) { 
+    T TMoogHalfLadder<T>::Tick(T input) { 
         T output=0.0; 
-        T c = get_cutoff();
-        T q = get_q();
-        set_cutoff(clamp(c + c * F),0,sr/2-1);
-        set_q(clamp(q + R),0,1);
         mydsp<T> &dsp = static_cast<mydsp<T> &>(*fDsp);
-        dsp.tick(A*(input_gain*input),output); 
-        set_curoff(c);
-        set_q(q);
-        return output_gain*output; 
-    }    
+        dsp.tick(input,output); 
+        return output; 
+    }
 }

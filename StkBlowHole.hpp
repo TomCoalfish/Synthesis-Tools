@@ -138,8 +138,8 @@ inline T BlowHole<T>::tick( unsigned int )
   T pb = delays_[1].lastOut();
   vent_.tick( pa+pb );
 
-  lastFrame_[0] = delays_[0].tick( vent_.lastOut()+pb );
-  lastFrame_[0] *= outputGain_;
+  this->lastFrame_[0] = delays_[0].tick( vent_.lastOut()+pb );
+  this->lastFrame_[0] *= outputGain_;
 
   // Do three-port junction scattering (under tonehole)
   pa += vent_.lastOut();
@@ -151,13 +151,13 @@ inline T BlowHole<T>::tick( unsigned int )
   delays_[1].tick( pb + temp );
   tonehole_.tick( pa + pb - pth + temp );
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& BlowHole<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "BlowHole::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -175,7 +175,7 @@ inline StkFrames<T>& BlowHole<T>::tick( StkFrames<T>& frames, unsigned int chann
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -225,14 +225,14 @@ BlowHole<T>::BlowHole( T lowestFrequency )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  unsigned long nDelays = (unsigned long) ( 0.5 * Stk::sampleRate() / lowestFrequency );
+  unsigned long nDelays = (unsigned long) ( 0.5 * sampleRate() / lowestFrequency );
 
   // delays[0] is the delay line between the reed and the register vent.
-  delays_[0].setDelay( 5.0 * Stk::sampleRate() / 22050.0 );
+  delays_[0].setDelay( 5.0 * sampleRate() / 22050.0 );
   // delays[1] is the delay line between the register vent and the tonehole.
   delays_[1].setMaximumDelay( nDelays + 1 );
   // delays[2] is the delay line between the tonehole and the end of the bore.
-  delays_[2].setDelay( 4.0 * Stk::sampleRate() / 22050.0 );
+  delays_[2].setDelay( 4.0 * sampleRate() / 22050.0 );
 
   reedTable_.setOffset( 0.7 );
   reedTable_.setSlope( -0.3 );
@@ -244,7 +244,7 @@ BlowHole<T>::BlowHole( T lowestFrequency )
 
   // Calculate tonehole coefficients and set for initially open.
   T te = 1.4 * rth;    // effective length of the open hole
-  thCoeff_ = (te*2*Stk::sampleRate() - 347.23) / (te*2*Stk::sampleRate() + 347.23);
+  thCoeff_ = (te*2*sampleRate() - 347.23) / (te*2*sampleRate() + 347.23);
   tonehole_.setA1( -thCoeff_ );
   tonehole_.setB0( thCoeff_ );
   tonehole_.setB1( -1.0 );
@@ -255,8 +255,8 @@ BlowHole<T>::BlowHole( T lowestFrequency )
   double xi = 0.0;         // series resistance term
   double zeta = 347.23 + 2*PI*pow(rb,2)*xi/1.1769;
   double psi = 2*PI*pow(rb,2)*te / (PI*pow(r_rh,2));
-  T rhCoeff = (zeta - 2 * Stk::sampleRate() * psi) / (zeta + 2 * Stk::sampleRate() * psi);
-  rhGain_ = -347.23 / (zeta + 2 * Stk::sampleRate() * psi);
+  T rhCoeff = (zeta - 2 * sampleRate() * psi) / (zeta + 2 * sampleRate() * psi);
+  rhGain_ = -347.23 / (zeta + 2 * sampleRate() * psi);
   vent_.setA1( rhCoeff );
   vent_.setB0( 1.0 );
   vent_.setB1( 1.0 );
@@ -299,7 +299,7 @@ void BlowHole<T>::setFrequency( T frequency )
 #endif
 
   // Account for approximate filter delays and one sample "lastOut" delay.
-  T delay = ( Stk::sampleRate() / frequency ) * 0.5 - 3.5;
+  T delay = ( sampleRate() / frequency ) * 0.5 - 3.5;
   delay -= delays_[0].getDelay() + delays_[2].getDelay();
 
   delays_[1].setDelay( delay );
@@ -385,7 +385,7 @@ template<typename T>
 void BlowHole<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "BlowHole::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }

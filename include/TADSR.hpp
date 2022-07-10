@@ -3,15 +3,31 @@
 #include <cstdlib>
 #include <math.h>
 
-#include "SABase.hpp"
+#include "SoundAlchemy.hpp"
 
-namespace SoundAlchemy
+namespace SoundAlchemy::ADSR
 {
     // todo: exponential one pole filter
     template<typename T>
     class TADSR : public TObject<T>  {
     public:
+        enum envState {
+            env_idle = 0,
+            env_attack,
+            env_decay,
+            env_sustain,
+            env_release
+        };
+
         TADSR<T>(void);
+        TADSR<T>(float a, float d, float s, float r, float sr)
+        {
+            reset();
+            this->sample_rate = sr;
+            setAllTimes(a,d,s,r);
+            setTargetRatioA(0.3);
+            setTargetRatioDR(0.0001);
+        }
         ~TADSR<T>(void);
         T process(void);
         T getOutput(void);
@@ -20,9 +36,9 @@ namespace SoundAlchemy
 
         void setSustainLevel(T level);
 
-        void setAttackTime(T ms) { attackRate = ms/this->sample_rate; }
-        void setDecayTime(T ms) { decayRate = ms/this->sample_rate; }
-        void setReleaseTime(T ms) { releaseRate = ms/this->sample_rate; }
+        void setAttackTime(T ms) { attackRate = ms*this->sample_rate; }
+        void setDecayTime(T ms) { decayRate = ms*this->sample_rate; }
+        void setReleaseTime(T ms) { releaseRate = ms*this->sample_rate; }
 
         void setAllTimes(T attack, T decay, T sustain, T release) {
             setAttackTime(attack);
@@ -48,22 +64,13 @@ namespace SoundAlchemy
         void reset(void);
 
         T Tick() {
-            return this->output_gain*process();
-        }
-        T Tick(T I, T A = 1, T X = -1, T Y = 1) {
-            I *= this->input_gain;
-            T r = this->output_gain*(A*I*Tick());
-            return clamp(clamp(r,X,Y),this->minA,this->maxA);
+            return process();
         }
                 
-        enum envState {
-            env_idle = 0,
-            env_attack,
-            env_decay,
-            env_sustain,
-            env_release
-        };
+        void noteOn() { gate(1); }
+        void noteOff() { gate(0); }
 
+        
     protected:
         int state;
         T output;

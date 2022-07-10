@@ -8,17 +8,19 @@
 
 #pragma once
 
-#include "TLadderBase.hpp
+#include "TLadderBase.hpp"
 
+namespace SoundAlchemy::MoogFilters
+{
 template<typename T>
 class TSimplifiedMoog : public TLadderFilterBase<T>
 {
 public:
 	
-	TSimplifiedMoog(T sampleRate) : TLadderFilterBase<T>>sampleRate)
+	TSimplifiedMoog(T sampleRate) : TLadderFilterBase<T>(sampleRate)
 	{
 		// To keep the overall level approximately constant, comp should be set
-		// to 0.5 resulting in a 6 dB passband gain decrease at the maximum resonance
+		// to 0.5 resulting in a 6 dB passband gain decrease at the maximum this->resonance
 		// (compared to a 12 dB decrease in the original Moog model
 		gainCompensation = 0.5;
 		
@@ -51,13 +53,13 @@ public:
 				if (stageIdx)
 				{
 					input = stage[stageIdx-1];
-					stageTanh[stageIdx-1] = tanh(input);
-					stage[stageIdx] = (h * stageZ1[stageIdx] + h0 * stageTanh[stageIdx-1]) + (1.0 - g) * (stageIdx != 3 ? stageTanh[stageIdx] : tanh(stageZ1[stageIdx]));
+					stageTanh[stageIdx-1] = std::tanh(input);
+					stage[stageIdx] = (h * stageZ1[stageIdx] + h0 * stageTanh[stageIdx-1]) + (1.0 - g) * (stageIdx != 3 ? stageTanh[stageIdx] : std::tanh(stageZ1[stageIdx]));
 				}
 				else
 				{
-					input = samples[s] - ((4.0 * resonance) * (output - gainCompensation * samples[s]));
-					stage[stageIdx] = (h * tanh(input) + h0 * stageZ1[stageIdx]) + (1.0 - g) * stageTanh[stageIdx];
+					input = samples[s] - ((4.0 * this->resonance) * (output - gainCompensation * samples[s]));
+					stage[stageIdx] = (h * std::tanh(input) + h0 * stageZ1[stageIdx]) + (1.0 - g) * stageTanh[stageIdx];
 				}
 				
 				stageZ1[stageIdx] = stage[stageIdx];
@@ -79,13 +81,13 @@ public:
 				if (stageIdx)
 				{
 					input = stage[stageIdx-1];
-					stageTanh[stageIdx-1] = tanh(input);
-					stage[stageIdx] = (h * stageZ1[stageIdx] + h0 * stageTanh[stageIdx-1]) + (1.0 - g) * (stageIdx != 3 ? stageTanh[stageIdx] : tanh(stageZ1[stageIdx]));
+					stageTanh[stageIdx-1] = std::tanh(input);
+					stage[stageIdx] = (h * stageZ1[stageIdx] + h0 * stageTanh[stageIdx-1]) + (1.0 - g) * (stageIdx != 3 ? stageTanh[stageIdx] : std::tanh(stageZ1[stageIdx]));
 				}
 				else
 				{
-					input = samples[s] - ((4.0 * resonance) * (output - gainCompensation * samples[s]));
-					stage[stageIdx] = (h * tanh(input) + h0 * stageZ1[stageIdx]) + (1.0 - g) * stageTanh[stageIdx];
+					input = samples[s] - ((4.0 * this->resonance) * (output - gainCompensation * samples[s]));
+					stage[stageIdx] = (h * std::tanh(input) + h0 * stageZ1[stageIdx]) + (1.0 - g) * stageTanh[stageIdx];
 				}
 				
 				stageZ1[stageIdx] = stage[stageIdx];
@@ -104,18 +106,18 @@ public:
 	}
 	virtual void SetResonance(T r) override
 	{
-		resonance = r;
+		this->resonance = r;
 	}
 	
 	virtual void SetCutoff(T c) override
 	{
-		cutoff = c;
+		this->cutoff = c;
 		
 		// Not being oversampled at the moment... * 2 when functional
 		T fs2 = sampleRate;
 		
-		// Normalized cutoff [0, 1] in radians: ((2*pi) * cutoff / samplerate)
-		g = (2 * MOOG_PI) * cutoff / fs2; // feedback coefficient at fs*2 because of doublesampling
+		// Normalized this->cutoff [0, 1] in radians: ((2*pi) * this->cutoff / samplerate)
+		g = (2 * MOOG_PI) * this->cutoff / fs2; // feedback coefficient at fs*2 because of doublesampling
 		g *= MOOG_PI / 1.3; // correction factor that allows _cutoff to be supplied Hertz
 		
 		// FIR part with gain g
@@ -139,5 +141,4 @@ private:
 	
 	T gainCompensation;
 };
-
-#endif
+}

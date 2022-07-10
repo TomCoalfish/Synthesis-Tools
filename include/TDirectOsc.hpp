@@ -1,7 +1,7 @@
 #pragma once
 #include "SABase.hpp"
 
-namespace SoundAlchemy
+namespace SoundAlchemy::Oscillators
 {
     template<typename T>
     class TDirectOSC : public Object<T>

@@ -81,8 +81,8 @@ class Instrmnt : public Stk<T>
 template<typename T>
 inline void Instrmnt <T>::setFrequency( T frequency )
 {
-  this->oStream_ << "Instrmnt::setFrequency: virtual setFrequency function call!";
-  this->handleError( StkError::WARNING );
+  oStream_ << "Instrmnt::setFrequency: virtual setFrequency function call!";
+  handleError( StkError::WARNING );
 }
 
 template<typename T>
@@ -101,8 +101,8 @@ inline T Instrmnt <T>::lastOut( unsigned int channel )
 template<typename T>
 inline void Instrmnt <T>::controlChange( int number, T value )
 {
-  this->oStream_ << "Instrmnt::controlChange: virtual function call!";
-  this->handleError( StkError::WARNING );
+  oStream_ << "Instrmnt::controlChange: virtual function call!";
+  handleError( StkError::WARNING );
 }
 
 } // stk namespace

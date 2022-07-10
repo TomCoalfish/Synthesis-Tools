@@ -27,10 +27,10 @@ public:
   ~OnePole();
 
   //! Set the b[0] coefficient value.
-  void setB0( T b0 ) { b_[0] = b0; };
+  void setB0( T b0 ) { this->b_[0] = b0; };
 
   //! Set the a[1] coefficient value.
-  void setA1( T a1 ) { a_[1] = a1; };
+  void setA1( T a1 ) { this->a_[1] = a1; };
 
   //! Set all filter coefficients.
   void setCoefficients( T b0, T a1, bool clearState = false );
@@ -47,7 +47,7 @@ public:
   void setPole( T thePole );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Input one sample to the filter and return one output.
   T tick( T input );
@@ -79,11 +79,11 @@ public:
 template<typename T>
 inline T OnePole<T>::tick( T input )
 {
-  inputs_[0] = gain_ * input;
-  lastFrame_[0] = b_[0] * inputs_[0] - a_[1] * outputs_[1];
-  outputs_[1] = lastFrame_[0];
+  this->inputs_[0] = this->gain_ * input;
+  this->lastFrame_[0] = this->b_[0] * this->inputs_[0] - this->a_[1] * this->outputs_[1];
+  this->outputs_[1] = this->lastFrame_[0];
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -99,15 +99,16 @@ inline StkFrames<T>& OnePole<T>::tick( StkFrames<T>& frames, unsigned int channe
   T *samples = &frames[channel];
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
-    inputs_[0] = gain_ * *samples;
-    *samples = b_[0] * inputs_[0] - a_[1] * outputs_[1];
-    outputs_[1] = *samples;
+    this->inputs_[0] = this->gain_ * *samples;
+    *samples = this->b_[0] * this->inputs_[0] - this->a_[1] * this->outputs_[1];
+    this->outputs_[1] = *samples;
   }
 
-  lastFrame_[0] = outputs_[1];
+  this->lastFrame_[0] = this->outputs_[1];
   return frames;
 }
 
+template<typename T>
 inline StkFrames<T>& OnePole<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames, unsigned int iChannel, unsigned int oChannel )
 {
 #if defined(_STK_DEBUG_)
@@ -121,12 +122,12 @@ inline StkFrames<T>& OnePole<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFra
   T *oSamples = &oFrames[oChannel];
   unsigned int iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
-    inputs_[0] = gain_ * *iSamples;
-    *oSamples = b_[0] * inputs_[0] - a_[1] * outputs_[1];
-    outputs_[1] = *oSamples;
+    this->inputs_[0] = this->gain_ * *iSamples;
+    *oSamples = this->b_[0] * this->inputs_[0] - this->a_[1] * this->outputs_[1];
+    this->outputs_[1] = *oSamples;
   }
 
-  lastFrame_[0] = outputs_[1];
+  this->lastFrame_[0] = this->outputs_[1];
   return iFrames;
 }
 
@@ -145,11 +146,11 @@ inline StkFrames<T>& OnePole<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFra
 template<typename T>
 OnePole<T>::OnePole( T thePole )
 {
-  b_.resize( 1 );
-  a_.resize( 2 );
-  a_[0] = 1.0;
-  inputs_.resize( 1, 1, 0.0 );
-  outputs_.resize( 2, 1, 0.0 );
+  this->b_.resize( 1 );
+  this->a_.resize( 2 );
+  this->a_[0] = 1.0;
+  this->inputs_.resize( 1, 1, 0.0 );
+  this->outputs_.resize( 2, 1, 0.0 );
 
   this->setPole( thePole );
 }
@@ -169,11 +170,11 @@ void OnePole<T>::setPole( T thePole )
 
   // Normalize coefficients for peak unity gain.
   if ( thePole > 0.0 )
-    b_[0] = (T) (1.0 - thePole);
+    this->b_[0] = (T) (1.0 - thePole);
   else
-    b_[0] = (T) (1.0 + thePole);
+    this->b_[0] = (T) (1.0 + thePole);
 
-  a_[1] = -thePole;
+  this->a_[1] = -thePole;
 }
 
 template<typename T>
@@ -184,8 +185,8 @@ void OnePole<T>::setCoefficients( T b0, T a1, bool clearState )
     handleError( StkError::WARNING ); return;
   }
 
-  b_[0] = b0;
-  a_[1] = a1;
+  this->b_[0] = b0;
+  this->a_[1] = a1;
 
   if ( clearState ) this->clear();
 }

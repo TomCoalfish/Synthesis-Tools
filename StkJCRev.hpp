@@ -28,7 +28,8 @@ namespace stk {
 */
 /***************************************************/
 
-class JCRev : public Effect
+template<typename T>
+class JCRev : public Effect<T>
 {
  public:
   //! Class constructor taking a T60 decay time argument (one second default value).
@@ -107,7 +108,7 @@ inline T JCRev<T>::lastOut( unsigned int channel )
   }
 #endif
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 template<typename T>
@@ -153,13 +154,13 @@ inline T JCRev<T>::tick( T input, unsigned int channel )
 
   filtout = temp3 + temp4 + temp5 + temp6;
 
-  lastFrame_[0] = effectMix_ * (outLeftDelay_.tick(filtout));
-  lastFrame_[1] = effectMix_ * (outRightDelay_.tick(filtout));
-  temp = (1.0 - effectMix_) * input;
-  lastFrame_[0] += temp;
-  lastFrame_[1] += temp;
+  this->lastFrame_[0] = this->effectMix_ * (outLeftDelay_.tick(filtout));
+  this->lastFrame_[1] = this->effectMix_ * (outRightDelay_.tick(filtout));
+  temp = (1.0 - this->effectMix_) * input;
+  this->lastFrame_[0] += temp;
+  this->lastFrame_[1] += temp;
     
-  return 0.7 * lastFrame_[channel];
+  return 0.7 * this->lastFrame_[channel];
 }
 
 /***************************************************/
@@ -192,11 +193,11 @@ JCRev<T>::JCRev( T T60 )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  lastFrame_.resize( 1, 2, 0.0 ); // resize lastFrame_ for stereo output
+  this->lastFrame_.resize( 1, 2, 0.0 ); // resize this->lastFrame_ for stereo output
 
   // Delay lengths for 44100 Hz sample rate.
   int lengths[9] = {1116, 1356, 1422, 1617, 225, 341, 441, 211, 179};
-  double scaler = Stk::sampleRate() / 44100.0;
+  double scaler = stk::sampleRate() / 44100.0;
 
   int delay, i;
   if ( scaler != 1.0 ) {
@@ -225,7 +226,7 @@ JCRev<T>::JCRev( T T60 )
   outRightDelay_.setMaximumDelay( lengths[8] );
   outRightDelay_.setDelay( lengths[8] );
   allpassCoefficient_ = 0.7;
-  effectMix_ = 0.3;
+  this->effectMix_ = 0.3;
   this->clear();
 }
 
@@ -241,8 +242,8 @@ void JCRev<T>::clear()
   combDelays_[3].clear();
   outRightDelay_.clear();
   outLeftDelay_.clear();
-  lastFrame_[0] = 0.0;
-  lastFrame_[1] = 0.0;
+  this->lastFrame_[0] = 0.0;
+  this->lastFrame_[1] = 0.0;
 }
 
 template<typename T>
@@ -254,7 +255,7 @@ void JCRev<T>::setT60( T T60 )
   }
 
   for ( int i=0; i<4; i++ )
-    combCoefficient_[i] = pow(10.0, (-3.0 * combDelays_[i].getDelay() / (T60 * Stk::sampleRate())));
+    combCoefficient_[i] = pow(10.0, (-3.0 * combDelays_[i].getDelay() / (T60 * stk::sampleRate())));
 }
 
 template<typename T>
@@ -271,7 +272,7 @@ StkFrames<T>& JCRev<T>::tick( StkFrames<T>& frames, unsigned int channel )
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
     *samples = tick( *samples );
-    *(samples+1) = lastFrame_[1];
+    *(samples+1) = this->lastFrame_[1];
   }
 
   return frames;
@@ -293,7 +294,7 @@ StkFrames<T>& JCRev<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames, unsi
   unsigned int iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
     *oSamples = tick( *iSamples );
-    *(oSamples+1) = lastFrame_[1];
+    *(oSamples+1) = this->lastFrame_[1];
   }
 
   return iFrames;

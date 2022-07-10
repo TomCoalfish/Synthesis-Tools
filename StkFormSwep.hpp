@@ -29,7 +29,7 @@ class FormSwep : public Filter<T>
   ~FormSwep();
 
   //! A function to enable/disable the automatic updating of class data when the STK sample rate changes.
-  void ignoreSampleRateChange( bool ignore = true ) { ignoreSampleRateChange_ = ignore; };
+  void ignoreSampleRateChange( bool ignore = true ) { this->ignoreSampleRateChange_ = ignore; };
 
   //! Sets the filter coefficients for a resonance at \e frequency (in Hz).
   /*!
@@ -73,7 +73,7 @@ class FormSwep : public Filter<T>
   void setSweepTime( T time );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Input one sample to the filter and return a reference to one output.
   T tick( T input );
@@ -131,25 +131,25 @@ inline T FormSwep<T>::tick( T input )
       dirty_ = false;
       radius_ = targetRadius_;
       frequency_ = targetFrequency_;
-      gain_ = targetGain_;
+      this->gain_ = targetGain_;
     }
     else {
       radius_ = startRadius_ + (deltaRadius_ * sweepState_);
       frequency_ = startFrequency_ + (deltaFrequency_ * sweepState_);
-      gain_ = startGain_ + (deltaGain_ * sweepState_);
+      this->gain_ = startGain_ + (deltaGain_ * sweepState_);
     }
     this->setResonance( frequency_, radius_ );
   }
 
-  inputs_[0] = gain_ * input;
-  lastFrame_[0] = b_[0] * inputs_[0] + b_[1] * inputs_[1] + b_[2] * inputs_[2];
-  lastFrame_[0] -= a_[2] * outputs_[2] + a_[1] * outputs_[1];
-  inputs_[2] = inputs_[1];
-  inputs_[1] = inputs_[0];
-  outputs_[2] = outputs_[1];
-  outputs_[1] = lastFrame_[0];
+  this->inputs_[0] = this->gain_ * input;
+  this->lastFrame_[0] = this->b_[0] * this->inputs_[0] + this->b_[1] * this->inputs_[1] + this->b_[2] * this->inputs_[2];
+  this->lastFrame_[0] -= this->a_[2] * this->outputs_[2] + this->a_[1] * this->outputs_[1];
+  this->inputs_[2] = this->inputs_[1];
+  this->inputs_[1] = this->inputs_[0];
+  this->outputs_[2] = this->outputs_[1];
+  this->outputs_[1] = this->lastFrame_[0];
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -217,25 +217,25 @@ FormSwep<T>::FormSwep( void )
   sweepRate_ = 0.002;
   dirty_ = false;
 
-  b_.resize( 3, 0.0 );
-  a_.resize( 3, 0.0 );
-  a_[0] = 1.0;
-  inputs_.resize( 3, 1, 0.0 );
-  outputs_.resize( 3, 1, 0.0 );
+  this->b_.resize( 3, 0.0 );
+  this->a_.resize( 3, 0.0 );
+  this->a_[0] = 1.0;
+  this->inputs_.resize( 3, 1, 0.0 );
+  this->outputs_.resize( 3, 1, 0.0 );
 
-  Stk::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 FormSwep<T>::~FormSwep()
 {
-  Stk::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
 void FormSwep<T>::sampleRateChanged( T newRate, T oldRate )
 {
-  if ( !ignoreSampleRateChange_ ) {
+  if ( !this->ignoreSampleRateChange_ ) {
     oStream_ << "FormSwep::sampleRateChanged: you may need to recompute filter coefficients!";
     handleError( StkError::WARNING );
   }
@@ -245,7 +245,7 @@ template<typename T>
 void FormSwep<T>::setResonance( T frequency, T radius )
 {
 #if defined(_STK_DEBUG_)
-  if ( frequency < 0.0 || frequency > 0.5 * Stk::sampleRate() ) {
+  if ( frequency < 0.0 || frequency > 0.5 * sampleRate() ) {
     oStream_ << "FormSwep::setResonance: frequency argument (" << frequency << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }
@@ -258,13 +258,13 @@ void FormSwep<T>::setResonance( T frequency, T radius )
   radius_ = radius;
   frequency_ = frequency;
 
-  a_[2] = radius * radius;
-  a_[1] = -2.0 * radius * cos( TWO_PI * frequency / Stk::sampleRate() );
+  this->a_[2] = radius * radius;
+  this->a_[1] = -2.0 * radius * cos( TWO_PI * frequency / sampleRate() );
 
   // Use zeros at +- 1 and normalize the filter peak gain.
-  b_[0] = 0.5 - 0.5 * a_[2];
-  b_[1] = 0.0;
-  b_[2] = -b_[0];
+  this->b_[0] = 0.5 - 0.5 * this->a_[2];
+  this->b_[1] = 0.0;
+  this->b_[2] = -this->b_[0];
 }
 
 template<typename T>
@@ -275,7 +275,7 @@ void FormSwep<T>::setStates( T frequency, T radius, T gain )
   if ( frequency_ != frequency || radius_ != radius )
     this->setResonance( frequency, radius );
 
-  gain_ = gain;
+  this->gain_ = gain;
   targetFrequency_ = frequency;
   targetRadius_ = radius;
   targetGain_ = gain;
@@ -284,7 +284,7 @@ void FormSwep<T>::setStates( T frequency, T radius, T gain )
 template<typename T>
 void FormSwep<T>::setTargets( T frequency, T radius, T gain )
 {
-  if ( frequency < 0.0 || frequency > 0.5 * Stk::sampleRate() ) {
+  if ( frequency < 0.0 || frequency > 0.5 * sampleRate() ) {
     oStream_ << "FormSwep::setTargets: frequency argument (" << frequency << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }
@@ -296,13 +296,13 @@ void FormSwep<T>::setTargets( T frequency, T radius, T gain )
   dirty_ = true;
   startFrequency_ = frequency_;
   startRadius_ = radius_;
-  startGain_ = gain_;
+  startGain_ = this->gain_;
   targetFrequency_ = frequency;
   targetRadius_ = radius;
   targetGain_ = gain;
   deltaFrequency_ = frequency - frequency_;
   deltaRadius_ = radius - radius_;
-  deltaGain_ = gain - gain_;
+  deltaGain_ = gain - this->gain_;
   sweepState_ = 0.0;
 }
 
@@ -325,7 +325,7 @@ void FormSwep<T>::setSweepTime( T time )
     handleError( StkError::WARNING ); return;
   }
 
-  this->setSweepRate( 1.0 / ( time * Stk::sampleRate() ) );
+  this->setSweepRate( 1.0 / ( time * sampleRate() ) );
 }
 
 } // stk namespace

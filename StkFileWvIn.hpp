@@ -245,7 +245,7 @@ FileWvIn<T>::FileWvIn( unsigned long chunkThreshold, unsigned long chunkSize )
   : finished_(true), interpolate_(false), time_(0.0), rate_(0.0),
     chunkThreshold_(chunkThreshold), chunkSize_(chunkSize)
 {
-  Stk<T>::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
@@ -256,14 +256,14 @@ FileWvIn<T>::FileWvIn( std::string fileName, bool raw, bool doNormalize,
     chunkThreshold_(chunkThreshold), chunkSize_(chunkSize)
 {
   openFile( fileName, raw, doNormalize, doInt2FloatScaling );
-  Stk<T>::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 FileWvIn<T>::~FileWvIn()
 {
   this->closeFile();
-  Stk<T>::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
@@ -317,7 +317,7 @@ void FileWvIn<T>::openFile( std::string fileName, bool raw, bool doNormalize, bo
   if ( !chunking_ ) file_.close();
 
   // Set default rate based on file sampling rate.
-  this->setRate( this->data_.dataRate() / Stk<T>::sampleRate() );
+  this->setRate( this->data_.dataRate() / sampleRate() );
 
   if ( doNormalize & !chunking_ ) this->normalize();
 
@@ -451,8 +451,8 @@ StkFrames<T>& FileWvIn<T>::tick( StkFrames<T>& frames, unsigned int channel)
 {
   if ( finished_ ) {
 #if defined(_STK_DEBUG_)
-    this->oStream_ << "FileWvIn::tick(): end of file or no open file!";
-    this->handleError( StkError::DEBUG_PRINT );
+    oStream_ << "FileWvIn::tick(): end of file or no open file!";
+    handleError( StkError::DEBUG_PRINT );
 #endif
     return frames;
   }
@@ -460,8 +460,8 @@ StkFrames<T>& FileWvIn<T>::tick( StkFrames<T>& frames, unsigned int channel)
   unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
-    this->oStream_ << "FileWvIn::tick(): channel and StkFrames arguments are incompatible!";
-    this->handleError( StkError::FUNCTION_ARGUMENT );
+    oStream_ << "FileWvIn::tick(): channel and StkFrames arguments are incompatible!";
+    handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
     

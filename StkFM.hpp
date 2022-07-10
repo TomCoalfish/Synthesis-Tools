@@ -146,8 +146,8 @@ FM<T>::FM( unsigned int operators )
   : nOperators_(operators)
 {
   if ( nOperators_ == 0 ) {
-    this->oStream_ << "FM::FM: Number of operators must be greater than zero!";
-    this->handleError( StkError::FUNCTION_ARGUMENT );
+    oStream_ << "FM::FM: Number of operators must be greater than zero!";
+    handleError( StkError::FUNCTION_ARGUMENT );
   }
 
   twozero_.setB2( -1.0 );
@@ -224,8 +224,8 @@ template<typename T>
 void FM<T>::setRatio( unsigned int waveIndex, T ratio )
 {
   if ( waveIndex >= nOperators_ ) {
-    this->oStream_ << "FM:setRatio: waveIndex parameter is greater than the number of operators!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "FM:setRatio: waveIndex parameter is greater than the number of operators!";
+    handleError( StkError::WARNING ); return;
   }
 
   ratios_[waveIndex] = ratio;
@@ -239,8 +239,8 @@ template<typename T>
 void FM<T>::setGain( unsigned int waveIndex, T gain )
 {
   if ( waveIndex >= nOperators_ ) {
-    this->oStream_ << "FM::setGain: waveIndex parameter is greater than the number of operators!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "FM::setGain: waveIndex parameter is greater than the number of operators!";
+    handleError( StkError::WARNING ); return;
   }
 
   gains_[waveIndex] = gain;

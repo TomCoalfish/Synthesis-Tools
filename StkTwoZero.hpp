@@ -166,21 +166,21 @@ TwoZero<T>::TwoZero( void )
   this->b_.resize( 3, 0.0 );
   this->inputs_.resize( 3, 1, 0.0 );
   this->b_[0] = 1.0;
-  Stk<T>::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 TwoZero<T>::~TwoZero()
 {
-  Stk<T>::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
 void TwoZero<T>::sampleRateChanged( T newRate, T oldRate )
 {
   if ( ! this->ignoreSampleRateChange_ ) {
-    this->oStream_ << "TwoZero::sampleRateChanged: you may need to recompute filter coefficients!";
-    this->handleError( StkError::WARNING );
+    oStream_ << "TwoZero::sampleRateChanged: you may need to recompute filter coefficients!";
+    handleError( StkError::WARNING );
   }
 }
 
@@ -209,7 +209,7 @@ void TwoZero<T>::setNotch( T frequency, T radius )
 #endif
 
   this->b_[2] = radius * radius;
-  this->b_[1] = -2.0 * radius * cos(TWO_PI * frequency / Stk<T>::sampleRate());
+  this->b_[1] = -2.0 * radius * cos(TWO_PI * frequency / sampleRate());
 
   // Normalize the filter gain.
   if ( this->b_[1] > 0.0 ) // Maximum at z = 0.

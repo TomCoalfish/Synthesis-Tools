@@ -1,8 +1,6 @@
-#ifndef STK_PRCREV_H
-#define STK_PRCREV_H
-
-#include "Effect.h"
-#include "Delay.h"
+#pragma once
+#include "StkEffect.hpp"
+#include "StkDelay.hpp"
 #include <cmath>
 
 namespace stk {
@@ -82,8 +80,8 @@ public:
 
 protected:
 
-  Delay    allpassDelays_[2];
-  Delay    combDelays_[2];
+  Delay<T>    allpassDelays_[2];
+  Delay<T>    combDelays_[2];
   T allpassCoefficient_;
   T combCoefficient_[2];
 
@@ -99,10 +97,12 @@ inline T PRCRev<T>::lastOut( unsigned int channel )
   }
 #endif
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
- inline T PRCRev<T>::tick( T input, unsigned int channel )
+
+template<typename T>
+inline T PRCRev<T>::tick( T input, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
   if ( channel > 1 ) {
@@ -128,13 +128,13 @@ inline T PRCRev<T>::lastOut( unsigned int channel )
   temp2 = temp1 + ( combCoefficient_[0] * combDelays_[0].lastOut() );
   temp3 = temp1 + ( combCoefficient_[1] * combDelays_[1].lastOut() );
 
-  lastFrame_[0] = effectMix_ * (combDelays_[0].tick(temp2));
-  lastFrame_[1] = effectMix_ * (combDelays_[1].tick(temp3));
-  temp = (1.0 - effectMix_) * input;
-  lastFrame_[0] += temp;
-  lastFrame_[1] += temp;
+  this->lastFrame_[0] = this->effectMix_ * (combDelays_[0].tick(temp2));
+  this->lastFrame_[1] = this->effectMix_ * (combDelays_[1].tick(temp3));
+  temp = (1.0 - this->effectMix_) * input;
+  this->lastFrame_[0] += temp;
+  this->lastFrame_[1] += temp;
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 /***************************************************/
@@ -161,11 +161,11 @@ PRCRev<T>::PRCRev( T T60 )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  lastFrame_.resize( 1, 2, 0.0 ); // resize lastFrame_ for stereo output
+  this->lastFrame_.resize( 1, 2, 0.0 ); // resize this->lastFrame_ for stereo output
 
   // Delay lengths for 44100 Hz sample rate.
   int lengths[4]= {341, 613, 1557, 2137};
-  double scaler = Stk::sampleRate() / 44100.0;
+  double scaler = stk::sampleRate() / 44100.0;
 
   // Scale the delay lengths if necessary.
   int delay, i;
@@ -188,7 +188,7 @@ PRCRev<T>::PRCRev( T T60 )
 
   this->setT60( T60 );
   allpassCoefficient_ = 0.7;
-  effectMix_ = 0.5;
+  this->effectMix_ = 0.5;
   this->clear();
 }
 
@@ -199,8 +199,8 @@ void PRCRev<T>::clear( void )
   allpassDelays_[1].clear();
   combDelays_[0].clear();
   combDelays_[1].clear();
-  lastFrame_[0] = 0.0;
-  lastFrame_[1] = 0.0;
+  this->lastFrame_[0] = 0.0;
+  this->lastFrame_[1] = 0.0;
 }
 
 template<typename T>
@@ -211,8 +211,8 @@ void PRCRev<T>::setT60( T T60 )
     handleError( StkError::WARNING ); return;
   }
 
-  combCoefficient_[0] = pow(10.0, (-3.0 * combDelays_[0].getDelay() / (T60 * Stk::sampleRate())));
-  combCoefficient_[1] = pow(10.0, (-3.0 * combDelays_[1].getDelay() / (T60 * Stk::sampleRate())));
+  combCoefficient_[0] = pow(10.0, (-3.0 * combDelays_[0].getDelay() / (T60 * stk::sampleRate())));
+  combCoefficient_[1] = pow(10.0, (-3.0 * combDelays_[1].getDelay() / (T60 * stk::sampleRate())));
 }
 
 template<typename T>
@@ -229,7 +229,7 @@ StkFrames<T>& PRCRev<T>::tick( StkFrames<T>& frames, unsigned int channel )
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
     *samples = tick( *samples );
-    *(samples+1) = lastFrame_[1];
+    *(samples+1) = this->lastFrame_[1];
   }
 
   return frames;
@@ -250,7 +250,7 @@ StkFrames<T>& PRCRev<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames, uns
   unsigned int iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
     *oSamples = tick( *iSamples );
-    *(oSamples+1) = lastFrame_[1];
+    *(oSamples+1) = this->lastFrame_[1];
   }
 
   return iFrames;

@@ -175,15 +175,15 @@ Asymp<T>:: Asymp( void )
   value_ = 0.0;
   target_ = 0.0;
   state_ = 0;
-  factor_ = exp( -1.0 / ( 0.3 * Stk<T>::sampleRate() ) );
+  factor_ = exp( -1.0 / ( 0.3 * sampleRate() ) );
   constant_ = 0.0;
-  Stk<T>::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 Asymp<T>:: ~Asymp( void )
 {    
-  Stk<T>::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
@@ -211,11 +211,11 @@ template<typename T>
 void Asymp<T>:: setTau( T tau )
 {
   if ( tau <= 0.0 ) {
-    this->oStream_ << "Asymp::setTau: negative or zero tau not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "Asymp::setTau: negative or zero tau not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
-  factor_ = std::exp( -1.0 / ( tau * Stk<T>::sampleRate() ) );
+  factor_ = std::exp( -1.0 / ( tau * sampleRate() ) );
   constant_ = ( 1.0 - factor_ ) * target_;
 }
 
@@ -223,12 +223,12 @@ template<typename T>
 void Asymp<T>:: setTime( T time )
 {
   if ( time <= 0.0 ) {
-    this->oStream_ << "Asymp::setTime: negative or zero times not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "Asymp::setTime: negative or zero times not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
   T tau = -time / std::log( TARGET_THRESHOLD );
-  factor_ = std::exp( -1.0 / ( tau * Stk<T>::sampleRate() ) );
+  factor_ = std::exp( -1.0 / ( tau * sampleRate() ) );
   constant_ = ( 1.0 - factor_ ) * target_;
 }
 
@@ -236,8 +236,8 @@ template<typename T>
 void Asymp<T>:: setT60( T t60 )
 {
   if ( t60 <= 0.0 ) {
-    this->oStream_ << "Asymp::setT60: negative or zero t60 not allowed!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "Asymp::setT60: negative or zero t60 not allowed!";
+    handleError( StkError::WARNING ); return;
   }
 
   setTau( t60 / 6.91 );

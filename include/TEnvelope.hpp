@@ -2,14 +2,14 @@
 
 #include <cmath>
 
-namespace SoundAlchemy {
-
+namespace SoundWave::Envelopes
+{
     template<class T>
-    class ADSR : public Object<T>
+    class TADSR 
     {
     public:
-        ADSR(void);
-        ~ADSR(void);
+        TADSR(void);
+        ~TADSR(void);
         T process(void);
         T getOutput(void);
         int getState(void);
@@ -67,7 +67,7 @@ namespace SoundAlchemy {
     };
 
     template<typename T>
-     T ADSR<T>::process() {
+     T TADSR<T>::process() {
         switch (state) {
             case env_idle:
                 break;
@@ -98,7 +98,7 @@ namespace SoundAlchemy {
     }
 
     template<typename T>
-    void ADSR<T>::gate(int gate) {
+    void TADSR<T>::gate(int gate) {
         if (gate)
             state = env_attack;
         else if (state != env_idle)
@@ -106,23 +106,23 @@ namespace SoundAlchemy {
     }
 
     template<typename T>
-    int ADSR<T>::getState() {
+    int TADSR<T>::getState() {
         return state;
     }
 
     template<typename T>
-    void ADSR<T>::reset() {
+    void TADSR<T>::reset() {
         state = env_idle;
         output = 0.0;
     }
 
     template<typename T>
-    T ADSR<T>::getOutput() {
+    T TADSR<T>::getOutput() {
         return output;
     }
 
     template<typename T>
-    ADSR<T>::ADSR(void) {
+    TADSR<T>::TADSR(void) {
         reset();
         setAttackRate(0);
         setDecayRate(0);
@@ -133,43 +133,43 @@ namespace SoundAlchemy {
     }
 
     template<typename T>
-    ADSR<T>::~ADSR(void) {
+    TADSR<T>::~TADSR(void) {
     }
 
     template<typename T>
-    void ADSR<T>::setAttackRate(T rate) {
+    void TADSR<T>::setAttackRate(T rate) {
         attackRate = rate;
         attackCoef = calcCoef(rate, targetRatioA);
         attackBase = (1.0 + targetRatioA) * (1.0 - attackCoef);
     }
 
     template<typename T>
-    void ADSR<T>::setDecayRate(T rate) {
+    void TADSR<T>::setDecayRate(T rate) {
         decayRate = rate;
         decayCoef = calcCoef(rate, targetRatioDR);
         decayBase = (sustainLevel - targetRatioDR) * (1.0 - decayCoef);
     }
 
     template<typename T>
-    void ADSR<T>::setReleaseRate(T rate) {
+    void TADSR<T>::setReleaseRate(T rate) {
         releaseRate = rate;
         releaseCoef = calcCoef(rate, targetRatioDR);
         releaseBase = -targetRatioDR * (1.0 - releaseCoef);
     }
 
     template<typename T>
-    T ADSR<T>::calcCoef(T rate, T targetRatio) {
+    T TADSR<T>::calcCoef(T rate, T targetRatio) {
         return (rate <= 0) ? 0.0 : exp(-log((1.0 + targetRatio) / targetRatio) / rate);
     }
 
     template<typename T>
-    void ADSR<T>::setSustainLevel(T level) {
+    void TADSR<T>::setSustainLevel(T level) {
         sustainLevel = level;
         decayBase = (sustainLevel - targetRatioDR) * (1.0 - decayCoef);
     }
 
     template<typename T>
-    void ADSR<T>::setTargetRatioA(T targetRatio) {
+    void TADSR<T>::setTargetRatioA(T targetRatio) {
         if (targetRatio < 0.000000001)
             targetRatio = 0.000000001;  // -180 dB
         targetRatioA = targetRatio;
@@ -178,7 +178,7 @@ namespace SoundAlchemy {
     }
 
     template<typename T>
-    void ADSR<T>::setTargetRatioDR(T targetRatio) {
+    void TADSR<T>::setTargetRatioDR(T targetRatio) {
         if (targetRatio < 0.000000001)
             targetRatio = 0.000000001;  // -180 dB
         targetRatioDR = targetRatio;
@@ -188,16 +188,13 @@ namespace SoundAlchemy {
         releaseBase = -targetRatioDR * (1.0 - releaseCoef);
     }
 
-    #if !defined( M_PI )
-        #define M_PI 3.14159265358979324
-    #endif // !defined( M_PI )
-
+    
     #if !defined( M_2PI )
         #define M_2PI 6.28318530717958648
     #endif // !defined( M_2PI )
 
     template<typename T>
-    class GammaEnv
+    class TGammaEnvelope
     {
     public:
         T Attack; ///< Attack time, in seconds.
@@ -498,24 +495,26 @@ namespace SoundAlchemy {
 
     };
 
-    enum state_enum {
-        idle, attack, decay, sustain, release
-    };
-
+   
     template<typename T>
-    struct parameter_struct {
-        T attackTime = 1.0;
-        T attackSlope = 0.0;
-        T decayTime = 1.0;
-        T decaySlope = 0.0;
-        T sustainLevel = 0.5;
-        T releaseTime = 1.0;
-        T releaseSlope = 0.0;
-    };
+    class TParametricEnvelope {
+    public:
+        enum state_enum {
+            idle, attack, decay, sustain, release
+        };
 
-    template<typename T>
-    class ParametricEnvelope {
+        struct parameter_struct {
+            T attackTime = 1.0;
+            T attackSlope = 0.0;
+            T decayTime = 1.0;
+            T decaySlope = 0.0;
+            T sustainLevel = 0.5;
+            T releaseTime = 1.0;
+            T releaseSlope = 0.0;
+        };
+
     private:
+        
         T currentValue;
         T releaseInitialValue;
         unsigned long currentStep;
@@ -526,7 +525,7 @@ namespace SoundAlchemy {
         T maxLevel;
         // Time scale. Essentially, how often is step() called?
         unsigned int stepFrequency;
-        parameter_struct<T> parameters;
+        parameter_struct parameters;
 
         void gotoState(state_enum newState);
 
@@ -537,7 +536,8 @@ namespace SoundAlchemy {
         T calculateReleaseValue(unsigned long currentStep, T time, T slope, T originLevel);
 
     public:
-        ParametricEnvelope(T maxLevel = 10.0, unsigned int stepFrequency = 10000);
+        
+        TParametricEnvelope(T maxLevel = 10.0, unsigned int stepFrequency = 10000);
 
         //
         // Setters for all envelope parameters, with reasonable defaults
@@ -589,7 +589,7 @@ namespace SoundAlchemy {
 
         //
         // Return current parameters
-        parameter_struct<T> getParameters();
+        parameter_struct getParameters();
 
         float Tick(float in) {
             return step()*in;
@@ -611,14 +611,14 @@ namespace SoundAlchemy {
     };
 
     template<typename T>
-    ParametricEnvelope<T>::ParametricEnvelope(T maxLevel, unsigned int stepFrequency) {
+    TParametricEnvelope<T>::TParametricEnvelope(T maxLevel, unsigned int stepFrequency) {
         this->maxLevel = maxLevel;
         this->stepFrequency = stepFrequency;
         reset();
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::reset() {
+    void TParametricEnvelope<T>::reset() {
         currentState = idle;
         previousState = idle;
         currentValue = 0.0;
@@ -626,37 +626,37 @@ namespace SoundAlchemy {
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::setAttackTime(T time) {
+    void TParametricEnvelope<T>::setAttackTime(T time) {
         parameters.attackTime = time;
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::setAttackSlope(T slope) {
+    void TParametricEnvelope<T>::setAttackSlope(T slope) {
         parameters.attackSlope = slope;
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::setDecayTime(T time) {
+    void TParametricEnvelope<T>::setDecayTime(T time) {
         parameters.decayTime = time;
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::setDecaySlope(T slope) {
+    void TParametricEnvelope<T>::setDecaySlope(T slope) {
         parameters.decaySlope = slope;
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::setReleaseTime(T time) {
+    void TParametricEnvelope<T>::setReleaseTime(T time) {
         parameters.releaseTime = time;
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::setReleaseSlope(T slope) {
+    void TParametricEnvelope<T>::setReleaseSlope(T slope) {
         parameters.releaseSlope = slope;
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::setSustainLevel(T level) {
+    void TParametricEnvelope<T>::setSustainLevel(T level) {
         if (level>maxLevel) {
             parameters.sustainLevel = 1.0;
         } else {
@@ -665,17 +665,17 @@ namespace SoundAlchemy {
     }
 
     template<typename T>
-    parameter_struct<T> ParametricEnvelope<T>::getParameters() {
+    typename TParametricEnvelope<T>::parameter_struct TParametricEnvelope<T>::getParameters() {
         return parameters;
     }
 
     template<typename T>
-    state_enum ParametricEnvelope<T>::getState() {
+    typename TParametricEnvelope<T>::state_enum TParametricEnvelope<T>::getState() {
         return currentState;
     }
 
     template<typename T>
-    T ParametricEnvelope<T>::step() {
+    T TParametricEnvelope<T>::step() {
         //TODO Implement value update
         switch (currentState) {
             case idle:
@@ -730,38 +730,38 @@ namespace SoundAlchemy {
     }
 
     template<typename T>
-    T ParametricEnvelope<T>::getCurrentTime() {
+    T TParametricEnvelope<T>::getCurrentTime() {
         return currentStep / (T)stepFrequency;
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::onGateOn() {
+    void TParametricEnvelope<T>::onGateOn() {
         gotoState(attack);
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::onGateOff() {
+    void TParametricEnvelope<T>::onGateOff() {
         gotoState(release);
     }
 
     template<typename T>
-    void ParametricEnvelope<T>::gotoState(state_enum newState) {
+    void TParametricEnvelope<T>::gotoState(state_enum newState) {
         previousState = currentState;
         currentState = newState;
     }
 
     template<typename T>
-    T ParametricEnvelope<T>::calculateAttackValue(unsigned long currentStep, T time, T slope) {
+    T TParametricEnvelope<T>::calculateAttackValue(unsigned long currentStep, T time, T slope) {
         return std::pow(getCurrentTime() / time, std::pow(2.0, -slope));
     }
 
     template<typename T>
-    T ParametricEnvelope<T>::calculateDecayValue(unsigned long currentStep, T time, T slope, T targetLevel) {
+    T TParametricEnvelope<T>::calculateDecayValue(unsigned long currentStep, T time, T slope, T targetLevel) {
         return std::pow(getCurrentTime() / time, std::pow(2.0, -slope)) * (targetLevel - 1.0) + 1.0;
     }
 
     template<typename T>
-    T ParametricEnvelope<T>::calculateReleaseValue(unsigned long currentStep, T time, T slope, T originLevel) {
+    T TParametricEnvelope<T>::calculateReleaseValue(unsigned long currentStep, T time, T slope, T originLevel) {
         return originLevel * ( 1- std::pow(getCurrentTime() / time, std::pow(2.0, -slope))) ;
     }
 };

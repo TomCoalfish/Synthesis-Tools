@@ -57,7 +57,7 @@ public:
   //! Set the modulation (vibrato) depth.
   void setModulationDepth( T mDepth )
   {
-    vibrato_.setFrequency(mDepth);
+    this->vibrato_.setFrequency(mDepth);
   }
 
   //! Perform the control change specified by \e number and \e value (0.0 - 128.0).
@@ -95,11 +95,11 @@ public:
 
 template<typename T>
 ModalBar<T>:: ModalBar( void )
-  : Modal()
+  : Modal<T>()
 {
   // Concatenate the STK rawwave path to the rawwave file
-  wave_ = new FileWvIn( (Stk::rawwavePath() + "marmstk1.raw").c_str(), true );
-  wave_->setRate( 0.5 * 22050.0 / Stk::sampleRate() );
+  this->wave_ = new FileWvIn<T>( (stk::rawwavePath() + "marmstk1.raw").c_str(), true );
+  this->wave_->setRate( 0.5 * 22050.0 / stk::sampleRate() );
 
   // Set the resonances for preset 0 (marimba).
   this->setPreset( 0 );
@@ -108,7 +108,7 @@ ModalBar<T>:: ModalBar( void )
 template<typename T>
 ModalBar<T>:: ~ModalBar( void )
 {
-  delete wave_;
+  delete this->wave_;
 }
 
 template<typename T>
@@ -119,9 +119,9 @@ void ModalBar<T>:: setStickHardness( T hardness )
     handleError( StkError::WARNING ); return;
   }
 
-  stickHardness_ = hardness;
-  wave_->setRate( (0.25 * pow(4.0, stickHardness_) ) );
-  masterGain_ = 0.1 + (1.8 * stickHardness_);
+  this->stickHardness_ = hardness;
+  this->wave_->setRate( (0.25 * pow(4.0, this->stickHardness_) ) );
+  this->masterGain_ = 0.1 + (1.8 * this->stickHardness_);
 }
 
 template<typename T>
@@ -132,7 +132,7 @@ void ModalBar<T>:: setStrikePosition( T position )
     handleError( StkError::WARNING ); return;
   }
 
-  strikePosition_ = position;
+  this->strikePosition_ = position;
 
   // Hack only first three modes.
   T temp2 = position * PI;
@@ -196,26 +196,26 @@ void ModalBar<T>:: setPreset( int preset )
   };
 
   int temp = (preset % 9);
-  for (unsigned int i=0; i<nModes_; i++) {
+  for (unsigned int i=0; i<this->nModes_; i++) {
     this->setRatioAndRadius(i, presets[temp][0][i], presets[temp][1][i]);
     this->setModeGain(i, presets[temp][2][i]);
   }
 
   this->setStickHardness(presets[temp][3][0]);
   this->setStrikePosition(presets[temp][3][1]);
-  directGain_ = presets[temp][3][2];
+  this->directGain_ = presets[temp][3][2];
 
   if (temp == 1) // vibraphone
-    vibratoGain_ = 0.2;
+    this->vibratoGain_ = 0.2;
   else
-    vibratoGain_ = 0.0;
+    this->vibratoGain_ = 0.0;
 }
 
 template<typename T>
 void ModalBar<T>:: controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( stk::inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "ModalBar::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }
@@ -229,13 +229,13 @@ void ModalBar<T>:: controlChange( int number, T value )
   else if (number == __SK_ProphesyRibbon_) // 16
 		this->setPreset((int) value);
   else if (number == __SK_Balance_) // 8
-    vibratoGain_ = normalizedValue * 0.3;
+    this->vibratoGain_ = normalizedValue * 0.3;
   else if (number == __SK_ModWheel_) // 1
-    directGain_ = normalizedValue;
+    this->directGain_ = normalizedValue;
   else if (number == __SK_ModFrequency_) // 11
-    vibrato_.setFrequency( normalizedValue * 12.0 );
+    this->vibrato_.setFrequency( normalizedValue * 12.0 );
   else if (number == __SK_AfterTouch_Cont_)	// 128
-    envelope_.setTarget( normalizedValue );
+    this->envelope_.setTarget( normalizedValue );
 #if defined(_STK_DEBUG_)
   else {
     oStream_ << "ModalBar::controlChange: undefined control number (" << number << ")!";

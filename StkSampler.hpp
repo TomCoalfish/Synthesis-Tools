@@ -58,8 +58,8 @@ class Sampler : public Instrmnt<T>
  protected:
 
   ADSR<T> adsr_;
-  std::vector<FileWvIn *> attacks_;
-  std::vector<FileLoop *> loops_;
+  std::vector<FileWvIn<T> *> attacks_;
+  std::vector<FileLoop<T> *> loops_;
   OnePole<T> filter_;
   T baseFrequency_;
   std::vector<T> attackRatios_;
@@ -82,7 +82,7 @@ class Sampler : public Instrmnt<T>
 
 
 template<typename T>
-Sample<T>::Sampler( void )
+Sampler<T>::Sampler( void )
 {
   // We don't make the waves here yet, because
   // we don't know what they will be.
@@ -93,7 +93,7 @@ Sample<T>::Sampler( void )
 
 
 template<typename T>
-Sample<T>::~Sampler( void )
+Sampler<T>::~Sampler( void )
 {
   unsigned int i;
   for ( i=0; i<attacks_.size(); i++ ) delete attacks_[i];
@@ -102,7 +102,7 @@ Sample<T>::~Sampler( void )
 
 
 template<typename T>
-void Sample<T>::keyOn( void )
+void Sampler<T>::keyOn( void )
 {
   // Reset all attack waves.
   for ( unsigned int i=0; i<attacks_.size(); i++ )
@@ -115,7 +115,7 @@ void Sample<T>::keyOn( void )
 
 
 template<typename T>
-void Sample<T>::keyOff( void )
+void Sampler<T>::keyOff( void )
 {
   adsr_.keyOff();
 }
@@ -123,7 +123,7 @@ void Sample<T>::keyOff( void )
 
 
 template<typename T>
-void Sample<T>::noteOff( T amplitude )
+void Sampler<T>::noteOff( T amplitude )
 {
   this->keyOff();
 }

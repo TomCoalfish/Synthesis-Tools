@@ -1,13 +1,10 @@
 #pragma once
 #include <cmath>
+#include "SoundAlchemy.hpp"
 
 
-using std::pow;
-using std::tan;
-using std::sqrt;
-
-namespace SoundWave {
-
+namespace SoundAlchemy::Filters
+{
 //==============================================================================
 
 
@@ -165,7 +162,7 @@ private:
 template<typename T>
 T pitchToFreq(T pitch)
 {
-    return pow(2, (pitch - 69) / 12) * 440;
+    return std::pow(2, (pitch - 69) / 12) * 440;
 }
 
 //==============================================================================
@@ -173,7 +170,7 @@ T pitchToFreq(T pitch)
 template<typename T>
 T freqToPitch(T freq)
 {
-    return 69 + 12 * log2(freq / 440);
+    return 69 + 12 * std::log2(freq / 440);
 }
 
 //==============================================================================
@@ -393,7 +390,7 @@ void TStateVariableFilter<T>::calcFilter()
         // prewarp the cutoff (for bilinear-transform filters)
         T wd = static_cast<T>(cutoffFreq * 2.0f * M_PI);
         T Tt = 1.0f / (T)sampleRate;
-        T wa = (2.0f / Tt) * tan(wd * Tt / 2.0f);
+        T wa = (2.0f / Tt) * std::tan(wd * Tt / 2.0f);
 
         // Calculate g (gain element of integrator)
         gCoeff = wa * Tt / 2.0f;			// Calculate g (gain element of integrator)

@@ -81,8 +81,8 @@ class NRev : public Effect<T>
 
  protected:
 
-  Delay allpassDelays_[8];
-  Delay combDelays_[6];
+  Delay<T> allpassDelays_[8];
+  Delay<T> combDelays_[6];
   T allpassCoefficient_;
   T combCoefficient_[6];
 	T lowpassState_;
@@ -99,7 +99,7 @@ inline T NRev<T>::lastOut( unsigned int channel )
   }
 #endif
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 
@@ -142,19 +142,19 @@ inline T NRev<T>::tick( T input, unsigned int channel )
   temp2 = allpassCoefficient_ * temp;
   temp2 += temp1;
   allpassDelays_[4].tick( temp2 );
-  lastFrame_[0] = effectMix_*( -( allpassCoefficient_ * temp2 ) + temp );
+  this->lastFrame_[0] = this->effectMix_*( -( allpassCoefficient_ * temp2 ) + temp );
     
   temp = allpassDelays_[5].lastOut();
   temp3 = allpassCoefficient_ * temp;
   temp3 += temp1;
   allpassDelays_[5].tick( temp3 );
-  lastFrame_[1] = effectMix_*( - ( allpassCoefficient_ * temp3 ) + temp );
+  this->lastFrame_[1] = this->effectMix_*( - ( allpassCoefficient_ * temp3 ) + temp );
 
-  temp = ( 1.0 - effectMix_ ) * input;
-  lastFrame_[0] += temp;
-  lastFrame_[1] += temp;
+  temp = ( 1.0 - this->effectMix_ ) * input;
+  this->lastFrame_[0] += temp;
+  this->lastFrame_[1] += temp;
     
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 /***************************************************/
@@ -182,10 +182,10 @@ NRev<T>::NRev( T T60 )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  lastFrame_.resize( 1, 2, 0.0 ); // resize lastFrame_ for stereo output
+  this->lastFrame_.resize( 1, 2, 0.0 ); // resize this->lastFrame_ for stereo output
 
   int lengths[15] = {1433, 1601, 1867, 2053, 2251, 2399, 347, 113, 37, 59, 53, 43, 37, 29, 19};
-  double scaler = Stk::sampleRate() / 25641.0;
+  double scaler = stk::sampleRate() / 25641.0;
 
   int delay, i;
   for ( i=0; i<15; i++ ) {
@@ -198,7 +198,7 @@ NRev<T>::NRev( T T60 )
   for ( i=0; i<6; i++ ) {
     combDelays_[i].setMaximumDelay( lengths[i] );
     combDelays_[i].setDelay( lengths[i] );
-    combCoefficient_[i] = pow(10.0, (-3 * lengths[i] / (T60 * Stk::sampleRate())));
+    combCoefficient_[i] = pow(10.0, (-3 * lengths[i] / (T60 * stk::sampleRate())));
   }
 
   for ( i=0; i<8; i++ ) {
@@ -208,7 +208,7 @@ NRev<T>::NRev( T T60 )
 
   this->setT60( T60 );
   allpassCoefficient_ = 0.7;
-  effectMix_ = 0.3;
+  this->effectMix_ = 0.3;
   this->clear();
 }
 
@@ -219,8 +219,8 @@ void NRev<T>::clear()
   int i;
   for (i=0; i<6; i++) combDelays_[i].clear();
   for (i=0; i<8; i++) allpassDelays_[i].clear();
-  lastFrame_[0] = 0.0;
-  lastFrame_[1] = 0.0;
+  this->lastFrame_[0] = 0.0;
+  this->lastFrame_[1] = 0.0;
   lowpassState_ = 0.0;
 }
 
@@ -234,7 +234,7 @@ void NRev<T>::setT60( T T60 )
   }
 
   for ( int i=0; i<6; i++ )
-    combCoefficient_[i] = pow(10.0, (-3.0 * combDelays_[i].getDelay() / (T60 * Stk::sampleRate())));
+    combCoefficient_[i] = pow(10.0, (-3.0 * combDelays_[i].getDelay() / (T60 * stk::sampleRate())));
 }
 
 template<typename T>
@@ -251,7 +251,7 @@ StkFrames<T>& NRev<T>::tick( StkFrames<T>& frames, unsigned int channel )
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
     *samples = tick( *samples );
-    *(samples+1) = lastFrame_[1];
+    *(samples+1) = this->lastFrame_[1];
   }
 
   return frames;
@@ -272,7 +272,7 @@ StkFrames<T>& NRev<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames, unsig
   unsigned int iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
     *oSamples = tick( *iSamples );
-    *(oSamples+1) = lastFrame_[1];
+    *(oSamples+1) = this->lastFrame_[1];
   }
 
   return iFrames;

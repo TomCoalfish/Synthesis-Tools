@@ -111,16 +111,16 @@ inline T Brass<T>::tick( unsigned int )
   if ( deltaPressure > 1.0 ) deltaPressure = 1.0;        // Non-linear saturation.
 
   // The following input scattering assumes the mouthPressure = area.
-  lastFrame_[0] = deltaPressure * mouthPressure + ( 1.0 - deltaPressure) * borePressure;
-  lastFrame_[0] = delayLine_.tick( dcBlock_.tick( lastFrame_[0] ) );
+  this->lastFrame_[0] = deltaPressure * mouthPressure + ( 1.0 - deltaPressure) * borePressure;
+  this->lastFrame_[0] = delayLine_.tick( dcBlock_.tick( this->lastFrame_[0] ) );
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& Brass<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Brass::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -138,7 +138,7 @@ inline StkFrames<T>& Brass<T>::tick( StkFrames<T>& frames, unsigned int channel 
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -176,7 +176,7 @@ Brass<T>::Brass( T lowestFrequency )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  unsigned long nDelays = (unsigned long) ( Stk::sampleRate() / lowestFrequency );
+  unsigned long nDelays = (unsigned long) ( sampleRate() / lowestFrequency );
   delayLine_.setMaximumDelay( nDelays + 1 );
 
   lipFilter_.setGain( 0.03 );
@@ -218,7 +218,7 @@ void Brass<T>::setFrequency( T frequency )
 #endif
 
   // Fudge correction for filter delays.
-  slideTarget_ = ( Stk::sampleRate() / frequency * 2.0 ) + 3.0;
+  slideTarget_ = ( sampleRate() / frequency * 2.0 ) + 3.0;
   delayLine_.setDelay( slideTarget_ ); // play a harmonic
 
   lipTarget_ = frequency;
@@ -280,7 +280,7 @@ template<typename T>
 void Brass<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Brass::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }

@@ -56,12 +56,12 @@ inline T JetTable<T>::tick( T input )
   // Perform "table lookup" using a polynomial
   // calculation (x^3 - x), which approximates
   // the jet sigmoid behavior.
-  lastFrame_[0] = input * (input * input - 1.0);
+  this->lastFrame_[0] = input * (input * input - 1.0);
 
   // Saturate at +/- 1.0.
-  if ( lastFrame_[0] > 1.0 ) lastFrame_[0] = 1.0;
-  if ( lastFrame_[0] < -1.0 ) lastFrame_[0] = -1.0; 
-  return lastFrame_[0];
+  if ( this->lastFrame_[0] > 1.0 ) this->lastFrame_[0] = 1.0;
+  if ( this->lastFrame_[0] < -1.0 ) this->lastFrame_[0] = -1.0; 
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -82,10 +82,11 @@ inline StkFrames<T>& JetTable<T>::tick( StkFrames<T>& frames, unsigned int chann
     if ( *samples < -1.0) *samples = -1.0;
   }
 
-  lastFrame_[0] = *(samples-hop);
+  this->lastFrame_[0] = *(samples-hop);
   return frames;
 }
 
+template<typename T>
 inline StkFrames<T>& JetTable<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames, unsigned int iChannel, unsigned int oChannel )
 {
 #if defined(_STK_DEBUG_)
@@ -104,7 +105,7 @@ inline StkFrames<T>& JetTable<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFr
     if ( *oSamples < -1.0) *oSamples = -1.0;
   }
 
-  lastFrame_[0] = *(oSamples-oHop);
+  this->lastFrame_[0] = *(oSamples-oHop);
   return iFrames;
 }
 

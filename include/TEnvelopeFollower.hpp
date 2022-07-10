@@ -2,7 +2,7 @@
 
 #include "SoundAlchemy.hpp"
 
-namespace SoundAlchemy
+namespace SoundAlchemy::Envelopes
 {
     template<typename T>
     class TEnvelopeFollower

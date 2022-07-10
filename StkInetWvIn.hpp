@@ -61,8 +61,8 @@ public:
     provided.
   */
   void listen( int port = 2006, unsigned int nChannels = 1,
-               Stk::StkFormat format = STK_SINT16,
-               Socket::ProtocolType protocol = Socket::PROTO_TCP );
+               StkFormat format = STK_SINT16,
+               ProtocolType protocol = PROTO_TCP );
 
   //! Returns true is an input connection exists or input data remains in the queue.
   /*!
@@ -119,9 +119,9 @@ protected:
   // Read buffered socket data into the data buffer ... will block if none available.
   int readData( void );
 
-  Socket *soket_;
-  Thread thread_;
-  Mutex mutex_;
+  Socket<T> *soket_;
+  Thread<T> thread_;
+  Mutex<T> mutex_;
   char *buffer_;
   unsigned long bufferFrames_;
   unsigned long bufferBytes_;
@@ -134,7 +134,7 @@ protected:
   bool connected_;
   int fd_;
   ThreadInfo threadInfo_;
-  Stk::StkFormat dataType_;
+  StkFormat dataType_;
 
 };
 
@@ -142,7 +142,7 @@ template<typename T>
 inline T InetWvIn<T>::lastOut( unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
-  if ( channel >= data_.channels() ) {
+  if ( channel >= this->data_.channels() ) {
     oStream_ << "InetWvIn::lastOut(): channel argument and data stream are incompatible!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
@@ -151,7 +151,7 @@ inline T InetWvIn<T>::lastOut( unsigned int channel )
   // If no connection and we've output all samples in the queue, return.
   if ( !connected_ && bytesFilled_ == 0 && bufferCounter_ == 0 ) return 0.0;
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 /***************************************************/
@@ -181,7 +181,17 @@ inline T InetWvIn<T>::lastOut( unsigned int channel )
 /***************************************************/
 
 
-extern "C" THREAD_RETURN THREAD_TYPE inputThread( void * ptr );
+template<typename T> THREAD_RETURN THREAD_TYPE inputThread( void * ptr )
+{
+  ThreadInfo *info = (ThreadInfo *)ptr;
+
+  while ( !info->finished ) {
+    ((InetWvIn<T> *) info->object)->receive();
+  }
+
+  return 0;
+}
+
 
 template<typename T>
 InetWvIn<T>::InetWvIn( unsigned long bufferFrames, unsigned int nBuffers )
@@ -191,7 +201,7 @@ InetWvIn<T>::InetWvIn( unsigned long bufferFrames, unsigned int nBuffers )
   threadInfo_.object = (void *) this;
 
   // Start the input thread.
-  if ( !thread_.start( &inputThread, &threadInfo_ ) ) {
+  if ( !thread_.start( &inputThread<T>, &threadInfo_ ) ) {
     oStream_ << "InetWvIn(): unable to start input thread in constructor!";
     handleError( StkError::PROCESS_THREAD );
   }
@@ -210,7 +220,7 @@ InetWvIn<T>::~InetWvIn()
 
 template<typename T>
 void InetWvIn<T>::listen( int port, unsigned int nChannels,
-                         Stk::StkFormat format, Socket::ProtocolType protocol )
+                         StkFormat format, ProtocolType protocol )
 {
   mutex_.lock();
 
@@ -238,16 +248,16 @@ void InetWvIn<T>::listen( int port, unsigned int nChannels,
     bufferBytes_ = bufferBytes;
   }
 
-  data_.resize( bufferFrames_, nChannels );
-  lastFrame_.resize( 1, nChannels, 0.0 );
+  this->data_.resize( bufferFrames_, nChannels );
+  this->lastFrame_.resize( 1, nChannels, 0.0 );
 
   bufferCounter_ = 0;
   writePoint_ = 0;
   readPoint_ = 0;
   bytesFilled_ = 0;
 
-  if ( protocol == Socket::PROTO_TCP ) {
-    TcpServer *socket = new TcpServer( port );
+  if ( protocol == PROTO_TCP ) {
+    TcpServer<T> *socket = new TcpServer<T>( port );
     oStream_ << "InetWvIn:listen(): waiting for TCP connection on port " << socket->port() << " ... ";
     handleError( StkError::STATUS );
     fd_ = socket->accept();
@@ -257,10 +267,10 @@ void InetWvIn<T>::listen( int port, unsigned int nChannels,
     }
     oStream_ << "InetWvIn::listen(): TCP socket connection made!";
     handleError( StkError::STATUS );
-    soket_ = (Socket *) socket;
+    soket_ = (Socket<T>*) socket;
   }
   else {
-    soket_ = new UdpSocket( port );
+    soket_ = new UdpSocket<T>( port );
     fd_ = soket_->id();
   }
 
@@ -273,7 +283,7 @@ template<typename T>
 void InetWvIn<T>::receive( void )
 {
   if ( !connected_ ) {
-    Stk::sleep(100);
+    stk::sleep(100);
     return;
   }
 
@@ -309,7 +319,7 @@ void InetWvIn<T>::receive( void )
     else {
       // Sleep 10 milliseconds AFTER unlocking mutex.
       mutex_.unlock();
-      Stk::sleep( 10 );
+      stk::sleep( 10 );
     }
   }
 }
@@ -326,9 +336,9 @@ int InetWvIn<T>::readData( void )
   // adequate network bandwidth and speed).
 
   // Wait until data is ready.
-  unsigned long bytes = data_.size() * dataBytes_;
+  unsigned long bytes = this->data_.size() * dataBytes_;
   while ( connected_ && bytesFilled_ < bytes )
-    Stk::sleep( 10 );
+    stk::sleep( 10 );
 
   if ( !connected_ && bytesFilled_ == 0 ) return 0;
   bytes = ( bytesFilled_ < bytes ) ? bytesFilled_ : bytes;
@@ -344,8 +354,8 @@ int InetWvIn<T>::readData( void )
 #ifdef __LITTLE_ENDIAN__
       swap16((unsigned char *) buf);
 #endif
-      data_[i] = (T) *buf++;
-      data_[i] *= gain;
+      this->data_[i] = (T) *buf++;
+      this->data_[i] *= gain;
     }
   }
   else if ( dataType_ == STK_SINT32 ) {
@@ -355,8 +365,8 @@ int InetWvIn<T>::readData( void )
 #ifdef __LITTLE_ENDIAN__
       swap32((unsigned char *) buf);
 #endif
-      data_[i] = (T) *buf++;
-      data_[i] *= gain;
+      this->data_[i] = (T) *buf++;
+      this->data_[i] *= gain;
     }
   }
   else if ( dataType_ == STK_FLOAT32 ) {
@@ -365,7 +375,7 @@ int InetWvIn<T>::readData( void )
 #ifdef __LITTLE_ENDIAN__
       swap32((unsigned char *) buf);
 #endif
-      data_[i] = (T) *buf++;
+      this->data_[i] = (T) *buf++;
     }
   }
   else if ( dataType_ == STK_FLOAT64 ) {
@@ -374,15 +384,15 @@ int InetWvIn<T>::readData( void )
 #ifdef __LITTLE_ENDIAN__
       swap64((unsigned char *) buf);
 #endif
-      data_[i] = (T) *buf++;
+      this->data_[i] = (T) *buf++;
     }
   }
   else if ( dataType_ == STK_SINT8 ) {
     gain = 1.0 / 127.0;
     signed char *buf = (signed char *) (buffer_+readPoint_);
     for (int i=0; i<samples; i++ ) {
-      data_[i] = (T) *buf++;
-      data_[i] *= gain;
+      this->data_[i] = (T) *buf++;
+      this->data_[i] *= gain;
     }
   }
 
@@ -392,9 +402,10 @@ int InetWvIn<T>::readData( void )
   bytesFilled_ -= bytes;
 
   mutex_.unlock();
-  return samples / data_.channels();
+  return samples / this->data_.channels();
 }
 
+template<typename T>
 bool InetWvIn<T>::isConnected( void )
 {
   if ( bytesFilled_ > 0 || bufferCounter_ > 0 )
@@ -403,6 +414,7 @@ bool InetWvIn<T>::isConnected( void )
     return connected_;
 }
 
+template<typename T>
 T InetWvIn<T>::tick( unsigned int channel )
 {
   // If no connection and we've output all samples in the queue, return 0.0.
@@ -415,7 +427,7 @@ T InetWvIn<T>::tick( unsigned int channel )
   }
 
 #if defined(_STK_DEBUG_)
-  if ( channel >= data_.channels() ) {
+  if ( channel >= this->data_.channels() ) {
     oStream_ << "InetWvIn::tick(): channel argument is incompatible with data stream!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
@@ -424,16 +436,16 @@ T InetWvIn<T>::tick( unsigned int channel )
   if ( bufferCounter_ == 0 )
     bufferCounter_ = readData();
 
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
   long index = ( bufferFrames_ - bufferCounter_ ) * nChannels;
   for ( unsigned int i=0; i<nChannels; i++ )
-    lastFrame_[i] = data_[index++];
+    this->lastFrame_[i] = this->data_[index++];
 
   bufferCounter_--;
   if ( bufferCounter_ < 0 )
     bufferCounter_ = 0;
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 
@@ -442,7 +454,7 @@ template<typename T>
 StkFrames<T>& InetWvIn<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
-  if ( channel > frames.channels() - data_.channels() ) {
+  if ( channel > frames.channels() - this->data_.channels() ) {
     oStream_ << "InetWvIn::tick(): channel and StkFrames<T> arguments are incompatible!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
@@ -458,11 +470,11 @@ StkFrames<T>& InetWvIn<T>::tick( StkFrames<T>& frames, unsigned int channel )
   }
 
   T *samples = &frames[channel];
-  unsigned int j, hop = frames.channels() - data_.channels();
+  unsigned int j, hop = frames.channels() - this->data_.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
     this->tick();
-    for ( j=0; j<lastFrame_.channels(); j++ )
-      *samples++ = lastFrame_[j];
+    for ( j=0; j<this->lastFrame_.channels(); j++ )
+      *samples++ = this->lastFrame_[j];
   }
 
   return frames;

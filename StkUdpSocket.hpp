@@ -1,5 +1,5 @@
 #pragma once
-#include "Socket.hpp"
+#include "StkSocket.hpp"
 #include <cstring>
 #include <sstream>
 
@@ -114,8 +114,8 @@ UdpSocket<T>::UdpSocket(int port )
 #endif
 
   // Create the UDP socket
-  soket_ = ::socket( AF_INET, SOCK_DGRAM, IPPROTO_UDP );
-  if ( soket_ < 0 ) {
+  this->soket_ = ::socket( AF_INET, SOCK_DGRAM, IPPROTO_UDP );
+  if ( this->soket_ < 0 ) {
     oStream_ << "UdpSocket: Couldn't create UDP socket!";
     handleError( StkError::PROCESS_SOCKET );
   }
@@ -126,12 +126,12 @@ UdpSocket<T>::UdpSocket(int port )
   address.sin_port = htons( port );
 
   // Bind socket to the appropriate port and interface (INADDR_ANY)
-  if ( bind(soket_, (struct sockaddr *)&address, sizeof(address)) < 0 ) {
+  if ( bind(this->soket_, (struct sockaddr *)&address, sizeof(address)) < 0 ) {
     oStream_ << "UdpSocket: Couldn't bind socket in constructor!";
     handleError( StkError::PROCESS_SOCKET );
   }
 
-  port_ = port;
+  this->port_ = port;
 }
 
 template<typename T>
@@ -164,24 +164,24 @@ void UdpSocket<T>::setAddress( struct sockaddr_in *address, int port, std::strin
 template<typename T>
 int UdpSocket<T>::writeBuffer( const void *buffer, long bufferSize, int flags )
 {
-  if ( !isValid( soket_ ) || !validAddress_ ) return -1;
-  return sendto( soket_, (const char *)buffer, bufferSize, flags, (struct sockaddr *)&address_, sizeof(address_) );
+  if ( !isValid( this->soket_ ) || !validAddress_ ) return -1;
+  return sendto( this->soket_, (const char *)buffer, bufferSize, flags, (struct sockaddr *)&address_, sizeof(address_) );
 }
 
 template<typename T>
 int UdpSocket<T>::readBuffer( void *buffer, long bufferSize, int flags )
 {
-  if ( !isValid( soket_ ) ) return -1;
-  return recvfrom( soket_, (char *)buffer, bufferSize, flags, NULL, NULL );
+  if ( !isValid( this->soket_ ) ) return -1;
+  return recvfrom( this->soket_, (char *)buffer, bufferSize, flags, NULL, NULL );
 }
 
 template<typename T>
 int UdpSocket<T>::writeBufferTo( const void *buffer, long bufferSize, int port, std::string hostname, int flags )
 {
-  if ( !isValid( soket_ ) ) return -1;
+  if ( !isValid( this->soket_ ) ) return -1;
   struct sockaddr_in address;
   this->setAddress( &address, port, hostname );
-  return sendto( soket_, (const char *)buffer, bufferSize, flags, (struct sockaddr *)&address, sizeof(address) );
+  return sendto( this->soket_, (const char *)buffer, bufferSize, flags, (struct sockaddr *)&address, sizeof(address) );
 }
 
 } // stk namespace

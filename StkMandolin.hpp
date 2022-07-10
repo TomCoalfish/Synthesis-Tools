@@ -105,17 +105,17 @@ inline T Mandolin<T>::tick( unsigned int )
   if ( !soundfile_[mic_].isFinished() )
     temp = soundfile_[mic_].tick() * pluckAmplitude_;
 
-  lastFrame_[0] = strings_[0].tick( temp );
-  lastFrame_[0] += strings_[1].tick( temp );
-  lastFrame_[0] *= 0.2;
+  this->lastFrame_[0] = strings_[0].tick( temp );
+  this->lastFrame_[0] += strings_[1].tick( temp );
+  this->lastFrame_[0] *= 0.2;
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& Mandolin<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Mandolin::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -133,7 +133,7 @@ inline StkFrames<T>& Mandolin<T>::tick( StkFrames<T>& frames, unsigned int chann
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -177,18 +177,18 @@ Mandolin<T>::Mandolin( T lowestFrequency )
   }
 
   // Concatenate the STK rawwave path to the rawwave files
-  soundfile_[0].openFile( (Stk::rawwavePath() + "mand1.raw").c_str(), true );
-  soundfile_[1].openFile( (Stk::rawwavePath() + "mand2.raw").c_str(), true );
-  soundfile_[2].openFile( (Stk::rawwavePath() + "mand3.raw").c_str(), true );
-  soundfile_[3].openFile( (Stk::rawwavePath() + "mand4.raw").c_str(), true );
-  soundfile_[4].openFile( (Stk::rawwavePath() + "mand5.raw").c_str(), true );
-  soundfile_[5].openFile( (Stk::rawwavePath() + "mand6.raw").c_str(), true );
-  soundfile_[6].openFile( (Stk::rawwavePath() + "mand7.raw").c_str(), true );
-  soundfile_[7].openFile( (Stk::rawwavePath() + "mand8.raw").c_str(), true );
-  soundfile_[8].openFile( (Stk::rawwavePath() + "mand9.raw").c_str(), true );
-  soundfile_[9].openFile( (Stk::rawwavePath() + "mand10.raw").c_str(), true );
-  soundfile_[10].openFile( (Stk::rawwavePath() + "mand11.raw").c_str(), true );
-  soundfile_[11].openFile( (Stk::rawwavePath() + "mand12.raw").c_str(), true );
+  soundfile_[0].openFile( (stk::rawwavePath() + "mand1.raw").c_str(), true );
+  soundfile_[1].openFile( (stk::rawwavePath() + "mand2.raw").c_str(), true );
+  soundfile_[2].openFile( (stk::rawwavePath() + "mand3.raw").c_str(), true );
+  soundfile_[3].openFile( (stk::rawwavePath() + "mand4.raw").c_str(), true );
+  soundfile_[4].openFile( (stk::rawwavePath() + "mand5.raw").c_str(), true );
+  soundfile_[5].openFile( (stk::rawwavePath() + "mand6.raw").c_str(), true );
+  soundfile_[6].openFile( (stk::rawwavePath() + "mand7.raw").c_str(), true );
+  soundfile_[7].openFile( (stk::rawwavePath() + "mand8.raw").c_str(), true );
+  soundfile_[8].openFile( (stk::rawwavePath() + "mand9.raw").c_str(), true );
+  soundfile_[9].openFile( (stk::rawwavePath() + "mand10.raw").c_str(), true );
+  soundfile_[10].openFile( (stk::rawwavePath() + "mand11.raw").c_str(), true );
+  soundfile_[11].openFile( (stk::rawwavePath() + "mand12.raw").c_str(), true );
 
   mic_ = 0;
   detuning_ = 0.995;
@@ -240,7 +240,7 @@ template<typename T>
 void Mandolin<T>::setBodySize( T size )
 {
   // Scale the commuted body response by its sample rate (22050).
-  T rate = size * 22050.0 / Stk::sampleRate();
+  T rate = size * 22050.0 / stk::sampleRate();
   for ( int i=0; i<12; i++ )
     soundfile_[i].setRate( rate );
 }
@@ -305,7 +305,7 @@ template<typename T>
 void Mandolin<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( stk::inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Mandolin::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }

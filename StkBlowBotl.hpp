@@ -111,15 +111,15 @@ inline T BlowBotl<T>::tick( unsigned int )
   randPressure *= (1.0 + pressureDiff);
 
   resonator_.tick( breathPressure + randPressure - ( jetTable_.tick( pressureDiff ) * pressureDiff ) );
-  lastFrame_[0] = 0.2 * outputGain_ * dcBlock_.tick( pressureDiff );
+  this->lastFrame_[0] = 0.2 * outputGain_ * dcBlock_.tick( pressureDiff );
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& BlowBotl<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "BlowBotl::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -137,7 +137,7 @@ inline StkFrames<T>& BlowBotl<T>::tick( StkFrames<T>& frames, unsigned int chann
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -184,6 +184,7 @@ BlowBotl<T>::~BlowBotl( void )
 {
 }
 
+template<typename T>
 void BlowBotl<T>::clear( void )
 {
   resonator_.clear();

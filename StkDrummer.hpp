@@ -65,8 +65,8 @@ class Drummer : public Instrmnt<T>
 
  protected:
 
-  FileWvIn waves_[DRUM_POLYPHONY];
-  OnePole  filters_[DRUM_POLYPHONY];
+  FileWvIn<T> waves_[DRUM_POLYPHONY];
+  OnePole<T>  filters_[DRUM_POLYPHONY];
   std::vector<int> soundOrder_;
   std::vector<int> soundNumber_;
   int      nSounding_;
@@ -75,8 +75,8 @@ class Drummer : public Instrmnt<T>
 template<typename T>
 inline T Drummer<T>::tick( unsigned int )
 {
-  lastFrame_[0] = 0.0;
-  if ( nSounding_ == 0 ) return lastFrame_[0];
+  this->lastFrame_[0] = 0.0;
+  if ( nSounding_ == 0 ) return this->lastFrame_[0];
 
   for ( int i=0; i<DRUM_POLYPHONY; i++ ) {
     if ( soundOrder_[i] >= 0 ) {
@@ -90,17 +90,17 @@ inline T Drummer<T>::tick( unsigned int )
         nSounding_--;
       }
       else
-        lastFrame_[0] += filters_[i].tick( waves_[i].tick() );
+        this->lastFrame_[0] += filters_[i].tick( waves_[i].tick() );
     }
   }
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& Drummer<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Drummer::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -118,7 +118,7 @@ inline StkFrames<T>& Drummer<T>::tick( StkFrames<T>& frames, unsigned int channe
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -243,9 +243,9 @@ void Drummer<T>::noteOn( T instrument, T amplitude )
     //std::cout << "iWave = " << iWave << ", nSounding = " << nSounding_ << ", soundOrder[] = " << soundOrder_[iWave] << std::endl;
 
     // Concatenate the STK rawwave path to the rawwave file
-    waves_[iWave].openFile( (Stk::rawwavePath() + waveNames[ genMIDIMap[ noteNumber ] ]).c_str(), true );
-    if ( Stk::sampleRate() != 22050.0 )
-      waves_[iWave].setRate( 22050.0 / Stk::sampleRate() );
+    waves_[iWave].openFile( (rawwavePath() + waveNames[ genMIDIMap[ noteNumber ] ]).c_str(), true );
+    if ( sampleRate() != 22050.0 )
+      waves_[iWave].setRate( 22050.0 / sampleRate() );
     filters_[iWave].setPole( 0.999 - (amplitude * 0.6) );
     filters_[iWave].setGain( amplitude );
   }

@@ -257,8 +257,8 @@ template<typename T>
 const char *Phonemes<T>::name( unsigned int index )
 {
   if ( index > 31 ) {
-    oStream_ << "Phonemes::name: index is greater than 31!";
-    handleError( oStream_.str(), StkError::WARNING );
+    Phonemes<T>::oStream_ << "Phonemes::name: index is greater than 31!";
+    Phonemes<T>::handleError( Phonemes<T>::oStream_.str(), StkError::WARNING );
     return 0;
   }
   return phonemeNames[index];
@@ -268,8 +268,8 @@ template<typename T>
 T Phonemes<T>::voiceGain( unsigned int index )
 {
   if ( index > 31 ) {
-    oStream_ << "Phonemes::voiceGain: index is greater than 31!";
-    handleError( oStream_.str(), StkError::WARNING );
+    Phonemes<T>::oStream_ << "Phonemes::voiceGain: index is greater than 31!";
+    Phonemes<T>::handleError( Phonemes<T>::oStream_.str(), StkError::WARNING );
     return 0.0;
   }
   return phonemeGains[index][0];
@@ -279,8 +279,8 @@ template<typename T>
 T Phonemes<T>::noiseGain( unsigned int index )
 {
   if ( index > 31 ) {
-    oStream_ << "Phonemes::noiseGain: index is greater than 31!";
-    handleError( oStream_.str(), StkError::WARNING );
+    Phonemes<T>::oStream_ << "Phonemes::noiseGain: index is greater than 31!";
+    Phonemes<T>::handleError( Phonemes<T>::oStream_.str(), StkError::WARNING );
     return 0.0;
   }
   return phonemeGains[index][1];
@@ -290,13 +290,13 @@ template<typename T>
 T Phonemes<T>::formantFrequency( unsigned int index, unsigned int partial )
 {
   if ( index > 31 ) {
-    oStream_ << "Phonemes::formantFrequency: index is greater than 31!";
-    handleError( oStream_.str(), StkError::WARNING );
+    Phonemes<T>::oStream_ << "Phonemes::formantFrequency: index is greater than 31!";
+    Phonemes<T>::handleError( Phonemes<T>::oStream_.str(), StkError::WARNING );
     return 0.0;
   }
   if ( partial > 3 ) {
-    oStream_ << "Phonemes::formantFrequency: partial is greater than 3!";
-    handleError( oStream_.str(), StkError::WARNING );
+    Phonemes<T>::oStream_ << "Phonemes::formantFrequency: partial is greater than 3!";
+    Phonemes<T>::handleError( Phonemes<T>::oStream_.str(), StkError::WARNING );
     return 0.0;
   }
   return phonemeParameters[index][partial][0];
@@ -306,13 +306,13 @@ template<typename T>
 T Phonemes<T>::formantRadius( unsigned int index, unsigned int partial )
 {
   if ( index > 31 ) {
-    oStream_ << "Phonemes::formantRadius: index is greater than 31!";
-    handleError( oStream_.str(), StkError::WARNING );
+    Phonemes<T>::oStream_ << "Phonemes::formantRadius: index is greater than 31!";
+    Phonemes<T>::handleError( Phonemes<T>::oStream_.str(), StkError::WARNING );
     return 0.0;
   }
   if ( partial > 3 ) {
-    oStream_ << "Phonemes::formantRadius: partial is greater than 3!";
-    handleError( oStream_.str(), StkError::WARNING );
+    Phonemes<T>::oStream_ << "Phonemes::formantRadius: partial is greater than 3!";
+    Phonemes<T>::handleError( Phonemes<T>::oStream_.str(), StkError::WARNING );
     return 0.0;
   }
   return phonemeParameters[index][partial][1];
@@ -322,13 +322,13 @@ template<typename T>
 T Phonemes<T>::formantGain( unsigned int index, unsigned int partial )
 {
   if ( index > 31 ) {
-    oStream_ << "Phonemes::formantGain: index is greater than 31!";
-    handleError( oStream_.str(), StkError::WARNING );
+    Phonemes<T>::oStream_ << "Phonemes::formantGain: index is greater than 31!";
+    Phonemes<T>::handleError( Phonemes<T>::oStream_.str(), StkError::WARNING );
     return 0.0;
   }
   if ( partial > 3 ) {
-    oStream_ << "Phonemes::formantGain: partial is greater than 3!";
-    handleError( oStream_.str(), StkError::WARNING );
+    Phonemes<T>::oStream_ << "Phonemes::formantGain: partial is greater than 3!";
+    Phonemes<T>::handleError( Phonemes<T>::oStream_.str(), StkError::WARNING );
     return 0.0;
   }
   return phonemeParameters[index][partial][2];

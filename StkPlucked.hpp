@@ -69,10 +69,10 @@ class Plucked : public Instrmnt<T>
 
  protected:  
 
-  DelayA   delayLine_;
-  OneZero  loopFilter_;
-  OnePole  pickFilter_;
-  Noise    noise_;
+  DelayA<T>   delayLine_;
+  OneZero<T>  loopFilter_;
+  OnePole<T>  pickFilter_;
+  Noise<T>    noise_;
 
   T loopGain_;
 };
@@ -81,14 +81,14 @@ template<typename T>
 inline T Plucked<T>::tick( unsigned int )
 {
   // Here's the whole inner loop of the instrument!!
-  return lastFrame_[0] = 3.0 * delayLine_.tick( loopFilter_.tick( delayLine_.lastOut() * loopGain_ ) ); 
+  return this->lastFrame_[0] = 3.0 * delayLine_.tick( loopFilter_.tick( delayLine_.lastOut() * loopGain_ ) ); 
 }
 
 
 template<typename T>
 inline StkFrames<T>& Plucked<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Plucked::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -106,7 +106,7 @@ inline StkFrames<T>& Plucked<T>::tick( StkFrames<T>& frames, unsigned int channe
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -144,7 +144,7 @@ Plucked<T>::Plucked( T lowestFrequency )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  unsigned long delays = (unsigned long) ( Stk::sampleRate() / lowestFrequency );
+  unsigned long delays = (unsigned long) ( stk::sampleRate() / lowestFrequency );
   delayLine_.setMaximumDelay( delays + 1 );
 
   this->setFrequency( 220.0 );
@@ -177,7 +177,7 @@ void Plucked<T>::setFrequency( T frequency )
 #endif
 
   // Delay = length - filter delay.
-  T delay = ( Stk::sampleRate() / frequency ) - loopFilter_.phaseDelay( frequency );
+  T delay = ( stk::sampleRate() / frequency ) - loopFilter_.phaseDelay( frequency );
   delayLine_.setDelay( delay );
 
   loopGain_ = 0.995 + (frequency * 0.000005);

@@ -81,18 +81,18 @@ template<typename T>
 inline T ReedTable<T>::tick( T input )    
 {
   // The input is differential pressure across the reed.
-  lastFrame_[0] = offset_ + (slope_ * input);
+  this->lastFrame_[0] = offset_ + (slope_ * input);
 
   // If output is > 1, the reed has slammed shut and the
   // reflection function value saturates at 1.0.
-  if ( lastFrame_[0] > 1.0) lastFrame_[0] = (T) 1.0;
+  if ( this->lastFrame_[0] > 1.0) this->lastFrame_[0] = (T) 1.0;
 
   // This is nearly impossible in a physical system, but
   // a reflection function value of -1.0 corresponds to
   // an open end (and no discontinuity in bore profile).
-  if ( lastFrame_[0] < -1.0) lastFrame_[0] = (T) -1.0;
+  if ( this->lastFrame_[0] < -1.0) this->lastFrame_[0] = (T) -1.0;
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -100,8 +100,8 @@ inline StkFrames<T>& ReedTable<T>::tick( StkFrames<T>& frames, unsigned int chan
 {
 #if defined(_STK_DEBUG_)
   if ( channel >= frames.channels() ) {
-    oStream_ << "ReedTable::tick(): channel and StkFrames<T> arguments are incompatible!";
-    handleError( StkError::FUNCTION_ARGUMENT );
+    this->oStream_ << "ReedTable::tick(): channel and StkFrames<T> arguments are incompatible!";
+    this->handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
@@ -113,7 +113,7 @@ inline StkFrames<T>& ReedTable<T>::tick( StkFrames<T>& frames, unsigned int chan
     if ( *samples < -1.0) *samples = -1.0;
   }
 
-  lastFrame_[0] = *(samples-hop);
+  this->lastFrame_[0] = *(samples-hop);
   return frames;
 }
 
@@ -122,8 +122,8 @@ inline StkFrames<T>& ReedTable<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oF
 {
 #if defined(_STK_DEBUG_)
   if ( iChannel >= iFrames.channels() || oChannel >= oFrames.channels() ) {
-    oStream_ << "ReedTable::tick(): channel and StkFrames<T> arguments are incompatible!";
-    handleError( StkError::FUNCTION_ARGUMENT );
+    this->oStream_ << "ReedTable::tick(): channel and StkFrames<T> arguments are incompatible!";
+    this->handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
@@ -136,10 +136,8 @@ inline StkFrames<T>& ReedTable<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oF
     if ( *oSamples < -1.0) *oSamples = -1.0;
   }
 
-  lastFrame_[0] = *(oSamples-oHop);
+  this->lastFrame_[0] = *(oSamples-oHop);
   return iFrames;
 }
 
 } // stk namespace
-
-#endif

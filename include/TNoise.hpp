@@ -5,9 +5,11 @@
 #include <queue>
 #include "std.h"
 
+#include "SoundAlchemy.hpp"
+
 using Std::StdRandomUniform;
 
-namespace SoundWave
+namespace SoundAlchemy::Noise
 {
     template<typename T>
     struct TGaussianWhiteNoise {

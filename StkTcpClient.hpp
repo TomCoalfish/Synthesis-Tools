@@ -1,5 +1,5 @@
 #pragma once
-#include "Socket.hpp"
+#include "StkSocket.hpp"
 #include <cstring>
 #include <sstream>
 
@@ -116,17 +116,17 @@ template<typename T>
 int TcpClient<T>::connect( int port, std::string hostname )
 {
   // Close any existing connections.
-  this->close( soket_ );
+  this->close( this->soket_ );
 
   // Create the client-side socket
-  soket_ = ::socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
-  if ( soket_ < 0 ) {
+  this->soket_ = ::socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
+  if ( this->soket_ < 0 ) {
     oStream_ << "TcpClient: Couldn't create socket client!";
     handleError( StkError::PROCESS_SOCKET );
   }
 
   int flag = 1;
-  int result = setsockopt( soket_, IPPROTO_TCP, TCP_NODELAY, (char *)&flag, sizeof(int) );
+  int result = setsockopt( this->soket_, IPPROTO_TCP, TCP_NODELAY, (char *)&flag, sizeof(int) );
   if ( result < 0 ) {
     oStream_ << "TcpClient: Error setting socket options!";
     handleError( StkError::PROCESS_SOCKET );
@@ -145,28 +145,28 @@ int TcpClient<T>::connect( int port, std::string hostname )
   server_address.sin_port = htons(port);
 
   // Connect to the server
-  if ( ::connect( soket_, (struct sockaddr *)&server_address, sizeof(server_address) ) < 0 ) {
+  if ( ::connect( this->soket_, (struct sockaddr *)&server_address, sizeof(server_address) ) < 0 ) {
     oStream_ << "TcpClient: Couldn't connect to socket server!";
     handleError( StkError::PROCESS_SOCKET );
   }
 
-  return soket_;
+  return this->soket_;
 }
 
 
 template<typename T>
 int TcpClient<T>::writeBuffer( const void *buffer, long bufferSize, int flags )
 {
-  if ( !isValid( soket_ ) ) return -1;
-  return send( soket_, (const char *)buffer, bufferSize, flags );
+  if ( !isValid( this->soket_ ) ) return -1;
+  return send( this->soket_, (const char *)buffer, bufferSize, flags );
 }
 
 
 template<typename T>
 int TcpClient<T>::readBuffer( void *buffer, long bufferSize, int flags )
 {
-  if ( !isValid( soket_ ) ) return -1;
-  return recv( soket_, (char *)buffer, bufferSize, flags );
+  if ( !isValid( this->soket_ ) ) return -1;
+  return recv( this->soket_, (char *)buffer, bufferSize, flags );
 }
 
 } // stk namespace

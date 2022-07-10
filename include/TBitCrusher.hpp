@@ -1,8 +1,8 @@
 #pragma once 
 
-#include "SABase.hpp"
+#include "SoundAlchemy.hpp"
 
-using namespace SoundAlchemy
+namespace SoundAlchemy::BitCrusher
 {
     template<typename T>
     class BitCrusher : public Object<T>

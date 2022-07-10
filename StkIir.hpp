@@ -79,7 +79,7 @@ public:
   void setDenominator( std::vector<T> &aCoefficients, bool clearState = false );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Input one sample to the filter and return one output.
   T tick( T input );
@@ -115,21 +115,21 @@ inline T Iir<T>::tick( T input )
 {
   size_t i;
 
-  outputs_[0] = 0.0;
-  inputs_[0] = gain_ * input;
-  for ( i=b_.size()-1; i>0; i-- ) {
-    outputs_[0] += b_[i] * inputs_[i];
-    inputs_[i] = inputs_[i-1];
+  this->outputs_[0] = 0.0;
+  this->inputs_[0] = this->gain_ * input;
+  for ( i=this->b_.size()-1; i>0; i-- ) {
+    this->outputs_[0] += this->b_[i] * this->inputs_[i];
+    this->inputs_[i] = this->inputs_[i-1];
   }
-  outputs_[0] += b_[0] * inputs_[0];
+  this->outputs_[0] += this->b_[0] * this->inputs_[0];
 
-  for ( i=a_.size()-1; i>0; i-- ) {
-    outputs_[0] += -a_[i] * outputs_[i];
-    outputs_[i] = outputs_[i-1];
+  for ( i=this->a_.size()-1; i>0; i-- ) {
+    this->outputs_[0] += -this->a_[i] * this->outputs_[i];
+    this->outputs_[i] = this->outputs_[i-1];
   }
 
-  lastFrame_[0] = outputs_[0];
-  return lastFrame_[0];
+  this->lastFrame_[0] = this->outputs_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -146,23 +146,23 @@ inline StkFrames<T>& Iir<T>::tick( StkFrames<T>& frames, unsigned int channel )
   size_t i;
   unsigned int hop = frames.channels();
   for ( unsigned int j=0; j<frames.frames(); j++, samples += hop ) {
-    outputs_[0] = 0.0;
-    inputs_[0] = gain_ * *samples;
-    for ( i=b_.size()-1; i>0; i-- ) {
-      outputs_[0] += b_[i] * inputs_[i];
-      inputs_[i] = inputs_[i-1];
+    this->outputs_[0] = 0.0;
+    this->inputs_[0] = this->gain_ * *samples;
+    for ( i=this->b_.size()-1; i>0; i-- ) {
+      this->outputs_[0] += this->b_[i] * this->inputs_[i];
+      this->inputs_[i] = this->inputs_[i-1];
     }
-    outputs_[0] += b_[0] * inputs_[0];
+    this->outputs_[0] += this->b_[0] * this->inputs_[0];
 
-    for ( i=a_.size()-1; i>0; i-- ) {
-      outputs_[0] += -a_[i] * outputs_[i];
-      outputs_[i] = outputs_[i-1];
+    for ( i=this->a_.size()-1; i>0; i-- ) {
+      this->outputs_[0] += -this->a_[i] * this->outputs_[i];
+      this->outputs_[i] = this->outputs_[i-1];
     }
 
-    *samples = outputs_[0];
+    *samples = this->outputs_[0];
   }
 
-  lastFrame_[0] = *(samples-hop);
+  this->lastFrame_[0] = *(samples-hop);
   return frames;
 }
 
@@ -181,23 +181,23 @@ inline StkFrames<T>& Iir<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames,
   size_t i;
   unsigned int iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int j=0; j<iFrames.frames(); j++, iSamples += iHop, oSamples += oHop ) {
-    outputs_[0] = 0.0;
-    inputs_[0] = gain_ * *iSamples;
-    for ( i=b_.size()-1; i>0; i-- ) {
-      outputs_[0] += b_[i] * inputs_[i];
-      inputs_[i] = inputs_[i-1];
+    this->outputs_[0] = 0.0;
+    this->inputs_[0] = this->gain_ * *iSamples;
+    for ( i=this->b_.size()-1; i>0; i-- ) {
+      this->outputs_[0] += this->b_[i] * this->inputs_[i];
+      this->inputs_[i] = this->inputs_[i-1];
     }
-    outputs_[0] += b_[0] * inputs_[0];
+    this->outputs_[0] += this->b_[0] * this->inputs_[0];
 
-    for ( i=a_.size()-1; i>0; i-- ) {
-      outputs_[0] += -a_[i] * outputs_[i];
-      outputs_[i] = outputs_[i-1];
+    for ( i=this->a_.size()-1; i>0; i-- ) {
+      this->outputs_[0] += -this->a_[i] * this->outputs_[i];
+      this->outputs_[i] = this->outputs_[i-1];
     }
 
-    *oSamples = outputs_[0];
+    *oSamples = this->outputs_[0];
   }
 
-  lastFrame_[0] = *(oSamples-oHop);
+  this->lastFrame_[0] = *(oSamples-oHop);
   return iFrames;
 }
 
@@ -231,11 +231,11 @@ template<typename T>
 Iir<T>::Iir()
 {
   // The default constructor should setup for pass-through.
-  b_.push_back( 1.0 );
-  a_.push_back( 1.0 );
+  this->b_.push_back( 1.0 );
+  this->a_.push_back( 1.0 );
 
-  inputs_.resize( 1, 1, 0.0 );
-  outputs_.resize( 1, 1, 0.0 );
+  this->inputs_.resize( 1, 1, 0.0 );
+  this->outputs_.resize( 1, 1, 0.0 );
 }
 
 template<typename T>
@@ -252,12 +252,12 @@ Iir<T>::Iir( std::vector<T> &bCoefficients, std::vector<T> &aCoefficients )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  gain_ = 1.0;
-  b_ = bCoefficients;
-  a_ = aCoefficients;
+  this->gain_ = 1.0;
+  this->b_ = bCoefficients;
+  this->a_ = aCoefficients;
 
-  inputs_.resize( b_.size(), 1, 0.0 );
-  outputs_.resize( a_.size(), 1, 0.0 );
+  this->inputs_.resize( this->b_.size(), 1, 0.0 );
+  this->outputs_.resize( this->a_.size(), 1, 0.0 );
   this->clear();
 }
 
@@ -284,12 +284,12 @@ void Iir<T>::setNumerator( std::vector<T> &bCoefficients, bool clearState )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  if ( b_.size() != bCoefficients.size() ) {
-    b_ = bCoefficients;
-    inputs_.resize( b_.size(), 1, 0.0 );
+  if ( this->b_.size() != bCoefficients.size() ) {
+    this->b_ = bCoefficients;
+    this->inputs_.resize( this->b_.size(), 1, 0.0 );
   }
   else {
-    for ( unsigned int i=0; i<b_.size(); i++ ) b_[i] = bCoefficients[i];
+    for ( unsigned int i=0; i<this->b_.size(); i++ ) this->b_[i] = bCoefficients[i];
   }
 
   if ( clearState ) this->clear();
@@ -309,21 +309,21 @@ void Iir<T>::setDenominator( std::vector<T> &aCoefficients, bool clearState )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  if ( a_.size() != aCoefficients.size() ) {
-    a_ = aCoefficients;
-    outputs_.resize( a_.size(), 1, 0.0 );
+  if ( this->a_.size() != aCoefficients.size() ) {
+    this->a_ = aCoefficients;
+    this->outputs_.resize( this->a_.size(), 1, 0.0 );
   }
   else {
-    for ( unsigned int i=0; i<a_.size(); i++ ) a_[i] = aCoefficients[i];
+    for ( unsigned int i=0; i<this->a_.size(); i++ ) this->a_[i] = aCoefficients[i];
   }
 
   if ( clearState ) this->clear();
 
   // Scale coefficients by a[0] if necessary
-  if ( a_[0] != 1.0 ) {
+  if ( this->a_[0] != 1.0 ) {
     unsigned int i;
-    for ( i=0; i<b_.size(); i++ ) b_[i] /= a_[0];
-    for ( i=1; i<a_.size(); i++ )  a_[i] /= a_[0];
+    for ( i=0; i<this->b_.size(); i++ ) this->b_[i] /= this->a_[0];
+    for ( i=1; i<this->a_.size(); i++ )  this->a_[i] /= this->a_[0];
   }
 }
 

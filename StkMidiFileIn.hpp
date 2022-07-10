@@ -26,6 +26,7 @@ namespace stk {
 */
 /**********************************************************************/
 
+
 template<typename T>
 class MidiFileIn : public Stk<T>
 {

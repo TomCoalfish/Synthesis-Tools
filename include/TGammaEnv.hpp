@@ -38,10 +38,10 @@
 
 #include <cmath>
 #include "SoundAlchemy.hpp"
-namespace SoundAlchemy
+namespace SoundAlchemy::Envelopes
 {
 	template<typename T>
-	class TGammaEnv : public Object<T>
+	class TGammaEnvelope : public Object<T>
 	{
 	public:
 		T Attack; ///< Attack time, in seconds.

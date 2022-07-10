@@ -130,7 +130,7 @@ inline StkFrames<T>& BlitSaw<T>::tick( StkFrames<T>& frames, unsigned int channe
 {
 #if defined(_STK_DEBUG_)
   if ( channel >= frames.channels() ) {
-    this->oStream_ << "BlitSaw::tick(): channel and StkFrames<T> arguments are incompatible!";
+    oStream_ << "BlitSaw::tick(): channel and StkFrames<T> arguments are incompatible!";
     this->handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
@@ -171,7 +171,7 @@ template<typename T>
 BlitSaw<T>::BlitSaw( T frequency )
 {
   if ( frequency <= 0.0 ) {
-    this->oStream_ << "BlitSaw::BlitSaw: argument (" << frequency << ") must be positive!";
+    oStream_ << "BlitSaw::BlitSaw: argument (" << frequency << ") must be positive!";
     this->handleError( StkError::FUNCTION_ARGUMENT );
   }
 
@@ -197,11 +197,11 @@ template<typename T>
 void BlitSaw<T>::setFrequency( T frequency )
 {
   if ( frequency <= 0.0 ) {
-    this->oStream_ << "BlitSaw::setFrequency: argument (" << frequency << ") must be positive!";
+    oStream_ << "BlitSaw::setFrequency: argument (" << frequency << ") must be positive!";
     this->handleError( StkError::WARNING ); return;
   }
 
-  p_ = Stk<T>::sampleRate() / frequency;
+  p_ = sampleRate() / frequency;
   C2_ = 1 / p_;
   rate_ = PI * C2_;
   this->updateHarmonics();

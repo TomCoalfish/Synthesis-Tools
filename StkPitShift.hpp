@@ -32,7 +32,7 @@ class PitShift : public Effect<T>
   void setShift( T shift );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Input one sample to the effect and return one output.
   T tick( T input );
@@ -61,7 +61,7 @@ class PitShift : public Effect<T>
 
  protected:
 
-  DelayL delayLine_[2];
+  DelayL<T> delayLine_[2];
   T delay_[2];
   T env_[2];
   T rate_;
@@ -93,14 +93,14 @@ inline T PitShift<T>::tick( T input )
   env_[0] = 1.0 - env_[1];
 
   // Delay input and apply envelope.
-  lastFrame_[0] =  env_[0] * delayLine_[0].tick( input );
-  lastFrame_[0] += env_[1] * delayLine_[1].tick( input );
+  this->lastFrame_[0] =  env_[0] * delayLine_[0].tick( input );
+  this->lastFrame_[0] += env_[1] * delayLine_[1].tick( input );
 
   // Compute effect mix and output.
-  lastFrame_[0] *= effectMix_;
-  lastFrame_[0] += ( 1.0 - effectMix_ ) * input;
+  this->lastFrame_[0] *= this->effectMix_;
+  this->lastFrame_[0] += ( 1.0 - this->effectMix_ ) * input;
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 /***************************************************/
@@ -127,7 +127,7 @@ PitShift<T>::PitShift( void )
   delayLine_[0].setDelay( delay_[0] );
   delayLine_[1].setMaximumDelay( maxDelay );
   delayLine_[1].setDelay( delay_[1] );
-  effectMix_ = 0.5;
+  this->effectMix_ = 0.5;
   rate_ = 1.0;
 }
 
@@ -136,7 +136,7 @@ void PitShift<T>::clear()
 {
   delayLine_[0].clear();
   delayLine_[1].clear();
-  lastFrame_[0] = 0.0;
+  this->lastFrame_[0] = 0.0;
 }
 
 template<typename T>

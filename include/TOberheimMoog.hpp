@@ -8,6 +8,8 @@
 #include "TLadderBase.hpp"
 #include "Util.h"
 
+namespace SoundAlchemy::MoogFilters
+{
 template<typename T>
 class TVAOnePole
 {
@@ -102,7 +104,7 @@ public:
 			// calculate input to first filter
 			double u = (input - K * sigma) * alpha0;
 			
-			u = tanh(saturation * u);
+			u = std::tanh(saturation * u);
 			
 			double stage1 = LPF1->Tick(u);
 			double stage2 = LPF2->Tick(stage1);
@@ -135,7 +137,7 @@ public:
 			// calculate input to first filter
 			double u = (input - K * sigma) * alpha0;
 			
-			u = tanh(saturation * u);
+			u = std::tanh(saturation * u);
 			
 			double stage1 = LPF1->Tick(u);
 			double stage2 = LPF2->Tick(stage1);
@@ -164,13 +166,13 @@ public:
 
 	virtual void SetCutoff(T c) override
 	{
-		cutoff = c;
+		this->cutoff = c;
 		
 		// prewarp for BZT
-		double wd = 2.0 * MOOG_PI * cutoff;
-		double T = 1.0 / sampleRate;
-		double wa = (2.0 / T) * tan(wd * T / 2.0);
-		double g = wa * T / 2.0;
+		double wd = 2.0 * MOOG_PI * this->cutoff;
+		double Fs = 1.0 / sampleRate;
+		double wa = (2.0 / Fs) * std::tan(wd * Fs / 2.0);
+		double g = wa * Fs / 2.0;
 		
 		// Feedforward coeff
 		double G = g / (1.0 + g);
@@ -211,3 +213,4 @@ private:
 	
 	double oberheimCoefs[5];
 };
+}

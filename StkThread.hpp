@@ -129,8 +129,8 @@ template<typename T>
 bool Thread<T>::start( THREAD_FUNCTION routine, void * ptr )
 {
   if ( thread_ ) {
-    this->oStream_ << "Thread:: a thread is already running!";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Thread:: a thread is already running!";
+    handleError( StkError::WARNING );
     return false;
   }
 

@@ -33,16 +33,17 @@ namespace stk {
 */
 /***************************************************/
 
+enum ProtocolType {
+    PROTO_TCP,
+    PROTO_UDP
+  };
+
 template<typename T>
 class Socket : public Stk<T>
 {
  public:
 
-  enum ProtocolType {
-    PROTO_TCP,
-    PROTO_UDP
-  };
-
+  
   //! Class constructor
   Socket();
 

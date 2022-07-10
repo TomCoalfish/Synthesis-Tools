@@ -16,7 +16,8 @@ namespace stk {
 */
 /***************************************************/
 
-class PoleZero : public Filter
+template<typename T>
+class PoleZero : public Filter<T>
 {
  public:
 
@@ -27,13 +28,13 @@ class PoleZero : public Filter
   ~PoleZero();
 
   //! Set the b[0] coefficient value.
-  void setB0( T b0 ) { b_[0] = b0; };
+  void setB0( T b0 ) { this->b_[0] = b0; };
 
   //! Set the b[1] coefficient value.
-  void setB1( T b1 ) { b_[1] = b1; };
+  void setB1( T b1 ) { this->b_[1] = b1; };
 
   //! Set the a[1] coefficient value.
-  void setA1( T a1 ) { a_[1] = a1; };
+  void setA1( T a1 ) { this->a_[1] = a1; };
 
   //! Set all filter coefficients.
   void setCoefficients( T b0, T b1, T a1, bool clearState = false );
@@ -57,7 +58,7 @@ class PoleZero : public Filter
   void setBlockZero( T thePole = 0.99 );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Input one sample to the filter and return one output.
   T tick( T input );
@@ -74,16 +75,18 @@ class PoleZero : public Filter
 
 };
 
+template<typename T>
 inline T PoleZero<T>::tick( T input )
 {
-  inputs_[0] = gain_ * input;
-  lastFrame_[0] = b_[0] * inputs_[0] + b_[1] * inputs_[1] - a_[1] * outputs_[1];
-  inputs_[1] = inputs_[0];
-  outputs_[1] = lastFrame_[0];
+  this->inputs_[0] = this->gain_ * input;
+  this->lastFrame_[0] = this->b_[0] * this->inputs_[0] + this->b_[1] * this->inputs_[1] - this->a_[1] * this->outputs_[1];
+  this->inputs_[1] = this->inputs_[0];
+  this->outputs_[1] = this->lastFrame_[0];
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
+template<typename T>
 inline StkFrames<T>& PoleZero<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
@@ -96,13 +99,13 @@ inline StkFrames<T>& PoleZero<T>::tick( StkFrames<T>& frames, unsigned int chann
   T *samples = &frames[channel];
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
-    inputs_[0] = gain_ * *samples;
-    *samples = b_[0] * inputs_[0] + b_[1] * inputs_[1] - a_[1] * outputs_[1];
-    inputs_[1] = inputs_[0];
-    outputs_[1] = *samples;
+    this->inputs_[0] = this->gain_ * *samples;
+    *samples = this->b_[0] * this->inputs_[0] + this->b_[1] * this->inputs_[1] - this->a_[1] * this->outputs_[1];
+    this->inputs_[1] = this->inputs_[0];
+    this->outputs_[1] = *samples;
   }
 
-  lastFrame_[0] = outputs_[1];
+  this->lastFrame_[0] = this->outputs_[1];
   return frames;
 }
 
@@ -120,21 +123,24 @@ inline StkFrames<T>& PoleZero<T>::tick( StkFrames<T>& frames, unsigned int chann
 /***************************************************/
 
 
+template<typename T>
 PoleZero<T>::PoleZero()
 {
   // Default setting for pass-through.
-  b_.resize( 2, 0.0 );
-  a_.resize( 2, 0.0 );
-  b_[0] = 1.0;
-  a_[0] = 1.0;
-  inputs_.resize( 2, 1, 0.0 );
-  outputs_.resize( 2, 1, 0.0 );
+  this->b_.resize( 2, 0.0 );
+  this->a_.resize( 2, 0.0 );
+  this->b_[0] = 1.0;
+  this->a_[0] = 1.0;
+  this->inputs_.resize( 2, 1, 0.0 );
+  this->outputs_.resize( 2, 1, 0.0 );
 }
 
+template<typename T>
 PoleZero<T>::~PoleZero()
 {
 }
 
+template<typename T>
 void PoleZero<T>::setCoefficients( T b0, T b1, T a1, bool clearState )
 {
   if ( std::abs( a1 ) >= 1.0 ) {
@@ -142,13 +148,14 @@ void PoleZero<T>::setCoefficients( T b0, T b1, T a1, bool clearState )
     handleError( StkError::WARNING ); return;
   }
 
-  b_[0] = b0;
-  b_[1] = b1;
-  a_[1] = a1;
+  this->b_[0] = b0;
+  this->b_[1] = b1;
+  this->a_[1] = a1;
 
   if ( clearState ) this->clear();
 }
 
+template<typename T>
 void PoleZero<T>::setAllpass( T coefficient )
 {
   if ( std::abs( coefficient ) >= 1.0 ) {
@@ -156,12 +163,13 @@ void PoleZero<T>::setAllpass( T coefficient )
     handleError( StkError::WARNING ); return;
   }
 
-  b_[0] = coefficient;
-  b_[1] = 1.0;
-  a_[0] = 1.0; // just in case
-  a_[1] = coefficient;
+  this->b_[0] = coefficient;
+  this->b_[1] = 1.0;
+  this->a_[0] = 1.0; // just in case
+  this->a_[1] = coefficient;
 }
 
+template<typename T>
 void PoleZero<T>::setBlockZero( T thePole )
 {
   if ( std::abs( thePole ) >= 1.0 ) {
@@ -169,10 +177,10 @@ void PoleZero<T>::setBlockZero( T thePole )
     handleError( StkError::WARNING ); return;
   }
 
-  b_[0] = 1.0;
-  b_[1] = -1.0;
-  a_[0] = 1.0; // just in case
-  a_[1] = -thePole;
+  this->b_[0] = 1.0;
+  this->b_[1] = -1.0;
+  this->a_[0] = 1.0; // just in case
+  this->a_[1] = -thePole;
 }
 
 } // stk namespace

@@ -28,10 +28,10 @@ class OneZero : public Filter<T>
   ~OneZero();
 
   //! Set the b[0] coefficient value.
-  void setB0( T b0 ) { b_[0] = b0; };
+  void setB0( T b0 ) { this->b_[0] = b0; };
 
   //! Set the b[1] coefficient value.
-  void setB1( T b1 ) { b_[1] = b1; };
+  void setB1( T b1 ) { this->b_[1] = b1; };
 
   //! Set all filter coefficients.
   void setCoefficients( T b0, T b1, bool clearState = false );
@@ -47,7 +47,7 @@ class OneZero : public Filter<T>
   void setZero( T theZero );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Input one sample to the filter and return one output.
   T tick( T input );
@@ -79,11 +79,11 @@ class OneZero : public Filter<T>
 template<typename T>
 inline T OneZero<T>::tick( T input )
 {
-  inputs_[0] = gain_ * input;
-  lastFrame_[0] = b_[1] * inputs_[1] + b_[0] * inputs_[0];
-  inputs_[1] = inputs_[0];
+  this->inputs_[0] = this->gain_ * input;
+  this->lastFrame_[0] = this->b_[1] * this->inputs_[1] + this->b_[0] * this->inputs_[0];
+  this->inputs_[1] = this->inputs_[0];
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -91,20 +91,20 @@ inline StkFrames<T>& OneZero<T>::tick( StkFrames<T>& frames, unsigned int channe
 {
 #if defined(_STK_DEBUG_)
   if ( channel >= frames.channels() ) {
-    oStream_ << "OneZero::tick(): channel and StkFrames<T> arguments are incompatible!";
-    handleError( StkError::FUNCTION_ARGUMENT );
+    this->oStream_ << "OneZero::tick(): channel and StkFrames<T> arguments are incompatible!";
+    this->handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
   T *samples = &frames[channel];
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
-    inputs_[0] = gain_ * *samples;
-    *samples = b_[1] * inputs_[1] + b_[0] * inputs_[0];
-    inputs_[1] = inputs_[0];
+    this->inputs_[0] = this->gain_ * *samples;
+    *samples = this->b_[1] * this->inputs_[1] + this->b_[0] * this->inputs_[0];
+    this->inputs_[1] = this->inputs_[0];
   }
 
-  lastFrame_[0] = *(samples-hop);
+  this->lastFrame_[0] = *(samples-hop);
   return frames;
 }
 
@@ -113,8 +113,8 @@ inline StkFrames<T>& OneZero<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFra
 {
 #if defined(_STK_DEBUG_)
   if ( iChannel >= iFrames.channels() || oChannel >= oFrames.channels() ) {
-    oStream_ << "OneZero::tick(): channel and StkFrames<T> arguments are incompatible!";
-    handleError( StkError::FUNCTION_ARGUMENT );
+    this->oStream_ << "OneZero::tick(): channel and StkFrames<T> arguments are incompatible!";
+    this->handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
@@ -122,12 +122,12 @@ inline StkFrames<T>& OneZero<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFra
   T *oSamples = &oFrames[oChannel];
   unsigned int iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
-    inputs_[0] = gain_ * *iSamples;
-    *oSamples = b_[1] * inputs_[1] + b_[0] * inputs_[0];
-    inputs_[1] = inputs_[0];
+    this->inputs_[0] = this->gain_ * *iSamples;
+    *oSamples = this->b_[1] * this->inputs_[1] + this->b_[0] * this->inputs_[0];
+    this->inputs_[1] = this->inputs_[0];
   }
 
-  lastFrame_[0] = *(oSamples-oHop);
+  this->lastFrame_[0] = *(oSamples-oHop);
   return iFrames;
 }
 
@@ -148,8 +148,8 @@ inline StkFrames<T>& OneZero<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFra
 template<typename T>
 OneZero<T>::OneZero( T theZero )
 {
-  b_.resize( 2 );
-  inputs_.resize( 2, 1, 0.0 );
+  this->b_.resize( 2 );
+  this->inputs_.resize( 2, 1, 0.0 );
 
   this->setZero( theZero );
 }
@@ -164,18 +164,18 @@ void OneZero<T>::setZero( T theZero )
 {
   // Normalize coefficients for unity gain.
   if ( theZero > 0.0 )
-    b_[0] = 1.0 / ((T) 1.0 + theZero);
+    this->b_[0] = 1.0 / ((T) 1.0 + theZero);
   else
-    b_[0] = 1.0 / ((T) 1.0 - theZero);
+    this->b_[0] = 1.0 / ((T) 1.0 - theZero);
 
-  b_[1] = -theZero * b_[0];
+  this->b_[1] = -theZero * this->b_[0];
 }
 
 template<typename T>
 void OneZero<T>::setCoefficients( T b0, T b1, bool clearState )
 {
-  b_[0] = b0;
-  b_[1] = b1;
+  this->b_[0] = b0;
+  this->b_[1] = b1;
 
   if ( clearState ) this->clear();
 }

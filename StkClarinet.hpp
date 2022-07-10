@@ -83,12 +83,12 @@ class Clarinet : public Instrmnt<T>
 
  protected:
 
-  DelayL delayLine_;
-  ReedTable reedTable_;
-  OneZero filter_;
-  Envelope envelope_;
-  Noise noise_;
-  SineWave vibrato_;
+  DelayL<T> delayLine_;
+  ReedTable<T> reedTable_;
+  OneZero<T> filter_;
+  Envelope<T> envelope_;
+  Noise<T> noise_;
+  SineWave<T> vibrato_;
 
   T outputGain_;
   T noiseGain_;
@@ -113,18 +113,18 @@ inline T Clarinet<T>::tick( unsigned int )
   pressureDiff = pressureDiff - breathPressure;
 
   // Perform non-linear scattering using pressure difference in reed function.
-  lastFrame_[0] = delayLine_.tick(breathPressure + pressureDiff * reedTable_.tick(pressureDiff));
+  this->lastFrame_[0] = delayLine_.tick(breathPressure + pressureDiff * reedTable_.tick(pressureDiff));
 
   // Apply output gain.
-  lastFrame_[0] *= outputGain_;
+  this->lastFrame_[0] *= outputGain_;
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& Clarinet<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Clarinet::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -142,7 +142,7 @@ inline StkFrames<T>& Clarinet<T>::tick( StkFrames<T>& frames, unsigned int chann
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -183,7 +183,7 @@ Clarinet<T>::Clarinet( T lowestFrequency )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  unsigned long nDelays = (unsigned long) ( 0.5 * Stk::sampleRate() / lowestFrequency );
+  unsigned long nDelays = (unsigned long) ( 0.5 * sampleRate() / lowestFrequency );
   delayLine_.setMaximumDelay( nDelays + 1 );
 
   reedTable_.setOffset( 0.7 );
@@ -221,7 +221,7 @@ void Clarinet<T>::setFrequency( T frequency )
 #endif
 
   // Account for filter delay and one sample "lastOut" delay.
-  T delay = ( Stk::sampleRate() / frequency ) * 0.5 - filter_.phaseDelay( frequency ) - 1.0;
+  T delay = ( sampleRate() / frequency ) * 0.5 - filter_.phaseDelay( frequency ) - 1.0;
   delayLine_.setDelay( delay );
 }
 
@@ -267,7 +267,7 @@ template<typename T>
 void Clarinet<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Clarinet::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }

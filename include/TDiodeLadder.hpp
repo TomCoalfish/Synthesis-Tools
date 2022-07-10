@@ -6,7 +6,7 @@
 #include <math.h>
 #include <vector>
 
-namespace SoundAlchemy {
+namespace SoundWave::DiodeLadder {
 
     template<typename T> class mydsp;
 
@@ -18,12 +18,12 @@ namespace SoundAlchemy {
     };
 
     template<typename T>
-    struct BasicDSP  {
+    struct BasicDSP {
         virtual ~BasicDSP() = default;
     };
 
     template<typename T>
-    class TDiodeLadder : public Object<T> {
+    class TDiodeLadder {
     public:
         TDiodeLadder();
         ~TDiodeLadder();
@@ -37,7 +37,7 @@ namespace SoundAlchemy {
             unsigned count) noexcept;
 
         
-        T Tick(T input, T A = 1 , T F = 1, T P = 1);
+        T Tick(T input);
         
         enum { NumInputs = 1 };
         enum { NumOutputs = 1 };
@@ -74,8 +74,6 @@ namespace SoundAlchemy {
         
         void set_q(T value) noexcept;
         
-
-
         
         void Process(size_t n, T * input, T* output) {            
             process(input,output,n);            
@@ -328,8 +326,6 @@ namespace SoundAlchemy {
                 fRec5[0] = (fSlow0 + (0.999000013f * fRec5[1]));
                 T fTemp0 = std::tan((fConst0 * fRec5[0]));
                 T fTemp1 = std::max<T>(-1.0f, std::min<T>(1.0f, (100.0f * T(input0[i]))));
-
-                // insert number drifts in here
                 T fTemp2 = (17.0f - (9.69999981f * mydsp_faustpower10_f((0.0f - (0.333333343f * (1.0f - (std::log10(fRec5[0]) + -0.30103001f)))))));
                 T fTemp3 = (fTemp0 + 1.0f);
                 T fTemp4 = ((0.5f * ((fRec1[1] * fTemp0) / fTemp3)) + fRec2[1]);
@@ -348,9 +344,7 @@ namespace SoundAlchemy {
                 T fTemp17 = ((fTemp0 * ((0.5f * (((fRec4[1] + fTemp16) * ((0.25f * (fTemp14 / fTemp12)) + 1.0f)) + ((fTemp4 + (0.5f * fTemp10)) / fTemp5))) - fRec3[1])) / fTemp3);
                 T fTemp18 = ((fTemp0 * ((0.5f * (((fRec3[1] + fTemp17) * ((0.25f * (fTemp14 / fTemp15)) + 1.0f)) + ((fRec1[1] + fTemp7) / fTemp3))) - fRec2[1])) / fTemp3);
                 T fTemp19 = ((fTemp0 * ((0.5f * (fRec2[1] + fTemp18)) - fRec1[1])) / fTemp3);
-
-                // distortions here
-                T fRec0 = (fRec1[1] + fTemp19);                            
+                T fRec0 = (fRec1[1] + fTemp19);
                 fRec1[0] = (fRec1[1] + (2.0f * fTemp19));
                 fRec2[0] = (fRec2[1] + (2.0f * fTemp18));
                 fRec3[0] = (fRec3[1] + (2.0f * fTemp17));
@@ -653,18 +647,10 @@ namespace SoundAlchemy {
 
 
     template<typename T>
-    T TDiodeLadder<T>::Tick(T input, T A, T F, T P) { 
+    T TDiodeLadder<T>::Tick(T input) { 
         T output=0.0; 
         mydsp<T> &dsp = static_cast<mydsp<T> &>(*fDsp);
-        T cutoff = get_cutoff();
-        T q = get_q();
-        set_cutoff(cutoff + F * cutoff);
-        set_q(q + P * q);
         dsp.tick(input,output); 
-        set_cutoff(cutoff);
-        set_q(q);
-        return A*output; 
+        return output; 
     }
-
-
 }

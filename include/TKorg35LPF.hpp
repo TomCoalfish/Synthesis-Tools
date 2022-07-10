@@ -7,21 +7,23 @@
 #include <math.h>
 #include <vector>
 
-namespace SoundAlchemy
-{
+#include "SoundAlchemy.hpp"
+
+namespace SoundAlchemy::Korg35LPF
+{    
     template<typename T> class mydsp;
-
+    
     template<typename T>
-    struct K35LPParameterRange {
-        T init;
-        T min;
-        T max;
-    };
-
-    template<typename T>
-    class TKorg35LPF : public Object<T>
+    class TKorg35LPF 
     {
     public:
+
+        struct ParameterRange {
+            T init;
+            T min;
+            T max;
+        };
+
         TKorg35LPF();
         ~TKorg35LPF();
 
@@ -48,7 +50,7 @@ namespace SoundAlchemy
         static const char *parameter_short_label(unsigned index) noexcept;
         static const char *parameter_symbol(unsigned index) noexcept;
         static const char *parameter_unit(unsigned index) noexcept;
-        static const K35LPParameterRange<T> *parameter_range(unsigned index) noexcept;
+        static const ParameterRange *parameter_range(unsigned index) noexcept;
         static bool parameter_is_trigger(unsigned index) noexcept;
         static bool parameter_is_boolean(unsigned index) noexcept;
         static bool parameter_is_integer(unsigned index) noexcept;
@@ -67,7 +69,7 @@ namespace SoundAlchemy
             process(in.data(),out.data(),n);
         }
 
-        T Tick(T input, T A = 1, T F = 0, T R = 0);
+        T Tick(T input);
     
         void Process(size_t n, T * input, T * output) {            
             process(input, output,n);
@@ -78,7 +80,6 @@ namespace SoundAlchemy
 
         mydsp<T> * fDsp;
     };
-
 
     class Meta {
     public:
@@ -320,7 +321,6 @@ namespace SoundAlchemy
         }
     };
 
-
     template<typename T>
     TKorg35LPF<T>::TKorg35LPF()
     {
@@ -435,17 +435,17 @@ namespace SoundAlchemy
     }
 
     template<typename T>
-    const K35LPParameterRange<T> *TKorg35LPF<T>::parameter_range(unsigned index) noexcept
+    const ParameterRange<T> *TKorg35LPF<T>::parameter_range(unsigned index) noexcept
     {
         switch (index) {
         
         case 0: {
-            static const K35LPParameterRange<T> range = { 20000, 20, 20000 };
+            static const ParameterRange<T> range = { 20000, 20, 20000 };
             return &range;
         }
         
         case 1: {
-            static const K35LPParameterRange<T> range = { 1, 0.5, 10 };
+            static const ParameterRange<T> range = { 1, 0.5, 10 };
             return &range;
         }
         
@@ -566,19 +566,12 @@ namespace SoundAlchemy
     }
 
     template<typename T>
-    T TKorg35LPF<T>::Tick(T input, T A = 1, T F = 0, T R = 0) { 
+    T TKorg35LPF<T>::Tick(T input) { 
         T output=0.0; 
-        T c = get_cutoff();
-        T q = get_q();
-        set_cutoff(c + F*c);
-        set_q(q + R);
         mydsp<T> &dsp = static_cast<mydsp<T>&>(*fDsp);
         dsp.tick(input,output); 
-        set_cutoff(c);
-        set_q(q);
-        return std::tanh(A*output); 
-    }
-   
+        return output; 
+    }   
 }
 
 

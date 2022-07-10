@@ -130,16 +130,16 @@ inline T Flute<T>::tick( unsigned int )
   pressureDiff = jetDelay_.tick( pressureDiff );
   //pressureDiff = jetTable_.tick( pressureDiff ) + (endReflection_ * temp);
   pressureDiff = dcBlock_.tick(jetTable_.tick( pressureDiff )) + (endReflection_ * temp); // moved the DC blocker to after the jet non-linearity (GPS, 29 Jan. 2020)
-  lastFrame_[0] = (T) 0.3 * boreDelay_.tick( pressureDiff );
+  this->lastFrame_[0] = (T) 0.3 * boreDelay_.tick( pressureDiff );
 
-  lastFrame_[0] *= outputGain_;
-  return lastFrame_[0];
+  this->lastFrame_[0] *= outputGain_;
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& Flute<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Flute::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -157,7 +157,7 @@ inline StkFrames<T>& Flute<T>::tick( StkFrames<T>& frames, unsigned int channel 
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -197,14 +197,14 @@ Flute<T>::Flute( T lowestFrequency )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  unsigned long nDelays = (unsigned long) ( Stk::sampleRate() / lowestFrequency );
+  unsigned long nDelays = (unsigned long) ( sampleRate() / lowestFrequency );
   boreDelay_.setMaximumDelay( nDelays + 1 );
 
   jetDelay_.setMaximumDelay( nDelays + 1 );
   jetDelay_.setDelay( 49.0 );
 
   vibrato_.setFrequency( 5.925 );
-  filter_.setPole( 0.7 - ( 0.1 * 22050.0 / Stk::sampleRate() ) );
+  filter_.setPole( 0.7 - ( 0.1 * 22050.0 / sampleRate() ) );
   dcBlock_.setBlockZero();
 
   adsr_.setAllTimes( 0.005, 0.01, 0.8, 0.010 );
@@ -250,7 +250,7 @@ void Flute<T>::setFrequency( T frequency )
   // (previously approximated as 2.0 samples).  The tuning is still
   // not perfect but I'm not sure why.  Also, we are not accounting
   // for the dc blocking filter delay.
-  T delay = Stk::sampleRate() / lastFrequency_ - filter_.phaseDelay( lastFrequency_ ) - 1.0;
+  T delay = sampleRate() / lastFrequency_ - filter_.phaseDelay( lastFrequency_ ) - 1.0;
 
   boreDelay_.setDelay( delay );
   jetDelay_.setDelay( delay * jetRatio_ );
@@ -307,7 +307,7 @@ template<typename T>
 void Flute<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Flute::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }

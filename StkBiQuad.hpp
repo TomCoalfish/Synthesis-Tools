@@ -209,13 +209,13 @@ BiQuad<T>::BiQuad() : Filter<T>()
   this->inputs_.resize( 3, 1, 0.0 );
   this->outputs_.resize( 3, 1, 0.0 );
 
-  Stk<T>::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 BiQuad<T>::~BiQuad()
 {
-  Stk<T>::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
@@ -234,8 +234,8 @@ template<typename T>
 void BiQuad<T>::sampleRateChanged( T newRate, T oldRate )
 {
   if ( ! this-> ignoreSampleRateChange_ ) {
-    this->oStream_ << "BiQuad::sampleRateChanged: you may need to recompute filter coefficients!";
-    this->handleError( StkError::WARNING );
+    oStream_ << "BiQuad::sampleRateChanged: you may need to recompute filter coefficients!";
+    handleError( StkError::WARNING );
   }
 }
 
@@ -254,7 +254,7 @@ void BiQuad<T>::setResonance( T frequency, T radius, bool normalize )
 #endif
 
   this->a_[2] = radius * radius;
-  this->a_[1] = -2.0 * radius * cos( TWO_PI * frequency / Stk<T>::sampleRate() );
+  this->a_[1] = -2.0 * radius * cos( TWO_PI * frequency / sampleRate() );
 
   if ( normalize ) {
     // Use zeros at +- 1 and normalize the filter peak gain.
@@ -280,7 +280,7 @@ void BiQuad<T>::setNotch( T frequency, T radius )
 
   // This method does not attempt to normalize the filter gain.
   this->b_[2] = radius * radius;
-  this->b_[1] = (T) -2.0 * radius * cos( TWO_PI * (double) frequency / Stk<T>::sampleRate() );
+  this->b_[1] = (T) -2.0 * radius * cos( TWO_PI * (double) frequency / sampleRate() );
 }
 
 template<typename T>

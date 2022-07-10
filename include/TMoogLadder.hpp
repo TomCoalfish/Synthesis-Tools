@@ -7,7 +7,9 @@
 #include <math.h>
 #include <vector>
 
-namespace SoundWave 
+#include "SoundAlchemy.hpp"
+
+namespace SoundAlchemy::MoogLadder
 {
 
     template<typename T> class mydsp;

@@ -71,33 +71,33 @@ inline T HevyMetl<T>::tick( unsigned int )
 {
   T temp;
 
-  temp = vibrato_.tick() * modDepth_ * 0.2;    
-  waves_[0]->setFrequency(baseFrequency_ * (1.0 + temp) * ratios_[0]);
-  waves_[1]->setFrequency(baseFrequency_ * (1.0 + temp) * ratios_[1]);
-  waves_[2]->setFrequency(baseFrequency_ * (1.0 + temp) * ratios_[2]);
-  waves_[3]->setFrequency(baseFrequency_ * (1.0 + temp) * ratios_[3]);
+  temp = this->vibrato_.tick() * this->modDepth_ * 0.2;    
+  this->waves_[0]->setFrequency(this->baseFrequency_ * (1.0 + temp) * this->ratios_[0]);
+  this->waves_[1]->setFrequency(this->baseFrequency_ * (1.0 + temp) * this->ratios_[1]);
+  this->waves_[2]->setFrequency(this->baseFrequency_ * (1.0 + temp) * this->ratios_[2]);
+  this->waves_[3]->setFrequency(this->baseFrequency_ * (1.0 + temp) * this->ratios_[3]);
     
-  temp = gains_[2] * adsr_[2]->tick() * waves_[2]->tick();
-  waves_[1]->addPhaseOffset( temp );
+  temp = this->gains_[2] * this->adsr_[2]->tick() * this->waves_[2]->tick();
+  this->waves_[1]->addPhaseOffset( temp );
     
-  waves_[3]->addPhaseOffset( twozero_.lastOut() );
-  temp = (1.0 - (control2_ * 0.5)) * gains_[3] * adsr_[3]->tick() * waves_[3]->tick();
-  twozero_.tick(temp);
+  this->waves_[3]->addPhaseOffset( this->twozero_.lastOut() );
+  temp = (1.0 - (this->control2_ * 0.5)) * this->gains_[3] * this->adsr_[3]->tick() * this->waves_[3]->tick();
+  this->twozero_.tick(temp);
     
-  temp += control2_ * 0.5 * gains_[1] * adsr_[1]->tick() * waves_[1]->tick();
-  temp = temp * control1_;
+  temp += this->control2_ * 0.5 * this->gains_[1] * this->adsr_[1]->tick() * this->waves_[1]->tick();
+  temp = temp * this->control1_;
     
-  waves_[0]->addPhaseOffset( temp );
-  temp = gains_[0] * adsr_[0]->tick() * waves_[0]->tick();
+  this->waves_[0]->addPhaseOffset( temp );
+  temp = this->gains_[0] * this->adsr_[0]->tick() * this->waves_[0]->tick();
     
-  lastFrame_[0] = temp * 0.5;
-  return lastFrame_[0];
+  this->lastFrame_[0] = temp * 0.5;
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& HevyMetl<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "HevyMetl::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -115,7 +115,7 @@ inline StkFrames<T>& HevyMetl<T>::tick( StkFrames<T>& frames, unsigned int chann
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -156,27 +156,27 @@ HevyMetl<T>::HevyMetl( void )
 {
   // Concatenate the STK rawwave path to the rawwave files
   for ( unsigned int i=0; i<3; i++ )
-    waves_[i] = new FileLoop( (Stk::rawwavePath() + "sinewave.raw").c_str(), true );
-  waves_[3] = new FileLoop( (Stk::rawwavePath() + "fwavblnk.raw").c_str(), true );
+    this->waves_[i] = new FileLoop<T>( (stk::rawwavePath() + "sinewave.raw").c_str(), true );
+  this->waves_[3] = new FileLoop<T>( (stk::rawwavePath() + "fwavblnk.raw").c_str(), true );
 
   this->setRatio(0, 1.0 * 1.000);
   this->setRatio(1, 4.0 * 0.999);
   this->setRatio(2, 3.0 * 1.001);
   this->setRatio(3, 0.5 * 1.002);
 
-  gains_[0] = fmGains_[92];
-  gains_[1] = fmGains_[76];
-  gains_[2] = fmGains_[91];
-  gains_[3] = fmGains_[68];
+  this->gains_[0] = this->fmGains_[92];
+  this->gains_[1] = this->fmGains_[76];
+  this->gains_[2] = this->fmGains_[91];
+  this->gains_[3] = this->fmGains_[68];
 
-  adsr_[0]->setAllTimes( 0.001, 0.001, 1.0, 0.01);
-  adsr_[1]->setAllTimes( 0.001, 0.010, 1.0, 0.50);
-  adsr_[2]->setAllTimes( 0.010, 0.005, 1.0, 0.20);
-  adsr_[3]->setAllTimes( 0.030, 0.010, 0.2, 0.20);
+  this->adsr_[0]->setAllTimes( 0.001, 0.001, 1.0, 0.01);
+  this->adsr_[1]->setAllTimes( 0.001, 0.010, 1.0, 0.50);
+  this->adsr_[2]->setAllTimes( 0.010, 0.005, 1.0, 0.20);
+  this->adsr_[3]->setAllTimes( 0.030, 0.010, 0.2, 0.20);
 
-  twozero_.setGain( 2.0 );
-  vibrato_.setFrequency( 5.5 );
-  modDepth_ = 0.0;
+  this->twozero_.setGain( 2.0 );
+  this->vibrato_.setFrequency( 5.5 );
+  this->modDepth_ = 0.0;
 }  
 
 template<typename T>
@@ -187,10 +187,10 @@ HevyMetl<T>::~HevyMetl( void )
 template<typename T>
 void HevyMetl<T>::noteOn( T frequency, T amplitude )
 {
-  gains_[0] = amplitude * fmGains_[92];
-  gains_[1] = amplitude * fmGains_[76];
-  gains_[2] = amplitude * fmGains_[91];
-  gains_[3] = amplitude * fmGains_[68];
+  this->gains_[0] = amplitude * this->fmGains_[92];
+  this->gains_[1] = amplitude * this->fmGains_[76];
+  this->gains_[2] = amplitude * this->fmGains_[91];
+  this->gains_[3] = amplitude * this->fmGains_[68];
   this->setFrequency( frequency );
   this->keyOn();
 }

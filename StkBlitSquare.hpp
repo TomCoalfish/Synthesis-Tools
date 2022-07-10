@@ -203,8 +203,8 @@ template<typename T>
 BlitSquare<T>::BlitSquare( T frequency )
 {
   if ( frequency <= 0.0 ) {
-    this->oStream_ << "BlitSquare::BlitSquare: argument (" << frequency << ") must be positive!";
-    this->handleError( StkError::FUNCTION_ARGUMENT );
+    oStream_ << "BlitSquare::BlitSquare: argument (" << frequency << ") must be positive!";
+    handleError( StkError::FUNCTION_ARGUMENT );
   }
 
   nHarmonics_ = 0;
@@ -230,14 +230,14 @@ template<typename T>
 void BlitSquare<T>:: setFrequency( T frequency )
 {
   if ( frequency <= 0.0 ) {
-    this->oStream_ << "BlitSquare::setFrequency: argument (" << frequency << ") must be positive!";
-    this->handleError( StkError::WARNING ); return;
+    oStream_ << "BlitSquare::setFrequency: argument (" << frequency << ") must be positive!";
+    handleError( StkError::WARNING ); return;
   }
 
   // By using an even value of the parameter M, we get a bipolar blit
   // waveform at half the blit frequency.  Thus, we need to scale the
   // frequency value here by 0.5. (GPS, 2006).
-  p_ = 0.5 * Stk<T>::sampleRate() / frequency;
+  p_ = 0.5 * sampleRate() / frequency;
   rate_ = PI / p_;
   this->updateHarmonics();
 }

@@ -45,8 +45,8 @@ class FileWvOut : public WvOut<T>
   */
   FileWvOut( std::string fileName,
              unsigned int nChannels = 1,
-             FileWrite::FILE_TYPE type = FileWrite::FILE_WAV,
-             Stk::StkFormat format = STK_SINT16,
+             FILE_TYPE type = FILE_WAV,
+             StkFormat format = STK_SINT16,
              unsigned int bufferFrames = 1024 );
 
   //! Class destructor.
@@ -60,8 +60,8 @@ class FileWvOut : public WvOut<T>
   */
   void openFile( std::string fileName,
                  unsigned int nChannels,
-                 FileWrite::FILE_TYPE type,
-                 Stk::StkFormat format );
+                 FILE_TYPE type,
+                 StkFormat format );
 
   //! Close a file if one is open.
   /*!
@@ -89,7 +89,7 @@ class FileWvOut : public WvOut<T>
 
   void incrementFrame( void );
 
-  FileWrite file_;
+  FileWrite<T> file_;
   unsigned int bufferFrames_;
   unsigned int bufferIndex_;
   unsigned int iData_;
@@ -121,45 +121,45 @@ class FileWvOut : public WvOut<T>
 
 
 template<typename T>
-FileWvOut <T>: FileWvOut( unsigned int bufferFrames )
+FileWvOut <T>:: FileWvOut( unsigned int bufferFrames )
   :bufferFrames_( bufferFrames )
 {
 }
 
 template<typename T>
-FileWvOut<T>::FileWvOut( std::string fileName, unsigned int nChannels, FileWrite::FILE_TYPE type, Stk::StkFormat format, unsigned int bufferFrames )
+FileWvOut<T>::FileWvOut( std::string fileName, unsigned int nChannels, FILE_TYPE type, StkFormat format, unsigned int bufferFrames )
   :bufferFrames_( bufferFrames )
 {
   this->openFile( fileName, nChannels, type, format );
 }
 
 template<typename T>
-FileWvOut <T>: ~FileWvOut()
+FileWvOut <T>:: ~FileWvOut()
 {
   this->closeFile();
 }
 
 template<typename T>
-void FileWvOut <T>: closeFile( void )
+void FileWvOut <T>:: closeFile( void )
 {
   if ( file_.isOpen() ) {
 
     // Output any remaining samples in the buffer before closing.
     if ( bufferIndex_ > 0 ) {
-      data_.resize( bufferIndex_, data_.channels() );
-      file_.write( data_ );
+      this->data_.resize( bufferIndex_, this->data_.channels() );
+      file_.write( this->data_ );
     }
 
     file_.close();
-    frameCounter_ = 0;
+    this->frameCounter_ = 0;
   }
 }
 
 template<typename T>
-void FileWvOut <T>: openFile( std::string fileName,
+void FileWvOut <T>:: openFile( std::string fileName,
                             unsigned int nChannels,
-                            FileWrite::FILE_TYPE type,
-                            Stk::StkFormat format )
+                            FILE_TYPE type,
+                            StkFormat format )
 {
   closeFile();
 
@@ -172,27 +172,27 @@ void FileWvOut <T>: openFile( std::string fileName,
   file_.open( fileName, nChannels, type, format );
 
   // Allocate new memory if necessary.
-  data_.resize( bufferFrames_, nChannels );
+  this->data_.resize( bufferFrames_, nChannels );
 
   bufferIndex_ = 0;
   iData_ = 0;
 }
 
 template<typename T>
-void FileWvOut <T>: incrementFrame( void )
+void FileWvOut <T>:: incrementFrame( void )
 {
-  frameCounter_++;
+  this->frameCounter_++;
   bufferIndex_++;
 
   if ( bufferIndex_ == bufferFrames_ ) {
-    file_.write( data_ );
+    file_.write( this->data_ );
     bufferIndex_ = 0;
     iData_ = 0;
   }
 }
 
 template<typename T>
-void FileWvOut <T>: tick( const T sample )
+void FileWvOut <T>:: tick( const T sample )
 {
 #if defined(_STK_DEBUG_)
   if ( !file_.isOpen() ) {
@@ -202,17 +202,17 @@ void FileWvOut <T>: tick( const T sample )
   }
 #endif
 
-  unsigned int nChannels = data_.channels();
+  unsigned int nChannels = this->data_.channels();
   T input = sample;
   clipTest( input );
   for ( unsigned int j=0; j<nChannels; j++ )
-    data_[iData_++] = input;
+    this->data_[iData_++] = input;
 
   this->incrementFrame();
 }
 
 template<typename T>
-void FileWvOut <T>: tick( const StkFrames<T>& frames )
+void FileWvOut <T>:: tick( const StkFrames<T>& frames )
 {
 #if defined(_STK_DEBUG_)
   if ( !file_.isOpen() ) {
@@ -228,12 +228,12 @@ void FileWvOut <T>: tick( const StkFrames<T>& frames )
 #endif
 
   unsigned int iFrames = 0;
-  unsigned int j, nChannels = data_.channels();
+  unsigned int j, nChannels = this->data_.channels();
   for ( unsigned int i=0; i<frames.frames(); i++ ) {
 
     for ( j=0; j<nChannels; j++ ) {
-      data_[iData_] = frames[iFrames++];
-      clipTest( data_[iData_++] );
+      this->data_[iData_] = frames[iFrames++];
+      clipTest( this->data_[iData_++] );
     }
 
     this->incrementFrame();

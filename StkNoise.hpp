@@ -36,48 +36,67 @@ public:
   void setSeed( unsigned int seed = 0 );
 
   //! Return the last computed output value.
-  StkFloat lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Compute and return one output sample.
-  StkFloat tick( void );
+  T tick( void );
 
-  //! Fill a channel of the StkFrames object with computed outputs.
+  //! Fill a channel of the StkFrames<T> object with computed outputs.
   /*!
     The \c channel argument must be less than the number of
-    channels in the StkFrames argument (the first channel is specified
+    channels in the StkFrames<T> argument (the first channel is specified
     by 0).  However, range checking is only performed if _STK_DEBUG_
     is defined during compilation, in which case an out-of-range value
     will trigger an StkError exception.
   */
-  StkFrames& tick( StkFrames& frames, unsigned int channel = 0 );
+  StkFrames<T>& tick( StkFrames<T>& frames, unsigned int channel = 0 );
 
 protected:
 
 };
 
-inline StkFloat Noise :: tick( void )
+template<typename T>
+inline T Noise<T>::tick( void )
 {
-  return lastFrame_[0] = (StkFloat) ( 2.0 * rand() / (RAND_MAX + 1.0) - 1.0 );
+  return this->lastFrame_[0] = (T) ( 2.0 * rand() / (RAND_MAX + 1.0) - 1.0 );
 }
 
-inline StkFrames& Noise :: tick( StkFrames& frames, unsigned int channel )
+
+template<typename T>
+inline StkFrames<T>& Noise<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
   if ( channel >= frames.channels() ) {
-    oStream_ << "Noise::tick(): channel and StkFrames arguments are incompatible!";
+    oStream_ << "Noise::tick(): channel and StkFrames<T> arguments are incompatible!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
-  StkFloat *samples = &frames[channel];
+  T *samples = &frames[channel];
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop )
-    *samples = (StkFloat) ( 2.0 * rand() / (RAND_MAX + 1.0) - 1.0 );
+    *samples = (T) ( 2.0 * rand() / (RAND_MAX + 1.0) - 1.0 );
 
-  lastFrame_[0] = *(samples-hop);
+  this->lastFrame_[0] = *(samples-hop);
   return frames;
 }
 
+template<typename T>
+Noise<T> :: Noise( unsigned int seed )
+{
+  // Seed the random number generator
+  this->setSeed( seed );
+}
+
+template<typename T>
+void Noise<T> :: setSeed( unsigned int seed )
+{
+  if ( seed == 0 )
+    srand( (unsigned int) time( NULL ) );
+  else
+    srand( seed );
+}
+
+
 } // stk namespace
 
-#endif

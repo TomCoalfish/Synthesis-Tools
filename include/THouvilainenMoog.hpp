@@ -1,8 +1,12 @@
 #include "TLadderBase.hpp"
 
+#ifndef MOOG_PI
 #define MOOG_PI M_PI
+#endif
 
-namespace SoundWave {
+
+
+namespace SoundAlchemy::MoogFilters {
     template<typename T>
     class THouvilainenMoog : public TLadderFilterBase<T>
     {
@@ -53,11 +57,11 @@ namespace SoundWave {
                 for (int j = 0; j < 2; j++) 
                 {
                     float input = _input[s] - resQuad * delay[5];
-                    delay[0] = stage[0] = delay[0] + tune * (tanh(input * thermal) - stageTanh[0]);
+                    delay[0] = stage[0] = delay[0] + tune * (std::tanh(input * thermal) - stageTanh[0]);
                     for (int k = 1; k < 4; k++) 
                     {
                         input = stage[k-1];
-                        stage[k] = delay[k] + tune * ((stageTanh[k-1] = tanh(input * thermal)) - (k != 3 ? stageTanh[k] : tanh(delay[k] * thermal)));
+                        stage[k] = delay[k] + tune * ((stageTanh[k-1] = std::tanh(input * thermal)) - (k != 3 ? stageTanh[k] : std::tanh(delay[k] * thermal)));
                         delay[k] = stage[k];
                     }
                     // 0.5 sample delay for phase compensation
@@ -68,32 +72,9 @@ namespace SoundWave {
             }
         }
         
-        T Tick(T input, T A = 1, T F = 0, T P = 0) {
+        T Tick(T input) {
             T r = 0.0;
-            T fc = this->cutoff;
-            T r  = this->resonance;
-            SetCutoff( fc + F*fc);
-            SetResoance( r + P );
-            input *= A;            
-            // Oversample
-            for (int j = 0; j < 2; j++) 
-            {
-                input = _input[s] - resQuad * delay[5];
-                delay[0] = stage[0] = delay[0] + tune * (std::tanh(input * thermal) - stageTanh[0]);
-                for (int k = 1; k < 4; k++) 
-                {
-                    input = stage[k-1];
-                    stage[k] = delay[k] + tune * ((stageTanh[k-1] = std::tanh(input * thermal)) - (k != 3 ? stageTanh[k] : std::tanh(delay[k] * thermal)));
-                    delay[k] = stage[k];
-                }
-                // 0.5 sample delay for phase compensation
-                delay[5] = (stage[3] + delay[4]) * 0.5;
-                delay[4] = stage[3];
-            }
-            _input[s] = delay[5];
-            SetCutoff(fc);
-            SetResonance(r);
-            r = std::tanh(A*r);
+            Process(1,&input,&r);
             return r;
         }
         
@@ -115,7 +96,7 @@ namespace SoundWave {
             double fcr = 1.8730 * fc3 + 0.4955 * fc2 - 0.6490 * fc + 0.9988;
             acr = -3.9364 * fc2 + 1.8409 * fc + 0.9968;
 
-            tune = (1.0 - exp(-((2 * MOOG_PI) * f * fcr))) / thermal; 
+            tune = (1.0 - std::exp(-((2 * MOOG_PI) * f * fcr))) / thermal; 
 
             SetResonance(this->resonance);
         }

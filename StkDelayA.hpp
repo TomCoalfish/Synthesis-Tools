@@ -43,7 +43,7 @@ public:
   void clear( void );
 
   //! Get the maximum delay-line length.
-  unsigned long getMaximumDelay( void ) { return inputs_.size() - 1; };
+  unsigned long getMaximumDelay( void ) { return this->inputs_.size() - 1; };
   
   //! Set the maximum delay-line length.
   /*!
@@ -76,7 +76,7 @@ public:
   void tapIn( T value, unsigned long tapDelay );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Return the value which will be output by the next call to tick().
   /*!
@@ -126,8 +126,8 @@ inline T DelayA<T>::nextOut( void )
 {
   if ( doNextOut_ ) {
     // Do allpass interpolation delay.
-    nextOutput_ = -coeff_ * lastFrame_[0];
-    nextOutput_ += apInput_ + ( coeff_ * inputs_[outPoint_] );
+    nextOutput_ = -coeff_ * this->lastFrame_[0];
+    nextOutput_ += apInput_ + ( coeff_ * this->inputs_[outPoint_] );
     doNextOut_ = false;
   }
 
@@ -137,21 +137,21 @@ inline T DelayA<T>::nextOut( void )
 template<typename T>
 inline T DelayA<T>::tick( T input )
 {
-  inputs_[inPoint_++] = input * gain_;
+  this->inputs_[inPoint_++] = input * this->gain_;
 
   // Increment input pointer modulo length.
-  if ( inPoint_ == inputs_.size() )
+  if ( inPoint_ == this->inputs_.size() )
     inPoint_ = 0;
 
-  lastFrame_[0] = nextOut();
+  this->lastFrame_[0] = nextOut();
   doNextOut_ = true;
 
   // Save the allpass input and increment modulo length.
-  apInput_ = inputs_[outPoint_++];
-  if ( outPoint_ == inputs_.size() )
+  apInput_ = this->inputs_[outPoint_++];
+  if ( outPoint_ == this->inputs_.size() )
     outPoint_ = 0;
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -167,13 +167,13 @@ inline StkFrames<T>& DelayA<T>::tick( StkFrames<T>& frames, unsigned int channel
   T *samples = &frames[channel];
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
-    inputs_[inPoint_++] = *samples * gain_;
-    if ( inPoint_ == inputs_.size() ) inPoint_ = 0;
+    this->inputs_[inPoint_++] = *samples * this->gain_;
+    if ( inPoint_ == this->inputs_.size() ) inPoint_ = 0;
     *samples = nextOut();
-    lastFrame_[0] = *samples;
+    this->lastFrame_[0] = *samples;
     doNextOut_ = true;
-    apInput_ = inputs_[outPoint_++];
-    if ( outPoint_ == inputs_.size() ) outPoint_ = 0;
+    apInput_ = this->inputs_[outPoint_++];
+    if ( outPoint_ == this->inputs_.size() ) outPoint_ = 0;
   }
 
   return frames;
@@ -193,13 +193,13 @@ inline StkFrames<T>& DelayA<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFram
   T *oSamples = &oFrames[oChannel];
   unsigned int iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
-    inputs_[inPoint_++] = *iSamples * gain_;
-    if ( inPoint_ == inputs_.size() ) inPoint_ = 0;
+    this->inputs_[inPoint_++] = *iSamples * this->gain_;
+    if ( inPoint_ == this->inputs_.size() ) inPoint_ = 0;
     *oSamples = nextOut();
-    lastFrame_[0] = *oSamples;
+    this->lastFrame_[0] = *oSamples;
     doNextOut_ = true;
-    apInput_ = inputs_[outPoint_++];
-    if ( outPoint_ == inputs_.size() ) outPoint_ = 0;
+    apInput_ = this->inputs_[outPoint_++];
+    if ( outPoint_ == this->inputs_.size() ) outPoint_ = 0;
   }
 
   return iFrames;
@@ -240,8 +240,8 @@ DelayA<T>::DelayA( T delay, unsigned long maxDelay )
   }
 
   // Writing before reading allows delays from 0 to length-1. 
-  if ( maxDelay + 1 > inputs_.size() )
-    inputs_.resize( maxDelay + 1, 1, 0.0 );
+  if ( maxDelay + 1 > this->inputs_.size() )
+    this->inputs_.resize( maxDelay + 1, 1, 0.0 );
 
   inPoint_ = 0;
   this->setDelay( delay );
@@ -257,23 +257,23 @@ DelayA<T>::~DelayA()
 template<typename T>
 void DelayA<T>::clear()
 {
-  for ( unsigned int i=0; i<inputs_.size(); i++ )
-    inputs_[i] = 0.0;
-  lastFrame_[0] = 0.0;
+  for ( unsigned int i=0; i<this->inputs_.size(); i++ )
+    this->inputs_[i] = 0.0;
+  this->lastFrame_[0] = 0.0;
   apInput_ = 0.0;
 }
 
 template<typename T>
 void DelayA<T>::setMaximumDelay( unsigned long delay )
 {
-  if ( delay < inputs_.size() ) return;
-  inputs_.resize(delay + 1, 1, 0.0);
+  if ( delay < this->inputs_.size() ) return;
+  this->inputs_.resize(delay + 1, 1, 0.0);
 }
 
 template<typename T>
 void DelayA<T>::setDelay( T delay )
 {
-  unsigned long length = inputs_.size();
+  unsigned long length = this->inputs_.size();
   if ( delay + 1 > length ) { // The value is too big.
     oStream_ << "DelayA::setDelay: argument (" << delay << ") greater than maximum!";
     handleError( StkError::WARNING ); return;
@@ -310,19 +310,19 @@ T DelayA<T>::tapOut( unsigned long tapDelay )
 {
   long tap = inPoint_ - tapDelay - 1;
   while ( tap < 0 ) // Check for wraparound.
-    tap += inputs_.size();
+    tap += this->inputs_.size();
 
-  return inputs_[tap];
+  return this->inputs_[tap];
 }
 
 template<typename T>
-void  tapIn( T value, unsigned long tapDelay )
+void DelayA<T>::tapIn( T value, unsigned long tapDelay )
 {
   long tap = inPoint_ - tapDelay - 1;
   while ( tap < 0 ) // Check for wraparound.
-    tap += inputs_.size();
+    tap += this->inputs_.size();
 
-  inputs_[tap] = value;
+  this->inputs_[tap] = value;
 }
 
 } // stk namespace

@@ -1,7 +1,7 @@
 #pragma once
 #include "StkFM.hpp"
 #include "SKINImsg.h"
-#include "Phonemes.h"
+#include "StkPhonemes.hpp"
 
 namespace stk {
 
@@ -51,72 +51,73 @@ class FMVoices : public FM<T>
   ~FMVoices( void );
 
   //! Set instrument parameters for a particular frequency.
-  void setFrequency( StkFloat frequency );
+  void setFrequency( T frequency );
 
   //! Start a note with the given frequency and amplitude.
-  void noteOn( StkFloat frequency, StkFloat amplitude );
+  void noteOn( T frequency, T amplitude );
 
   //! Perform the control change specified by \e number and \e value (0.0 - 128.0).
-  void controlChange( int number, StkFloat value );
+  void controlChange( int number, T value );
 
   //! Compute and return one output sample.
-  StkFloat tick( unsigned int channel = 0 );
+  T tick( unsigned int channel = 0 );
 
-  //! Fill a channel of the StkFrames object with computed outputs.
+  //! Fill a channel of the StkFrames<T> object with computed outputs.
   /*!
     The \c channel argument must be less than the number of
-    channels in the StkFrames argument (the first channel is specified
+    channels in the StkFrames<T> argument (the first channel is specified
     by 0).  However, range checking is only performed if _STK_DEBUG_
     is defined during compilation, in which case an out-of-range value
     will trigger an StkError exception.
   */
-  StkFrames& tick( StkFrames& frames, unsigned int channel = 0 );
+  StkFrames<T>& tick( StkFrames<T>& frames, unsigned int channel = 0 );
 
  protected:
 
   int currentVowel_;
-  StkFloat tilt_[3];
-  StkFloat mods_[3];
+  T tilt_[3];
+  T mods_[3];
 };
 
 template<typename T>
-inline StkFloat FMVoices :: tick( unsigned int )
+inline T FMVoices <T>:: tick( unsigned int )
 {
-  StkFloat temp, temp2;
+  T temp, temp2;
 
-  temp = gains_[3] * adsr_[3]->tick() * waves_[3]->tick();
-  temp2 = vibrato_.tick() * modDepth_ * 0.1;
+  temp = this->gains_ [3] * this->adsr_ [3]->tick() * this->waves_ [3]->tick();
+  temp2 = this->vibrato_ .tick() * this->modDepth_  * 0.1;
 
-  waves_[0]->setFrequency(baseFrequency_ * (1.0 + temp2) * ratios_[0]);
-  waves_[1]->setFrequency(baseFrequency_ * (1.0 + temp2) * ratios_[1]);
-  waves_[2]->setFrequency(baseFrequency_ * (1.0 + temp2) * ratios_[2]);
-  waves_[3]->setFrequency(baseFrequency_ * (1.0 + temp2) * ratios_[3]);
+  
+  this->waves_ [0]->setFrequency(this->baseFrequency_  * (1.0 + temp2) * this->ratios_ [0]);
+  this->waves_ [1]->setFrequency(this->baseFrequency_  * (1.0 + temp2) * this->ratios_ [1]);
+  this->waves_ [2]->setFrequency(this->baseFrequency_  * (1.0 + temp2) * this->ratios_ [2]);
+  this->waves_ [3]->setFrequency(this->baseFrequency_  * (1.0 + temp2) * this->ratios_ [3]);
 
-  waves_[0]->addPhaseOffset(temp * mods_[0]);
-  waves_[1]->addPhaseOffset(temp * mods_[1]);
-  waves_[2]->addPhaseOffset(temp * mods_[2]);
-  waves_[3]->addPhaseOffset( twozero_.lastOut() );
-  twozero_.tick( temp );
-  temp =  gains_[0] * tilt_[0] * adsr_[0]->tick() * waves_[0]->tick();
-  temp += gains_[1] * tilt_[1] * adsr_[1]->tick() * waves_[1]->tick();
-  temp += gains_[2] * tilt_[2] * adsr_[2]->tick() * waves_[2]->tick();
+  this->waves_ [0]->addPhaseOffset(temp * mods_[0]);
+  this->waves_ [1]->addPhaseOffset(temp * mods_[1]);
+  this->waves_ [2]->addPhaseOffset(temp * mods_[2]);
+  this->waves_ [3]->addPhaseOffset( this->twozero_ .lastOut() );
+  this->twozero_ .tick( temp );
+  temp =  this->gains_ [0] * tilt_[0] * this->adsr_ [0]->tick() * this->waves_ [0]->tick();
+  temp += this->gains_ [1] * tilt_[1] * this->adsr_ [1]->tick() * this->waves_ [1]->tick();
+  temp += this->gains_ [2] * tilt_[2] * this->adsr_ [2]->tick() * this->waves_ [2]->tick();
 
-  lastFrame_[0] = temp * 0.33;
-  return lastFrame_[0];
+  this->lastFrame_[0] = temp * 0.33;
+  return this->lastFrame_[0];
 }
 
 template<typename T>
-inline StkFrames& FMVoices :: tick( StkFrames& frames, unsigned int channel )
+inline StkFrames<T>& FMVoices <T>:: tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
-    oStream_ << "FMVoices::tick(): channel and StkFrames arguments are incompatible!";
+    oStream_ << "FMVoices::tick(): channel and StkFrames<T> arguments are incompatible!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
-  StkFloat *samples = &frames[channel];
+  T *samples = &frames[channel];
   unsigned int j, hop = frames.channels() - nChannels;
   if ( nChannels == 1 ) {
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop )
@@ -126,7 +127,7 @@ inline StkFrames& FMVoices :: tick( StkFrames& frames, unsigned int channel )
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -166,30 +167,29 @@ inline StkFrames& FMVoices :: tick( StkFrames& frames, unsigned int channel )
 /***************************************************/
 
 
-namespace stk {
-
-FMVoices :: FMVoices( void )
-  : FM()
+template<typename T>
+FMVoices <T>:: FMVoices( void )
+  : FM<T>()
 {
   // Concatenate the STK rawwave path to the rawwave files
   for ( unsigned int i=0; i<3; i++ )
-    waves_[i] = new FileLoop( (Stk::rawwavePath() + "sinewave.raw").c_str(), true );
-  waves_[3] = new FileLoop( (Stk::rawwavePath() + "fwavblnk.raw").c_str(), true );
+    this->waves_ [i] = new FileLoop<T> ( (rawwavePath() + "sinewave.raw").c_str(), true );
+  this->waves_ [3] = new FileLoop<T> ( (rawwavePath() + "fwavblnk.raw").c_str(), true );
 
   this->setRatio(0, 2.00);
   this->setRatio(1, 4.00);
   this->setRatio(2, 12.0);
   this->setRatio(3, 1.00);
 
-  gains_[3] = fmGains_[80];
+  this->gains_ [3] = this->fmGain_ [80];
 
-  adsr_[0]->setAllTimes( 0.05, 0.05, fmSusLevels_[15], 0.05);
-  adsr_[1]->setAllTimes( 0.05, 0.05, fmSusLevels_[15], 0.05);
-  adsr_[2]->setAllTimes( 0.05, 0.05, fmSusLevels_[15], 0.05);
-  adsr_[3]->setAllTimes( 0.01, 0.01, fmSusLevels_[15], 0.5);
+  this->adsr_ [0]->setAllTimes( 0.05, 0.05, this->fmSusLevels_ [15], 0.05);
+  this->adsr_ [1]->setAllTimes( 0.05, 0.05, this->fmSusLevels_ [15], 0.05);
+  this->adsr_ [2]->setAllTimes( 0.05, 0.05, this->fmSusLevels_ [15], 0.05);
+  this->adsr_ [3]->setAllTimes( 0.01, 0.01, this->fmSusLevels_ [15], 0.5);
 
-  twozero_.setGain( 0.0 );
-  modDepth_ = (StkFloat) 0.005;
+  this->twozero_ .setGain( 0.0 );
+  this->modDepth_  = (T) 0.005;
   currentVowel_ = 0;
   tilt_[0] = 1.0;
   tilt_[1] = 0.5;
@@ -197,15 +197,17 @@ FMVoices :: FMVoices( void )
   mods_[0] = 1.0;
   mods_[1] = 1.1;
   mods_[2] = 1.1;
-  baseFrequency_ = 110.0;
+  this->baseFrequency_  = 110.0;
   this->setFrequency( 110.0 );    
 }  
 
-FMVoices :: ~FMVoices( void )
+template<typename T>
+FMVoices <T>:: ~FMVoices( void )
 {
 }
 
-void FMVoices :: setFrequency( StkFloat frequency )
+template<typename T>
+void FMVoices <T>:: setFrequency( T frequency )
 {
 #if defined(_STK_DEBUG_)
   if ( frequency <= 0.0 ) {
@@ -214,7 +216,7 @@ void FMVoices :: setFrequency( StkFloat frequency )
   }
 #endif
 
-  StkFloat temp, temp2 = 0.0;
+  T temp, temp2 = 0.0;
   int tempi = 0;
   unsigned int i = 0;
 
@@ -236,22 +238,23 @@ void FMVoices :: setFrequency( StkFloat frequency )
   }
   else return;
 
-  baseFrequency_ = frequency;
-  temp = (temp2 * Phonemes::formantFrequency(i, 0) / baseFrequency_) + 0.5;
+  this->baseFrequency_  = frequency;
+  temp = (temp2 * Phonemes<T>:: formantFrequency(i, 0) / this->baseFrequency_ ) + 0.5;
   tempi = (int) temp;
-  this->setRatio( 0, (StkFloat) tempi );
-  temp = (temp2 * Phonemes::formantFrequency(i, 1) / baseFrequency_) + 0.5;
+  this->setRatio( 0, (T) tempi );
+  temp = (temp2 * Phonemes<T>:: formantFrequency(i, 1) / this->baseFrequency_ ) + 0.5;
   tempi = (int) temp;
-  this->setRatio( 1, (StkFloat) tempi );
-  temp = (temp2 * Phonemes::formantFrequency(i, 2) / baseFrequency_) + 0.5;
+  this->setRatio( 1, (T) tempi );
+  temp = (temp2 * Phonemes<T>:: formantFrequency(i, 2) / this->baseFrequency_ ) + 0.5;
   tempi = (int) temp;
-  this->setRatio( 2, (StkFloat) tempi );    
-  gains_[0] = 1.0;
-  gains_[1] = 1.0;
-  gains_[2] = 1.0;
+  this->setRatio( 2, (T) tempi );    
+  this->gains_ [0] = 1.0;
+  this->gains_ [1] = 1.0;
+  this->gains_ [2] = 1.0;
 }
 
-void FMVoices :: noteOn( StkFloat frequency, StkFloat amplitude )
+template<typename T>
+void FMVoices <T>:: noteOn( T frequency, T amplitude )
 {
   this->setFrequency( frequency );
   tilt_[0] = amplitude;
@@ -260,21 +263,22 @@ void FMVoices :: noteOn( StkFloat frequency, StkFloat amplitude )
   this->keyOn();
 }
 
-void FMVoices :: controlChange( int number, StkFloat value )
+template<typename T>
+void FMVoices <T>:: controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "FMVoices::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }
 #endif
 
-  StkFloat normalizedValue = value * ONE_OVER_128;
+  T normalizedValue = value * ONE_OVER_128;
   if (number == __SK_Breath_) // 2
-    gains_[3] = fmGains_[(int) ( normalizedValue * 99.9 )];
+    this->gains_ [3] = this->fmGain_ [(int) ( normalizedValue * 99.9 )];
   else if (number == __SK_FootControl_)	{ // 4
     currentVowel_ = (int) (normalizedValue * 127.0);
-    this->setFrequency(baseFrequency_);
+    this->setFrequency(this->baseFrequency_ );
   }
   else if (number == __SK_ModFrequency_) // 11
     this->setModulationSpeed( normalizedValue * 12.0);

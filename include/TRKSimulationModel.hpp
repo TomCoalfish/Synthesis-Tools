@@ -62,6 +62,8 @@ The differential equations are:
 where k controls the cutoff frequency, r is feedback (<= 4 for stability), and S(x) is a saturation function.
 */
 
+namespace SoundAlchemy::MoogFilters
+{
 template<typename T>
 class TRKSimulationMoog : public TLadderFilterBase<T>
 {
@@ -174,4 +176,4 @@ private:
 
 };
 
-#endif
+}

@@ -6,21 +6,22 @@
 #include <cmath>
 #include <algorithm>
 #include <math.h>
+
 #include "SoundAlchemy.hpp"
 
-namespace SoundAlchemy {
+namespace SoundAlchemy::Korg35HPF {
 
     template<typename T> class mydsp;
 
     template<typename T>
-    struct K35HPParameterRange {
+    struct ParameterRange {
         T init;
         T min;
         T max;
     };
 
     template<typename T>
-    class TKorg35HPF : public Object<T>{
+    class TKorg35HPF {
     public:
         TKorg35HPF();
         ~TKorg35HPF();
@@ -49,7 +50,7 @@ namespace SoundAlchemy {
         static const char *parameter_short_label(unsigned index) noexcept;
         static const char *parameter_symbol(unsigned index) noexcept;
         static const char *parameter_unit(unsigned index) noexcept;
-        static const K35HPParameterRange<T> *parameter_range(unsigned index) noexcept;
+        static const ParameterRange<T> *parameter_range(unsigned index) noexcept;
         static bool parameter_is_trigger(unsigned index) noexcept;
         static bool parameter_is_boolean(unsigned index) noexcept;
         static bool parameter_is_integer(unsigned index) noexcept;
@@ -66,7 +67,7 @@ namespace SoundAlchemy {
             process(samples,samples,n);
         }
 
-        T Tick(T input, T A = 1, T X = 0, T Y = 0);
+        T Tick(T input);
         
 
         T get_parameter(unsigned index) const noexcept;
@@ -445,17 +446,17 @@ namespace SoundAlchemy {
     }
 
     template<typename T>
-    const K35HPParameterRange<T> *TKorg35HPF<T>::parameter_range(unsigned index) noexcept
+    const ParameterRange<T> *TKorg35HPF<T>::parameter_range(unsigned index) noexcept
     {
         switch (index) {
         
         case 0: {
-            static const K35HPParameterRange<T> range = { 20000, 20, 20000 };
+            static const ParameterRange<T> range = { 20000, 20, 20000 };
             return &range;
         }
         
         case 1: {
-            static const K35HPParameterRange<T> range = { 1, 0.5, 10 };
+            static const ParameterRange<T> range = { 1, 0.5, 10 };
             return &range;
         }
         
@@ -576,16 +577,10 @@ namespace SoundAlchemy {
     }
 
     template<typename T>
-    T TKorg35HPF<T>::Tick(T input, T A = 1, T X = 0, T Y = 0) { 
+    T TKorg35HPF<T>::Tick(T input) { 
         T output=0.0; 
-        T fc = get_cutoff();
-        T q  = get_q();
-        set_cutoff(fc + fc*X);
-        set_q(q + Y);
         mydsp<T> &dsp = static_cast<mydsp<T>&>(*fDsp);
         dsp.tick(input,output); 
-        set_cutoff(fc);
-        set_q(q);    
-        return std::tanh(A*output); 
+        return output; 
     }
 }

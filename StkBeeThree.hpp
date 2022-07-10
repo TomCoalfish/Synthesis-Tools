@@ -162,8 +162,8 @@ BeeThree<T>::BeeThree( void )
 {
   // Concatenate the STK rawwave path to the rawwave files
   for ( unsigned int i=0; i<3; i++ )
-    this->waves_[i] = new FileLoop<T>( (Stk<T>::rawwavePath() + "sinewave.raw").c_str(), true );
-  this->waves_[3] = new FileLoop<T>( (Stk<T>::rawwavePath() + "fwavblnk.raw").c_str(), true );
+    this->waves_[i] = new FileLoop<T>( (rawwavePath() + "sinewave.raw").c_str(), true );
+  this->waves_[3] = new FileLoop<T>( (rawwavePath() + "fwavblnk.raw").c_str(), true );
 
   this->setRatio( 0, 0.999 );
   this->setRatio( 1, 1.997 );

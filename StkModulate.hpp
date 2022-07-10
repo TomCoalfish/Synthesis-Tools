@@ -32,7 +32,7 @@ class Modulate : public Generator<T>
   ~Modulate( void );
 
   //! Reset internal state.
-  void reset( void ) { lastFrame_[0] = 0.0; };
+  void reset( void ) { this->lastFrame_[0] = 0.0; };
 
   //! Set the periodic (vibrato) rate or frequency in Hz.
   void setVibratoRate( T rate ) { vibrato_.setFrequency( rate ); };
@@ -41,13 +41,13 @@ class Modulate : public Generator<T>
   void setVibratoGain( T gain ) { vibratoGain_ = gain; };
 
   //! Set the periodic (vibrato) rate or frequency in Hz.
-  void setRandomRate( T rate ) {  noiseRate_ = (unsigned int) ( rate * Stk::sampleRate() / 22050.0 ); };
+  void setRandomRate( T rate ) {  noiseRate_ = (unsigned int) ( rate * stk::sampleRate() / 22050.0 ); };
   
   //! Set the random modulation gain.
   void setRandomGain( T gain );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Compute and return one output sample.
   T tick( void );
@@ -66,9 +66,9 @@ class Modulate : public Generator<T>
 
   void sampleRateChanged( T newRate, T oldRate );
 
-  SineWave vibrato_;
-  Noise noise_;
-  OnePole  filter_;
+  SineWave<T> vibrato_;
+  Noise<T> noise_;
+  OnePole<T>  filter_;
   T vibratoGain_;
   T randomGain_;
   unsigned int noiseRate_;
@@ -80,13 +80,13 @@ template<typename T>
 inline T Modulate<T>::tick( void )
 {
   // Compute periodic and random modulations.
-  lastFrame_[0] = vibratoGain_ * vibrato_.tick();
+  this->lastFrame_[0] = vibratoGain_ * vibrato_.tick();
   if ( noiseCounter_++ >= noiseRate_ ) {
     noise_.tick();
     noiseCounter_ = 0;
   }
-  lastFrame_[0] += filter_.tick( noise_.lastOut() );
-  return lastFrame_[0];
+  this->lastFrame_[0] += filter_.tick( noise_.lastOut() );
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -126,26 +126,26 @@ Modulate<T>::Modulate( void )
   vibrato_.setFrequency( 6.0 );
   vibratoGain_ = 0.04;
 
-  noiseRate_ = (unsigned int) ( 330.0 * Stk::sampleRate() / 22050.0 );
+  noiseRate_ = (unsigned int) ( 330.0 * stk::sampleRate() / 22050.0 );
   noiseCounter_ = noiseRate_;
 
   randomGain_ = 0.05;
   filter_.setPole( 0.999 );
   filter_.setGain( randomGain_ );
 
-  Stk::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 template<typename T>
 Modulate<T>::~Modulate( void )
 {
-  Stk::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 template<typename T>
 void Modulate<T>::sampleRateChanged( T newRate, T oldRate )
 {
-  if ( !ignoreSampleRateChange_ )
+  if ( ! this->ignoreSampleRateChange_ )
     noiseRate_ = (unsigned int ) ( newRate * noiseRate_ / oldRate );
 }
 

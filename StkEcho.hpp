@@ -23,7 +23,7 @@ class Echo : public Effect<T>
   /*!
     The default delay value is set to 1/2 the maximum delay length.
   */
-  Echo( unsigned long maximumDelay = (unsigned long) Stk::sampleRate() );
+  Echo( unsigned long maximumDelay = (unsigned long) sampleRate() );
 
   //! Reset and clear all internal state.
   void clear();
@@ -35,7 +35,7 @@ class Echo : public Effect<T>
   void setDelay( unsigned long delay );
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Input one sample to the effect and return one output.
   T tick( T input );
@@ -64,7 +64,7 @@ class Echo : public Effect<T>
 
  protected:
 
-  Delay delayLine_;
+  Delay<T> delayLine_;
   unsigned long length_;
 
 };
@@ -72,8 +72,8 @@ class Echo : public Effect<T>
 template<typename T>
 inline T Echo<T>::tick( T input )
 {
-  lastFrame_[0] = effectMix_ * ( delayLine_.tick( input ) - input ) + input;
-  return lastFrame_[0];
+  this->lastFrame_[0] = this->effectMix_ * ( delayLine_.tick( input ) - input ) + input;
+  return this->lastFrame_[0];
 }
 
 template<typename T>
@@ -89,10 +89,10 @@ inline StkFrames<T>& Echo<T>::tick( StkFrames<T>& frames, unsigned int channel )
   T *samples = &frames[channel];
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
-    *samples = effectMix_ * ( delayLine_.tick( *samples ) - *samples ) + *samples;
+    *samples = this->effectMix_ * ( delayLine_.tick( *samples ) - *samples ) + *samples;
   }
 
-  lastFrame_[0] = *(samples-hop);
+  this->lastFrame_[0] = *(samples-hop);
   return frames;
 }
 
@@ -110,10 +110,10 @@ inline StkFrames<T>& Echo<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames
   T *oSamples = &oFrames[oChannel];
   unsigned int iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
-    *oSamples = effectMix_ * ( delayLine_.tick( *iSamples ) - *iSamples ) + *iSamples;
+    *oSamples = this->effectMix_ * ( delayLine_.tick( *iSamples ) - *iSamples ) + *iSamples;
   }
 
-  lastFrame_[0] = *(oSamples-oHop);
+  this->lastFrame_[0] = *(oSamples-oHop);
   return iFrames;
 }
 
@@ -128,11 +128,11 @@ inline StkFrames<T>& Echo<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames
 /***************************************************/
 
 template<typename T>
-Echo<T>::Echo( unsigned long maximumDelay ) : Effect()
+Echo<T>::Echo( unsigned long maximumDelay ) : Effect<T>()
 {
   this->setMaximumDelay( maximumDelay );
   delayLine_.setDelay( length_ >> 1 );
-  effectMix_ = 0.5;
+  this->effectMix_ = 0.5;
   this->clear();
 }
 
@@ -140,7 +140,7 @@ template<typename T>
 void Echo<T>::clear( void )
 {
   delayLine_.clear();
-  lastFrame_[0] = 0.0;
+  this->lastFrame_[0] = 0.0;
 }
 
 template<typename T>
