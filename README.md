@@ -22,3 +22,4 @@ Templated Synthesis Toolkit
 * So I might dissect Stk base class a bit and make a new one that is not templated
 * It's not a huge deal but I just think it's awkward as everything derived from the Stk base class
 * And that needed to be templated to work
+* SO either I will make Stk base class not a template at all or something else
