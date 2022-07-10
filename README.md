@@ -15,6 +15,12 @@ Templated Synthesis Toolkit
 * Possible library you can use like Vc with Gcc 
 * We can modify to work on ARM too later
 
+# Viperfish
+* A tiny cublas linear algebra for the GPU
+* It is pretty fast as long as everything stays on the GPU
+* It won't work with Stk unless you rewrite them into Cuda which I am not going to do
+* But it does have vector expression and I may use nvrtc so you can compile Jit expression on the GPU
+
 # Mkl/IPP
 * I will hook it into Stk with some codes I have
 * Some linear algebra vector/matrix
