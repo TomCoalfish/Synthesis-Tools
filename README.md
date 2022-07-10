@@ -13,6 +13,7 @@ Templated Synthesis Toolkit
 * I have SSE and AVX vector classes
 * Needs aligned memory
 * Possible library you can use like Vc with Gcc 
+* We can modify to work on ARM too later
 
 # CSound
 * Can run CSound files
