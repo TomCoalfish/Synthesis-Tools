@@ -12,3 +12,8 @@ Templated Synthesis Toolkit
 * I have SSE and AVX 
 * Possible library you can use like Vc with Gcc 
 
+# So then all the classes now work on the type
+* I removed some baggage from the main Stk class as it made templated awkward
+* In some places I took enums out of the class as it's just a real mouthful having to access it
+* In other cases I added enums for the old static values and changed them into enums
+
