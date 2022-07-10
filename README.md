@@ -47,3 +47,10 @@ Templated Synthesis Toolkit
 * I am making it to it will work with Stk like an extensions for algorithms
 * It is not really difficult as it's all mostly templates
 * It has a peculiar audio scheduler in it you can use as the audio system 
+
+# Marsyas
+* Stk is in Marsyas too
+* You should be able to call the marsyas system without a problem
+
+# Essentia
+* It should work with C++ no problem
