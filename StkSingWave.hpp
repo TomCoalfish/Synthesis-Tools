@@ -38,7 +38,7 @@ class SingWave : public Generator<T>
   ~SingWave( void );
 
   //! Reset file to beginning.
-  void reset( void ) { wave_.reset(); lastFrame_[0] = 0.0; };
+  void reset( void ) { wave_.reset(); this->lastFrame_[0] = 0.0; };
 
   //! Normalize the file to a maximum of +-1.0.
   void normalize( void ) { wave_.normalize(); };
@@ -74,7 +74,7 @@ class SingWave : public Generator<T>
   void noteOff( void ) { envelope_.keyOff(); };
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Compute and return one output sample.
   T tick( void );
@@ -91,15 +91,16 @@ class SingWave : public Generator<T>
 
  protected:
 
-  FileLoop wave_;
-  Modulate modulator_;
-  Envelope envelope_;
-  Envelope pitchEnvelope_;
+  FileLoop<T> wave_;
+  Modulate<T> modulator_;
+  Envelope<T> envelope_;
+  Envelope<T> pitchEnvelope_;
   T rate_;
   T sweepRate_;
 
 };
 
+template<typename T>
 inline T SingWave<T>::tick( void )
 {
   // Set the wave rate.
@@ -107,12 +108,13 @@ inline T SingWave<T>::tick( void )
   newRate += newRate * modulator_.tick();
   wave_.setRate( newRate );
 
-  lastFrame_[0] = wave_.tick();
-  lastFrame_[0] *= envelope_.tick();
+  this->lastFrame_[0] = wave_.tick();
+  this->lastFrame_[0] *= envelope_.tick();
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
+template<typename T>
 inline StkFrames<T>& SingWave<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
@@ -145,6 +147,7 @@ inline StkFrames<T>& SingWave<T>::tick( StkFrames<T>& frames, unsigned int chann
 */
 /***************************************************/
  
+template<typename T>
 SingWave<T>::SingWave( std::string fileName, bool raw )
 {
   // An exception could be thrown here.
@@ -164,14 +167,16 @@ SingWave<T>::SingWave( std::string fileName, bool raw )
 	pitchEnvelope_.setRate( sweepRate_ * rate_ );
 }
 
+template<typename T>
 SingWave<T>::~SingWave()
 {
 }
 
+template<typename T>
 void SingWave<T>::setFrequency( T frequency )
 {
 	T temp = rate_;
-	rate_ = wave_.getSize() * frequency / Stk::sampleRate();
+	rate_ = wave_.getSize() * frequency / stk::sampleRate();
 	temp -= rate_;
 	if ( temp < 0) temp = -temp;
 	pitchEnvelope_.setTarget( rate_ );

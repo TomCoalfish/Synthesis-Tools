@@ -27,11 +27,12 @@ namespace stk {
 */
 /***************************************************/
 
-class Sitar : public Instrmnt
+template<typename T>
+class Sitar : public Instrmnt<T>
 {
  public:
   //! Class constructor, taking the lowest desired playing frequency.
-  Sitar( StkFloat lowestFrequency = 8.0 );
+  Sitar( T lowestFrequency = 8.0 );
 
   //! Class destructor.
   ~Sitar( void );
@@ -40,45 +41,46 @@ class Sitar : public Instrmnt
   void clear( void );
 
   //! Set instrument parameters for a particular frequency.
-  void setFrequency( StkFloat frequency );
+  void setFrequency( T frequency );
 
   //! Pluck the string with the given amplitude using the current frequency.
-  void pluck( StkFloat amplitude );
+  void pluck( T amplitude );
 
   //! Start a note with the given frequency and amplitude.
-  void noteOn( StkFloat frequency, StkFloat amplitude );
+  void noteOn( T frequency, T amplitude );
 
   //! Stop a note with the given amplitude (speed of decay).
-  void noteOff( StkFloat amplitude );
+  void noteOff( T amplitude );
 
   //! Compute and return one output sample.
-  StkFloat tick( unsigned int channel = 0 );
+  T tick( unsigned int channel = 0 );
 
-  //! Fill a channel of the StkFrames object with computed outputs.
+  //! Fill a channel of the StkFrames<T> object with computed outputs.
   /*!
     The \c channel argument must be less than the number of
-    channels in the StkFrames argument (the first channel is specified
+    channels in the StkFrames<T> argument (the first channel is specified
     by 0).  However, range checking is only performed if _STK_DEBUG_
     is defined during compilation, in which case an out-of-range value
     will trigger an StkError exception.
   */
-  StkFrames& tick( StkFrames& frames, unsigned int channel = 0 );
+  StkFrames<T>& tick( StkFrames<T>& frames, unsigned int channel = 0 );
 
  protected:
 
-  DelayA  delayLine_;
-  OneZero loopFilter_;
-  Noise   noise_;
-  ADSR    envelope_;
+  DelayA<T>  delayLine_;
+  OneZero<T> loopFilter_;
+  Noise<T>   noise_;
+  ADSR<T>    envelope_;
 
-  StkFloat loopGain_;
-  StkFloat amGain_;
-  StkFloat delay_;
-  StkFloat targetDelay_;
+  T loopGain_;
+  T amGain_;
+  T delay_;
+  T targetDelay_;
 
 };
 
-inline StkFloat Sitar :: tick( unsigned int )
+template<typename T>
+inline T Sitar<T>::tick( unsigned int )
 {
   if ( fabs(targetDelay_ - delay_) > 0.001 ) {
     if ( targetDelay_ < delay_ )
@@ -88,23 +90,24 @@ inline StkFloat Sitar :: tick( unsigned int )
     delayLine_.setDelay( delay_ );
   }
 
-  lastFrame_[0] = delayLine_.tick( loopFilter_.tick( delayLine_.lastOut() * loopGain_ ) + 
+  this->lastFrame_[0] = delayLine_.tick( loopFilter_.tick( delayLine_.lastOut() * loopGain_ ) + 
                                 (amGain_ * envelope_.tick() * noise_.tick()));
   
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
-inline StkFrames& Sitar :: tick( StkFrames& frames, unsigned int channel )
+template<typename T>
+inline StkFrames<T>& Sitar<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
-    oStream_ << "Sitar::tick(): channel and StkFrames arguments are incompatible!";
+    oStream_ << "Sitar::tick(): channel and StkFrames<T> arguments are incompatible!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
-  StkFloat *samples = &frames[channel];
+  T *samples = &frames[channel];
   unsigned int j, hop = frames.channels() - nChannels;
   if ( nChannels == 1 ) {
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop )
@@ -114,14 +117,109 @@ inline StkFrames& Sitar :: tick( StkFrames& frames, unsigned int channel )
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
   return frames;
 }
 
+/***************************************************/
+/*! \class Sitar
+    \brief STK sitar string model class.
+
+    This class implements a sitar plucked string
+    physical model based on the Karplus-Strong
+    algorithm.
+
+    This is a digital waveguide model, making its
+    use possibly subject to patents held by
+    Stanford University, Yamaha, and others.
+    There exist at least two patents, assigned to
+    Stanford, bearing the names of Karplus and/or
+    Strong.
+
+    by Perry R. Cook and Gary P. Scavone, 1995--2021.
+*/
+/***************************************************/
+
+
+template<typename T>
+Sitar<T>::Sitar( T lowestFrequency )
+{
+  if ( lowestFrequency <= 0.0 ) {
+    oStream_ << "Sitar::Sitar: argument is less than or equal to zero!";
+    handleError( StkError::FUNCTION_ARGUMENT );
+  }
+
+  unsigned long length = (unsigned long) ( stk::sampleRate() / lowestFrequency + 1 );
+  delayLine_.setMaximumDelay( length );
+  delay_ = 0.5 * length;
+  delayLine_.setDelay( delay_ );
+  targetDelay_ = delay_;
+
+  loopFilter_.setZero( 0.01 );
+  loopGain_ = 0.999;
+
+  envelope_.setAllTimes( 0.001, 0.04, 0.0, 0.5 );
+  this->clear();
+}
+
+template<typename T>
+Sitar<T>::~Sitar( void )
+{
+}
+
+template<typename T>
+void Sitar<T>::clear( void )
+{
+  delayLine_.clear();
+  loopFilter_.clear();
+}
+
+template<typename T>
+void Sitar<T>::setFrequency( T frequency )
+{
+#if defined(_STK_DEBUG_)
+  if ( frequency <= 0.0 ) {
+    oStream_ << "Sitar::setFrequency: parameter is less than or equal to zero!";
+    handleError( StkError::WARNING ); return;
+  }
+#endif
+
+  targetDelay_ = (stk::sampleRate() / frequency);
+  delay_ = targetDelay_ * (1.0 + (0.05 * noise_.tick()));
+  delayLine_.setDelay( delay_ );
+  loopGain_ = 0.995 + (frequency * 0.0000005);
+  if ( loopGain_ > 0.9995 ) loopGain_ = 0.9995;
+}
+
+template<typename T>
+void Sitar<T>::pluck( T amplitude )
+{
+  envelope_.keyOn();
+}
+
+template<typename T>
+void Sitar<T>::noteOn( T frequency, T amplitude )
+{
+  this->setFrequency( frequency );
+  this->pluck( amplitude );
+  amGain_ = 0.1 * amplitude;
+}
+
+template<typename T>
+void Sitar<T>::noteOff( T amplitude )
+{
+  if ( amplitude < 0.0 || amplitude > 1.0 ) {
+    oStream_ << "Sitar::noteOff: amplitude is out of range!";
+    handleError( StkError::WARNING ); return;
+  }
+
+  loopGain_ = (T) 1.0 - amplitude;
+}
+
 } // stk namespace
 
-#endif
+
 

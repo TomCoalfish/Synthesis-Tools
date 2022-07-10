@@ -38,7 +38,7 @@ enum ProtocolType {
     PROTO_UDP
   };
 
-template<typename T>
+
 class Socket : public Stk
 {
  public:
@@ -96,15 +96,15 @@ class Socket : public Stk
 /***************************************************/
 
 
-template<typename T>
-Socket<T>::Socket()
+
+inline Socket::Socket()
 {
   soket_ = -1;
   port_ = -1;
 }
 
-template<typename T>
-Socket<T>::~Socket()
+
+inline Socket::~Socket()
 {
   this->close( soket_ );
 
@@ -115,8 +115,8 @@ Socket<T>::~Socket()
 #endif
 }
 
-template<typename T>
-void Socket<T>::close( int socket )
+
+inline void Socket::close( int socket )
 {
   if ( !isValid( socket ) ) return;
 
@@ -131,8 +131,8 @@ void Socket<T>::close( int socket )
 #endif
 }
 
-template<typename T>
-void Socket<T>::setBlocking( int socket, bool enable )
+
+inline void Socket::setBlocking( int socket, bool enable )
 {
   if ( !isValid( socket ) ) return;
 
@@ -150,15 +150,15 @@ void Socket<T>::setBlocking( int socket, bool enable )
 #endif
 }
 
-template<typename T>
-int Socket<T>::writeBuffer(int socket, const void *buffer, long bufferSize, int flags )
+
+inline int Socket::writeBuffer(int socket, const void *buffer, long bufferSize, int flags )
 {
   if ( !isValid( socket ) ) return -1;
   return send( socket, (const char *)buffer, bufferSize, flags );
 }
 
-template<typename T>
-int Socket<T>::readBuffer(int socket, void *buffer, long bufferSize, int flags )
+
+inline int Socket::readBuffer(int socket, void *buffer, long bufferSize, int flags )
 {
   if ( !isValid( socket ) ) return -1;
   return recv( socket, (char *)buffer, bufferSize, flags );

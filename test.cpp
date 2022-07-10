@@ -49,6 +49,33 @@
 #include "StkPlucked.hpp"
 #include "StkPoleZero.hpp"
 #include "StkPolyBLEP.hpp"
+#include "StkRecorder.hpp"
+#include "StkReedTable.hpp"
+#include "StkResonate.hpp"
+#include "StkRhodey.hpp"
+#include "StkSampler.hpp"
+#include "StkSaxofony.hpp"
+#include "StkShakers.hpp"
+#include "StkSimple.hpp"
+#include "StkSineWave.hpp"
+#include "StkSingWave.hpp"
+#include "StkSitar.hpp"
+#include "StkSkini.hpp"
+#include "StkSocket.hpp"
+#include "StkSphere.hpp"
+#include "StkStifKarp.hpp"
+#include "StkTapDelay.hpp"
+#include "StkTcpClient.hpp"
+#include "StkTcpServer.hpp"
+#include "StkThread.hpp"
+#include "StkTubeBell.hpp"
+#include "StkTwang.hpp"
+#include "StkTwoPole.hpp"
+#include "StkTwoZero.hpp"
+#include "StkUdpSocket.hpp"
+#include "StkVoicer.hpp"
+#include "StkVoicForm.hpp"
+#include "StkWhistle.hpp"
 
 // these classes don't need to be templates
 // They are right now because Stk is the base class of everything
@@ -63,6 +90,8 @@
 #include "StkFileWvOut.hpp"
 #include "StkMutex.hpp"
 #include "StkPRCRev.hpp"
+#include "StkRtWvIn.hpp"
+#include "StkRtWvOut.hpp"
 
 using namespace stk;
 
@@ -103,19 +132,27 @@ int main()
     LentPitShift<float> pitch;
     Mandolin<float> mandolin(100.0f);
     Mesh2D<float> mesh2d(2,2);
-    Messager<float> msg;
+    Messager msg;
     //MidiFileIn<float> midiin;    
     ModalBar<float> modalbar;
     Modulate<float> mod;
     Moog<float> moog;
-    Mutex<float> m;
+    Mutex m;
     Noise<float> noise;
     PercFlut<float> perc;
     PitShift<float> pitshift;
     Plucked<float> plucky;
     StkPolyBLEP<float> blep(44100.0f);
     PRCRev<float> prc;
-    
+    Recorder<float> recorder;
+    ReedTable<float> reed;
+    Resonate<float> res;
+    Rhodey<float> rhodey;
+    Saxofony<float> sax(440);
+    Shakers<float> shakers();
+    Simple<float> simpy;
+    Sitar<float> sitar;
+
     SetSampleRate(44100);
     StkFrames<float> f(1024,2);
     f.fill(0,1);

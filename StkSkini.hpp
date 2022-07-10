@@ -37,7 +37,7 @@ namespace stk {
 */
 /***************************************************/
 
-template<typename T>
+
 class Skini : public Stk
 {
  public:
@@ -46,8 +46,8 @@ class Skini : public Stk
   struct Message { 
     long type;                         /*!< The message type, as defined in SKINImsg.h. */
     long channel;                      /*!< The message channel (not limited to 16!). */
-    T time;                     /*!< The message time stamp in seconds (delta or absolute). */
-    std::vector<T> floatValues; /*!< The message values read as floats (values are type-specific). */
+    double time;                     /*!< The message time stamp in seconds (delta or absolute). */
+    std::vector<double> floatValues; /*!< The message values read as floats (values are type-specific). */
     std::vector<long> intValues;       /*!< The message values read as ints (number and values are type-specific). */
     std::string remainder;             /*!< Any remaining message data, read as ascii text. */
 
@@ -146,37 +146,37 @@ const double Midi2Pitch[129] = {
 /***************************************************/
 
 
-template<typename T>
-Skini<T>::Skini()
+inline
+Skini::Skini()
 {
 }
 
-template<typename T>
-Skini<T>::~Skini()
+inline
+Skini::~Skini()
 {
 }
 
-template<typename T>
-bool Skini<T>::setFile( std::string fileName )
+inline
+bool Skini::setFile( std::string fileName )
 {
   if ( file_.is_open() ) {
-    this->oStream_ << "Skini::setFile: already reaading a file!";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Skini::setFile: already reaading a file!";
+    handleError( StkError::WARNING );
     return false;
   }
 
   file_.open( fileName.c_str() );
   if ( !file_ ) {
-    this->oStream_ << "Skini::setFile: unable to open file (" << fileName << ")";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Skini::setFile: unable to open file (" << fileName << ")";
+    handleError( StkError::WARNING );
     return false;
   }
 
   return true;
 }
 
-template<typename T>
-long Skini<T>::nextMessage( Message& message )
+inline
+long Skini::nextMessage( Message& message )
 {
   if ( !file_.is_open() ) return 0;
 
@@ -186,8 +186,8 @@ long Skini<T>::nextMessage( Message& message )
 
     // Read a line from the file and skip over invalid messages.
     if ( std::getline( file_, line ).eof() ) {
-      this->oStream_ << "// End of Score.  Thanks for using SKINI!!";
-      this->handleError( StkError::STATUS );
+      oStream_ << "// End of Score.  Thanks for using SKINI!!";
+      handleError( StkError::STATUS );
       file_.close();
       message.type = 0;
       done = true;
@@ -198,8 +198,8 @@ long Skini<T>::nextMessage( Message& message )
   return message.type;  
 }
 
-template<typename T>
-void Skini<T>::tokenize( const std::string&        str,
+inline
+void Skini::tokenize( const std::string&        str,
                         std::vector<std::string>& tokens,
                         const std::string&        delimiters )
 {
@@ -218,8 +218,8 @@ void Skini<T>::tokenize( const std::string&        str,
   }
 } 
 
-template<typename T>
-long Skini<T>::parseString( std::string& line, Message& message )
+inline
+long Skini::parseString( std::string& line, Message& message )
 {
   message.type = 0;
   if ( line.empty() ) return message.type;
@@ -228,14 +228,14 @@ long Skini<T>::parseString( std::string& line, Message& message )
   std::string::size_type lastPos = line.find_first_not_of(" ,\t", 0);
   std::string::size_type pos     = line.find_first_of("/", lastPos);
   if ( std::string::npos != pos ) {
-    this->oStream_ << "// Comment Line: " << line;
-    this->handleError( StkError::STATUS );
+    oStream_ << "// Comment Line: " << line;
+    handleError( StkError::STATUS );
     return message.type;
   }
 
   // Tokenize the string.
   std::vector<std::string> tokens; 
-  this->tokenize( line, tokens, " ,\t");
+  tokenize( line, tokens, " ,\t");
 
   // Valid SKINI messages must have at least three fields (type, time,
   // and channel).
@@ -249,8 +249,8 @@ long Skini<T>::parseString( std::string& line, Message& message )
   }
 
   if ( iSkini >= __SK_MaxMsgTypes_ )  {
-    this->oStream_ << "Skini::parseString: couldn't parse this line:\n   " << line;
-    this->handleError( StkError::WARNING );
+    oStream_ << "Skini::parseString: couldn't parse this line:\n   " << line;
+    handleError( StkError::WARNING );
     return message.type;
   }
   
@@ -261,14 +261,14 @@ long Skini<T>::parseString( std::string& line, Message& message )
   if ( tokens[1][0] == '=' ) {
     tokens[1].erase( tokens[1].begin() );
     if ( tokens[1].empty() ) {
-      this->oStream_ << "Skini::parseString: couldn't parse time field in line:\n   " << line;
-      this->handleError( StkError::WARNING );
+      oStream_ << "Skini::parseString: couldn't parse time field in line:\n   " << line;
+      handleError( StkError::WARNING );
       return message.type = 0;
     }
-    message.time = (T) -atof( tokens[1].c_str() );
+    message.time = -atof( tokens[1].c_str() );
   }
   else
-    message.time = (T) atof( tokens[1].c_str() );
+    message.time = atof( tokens[1].c_str() );
 
   // Parse the channel field.
   message.channel = atoi( tokens[2].c_str() );
@@ -282,8 +282,8 @@ long Skini<T>::parseString( std::string& line, Message& message )
 //    if ( tokens.size() <= (unsigned int) (iValue+3) ) { //rgh: test iToken rather than always testing iValue+3
 //    if (tokens.size() <= iToken) { //rgh: iToken only tests it more tokens are to be consumed (SK_INT, SK_DBL, SK_STR)
 	  if ((tokens.size() <= iToken) && (dataType < 0))  { //Don't fail if remaining iValues come from skini_msgs[] rather than tokens[].
-        this->oStream_ <<  "Skini::parseString: inconsistency between type table and parsed line:\n   " << line;
-        this->handleError( StkError::WARNING );
+        oStream_ <<  "Skini::parseString: inconsistency between type table and parsed line:\n   " << line;
+        handleError( StkError::WARNING );
         return message.type = 0;
     }
 
@@ -291,7 +291,7 @@ long Skini<T>::parseString( std::string& line, Message& message )
 
     case SK_INT:
       message.intValues[iValue] = atoi( tokens[iToken].c_str() ); //rgh: use new index
-      message.floatValues[iValue] = (T) message.intValues[iValue];
+      message.floatValues[iValue] = message.intValues[iValue];
       ++iToken; //rgh: increment token index and value index (below)
       break;
 
@@ -307,7 +307,7 @@ long Skini<T>::parseString( std::string& line, Message& message )
 
     default: // MIDI extension message
       message.intValues[iValue] = dataType;
-      message.floatValues[iValue] = (T) message.intValues[iValue];
+      message.floatValues[iValue] = message.intValues[iValue];
       //iValue--; //rgh: iValue must increment even when iToken does not; resetting iValue only works sometimes
     }
 
@@ -320,8 +320,8 @@ long Skini<T>::parseString( std::string& line, Message& message )
   return message.type;
 }
 
-template<typename T>
-std::string Skini<T>::whatsThisType(long type)
+inline
+std::string Skini::whatsThisType(long type)
 {
   std::string typeString;
 
@@ -334,8 +334,8 @@ std::string Skini<T>::whatsThisType(long type)
   return typeString;
 }
 
-template<typename T>
-std::string Skini<T>::whatsThisController( long number )
+inline
+std::string Skini::whatsThisController( long number )
 {
   std::string controller;
 

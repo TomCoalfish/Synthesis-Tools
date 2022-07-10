@@ -99,12 +99,12 @@ class Saxofony : public Instrmnt<T>
 
  protected:
 
-  DelayL    delays_[2];
-  ReedTable reedTable_;
-  OneZero   filter_;
-  Envelope  envelope_;
-  Noise     noise_;
-  SineWave vibrato_;
+  DelayL<T>    delays_[2];
+  ReedTable<T> reedTable_;
+  OneZero<T>   filter_;
+  Envelope<T>  envelope_;
+  Noise<T>     noise_;
+  SineWave<T> vibrato_;
 
   T outputGain_;
   T noiseGain_;
@@ -126,20 +126,20 @@ inline T Saxofony<T>::tick( unsigned int )
   breathPressure += breathPressure * vibratoGain_ * vibrato_.tick();
 
   temp = -0.95 * filter_.tick( delays_[0].lastOut() );
-  lastFrame_[0] = temp - delays_[1].lastOut();
-  pressureDiff = breathPressure - lastFrame_[0];
+  this->lastFrame_[0] = temp - delays_[1].lastOut();
+  pressureDiff = breathPressure - this->lastFrame_[0];
   delays_[1].tick( temp );
   delays_[0].tick( breathPressure - (pressureDiff * reedTable_.tick(pressureDiff)) - temp );
 
-  lastFrame_[0] *= outputGain_;
-  return lastFrame_[0];
+  this->lastFrame_[0] *= outputGain_;
+  return this->lastFrame_[0];
 }
 
 
 template<typename T>
 inline StkFrames<T>& Saxofony<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Saxofony::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -157,7 +157,7 @@ inline StkFrames<T>& Saxofony<T>::tick( StkFrames<T>& frames, unsigned int chann
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -209,7 +209,7 @@ Saxofony<T>::Saxofony( T lowestFrequency )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  unsigned long nDelays = (unsigned long) ( Stk::sampleRate() / lowestFrequency );
+  unsigned long nDelays = (unsigned long) ( stk::sampleRate() / lowestFrequency );
   delays_[0].setMaximumDelay( nDelays + 1 );
   delays_[1].setMaximumDelay( nDelays + 1 );
 
@@ -255,7 +255,7 @@ void Saxofony<T>::setFrequency( T frequency )
 #endif
 
   // Account for filter delay and one sample "lastOut" delay.
-  T delay = ( Stk::sampleRate() / frequency ) - filter_.phaseDelay( frequency ) - 1.0;
+  T delay = ( stk::sampleRate() / frequency ) - filter_.phaseDelay( frequency ) - 1.0;
   delays_[0].setDelay( (1.0-position_) * delay );
   delays_[1].setDelay( position_ * delay );
 }
@@ -324,7 +324,7 @@ template<typename T>
 void Saxofony<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( stk::inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Saxofony::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }

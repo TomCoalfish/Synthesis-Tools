@@ -30,8 +30,8 @@ namespace stk {
 */
 /***************************************************/
 
-template<typename T>
-class TcpClient : public Socket<T>
+
+class TcpClient : public Socket
 {
  public:
   //! Default class constructor creates a socket client connection to the specified host and port.
@@ -88,8 +88,8 @@ class TcpClient : public Socket<T>
 
 
 
-template<typename T>
-TcpClient<T>::TcpClient( int port, std::string hostname )
+inline
+TcpClient::TcpClient( int port, std::string hostname )
 {
 #if defined(__OS_WINDOWS__)  // windoze-only stuff
   WSADATA wsaData;
@@ -107,13 +107,13 @@ TcpClient<T>::TcpClient( int port, std::string hostname )
 }
 
 
-template<typename T>
-TcpClient<T>::~TcpClient( void )
+inline
+TcpClient::~TcpClient( void )
 {
 }
 
-template<typename T>
-int TcpClient<T>::connect( int port, std::string hostname )
+inline
+int TcpClient::connect( int port, std::string hostname )
 {
   // Close any existing connections.
   this->close( this->soket_ );
@@ -154,16 +154,16 @@ int TcpClient<T>::connect( int port, std::string hostname )
 }
 
 
-template<typename T>
-int TcpClient<T>::writeBuffer( const void *buffer, long bufferSize, int flags )
+inline
+int TcpClient::writeBuffer( const void *buffer, long bufferSize, int flags )
 {
   if ( !isValid( this->soket_ ) ) return -1;
   return send( this->soket_, (const char *)buffer, bufferSize, flags );
 }
 
 
-template<typename T>
-int TcpClient<T>::readBuffer( void *buffer, long bufferSize, int flags )
+inline
+int TcpClient::readBuffer( void *buffer, long bufferSize, int flags )
 {
   if ( !isValid( this->soket_ ) ) return -1;
   return recv( this->soket_, (char *)buffer, bufferSize, flags );

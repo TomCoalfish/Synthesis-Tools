@@ -102,7 +102,7 @@ protected:
 template<typename T>
 inline StkFrames<T>& Whistle<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Whistle::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -120,7 +120,7 @@ inline StkFrames<T>& Whistle<T>::tick( StkFrames<T>& frames, unsigned int channe
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -152,14 +152,14 @@ const int CAN_RADIUS = 100;
 const int PEA_RADIUS = 30;
 const int BUMP_RADIUS = 5;
 
-const T NORM_CAN_LOSS = 0.97;
-//const T SLOW_CAN_LOSS = 0.90;
-const T GRAVITY = 20.0;
+const double NORM_CAN_LOSS = 0.97;
+//const double SLOW_CAN_LOSS = 0.90;
+const double GRAVITY = 20.0;
 
-const T NORM_TICK_SIZE = 0.004;
+const double NORM_TICK_SIZE = 0.004;
 //const T SLOW_TICK_SIZE = 0.0001;
 
-const T ENV_RATE = 0.001;
+const double ENV_RATE = 0.001;
 
 template<typename T>
 Whistle<T>::Whistle( void )
@@ -355,9 +355,9 @@ T Whistle<T>::tick( unsigned int )
 
   temp = envOut * envOut * gain / 2;
   soundMix = temp * ( sine_.tick() + ( noiseGain_*noise_.tick() ) );
-  lastFrame_[0] = 0.20 * soundMix; // should probably do one-zero filter here
+  this->lastFrame_[0] = 0.20 * soundMix; // should probably do one-zero filter here
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 

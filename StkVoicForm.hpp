@@ -6,7 +6,7 @@
 #include "StkFormSwep.hpp"
 #include "StkOnePole.hpp"
 #include "StkOneZero.hpp"
-#include "Phonemes.h"
+#include "StkPhonemes.hpp"
 #include "SKINImsg.h"
 #include <cstring>
 #include <cmath>
@@ -121,18 +121,18 @@ inline T VoicForm<T>::tick( unsigned int )
   T temp;
   temp = onepole_.tick( onezero_.tick( voiced_->tick() ) );
   temp += noiseEnv_.tick() * noise_.tick();
-  lastFrame_[0] = filters_[0].tick(temp);
-  lastFrame_[0] += filters_[1].tick(temp);
-  lastFrame_[0] += filters_[2].tick(temp);
-  lastFrame_[0] += filters_[3].tick(temp);
+  this->lastFrame_[0] = filters_[0].tick(temp);
+  this->lastFrame_[0] += filters_[1].tick(temp);
+  this->lastFrame_[0] += filters_[2].tick(temp);
+  this->lastFrame_[0] += filters_[3].tick(temp);
   /*
     temp  += noiseEnv_.tick() * noise_.tick();
-    lastFrame_[0]  = filters_[0].tick(temp);
-    lastFrame_[0]  = filters_[1].tick(lastFrame_[0]);
-    lastFrame_[0]  = filters_[2].tick(lastFrame_[0]);
-    lastFrame_[0]  = filters_[3].tick(lastFrame_[0]);
+    this->lastFrame_[0]  = filters_[0].tick(temp);
+    this->lastFrame_[0]  = filters_[1].tick(this->lastFrame_[0]);
+    this->lastFrame_[0]  = filters_[2].tick(this->lastFrame_[0]);
+    this->lastFrame_[0]  = filters_[3].tick(this->lastFrame_[0]);
   */
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 
@@ -140,7 +140,7 @@ inline T VoicForm<T>::tick( unsigned int )
 template<typename T>
 inline StkFrames<T>& VoicForm<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "VoicForm::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -158,7 +158,7 @@ inline StkFrames<T>& VoicForm<T>::tick( StkFrames<T>& frames, unsigned int chann
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -196,10 +196,10 @@ inline StkFrames<T>& VoicForm<T>::tick( StkFrames<T>& frames, unsigned int chann
 
 
 template<typename T>
-VoicForm<T>::VoicForm( void ) : Instrmnt()
+VoicForm<T>::VoicForm( void ) : Instrmnt<T>()
 {
   // Concatenate the STK rawwave path to the rawwave file
-  voiced_ = new SingWave( (Stk::rawwavePath() + "impuls20.raw").c_str(), true );
+  voiced_ = new SingWave<T>( (stk::rawwavePath() + "impuls20.raw").c_str(), true );
   voiced_->setGainRate( 0.001 );
   voiced_->setGainTarget( 0.0 );
 
@@ -255,14 +255,14 @@ bool VoicForm<T>::setPhoneme( const char *phoneme )
   bool found = false;
   unsigned int i = 0;
   while( i < 32 && !found ) {
-    if ( !strcmp( Phonemes::name(i), phoneme ) ) {
+    if ( !strcmp( Phonemes<T>::name(i), phoneme ) ) {
       found = true;
-      filters_[0].setTargets( Phonemes::formantFrequency(i, 0), Phonemes::formantRadius(i, 0), pow(10.0, Phonemes::formantGain(i, 0 ) / 20.0) );
-      filters_[1].setTargets( Phonemes::formantFrequency(i, 1), Phonemes::formantRadius(i, 1), pow(10.0, Phonemes::formantGain(i, 1 ) / 20.0) );
-      filters_[2].setTargets( Phonemes::formantFrequency(i, 2), Phonemes::formantRadius(i, 2), pow(10.0, Phonemes::formantGain(i, 2 ) / 20.0) );
-      filters_[3].setTargets( Phonemes::formantFrequency(i, 3), Phonemes::formantRadius(i, 3), pow(10.0, Phonemes::formantGain(i, 3 ) / 20.0) );
-      this->setVoiced( Phonemes::voiceGain( i ) );
-      this->setUnVoiced( Phonemes::noiseGain( i ) );
+      filters_[0].setTargets( Phonemes<T>::formantFrequency(i, 0), Phonemes<T>::formantRadius(i, 0), pow(10.0, Phonemes<T>::formantGain(i, 0 ) / 20.0) );
+      filters_[1].setTargets( Phonemes<T>::formantFrequency(i, 1), Phonemes<T>::formantRadius(i, 1), pow(10.0, Phonemes<T>::formantGain(i, 1 ) / 20.0) );
+      filters_[2].setTargets( Phonemes<T>::formantFrequency(i, 2), Phonemes<T>::formantRadius(i, 2), pow(10.0, Phonemes<T>::formantGain(i, 2 ) / 20.0) );
+      filters_[3].setTargets( Phonemes<T>::formantFrequency(i, 3), Phonemes<T>::formantRadius(i, 3), pow(10.0, Phonemes<T>::formantGain(i, 3 ) / 20.0) );
+      this->setVoiced( Phonemes<T>::voiceGain( i ) );
+      this->setUnVoiced( Phonemes<T>::noiseGain( i ) );
     }
     i++;
   }
@@ -309,7 +309,7 @@ template<typename T>
 void VoicForm<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( stk::inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "VoicForm::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }
@@ -342,12 +342,12 @@ void VoicForm<T>::controlChange( int number, T value )
       i = 0;
       temp = 1.4;
     }
-    filters_[0].setTargets( temp * Phonemes::formantFrequency(i, 0), Phonemes::formantRadius(i, 0), pow(10.0, Phonemes::formantGain(i, 0 ) / 20.0) );
-    filters_[1].setTargets( temp * Phonemes::formantFrequency(i, 1), Phonemes::formantRadius(i, 1), pow(10.0, Phonemes::formantGain(i, 1 ) / 20.0) );
-    filters_[2].setTargets( temp * Phonemes::formantFrequency(i, 2), Phonemes::formantRadius(i, 2), pow(10.0, Phonemes::formantGain(i, 2 ) / 20.0) );
-    filters_[3].setTargets( temp * Phonemes::formantFrequency(i, 3), Phonemes::formantRadius(i, 3), pow(10.0, Phonemes::formantGain(i, 3 ) / 20.0) );
-    this->setVoiced( Phonemes::voiceGain( i ) );
-    this->setUnVoiced( Phonemes::noiseGain( i ) );
+    filters_[0].setTargets( temp * Phonemes<T>::formantFrequency(i, 0), Phonemes<T>::formantRadius(i, 0), pow(10.0, Phonemes<T>::formantGain(i, 0 ) / 20.0) );
+    filters_[1].setTargets( temp * Phonemes<T>::formantFrequency(i, 1), Phonemes<T>::formantRadius(i, 1), pow(10.0, Phonemes<T>::formantGain(i, 1 ) / 20.0) );
+    filters_[2].setTargets( temp * Phonemes<T>::formantFrequency(i, 2), Phonemes<T>::formantRadius(i, 2), pow(10.0, Phonemes<T>::formantGain(i, 2 ) / 20.0) );
+    filters_[3].setTargets( temp * Phonemes<T>::formantFrequency(i, 3), Phonemes<T>::formantRadius(i, 3), pow(10.0, Phonemes<T>::formantGain(i, 3 ) / 20.0) );
+    this->setVoiced( Phonemes<T>::voiceGain( i ) );
+    this->setUnVoiced( Phonemes<T>::noiseGain( i ) );
   }
   else if (number == __SK_ModFrequency_) // 11
     voiced_->setVibratoRate( normalizedValue * 12.0);  // 0 to 12 Hz

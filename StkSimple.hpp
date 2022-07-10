@@ -87,19 +87,19 @@ class Simple : public Instrmnt<T>
 template<typename T>
 inline T Simple<T>::tick( unsigned int )
 {
-  lastFrame_[0] = loopGain_ * loop_->tick();
+  this->lastFrame_[0] = loopGain_ * loop_->tick();
   biquad_.tick( noise_.tick() );
-  lastFrame_[0] += (1.0 - loopGain_) * biquad_.lastOut();
-  lastFrame_[0] = filter_.tick( lastFrame_[0] );
-  lastFrame_[0] *= adsr_.tick();
-  return lastFrame_[0];
+  this->lastFrame_[0] += (1.0 - loopGain_) * biquad_.lastOut();
+  this->lastFrame_[0] = filter_.tick( this->lastFrame_[0] );
+  this->lastFrame_[0] *= adsr_.tick();
+  return this->lastFrame_[0];
 }
 
 
 template<typename T>
 inline StkFrames<T>& Simple<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Simple::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -117,7 +117,7 @@ inline StkFrames<T>& Simple<T>::tick( StkFrames<T>& frames, unsigned int channel
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -147,7 +147,7 @@ template<typename T>
 Simple<T>::Simple( void )
 {
   // Concatenate the STK rawwave path to the rawwave file
-  loop_ = new FileLoop( (Stk::rawwavePath() + "impuls10.raw").c_str(), true );
+  loop_ = new FileLoop<T>( (stk::rawwavePath() + "impuls10.raw").c_str(), true );
 
   filter_.setPole( 0.5 );
   baseFrequency_ = 440.0;
@@ -209,7 +209,7 @@ template<typename T>
 void Simple<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( stk::inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Simple::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }
@@ -221,7 +221,7 @@ void Simple<T>::controlChange( int number, T value )
   else if (number == __SK_NoiseLevel_) // 4
     loopGain_ = normalizedValue;
   else if (number == __SK_ModFrequency_) { // 11
-    normalizedValue /= 0.2 * Stk::sampleRate();
+    normalizedValue /= 0.2 * stk::sampleRate();
     adsr_.setAttackRate( normalizedValue );
     adsr_.setDecayRate( normalizedValue );
     adsr_.setReleaseRate( normalizedValue );

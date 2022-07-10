@@ -55,24 +55,24 @@ namespace stk {
 
 const int DEFAULT_QUEUE_LIMIT = 200;
 
-template<typename T>
+
 class Messager : public Stk
 {
  public:
 
   // This structure is used to share data among the various realtime
   // messager threads.  It must be public.
-  typedef typename Skini<T>::Message msg;
+  typedef typename Skini::Message msg;
   struct MessagerData {
-    Skini<T> skini;
+    Skini skini;
     std::queue<msg> queue;
     unsigned int queueLimit;
     int sources;
 
 #if defined(__STK_REALTIME__)
-    Mutex<T> mutex;
+    Mutex mutex;
     RtMidiIn *midi;
-    TcpServer<T> *socket;
+    TcpServer *socket;
     std::vector<int> fd;
     fd_set mask;
 #endif
@@ -160,8 +160,8 @@ class Messager : public Stk
   MessagerData data_;
 
 #if defined(__STK_REALTIME__)
-  Thread<T> stdinThread_;
-  Thread<T> socketThread_;
+  Thread stdinThread_;
+  Thread socketThread_;
 #endif
 
 };
@@ -215,8 +215,8 @@ enum MessagerSourceType
     STK_SOCKET = 0x8,
 };
 
-template<typename T>
-Messager<T>::Messager()
+inline
+Messager::Messager()
 {
   data_.sources = 0;
   data_.queueLimit = DEFAULT_QUEUE_LIMIT;
@@ -226,8 +226,8 @@ Messager<T>::Messager()
 #endif
 }
 
-template<typename T>
-Messager<T>::~Messager()
+inline
+Messager::~Messager()
 {
   // Clear the queue in case any thread is waiting on its limit.
 #if defined(__STK_REALTIME__)
@@ -247,17 +247,17 @@ Messager<T>::~Messager()
 #endif
 }
 
-template<typename T>
-bool Messager<T>::setScoreFile( const char* filename )
+inline
+bool Messager::setScoreFile( const char* filename )
 {
   if ( data_.sources ) {
     if ( data_.sources == STK_FILE ) {
-      this->oStream_ << "Messager::setScoreFile: already reading a scorefile!";
-      this->handleError( StkError::WARNING );
+      oStream_ << "Messager::setScoreFile: already reading a scorefile!";
+      handleError( StkError::WARNING );
     }
     else {
-      this->oStream_ << "Messager::setScoreFile: already reading realtime control input ... cannot do scorefile input too!";
-      this->handleError( StkError::WARNING );
+      oStream_ << "Messager::setScoreFile: already reading realtime control input ... cannot do scorefile input too!";
+      handleError( StkError::WARNING );
     }
     return false;
   }
@@ -267,8 +267,8 @@ bool Messager<T>::setScoreFile( const char* filename )
   return true;
 }
 
-template<typename T>
-void Messager<T>::popMessage( msg& message )
+inline
+void Messager::popMessage( msg& message )
 {
   if ( data_.sources == STK_FILE ) { // scorefile input
     if ( !data_.skini.nextMessage( message ) )
@@ -293,8 +293,8 @@ void Messager<T>::popMessage( msg& message )
 #endif
 }
 
-template<typename T>
-void Messager<T>::pushMessage( msg& message )
+inline
+void Messager::pushMessage( msg& message )
 {
 #if defined(__STK_REALTIME__)
   data_.mutex.lock();
@@ -307,56 +307,56 @@ void Messager<T>::pushMessage( msg& message )
 
 #if defined(__STK_REALTIME__)
 
-template<typename T>
-bool Messager<T>::startStdInput()
+inline
+bool Messager::startStdInput()
 {
   if ( data_.sources == STK_FILE ) {
-    this->oStream_ << "Messager::startStdInput: already reading a scorefile ... cannot do realtime control input too!";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Messager::startStdInput: already reading a scorefile ... cannot do realtime control input too!";
+    handleError( StkError::WARNING );
     return false;
   }
 
   if ( data_.sources & STK_STDIN ) {
-    this->oStream_ << "Messager::startStdInput: stdin input thread already started.";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Messager::startStdInput: stdin input thread already started.";
+    handleError( StkError::WARNING );
     return false;
   }
 
   // Start the stdin input thread.
   if ( !stdinThread_.start( (THREAD_FUNCTION)&stdinHandler, &data_ ) ) {
-    this->oStream_ << "Messager::startStdInput: unable to start stdin input thread!";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Messager::startStdInput: unable to start stdin input thread!";
+    handleError( StkError::WARNING );
     return false;
   }
   data_.sources |= STK_STDIN;
   return true;
 }
 
-template<typename T> THREAD_RETURN THREAD_TYPE stdinHandler(void *ptr);
-template<typename T> void midiHandler( double timeStamp, std::vector<unsigned char> *bytes, void *ptr );
-template<typename T> THREAD_RETURN THREAD_TYPE socketHandler(void *ptr);
+inline THREAD_RETURN THREAD_TYPE stdinHandler(void *ptr);
+inline void midiHandler( double timeStamp, std::vector<unsigned char> *bytes, void *ptr );
+inline THREAD_RETURN THREAD_TYPE socketHandler(void *ptr);
 
-template<typename T>
-bool Messager<T>::startMidiInput( int port )
+inline
+bool Messager::startMidiInput( int port )
 {
   if ( data_.sources == STK_FILE ) {
-    this->oStream_ << "Messager::startMidiInput: already reading a scorefile ... cannot do realtime control input too!";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Messager::startMidiInput: already reading a scorefile ... cannot do realtime control input too!";
+    handleError( StkError::WARNING );
     return false;
   }
 
   if ( data_.sources & STK_MIDI ) {
-    this->oStream_ << "Messager::startMidiInput: MIDI input already started.";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Messager::startMidiInput: MIDI input already started.";
+    handleError( StkError::WARNING );
     return false;
   }
 
   // First start the stdin input thread if it isn't already running
   // (to allow the user to exit).
   if ( !( data_.sources & STK_STDIN ) ) {
-    if ( this->startStdInput() == false ) {
-      this->oStream_ << "Messager::startMidiInput: unable to start input from stdin.";
-      this->handleError( StkError::WARNING );
+    if ( startStdInput() == false ) {
+      oStream_ << "Messager::startMidiInput: unable to start input from stdin.";
+      handleError( StkError::WARNING );
       return false;
     }
   }
@@ -368,8 +368,8 @@ bool Messager<T>::startMidiInput( int port )
     else data_.midi->openPort( (unsigned int)port );
   }
   catch ( RtMidiError &error ) {
-    this->oStream_ << "Messager::startMidiInput: error creating RtMidiIn instance (" << error.getMessage() << ").";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Messager::startMidiInput: error creating RtMidiIn instance (" << error.getMessage() << ").";
+    handleError( StkError::WARNING );
     return false;
   }
 
@@ -377,31 +377,31 @@ bool Messager<T>::startMidiInput( int port )
   return true;
 }
 
-template<typename T>
-bool Messager<T>::startSocketInput( int port )
+inline
+bool Messager::startSocketInput( int port )
 {
   if ( data_.sources == STK_FILE ) {
-    this->oStream_ << "Messager::startSocketInput: already reading a scorefile ... cannot do realtime control input too!";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Messager::startSocketInput: already reading a scorefile ... cannot do realtime control input too!";
+    handleError( StkError::WARNING );
     return false;
   }
 
   if ( data_.sources & STK_SOCKET ) {
-    this->oStream_ << "Messager::startSocketInput: socket input thread already started.";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Messager::startSocketInput: socket input thread already started.";
+    handleError( StkError::WARNING );
     return false;
   }
 
   // Create the socket server.
   try {
-    data_.socket = new TcpServer<T>( port );
+    data_.socket = new TcpServer( port );
   }
   catch ( StkError& ) {
     return false;
   }
 
-  this->oStream_ << "Socket server listening for connection(s) on port " << port << "...";
-  this->handleError( StkError::STATUS );
+  oStream_ << "Socket server listening for connection(s) on port " << port << "...";
+  handleError( StkError::STATUS );
 
   // Initialize socket descriptor information.
   FD_ZERO(&data_.mask);
@@ -411,8 +411,8 @@ bool Messager<T>::startSocketInput( int port )
 
   // Start the socket thread.
   if ( !socketThread_.start( (THREAD_FUNCTION)&socketHandler, &data_ ) ) {
-    this->oStream_ << "Messager::startSocketInput: unable to start socket input thread!";
-    this->handleError( StkError::WARNING );
+    oStream_ << "Messager::startSocketInput: unable to start socket input thread!";
+    handleError( StkError::WARNING );
     return false;
   }
 
@@ -425,14 +425,14 @@ bool Messager<T>::startSocketInput( int port )
   #include <errno.h>
 #endif
 
-template<typename T> using messager_data = typename Messager<T>::MessagerData;
-template<typename T> using msg = typename Skini<T>::Message;
+using messager_data = typename Messager::MessagerData;
+using msg = typename Skini::Message;
 
-template<typename T> 
+inline 
 THREAD_RETURN THREAD_TYPE stdinHandler(void *ptr)
 {  
-  messager_data<T> *data = (messager_data<T>*) ptr;
-  msg<T> message;
+  messager_data *data = (messager_data*) ptr;
+  msg message;
 
   std::string line;
   while ( !std::getline( std::cin, line).eof() ) {
@@ -457,7 +457,7 @@ THREAD_RETURN THREAD_TYPE stdinHandler(void *ptr)
   return NULL;
 }
 
-template<typename T> 
+inline 
 void midiHandler( double timeStamp, std::vector<unsigned char> *bytes, void *ptr )
 {
   if ( bytes->size() < 2 ) return;
@@ -465,24 +465,24 @@ void midiHandler( double timeStamp, std::vector<unsigned char> *bytes, void *ptr
   // Parse the MIDI bytes ... only keep MIDI channel messages.
   if ( bytes->at(0) > 239 ) return;
 
-  messager_data<T> *data = (messager_data<T>*) ptr;
-  msg<T> message;
+  messager_data *data = (messager_data*) ptr;
+  msg message;
 
   message.type = bytes->at(0) & 0xF0;
   message.channel = bytes->at(0) & 0x0F;
   message.time = 0.0; // realtime messages should have delta time = 0.0
   message.intValues[0] = bytes->at(1);
-  message.floatValues[0] = (T) message.intValues[0];
+  message.floatValues[0] = message.intValues[0];
   if ( ( message.type != 0xC0 ) && ( message.type != 0xD0 ) ) {
     if ( bytes->size() < 3 ) return;
     message.intValues[1] = bytes->at(2);
     if ( message.type == 0xE0 ) { // combine pithbend into single "14-bit" value
       message.intValues[0] += message.intValues[1] <<= 7;
-      message.floatValues[0] = (T) message.intValues[0];
+      message.floatValues[0] = message.intValues[0];
       message.intValues[1] = 0;
     }
     else
-      message.floatValues[1] = (T) message.intValues[1];
+      message.floatValues[1] = message.intValues[1];
   }
 
   while ( data->queue.size() >= data->queueLimit ) stk::sleep( 50 );
@@ -492,11 +492,11 @@ void midiHandler( double timeStamp, std::vector<unsigned char> *bytes, void *ptr
   data->mutex.unlock();
 }
 
-template<typename T> 
+inline 
 THREAD_RETURN THREAD_TYPE socketHandler(void *ptr)
 {
-  messager_data<T> *data = (messager_data<T> *) ptr;
-  msg<T> message;
+  messager_data *data = (messager_data *) ptr;
+  msg message;
   std::vector<int>& fd = data->fd;
 
   struct timeval timeout;
@@ -525,7 +525,7 @@ THREAD_RETURN THREAD_TYPE socketHandler(void *ptr)
         std::cout << "New socket connection made.\n" << std::endl;
 
         // Set the socket to non-blocking mode.
-        Socket<T>::setBlocking( newfd, false );
+        Socket::setBlocking( newfd, false );
 
         // Save the descriptor and update the masks.
         fd.push_back( newfd );
@@ -569,11 +569,11 @@ THREAD_RETURN THREAD_TYPE socketHandler(void *ptr)
         }
         index = 0;
 
-        bytesRead = Socket<T>::readBuffer(fd[i], buffer, bufferSize, 0);
+        bytesRead = Socket::readBuffer(fd[i], buffer, bufferSize, 0);
         if (bytesRead == 0) {
           // This socket connection closed.
           FD_CLR( fd[i], &data->mask );
-          Socket<T>::close( fd[i] );
+          Socket::close( fd[i] );
           fdclose.push_back( fd[i] );
         }
       }

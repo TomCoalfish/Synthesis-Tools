@@ -17,7 +17,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Sphere : public Stk<T>
+class Sphere : public Stk
 {
 public:
   //! Constructor taking an initial radius value.
@@ -36,16 +36,16 @@ public:
   void setMass( T mass ) { mass_ = mass; };
 
   //! Get the current position of the sphere as a 3D vector.
-  Vector3D* getPosition( void ) { return &position_; };
+  Vector3D<T>* getPosition( void ) { return &position_; };
 
   //! Get the relative position of the given point to the sphere as a 3D vector.
-  Vector3D* getRelativePosition( Vector3D *position );
+  Vector3D<T>* getRelativePosition( Vector3D<T> *position );
 
   //! Set the velocity of the sphere as a 3D vector.
-  T getVelocity( Vector3D* velocity );
+  T getVelocity( Vector3D<T>* velocity );
 
   //! Returns the distance from the sphere boundary to the given position (< 0 if inside).
-  T isInside( Vector3D *position );
+  T isInside( Vector3D<T> *position );
 
   //! Get the current sphere radius.
   T getRadius( void ) { return radius_; };
@@ -88,7 +88,7 @@ inline void Sphere<T>::tick( T timeIncrement )
 
 
 template<typename T>
-Vector3D<T>* Sphere<T>::getRelativePosition( Vector3D* position )
+Vector3D<T>* Sphere<T>::getRelativePosition( Vector3D<T>* position )
 {
   workingVector_.setXYZ(position->getX() - position_.getX(),
                         position->getY() - position_.getY(),  
@@ -97,19 +97,19 @@ Vector3D<T>* Sphere<T>::getRelativePosition( Vector3D* position )
 };
 
 template<typename T>
-T Sphere<T>::getVelocity( Vector3D* velocity )
+T Sphere<T>::getVelocity( Vector3D<T>* velocity )
 {
   velocity->setXYZ( velocity_.getX(), velocity_.getY(), velocity_.getZ() );
   return velocity_.getLength();
 };
 
 template<typename T>
-T Sphere<T>::isInside( Vector3D *position )
+T Sphere<T>::isInside( Vector3D<T> *position )
 {
   // Return directed distance from aPosition to spherical boundary ( <
   // 0 if inside).
   T distance;
-  Vector3D *tempVector;
+  Vector3D<T> *tempVector;
 
   tempVector = this->getRelativePosition( position );
   distance = tempVector->getLength();

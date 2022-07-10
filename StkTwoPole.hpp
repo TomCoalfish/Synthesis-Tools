@@ -28,16 +28,16 @@ class TwoPole : public Filter<T>
   ~TwoPole();
 
   //! A function to enable/disable the automatic updating of class data when the STK sample rate changes.
-  void ignoreSampleRateChange( bool ignore = true ) { ignoreSampleRateChange_ = ignore; };
+  void ignoreSampleRateChange( bool ignore = true ) { this->ignoreSampleRateChange_ = ignore; };
 
   //! Set the b[0] coefficient value.
-  void setB0( T b0 ) { b_[0] = b0; };
+  void setB0( T b0 ) { this->b_[0] = b0; };
 
   //! Set the a[1] coefficient value.
-  void setA1( T a1 ) { a_[1] = a1; };
+  void setA1( T a1 ) { this->a_[1] = a1; };
 
   //! Set the a[2] coefficient value.
-  void setA2( T a2 ) { a_[2] = a2; };
+  void setA2( T a2 ) { this->a_[2] = a2; };
 
   //! Set all filter coefficients.
   void setCoefficients( T b0, T a1, T a2, bool clearState = false );
@@ -61,7 +61,7 @@ class TwoPole : public Filter<T>
   void setResonance(T frequency, T radius, bool normalize = false);
 
   //! Return the last computed output value.
-  T lastOut( void ) const { return lastFrame_[0]; };
+  T lastOut( void ) const { return this->lastFrame_[0]; };
 
   //! Input one sample to the filter and return one output.
   T tick( T input );
@@ -97,12 +97,12 @@ class TwoPole : public Filter<T>
 template<typename T>
 inline T TwoPole<T>::tick( T input )
 {
-  inputs_[0] = gain_ * input;
-  lastFrame_[0] = b_[0] * inputs_[0] - a_[1] * outputs_[1] - a_[2] * outputs_[2];
-  outputs_[2] = outputs_[1];
-  outputs_[1] = lastFrame_[0];
+  this->inputs_[0] = this->gain_ * input;
+  this->lastFrame_[0] = this->b_[0] * this->inputs_[0] - this->a_[1] * this->outputs_[1] - this->a_[2] * this->outputs_[2];
+  this->outputs_[2] = this->outputs_[1];
+  this->outputs_[1] = this->lastFrame_[0];
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 
@@ -119,13 +119,13 @@ inline StkFrames<T>& TwoPole<T>::tick( StkFrames<T>& frames, unsigned int channe
   T *samples = &frames[channel];
   unsigned int hop = frames.channels();
   for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
-    inputs_[0] = gain_ * *samples;
-    *samples = b_[0] * inputs_[0] - a_[1] * outputs_[1] - a_[2] * outputs_[2];
-    outputs_[2] = outputs_[1];
-    outputs_[1] = *samples;
+    this->inputs_[0] = this->gain_ * *samples;
+    *samples = this->b_[0] * this->inputs_[0] - this->a_[1] * this->outputs_[1] - this->a_[2] * this->outputs_[2];
+    this->outputs_[2] = this->outputs_[1];
+    this->outputs_[1] = *samples;
   }
 
-  lastFrame_[0] = outputs_[1];
+  this->lastFrame_[0] = this->outputs_[1];
   return frames;
 }
 
@@ -144,13 +144,13 @@ inline StkFrames<T>& TwoPole<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFra
   T *oSamples = &oFrames[oChannel];
   unsigned int iHop = iFrames.channels(), oHop = oFrames.channels();
   for ( unsigned int i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
-    inputs_[0] = gain_ * *iSamples;
-    *oSamples = b_[0] * inputs_[0] - a_[1] * outputs_[1] - a_[2] * outputs_[2];
-    outputs_[2] = outputs_[1];
-    outputs_[1] = *oSamples;
+    this->inputs_[0] = this->gain_ * *iSamples;
+    *oSamples = this->b_[0] * this->inputs_[0] - this->a_[1] * this->outputs_[1] - this->a_[2] * this->outputs_[2];
+    this->outputs_[2] = this->outputs_[1];
+    this->outputs_[1] = *oSamples;
   }
 
-  lastFrame_[0] = outputs_[1];
+  this->lastFrame_[0] = this->outputs_[1];
   return iFrames;
 }
 
@@ -170,28 +170,28 @@ inline StkFrames<T>& TwoPole<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFra
 template<typename T>
 TwoPole<T>::TwoPole( void )
 {
-  b_.resize( 1 );
-  a_.resize( 3 );
-  inputs_.resize( 1, 1, 0.0 );
-  outputs_.resize( 3, 1, 0.0 );
-  b_[0] = 1.0;
-  a_[0] = 1.0;
+  this->b_.resize( 1 );
+  this->a_.resize( 3 );
+  this->inputs_.resize( 1, 1, 0.0 );
+  this->outputs_.resize( 3, 1, 0.0 );
+  this->b_[0] = 1.0;
+  this->a_[0] = 1.0;
 
-  Stk::addSampleRateAlert( this );
+  this->addSampleRateAlert( this );
 }
 
 
 template<typename T>
 TwoPole<T>::~TwoPole()
 {
-  Stk::removeSampleRateAlert( this );
+  this->removeSampleRateAlert( this );
 }
 
 
 template<typename T>
 void TwoPole<T>::sampleRateChanged( T newRate, T oldRate )
 {
-  if ( !ignoreSampleRateChange_ ) {
+  if ( !this->ignoreSampleRateChange_ ) {
     oStream_ << "TwoPole::sampleRateChanged: you may need to recompute filter coefficients!";
     handleError( StkError::WARNING );
   }
@@ -202,7 +202,7 @@ template<typename T>
 void TwoPole<T>::setResonance( T frequency, T radius, bool normalize )
 {
 #if defined(_STK_DEBUG_)
-  if ( frequency < 0.0 || frequency > 0.5 * Stk::sampleRate() ) {
+  if ( frequency < 0.0 || frequency > 0.5 * stk::sampleRate() ) {
     oStream_ << "TwoPole::setResonance: frequency argument (" << frequency << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }
@@ -212,14 +212,14 @@ void TwoPole<T>::setResonance( T frequency, T radius, bool normalize )
   }
 #endif
 
-  a_[2] = radius * radius;
-  a_[1] = (T) -2.0 * radius * cos(TWO_PI * frequency / Stk::sampleRate());
+  this->a_[2] = radius * radius;
+  this->a_[1] = (T) -2.0 * radius * cos(TWO_PI * frequency / stk::sampleRate());
 
   if ( normalize ) {
     // Normalize the filter gain ... not terribly efficient.
-    T real = 1 - radius + (a_[2] - radius) * cos(TWO_PI * 2 * frequency / Stk::sampleRate());
-    T imag = (a_[2] - radius) * sin(TWO_PI * 2 * frequency / Stk::sampleRate());
-    b_[0] = sqrt( pow(real, 2) + pow(imag, 2) );
+    T real = 1 - radius + (this->a_[2] - radius) * cos(TWO_PI * 2 * frequency / stk::sampleRate());
+    T imag = (this->a_[2] - radius) * sin(TWO_PI * 2 * frequency / stk::sampleRate());
+    this->b_[0] = sqrt( pow(real, 2) + pow(imag, 2) );
   }
 }
 
@@ -227,9 +227,9 @@ void TwoPole<T>::setResonance( T frequency, T radius, bool normalize )
 template<typename T>
 void TwoPole<T>::setCoefficients( T b0, T a1, T a2, bool clearState )
 {
-  b_[0] = b0;
-  a_[1] = a1;
-  a_[2] = a2;
+  this->b_[0] = b0;
+  this->a_[1] = a1;
+  this->a_[2] = a2;
 
   if ( clearState ) this->clear();
 }

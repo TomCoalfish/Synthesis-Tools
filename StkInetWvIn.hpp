@@ -119,9 +119,9 @@ protected:
   // Read buffered socket data into the data buffer ... will block if none available.
   int readData( void );
 
-  Socket<T> *soket_;
-  Thread<T> thread_;
-  Mutex<T> mutex_;
+  Socket *soket_;
+  Thread thread_;
+  Mutex mutex_;
   char *buffer_;
   unsigned long bufferFrames_;
   unsigned long bufferBytes_;
@@ -257,7 +257,7 @@ void InetWvIn<T>::listen( int port, unsigned int nChannels,
   bytesFilled_ = 0;
 
   if ( protocol == PROTO_TCP ) {
-    TcpServer<T> *socket = new TcpServer<T>( port );
+    TcpServer *socket = new TcpServer( port );
     oStream_ << "InetWvIn:listen(): waiting for TCP connection on port " << socket->port() << " ... ";
     handleError( StkError::STATUS );
     fd_ = socket->accept();
@@ -267,10 +267,10 @@ void InetWvIn<T>::listen( int port, unsigned int nChannels,
     }
     oStream_ << "InetWvIn::listen(): TCP socket connection made!";
     handleError( StkError::STATUS );
-    soket_ = (Socket<T>*) socket;
+    soket_ = (Socket*) socket;
   }
   else {
-    soket_ = new UdpSocket<T>( port );
+    soket_ = new UdpSocket( port );
     fd_ = soket_->id();
   }
 

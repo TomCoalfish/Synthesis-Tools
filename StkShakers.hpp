@@ -1,7 +1,5 @@
-#ifndef STK_SHAKERS_H
-#define STK_SHAKERS_H
-
-#include "Instrmnt.h"
+#pragma once
+#include "StkInstrmnt.hpp"
 #include <cmath>
 #include <stdlib.h>
 #include "SKINImsg.h"
@@ -154,7 +152,7 @@ class Shakers : public Instrmnt<T>
 template<typename T>
 inline void Shakers<T>::setResonance( BiQuad &filter, T frequency, T radius )
 {
-  filter.a[1] = -2.0 * radius * cos( TWO_PI * frequency / Stk::sampleRate());
+  filter.a[1] = -2.0 * radius * cos( TWO_PI * frequency / stk::sampleRate());
   filter.a[2] = radius * radius;
 }
 
@@ -210,8 +208,8 @@ inline T Shakers<T>::noise( void ) //  Return random T float between -1.0 and 1.
   return ( (T) ( 2.0 * rand() / (RAND_MAX + 1.0) ) - 1.0 );
 }
 
-const T MIN_ENERGY = 0.001;
-const T WATER_FREQ_SWEEP = 1.0001;
+const double MIN_ENERGY = 0.001;
+const double WATER_FREQ_SWEEP = 1.0001;
 
 
 template<typename T>
@@ -239,7 +237,7 @@ inline void Shakers<T>::waterDrop( void )
     filters_[i].gain *= baseRadii_[i];
     if ( filters_[i].gain > 0.001 ) {
       tempFrequencies_[i] *= WATER_FREQ_SWEEP;
-      filters_[i].a[1] = -2.0 * baseRadii_[i] * cos( TWO_PI * tempFrequencies_[i] / Stk::sampleRate() );
+      filters_[i].a[1] = -2.0 * baseRadii_[i] * cos( TWO_PI * tempFrequencies_[i] / stk::sampleRate() );
     }
     else
       filters_[i].gain = 0.0;
@@ -252,7 +250,7 @@ inline T Shakers<T>::tick( unsigned int )
   unsigned int iTube = 0;
   T input = 0.0;
   if ( shakerType_ == 19 || shakerType_ == 20 ) {
-    if ( ratchetCount_ <= 0 ) return lastFrame_[0] = 0.0;
+    if ( ratchetCount_ <= 0 ) return this->lastFrame_[0] = 0.0;
 
     shakeEnergy_ -= ( ratchetDelta_ + ( 0.002 * shakeEnergy_ ) );
     if ( shakeEnergy_ < 0.0 ) {
@@ -267,7 +265,7 @@ inline T Shakers<T>::tick( unsigned int )
     input = sndLevel_ * noise() * shakeEnergy_;
   }
   else { 
-    if ( shakeEnergy_ < MIN_ENERGY ) return lastFrame_[0] = 0.0;
+    if ( shakeEnergy_ < MIN_ENERGY ) return this->lastFrame_[0] = 0.0;
 
     // Exponential system decay
     shakeEnergy_ *= systemDecay_;
@@ -285,7 +283,7 @@ inline T Shakers<T>::tick( unsigned int )
         for ( unsigned int i=0; i<nResonances_; i++ ) {
           if ( doVaryFrequency_[i] ) {
             T tempRand = baseFrequencies_[i] * ( 1.0 + ( varyFactor_ * noise() ) );
-            filters_[i].a[1] = -2.0 * baseRadii_[i] * cos( TWO_PI * tempRand / Stk::sampleRate() );
+            filters_[i].a[1] = -2.0 * baseRadii_[i] * cos( TWO_PI * tempRand / stk::sampleRate() );
           }
         }
         if ( shakerType_ == 22 ) iTube = randomInt( 7 ); // ANGKLUNG_RESONANCES
@@ -297,34 +295,34 @@ inline T Shakers<T>::tick( unsigned int )
   sndLevel_ *= soundDecay_;
 
   // Do resonance filtering
-  lastFrame_[0] = 0.0;
+  this->lastFrame_[0] = 0.0;
   if ( shakerType_ == 22 ) {
     for ( unsigned int i=0; i<nResonances_; i++ ) {
       if ( i == iTube )
-        lastFrame_[0] += tickResonance( filters_[i], input );
+        this->lastFrame_[0] += tickResonance( filters_[i], input );
       else
-        lastFrame_[0] += tickResonance( filters_[i], 0.0 );
+        this->lastFrame_[0] += tickResonance( filters_[i], 0.0 );
     }
   }
   else {
     for ( unsigned int i=0; i<nResonances_; i++ )
-      lastFrame_[0] += tickResonance( filters_[i], input );
+      this->lastFrame_[0] += tickResonance( filters_[i], input );
   }
 
   // Do final FIR filtering (lowpass or highpass)
-  lastFrame_[0] = tickEqualize( lastFrame_[0] );
+  this->lastFrame_[0] = tickEqualize( this->lastFrame_[0] );
 
-  //if ( std::abs(lastFrame_[0]) > 1.0 )
-  //  std::cout << "lastOutput = " << lastFrame_[0] << std::endl;
+  //if ( std::abs(this->lastFrame_[0]) > 1.0 )
+  //  std::cout << "lastOutput = " << this->lastFrame_[0] << std::endl;
 
-  return lastFrame_[0];
+  return this->lastFrame_[0];
 }
 
 
 template<typename T>
 inline StkFrames<T>& Shakers<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Shakers::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -342,7 +340,7 @@ inline StkFrames<T>& Shakers<T>::tick( StkFrames<T>& frames, unsigned int channe
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -402,200 +400,200 @@ inline StkFrames<T>& Shakers<T>::tick( StkFrames<T>& frames, unsigned int channe
 
 
 // Maraca
-const T MARACA_SOUND_DECAY = 0.95;
-const T MARACA_SYSTEM_DECAY = 0.999;
-const T MARACA_GAIN = 4.0;
-const T MARACA_NUM_BEANS = 25;
+const double MARACA_SOUND_DECAY = 0.95;
+const double MARACA_SYSTEM_DECAY = 0.999;
+const double MARACA_GAIN = 4.0;
+const double MARACA_NUM_BEANS = 25;
 const int MARACA_RESONANCES = 1;
-const T MARACA_FREQUENCIES[MARACA_RESONANCES] = { 3200 };
-const T MARACA_RADII[MARACA_RESONANCES] = { 0.96 };
-const T MARACA_GAINS[MARACA_RESONANCES] = { 1.0 };
+const double MARACA_FREQUENCIES[MARACA_RESONANCES] = { 3200 };
+const double MARACA_RADII[MARACA_RESONANCES] = { 0.96 };
+const double MARACA_GAINS[MARACA_RESONANCES] = { 1.0 };
 
 // Cabasa
-const T CABASA_SOUND_DECAY = 0.96;
-const T CABASA_SYSTEM_DECAY = 0.997;
-const T CABASA_GAIN = 8.0;
-const T CABASA_NUM_BEADS = 512;
+const double CABASA_SOUND_DECAY = 0.96;
+const double CABASA_SYSTEM_DECAY = 0.997;
+const double CABASA_GAIN = 8.0;
+const double CABASA_NUM_BEADS = 512;
 const int CABASA_RESONANCES = 1;
-const T CABASA_FREQUENCIES[CABASA_RESONANCES] = { 3000 };
-const T CABASA_RADII[CABASA_RESONANCES] = { 0.7 };
-const T CABASA_GAINS[CABASA_RESONANCES] = { 1.0 };
+const double CABASA_FREQUENCIES[CABASA_RESONANCES] = { 3000 };
+const double CABASA_RADII[CABASA_RESONANCES] = { 0.7 };
+const double CABASA_GAINS[CABASA_RESONANCES] = { 1.0 };
 
 // Sekere
-const T SEKERE_SOUND_DECAY = 0.96;
-const T SEKERE_SYSTEM_DECAY = 0.999;
-const T SEKERE_GAIN = 4.0;
-const T SEKERE_NUM_BEANS = 64;
+const double SEKERE_SOUND_DECAY = 0.96;
+const double SEKERE_SYSTEM_DECAY = 0.999;
+const double SEKERE_GAIN = 4.0;
+const double SEKERE_NUM_BEANS = 64;
 const int SEKERE_RESONANCES = 1;
-const T SEKERE_FREQUENCIES[SEKERE_RESONANCES] = { 5500 };
-const T SEKERE_RADII[SEKERE_RESONANCES] = { 0.6 };
-const T SEKERE_GAINS[SEKERE_RESONANCES] = { 1.0 };
+const double SEKERE_FREQUENCIES[SEKERE_RESONANCES] = { 5500 };
+const double SEKERE_RADII[SEKERE_RESONANCES] = { 0.6 };
+const double SEKERE_GAINS[SEKERE_RESONANCES] = { 1.0 };
 
 // Bamboo Wind Chimes
-const T BAMBOO_SOUND_DECAY = 0.9;
-const T BAMBOO_SYSTEM_DECAY = 0.9999;
-const T BAMBOO_GAIN = 0.4;
-const T BAMBOO_NUM_TUBES = 1.2;
+const double BAMBOO_SOUND_DECAY = 0.9;
+const double BAMBOO_SYSTEM_DECAY = 0.9999;
+const double BAMBOO_GAIN = 0.4;
+const double BAMBOO_NUM_TUBES = 1.2;
 const int BAMBOO_RESONANCES = 3;
-const T BAMBOO_FREQUENCIES[BAMBOO_RESONANCES] = { 2800, 0.8 * 2800.0, 1.2 * 2800.0 };
-const T BAMBOO_RADII[BAMBOO_RESONANCES] = { 0.995, 0.995, 0.995 };
-const T BAMBOO_GAINS[BAMBOO_RESONANCES] = { 1.0, 1.0, 1.0 };
+const double BAMBOO_FREQUENCIES[BAMBOO_RESONANCES] = { 2800, 0.8 * 2800.0, 1.2 * 2800.0 };
+const double BAMBOO_RADII[BAMBOO_RESONANCES] = { 0.995, 0.995, 0.995 };
+const double BAMBOO_GAINS[BAMBOO_RESONANCES] = { 1.0, 1.0, 1.0 };
 
-// Tambourine
-const T TAMBOURINE_SOUND_DECAY = 0.95;
-const T TAMBOURINE_SYSTEM_DECAY = 0.9985;
-const T TAMBOURINE_GAIN = 1.0;
-const T TAMBOURINE_NUM_TIMBRELS = 32;
+// doubleambourine
+const double TAMBOURINE_SOUND_DECAY = 0.95;
+const double TAMBOURINE_SYSTEM_DECAY = 0.9985;
+const double TAMBOURINE_GAIN = 1.0;
+const double TAMBOURINE_NUM_TIMBRELS = 32;
 const int TAMBOURINE_RESONANCES = 3; // Fixed shell + 2 moving cymbal resonances
-const T TAMBOURINE_FREQUENCIES[TAMBOURINE_RESONANCES] = { 2300, 5600, 8100 };
-const T TAMBOURINE_RADII[TAMBOURINE_RESONANCES] = { 0.96, 0.99, 0.99 };
-const T TAMBOURINE_GAINS[TAMBOURINE_RESONANCES] = { 0.1, 0.8, 1.0 };
+const double TAMBOURINE_FREQUENCIES[TAMBOURINE_RESONANCES] = { 2300, 5600, 8100 };
+const double TAMBOURINE_RADII[TAMBOURINE_RESONANCES] = { 0.96, 0.99, 0.99 };
+const double TAMBOURINE_GAINS[TAMBOURINE_RESONANCES] = { 0.1, 0.8, 1.0 };
 
 // Sleighbells
-const T SLEIGH_SOUND_DECAY = 0.97;
-const T SLEIGH_SYSTEM_DECAY = 0.9994;
-const T SLEIGH_GAIN = 1.0;
-const T SLEIGH_NUM_BELLS = 32;
+const double SLEIGH_SOUND_DECAY = 0.97;
+const double SLEIGH_SYSTEM_DECAY = 0.9994;
+const double SLEIGH_GAIN = 1.0;
+const double SLEIGH_NUM_BELLS = 32;
 const int SLEIGH_RESONANCES = 5;
-const T SLEIGH_FREQUENCIES[SLEIGH_RESONANCES] = { 2500, 5300, 6500, 8300, 9800 };
-const T SLEIGH_RADII[SLEIGH_RESONANCES] = { 0.99, 0.99, 0.99, 0.99, 0.99 };
-const T SLEIGH_GAINS[SLEIGH_RESONANCES] = { 1.0, 1.0, 1.0, 0.5, 0.3 };
+const double SLEIGH_FREQUENCIES[SLEIGH_RESONANCES] = { 2500, 5300, 6500, 8300, 9800 };
+const double SLEIGH_RADII[SLEIGH_RESONANCES] = { 0.99, 0.99, 0.99, 0.99, 0.99 };
+const double SLEIGH_GAINS[SLEIGH_RESONANCES] = { 1.0, 1.0, 1.0, 0.5, 0.3 };
 
 // Sandpaper
-const T SANDPAPER_SOUND_DECAY = 0.999;
-const T SANDPAPER_SYSTEM_DECAY = 0.999;
-const T SANDPAPER_GAIN = 0.5;
-const T SANDPAPER_NUM_GRAINS = 128;
+const double SANDPAPER_SOUND_DECAY = 0.999;
+const double SANDPAPER_SYSTEM_DECAY = 0.999;
+const double SANDPAPER_GAIN = 0.5;
+const double SANDPAPER_NUM_GRAINS = 128;
 const int SANDPAPER_RESONANCES = 1;
-const T SANDPAPER_FREQUENCIES[SANDPAPER_RESONANCES] = { 4500 };
-const T SANDPAPER_RADII[SANDPAPER_RESONANCES] = { 0.6 };
-const T SANDPAPER_GAINS[SANDPAPER_RESONANCES] = { 1.0 };
+const double SANDPAPER_FREQUENCIES[SANDPAPER_RESONANCES] = { 4500 };
+const double SANDPAPER_RADII[SANDPAPER_RESONANCES] = { 0.6 };
+const double SANDPAPER_GAINS[SANDPAPER_RESONANCES] = { 1.0 };
 
 // Cokecan
-const T COKECAN_SOUND_DECAY = 0.97;
-const T COKECAN_SYSTEM_DECAY = 0.999;
-const T COKECAN_GAIN = 0.5;
-const T COKECAN_NUM_PARTS = 48;
+const double COKECAN_SOUND_DECAY = 0.97;
+const double COKECAN_SYSTEM_DECAY = 0.999;
+const double COKECAN_GAIN = 0.5;
+const double COKECAN_NUM_PARTS = 48;
 const int COKECAN_RESONANCES = 5; // Helmholtz + 4 metal resonances
-const T COKECAN_FREQUENCIES[COKECAN_RESONANCES] = { 370, 1025, 1424, 2149, 3596 };
-const T COKECAN_RADII[COKECAN_RESONANCES] = { 0.99, 0.992, 0.992, 0.992, 0.992 };
-const T COKECAN_GAINS[COKECAN_RESONANCES] = { 1.0, 1.8, 1.8, 1.8, 1.8 };
+const double COKECAN_FREQUENCIES[COKECAN_RESONANCES] = { 370, 1025, 1424, 2149, 3596 };
+const double COKECAN_RADII[COKECAN_RESONANCES] = { 0.99, 0.992, 0.992, 0.992, 0.992 };
+const double COKECAN_GAINS[COKECAN_RESONANCES] = { 1.0, 1.8, 1.8, 1.8, 1.8 };
 
-// Tuned Bamboo Wind Chimes (Angklung)
-const T ANGKLUNG_SOUND_DECAY = 0.95;
-const T ANGKLUNG_SYSTEM_DECAY = 0.9999;
-const T ANGKLUNG_GAIN = 0.5;
-const T ANGKLUNG_NUM_TUBES = 1.2;
+// doubleuned Bamboo Wind Chimes (Angklung)
+const double ANGKLUNG_SOUND_DECAY = 0.95;
+const double ANGKLUNG_SYSTEM_DECAY = 0.9999;
+const double ANGKLUNG_GAIN = 0.5;
+const double ANGKLUNG_NUM_TUBES = 1.2;
 const int ANGKLUNG_RESONANCES = 7;
-const T ANGKLUNG_FREQUENCIES[ANGKLUNG_RESONANCES] = { 1046.6, 1174.8, 1397.0, 1568, 1760, 2093.3, 2350 };
-const T ANGKLUNG_RADII[ANGKLUNG_RESONANCES] = { 0.996, 0.996, 0.996, 0.996, 0.996, 0.996, 0.996 };
-const T ANGKLUNG_GAINS[ANGKLUNG_RESONANCES] = { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 };
+const double ANGKLUNG_FREQUENCIES[ANGKLUNG_RESONANCES] = { 1046.6, 1174.8, 1397.0, 1568, 1760, 2093.3, 2350 };
+const double ANGKLUNG_RADII[ANGKLUNG_RESONANCES] = { 0.996, 0.996, 0.996, 0.996, 0.996, 0.996, 0.996 };
+const double ANGKLUNG_GAINS[ANGKLUNG_RESONANCES] = { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 };
 
 // Guiro
-const T GUIRO_SOUND_DECAY = 0.95;
-const T GUIRO_GAIN = 0.4;
-const T GUIRO_NUM_PARTS = 128;
+const double GUIRO_SOUND_DECAY = 0.95;
+const double GUIRO_GAIN = 0.4;
+const double GUIRO_NUM_PARTS = 128;
 const int GUIRO_RESONANCES = 2;
-const T GUIRO_FREQUENCIES[GUIRO_RESONANCES] = { 2500, 4000 };
-const T GUIRO_RADII[GUIRO_RESONANCES] = { 0.97, 0.97 };
-const T GUIRO_GAINS[GUIRO_RESONANCES] = { 1.0, 1.0 };
+const double GUIRO_FREQUENCIES[GUIRO_RESONANCES] = { 2500, 4000 };
+const double GUIRO_RADII[GUIRO_RESONANCES] = { 0.97, 0.97 };
+const double GUIRO_GAINS[GUIRO_RESONANCES] = { 1.0, 1.0 };
 
 // Wrench
-const T WRENCH_SOUND_DECAY = 0.95;
-const T WRENCH_GAIN = 0.4;
-const T WRENCH_NUM_PARTS = 128;
+const double WRENCH_SOUND_DECAY = 0.95;
+const double WRENCH_GAIN = 0.4;
+const double WRENCH_NUM_PARTS = 128;
 const int WRENCH_RESONANCES = 2;
-const T WRENCH_FREQUENCIES[WRENCH_RESONANCES] = { 3200, 8000 };
-const T WRENCH_RADII[WRENCH_RESONANCES] = { 0.99, 0.992 };
-const T WRENCH_GAINS[WRENCH_RESONANCES] = { 1.0, 1.0 };
+const double WRENCH_FREQUENCIES[WRENCH_RESONANCES] = { 3200, 8000 };
+const double WRENCH_RADII[WRENCH_RESONANCES] = { 0.99, 0.992 };
+const double WRENCH_GAINS[WRENCH_RESONANCES] = { 1.0, 1.0 };
 
 // Water Drops
-const T WATER_SOUND_DECAY = 0.95;
-const T WATER_SYSTEM_DECAY = 0.996;
-const T WATER_GAIN = 1.0;
-const T WATER_NUM_SOURCES = 10;
+const double WATER_SOUND_DECAY = 0.95;
+const double WATER_SYSTEM_DECAY = 0.996;
+const double WATER_GAIN = 1.0;
+const double WATER_NUM_SOURCES = 10;
 const int WATER_RESONANCES = 3;
-const T WATER_FREQUENCIES[WATER_RESONANCES] = { 450, 600, 750 };
-const T WATER_RADII[WATER_RESONANCES] = { 0.9985, 0.9985, 0.9985 };
-const T WATER_GAINS[WATER_RESONANCES] = { 1.0, 1.0, 1.0 };
+const double WATER_FREQUENCIES[WATER_RESONANCES] = { 450, 600, 750 };
+const double WATER_RADII[WATER_RESONANCES] = { 0.9985, 0.9985, 0.9985 };
+const double WATER_GAINS[WATER_RESONANCES] = { 1.0, 1.0, 1.0 };
 
 // PhOLIES (Physically-Oriented Library of Imitated Environmental
 // Sounds), Perry Cook, 1997-8
 
 // Stix1
-const T STIX1_SOUND_DECAY = 0.96;
-const T STIX1_SYSTEM_DECAY = 0.998;
-const T STIX1_GAIN = 6.0;
-const T STIX1_NUM_BEANS = 2;
+const double STIX1_SOUND_DECAY = 0.96;
+const double STIX1_SYSTEM_DECAY = 0.998;
+const double STIX1_GAIN = 6.0;
+const double STIX1_NUM_BEANS = 2;
 const int STIX1_RESONANCES = 1;
-const T STIX1_FREQUENCIES[STIX1_RESONANCES] = { 5500 };
-const T STIX1_RADII[STIX1_RESONANCES] = { 0.6 };
-const T STIX1_GAINS[STIX1_RESONANCES] = { 1.0 };
+const double STIX1_FREQUENCIES[STIX1_RESONANCES] = { 5500 };
+const double STIX1_RADII[STIX1_RESONANCES] = { 0.6 };
+const double STIX1_GAINS[STIX1_RESONANCES] = { 1.0 };
 
 // Crunch1
-const T CRUNCH1_SOUND_DECAY = 0.95;
-const T CRUNCH1_SYSTEM_DECAY = 0.99806;
-const T CRUNCH1_GAIN = 4.0;
-const T CRUNCH1_NUM_BEADS = 7;
+const double CRUNCH1_SOUND_DECAY = 0.95;
+const double CRUNCH1_SYSTEM_DECAY = 0.99806;
+const double CRUNCH1_GAIN = 4.0;
+const double CRUNCH1_NUM_BEADS = 7;
 const int CRUNCH1_RESONANCES = 1;
-const T CRUNCH1_FREQUENCIES[CRUNCH1_RESONANCES] = { 800 };
-const T CRUNCH1_RADII[CRUNCH1_RESONANCES] = { 0.95 };
-const T CRUNCH1_GAINS[CRUNCH1_RESONANCES] = { 1.0 };
+const double CRUNCH1_FREQUENCIES[CRUNCH1_RESONANCES] = { 800 };
+const double CRUNCH1_RADII[CRUNCH1_RESONANCES] = { 0.95 };
+const double CRUNCH1_GAINS[CRUNCH1_RESONANCES] = { 1.0 };
 
 // Nextmug + Coins
-const T NEXTMUG_SOUND_DECAY = 0.97;
-const T NEXTMUG_SYSTEM_DECAY = 0.9995;
-const T NEXTMUG_GAIN = 0.8;
-const T NEXTMUG_NUM_PARTS = 3;
+const double NEXTMUG_SOUND_DECAY = 0.97;
+const double NEXTMUG_SYSTEM_DECAY = 0.9995;
+const double NEXTMUG_GAIN = 0.8;
+const double NEXTMUG_NUM_PARTS = 3;
 const int NEXTMUG_RESONANCES = 4;
-const T NEXTMUG_FREQUENCIES[NEXTMUG_RESONANCES] = { 2123, 4518, 8856, 10753 };
-const T NEXTMUG_RADII[NEXTMUG_RESONANCES] = { 0.997, 0.997, 0.997, 0.997 };
-const T NEXTMUG_GAINS[NEXTMUG_RESONANCES] = { 1.0, 0.8, 0.6, 0.4 };
+const double NEXTMUG_FREQUENCIES[NEXTMUG_RESONANCES] = { 2123, 4518, 8856, 10753 };
+const double NEXTMUG_RADII[NEXTMUG_RESONANCES] = { 0.997, 0.997, 0.997, 0.997 };
+const double NEXTMUG_GAINS[NEXTMUG_RESONANCES] = { 1.0, 0.8, 0.6, 0.4 };
 
 const int COIN_RESONANCES = 3;
-const T PENNY_FREQUENCIES[COIN_RESONANCES] = { 11000, 5200, 3835 };
-const T PENNY_RADII[COIN_RESONANCES] = { 0.999, 0.999, 0.999 };
-const T PENNY_GAINS[COIN_RESONANCES] = { 1.0, 0.8, 0.5 };
+const double PENNY_FREQUENCIES[COIN_RESONANCES] = { 11000, 5200, 3835 };
+const double PENNY_RADII[COIN_RESONANCES] = { 0.999, 0.999, 0.999 };
+const double PENNY_GAINS[COIN_RESONANCES] = { 1.0, 0.8, 0.5 };
 
-const T NICKEL_FREQUENCIES[COIN_RESONANCES] = { 5583, 9255, 9805 };
-const T NICKEL_RADII[COIN_RESONANCES] = { 0.9992, 0.9992, 0.9992 };
-const T NICKEL_GAINS[COIN_RESONANCES] = { 1.0, 0.8, 0.5 };
+const double NICKEL_FREQUENCIES[COIN_RESONANCES] = { 5583, 9255, 9805 };
+const double NICKEL_RADII[COIN_RESONANCES] = { 0.9992, 0.9992, 0.9992 };
+const double NICKEL_GAINS[COIN_RESONANCES] = { 1.0, 0.8, 0.5 };
 
-const T DIME_FREQUENCIES[COIN_RESONANCES] = { 4450, 4974, 9945 };
-const T DIME_RADII[COIN_RESONANCES] = { 0.9993, 0.9993, 0.9993 };
-const T DIME_GAINS[COIN_RESONANCES] = { 1.0, 0.8, 0.5 };
+const double DIME_FREQUENCIES[COIN_RESONANCES] = { 4450, 4974, 9945 };
+const double DIME_RADII[COIN_RESONANCES] = { 0.9993, 0.9993, 0.9993 };
+const double DIME_GAINS[COIN_RESONANCES] = { 1.0, 0.8, 0.5 };
 
-const T QUARTER_FREQUENCIES[COIN_RESONANCES] = { 1708, 8863, 9045 };
-const T QUARTER_RADII[COIN_RESONANCES] = { 0.9995, 0.9995, 0.9995 };
-const T QUARTER_GAINS[COIN_RESONANCES] = { 1.0, 0.8, 0.5 };
+const double QUARTER_FREQUENCIES[COIN_RESONANCES] = { 1708, 8863, 9045 };
+const double QUARTER_RADII[COIN_RESONANCES] = { 0.9995, 0.9995, 0.9995 };
+const double QUARTER_GAINS[COIN_RESONANCES] = { 1.0, 0.8, 0.5 };
 
-const T FRANC_FREQUENCIES[COIN_RESONANCES] = { 5583, 11010, 1917 };
-const T FRANC_RADII[COIN_RESONANCES] = { 0.9995, 0.9995, 0.9995 };
-const T FRANC_GAINS[COIN_RESONANCES] = { 0.7, 0.4, 0.3 };
+const double FRANC_FREQUENCIES[COIN_RESONANCES] = { 5583, 11010, 1917 };
+const double FRANC_RADII[COIN_RESONANCES] = { 0.9995, 0.9995, 0.9995 };
+const double FRANC_GAINS[COIN_RESONANCES] = { 0.7, 0.4, 0.3 };
 
-const T PESO_FREQUENCIES[COIN_RESONANCES] = { 7250, 8150, 10060 };
-const T PESO_RADII[COIN_RESONANCES] = { 0.9996, 0.9996, 0.9996 };
-const T PESO_GAINS[COIN_RESONANCES] = { 1.0, 1.2, 0.7 };
+const double PESO_FREQUENCIES[COIN_RESONANCES] = { 7250, 8150, 10060 };
+const double PESO_RADII[COIN_RESONANCES] = { 0.9996, 0.9996, 0.9996 };
+const double PESO_GAINS[COIN_RESONANCES] = { 1.0, 1.2, 0.7 };
 
 // Big Gravel
-const T BIGROCKS_SOUND_DECAY = 0.98;
-const T BIGROCKS_SYSTEM_DECAY = 0.9965;
-const T BIGROCKS_GAIN = 4.0;
-const T BIGROCKS_NUM_PARTS = 23;
+const double BIGROCKS_SOUND_DECAY = 0.98;
+const double BIGROCKS_SYSTEM_DECAY = 0.9965;
+const double BIGROCKS_GAIN = 4.0;
+const double BIGROCKS_NUM_PARTS = 23;
 const int BIGROCKS_RESONANCES = 1;
-const T BIGROCKS_FREQUENCIES[BIGROCKS_RESONANCES] = { 6460 };
-const T BIGROCKS_RADII[BIGROCKS_RESONANCES] = { 0.932 };
-const T BIGROCKS_GAINS[BIGROCKS_RESONANCES] = { 1.0 };
+const double BIGROCKS_FREQUENCIES[BIGROCKS_RESONANCES] = { 6460 };
+const double BIGROCKS_RADII[BIGROCKS_RESONANCES] = { 0.932 };
+const double BIGROCKS_GAINS[BIGROCKS_RESONANCES] = { 1.0 };
 
 // Little Gravel
-const T LITTLEROCKS_SOUND_DECAY = 0.98;
-const T LITTLEROCKS_SYSTEM_DECAY = 0.99586;
-const T LITTLEROCKS_GAIN = 4.0;
-const T LITTLEROCKS_NUM_PARTS = 1600;
+const double LITTLEROCKS_SOUND_DECAY = 0.98;
+const double LITTLEROCKS_SYSTEM_DECAY = 0.99586;
+const double LITTLEROCKS_GAIN = 4.0;
+const double LITTLEROCKS_NUM_PARTS = 1600;
 const int LITTLEROCKS_RESONANCES = 1;
-const T LITTLEROCKS_FREQUENCIES[LITTLEROCKS_RESONANCES] = { 9000 };
-const T LITTLEROCKS_RADII[LITTLEROCKS_RESONANCES] = { 0.843 };
-const T LITTLEROCKS_GAINS[LITTLEROCKS_RESONANCES] = { 1.0 };
+const double LITTLEROCKS_FREQUENCIES[LITTLEROCKS_RESONANCES] = { 9000 };
+const double LITTLEROCKS_RADII[LITTLEROCKS_RESONANCES] = { 0.843 };
+const double LITTLEROCKS_GAINS[LITTLEROCKS_RESONANCES] = { 1.0 };
 
 
 template<typename T>
@@ -1011,7 +1009,7 @@ void Shakers<T>::setType( int type )
     setResonance( filters_[i], baseFrequencies_[i], baseRadii_[i] );
 }
 
-const T MAX_SHAKE = 1.0;
+const double MAX_SHAKE = 1.0;
 
 
 template<typename T>
@@ -1039,7 +1037,7 @@ template<typename T>
 void Shakers<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( stk::inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Shakers::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }

@@ -31,7 +31,7 @@ namespace stk {
 */
 /***************************************************/
 
-template<typename T>
+
 class Mutex : public Stk
 {
  public:
@@ -81,8 +81,8 @@ class Mutex : public Stk
 */
 /***************************************************/
 
-template<typename T>
-Mutex<T>::Mutex()
+inline
+Mutex::Mutex()
 {
 
 #if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
@@ -101,8 +101,8 @@ Mutex<T>::Mutex()
 #endif 
 }
 
-template<typename T>
-Mutex<T>::~Mutex()
+inline
+Mutex::~Mutex()
 {
 #if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
 
@@ -117,8 +117,8 @@ Mutex<T>::~Mutex()
 #endif 
 }
 
-template<typename T>
-void Mutex<T>::lock()
+inline
+void Mutex::lock()
 {
 #if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
 
@@ -131,8 +131,8 @@ void Mutex<T>::lock()
 #endif 
 }
 
-template<typename T>
-void Mutex<T>::unlock()
+inline
+void Mutex::unlock()
 {
 #if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
 
@@ -145,8 +145,8 @@ void Mutex<T>::unlock()
 #endif 
 }
 
-template<typename T>
-void Mutex<T>::wait()
+inline
+void Mutex::wait()
 {
 #if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
 
@@ -159,8 +159,8 @@ void Mutex<T>::wait()
 #endif 
 }
 
-template<typename T>
-void Mutex<T>::signal()
+inline
+void Mutex::signal()
 {
 #if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
 

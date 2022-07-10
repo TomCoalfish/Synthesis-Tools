@@ -44,7 +44,7 @@ namespace stk {
 */
 /***************************************************/
 
-template<typename T>
+
 class Thread : public Stk
 {
  public:
@@ -114,19 +114,19 @@ class Thread : public Stk
 */
 /***************************************************/
 
-template<typename T>
-Thread<T>::Thread()
+inline
+Thread::Thread()
 {
   thread_ = 0;
 }
 
-template<typename T>
-Thread<T>::~Thread()
+inline
+Thread::~Thread()
 {
 }
 
-template<typename T>
-bool Thread<T>::start( THREAD_FUNCTION routine, void * ptr )
+inline
+bool Thread::start( THREAD_FUNCTION routine, void * ptr )
 {
   if ( thread_ ) {
     oStream_ << "Thread:: a thread is already running!";
@@ -148,8 +148,8 @@ bool Thread<T>::start( THREAD_FUNCTION routine, void * ptr )
   return false;
 }
 
-template<typename T>
-bool Thread<T>::cancel()
+inline
+bool Thread::cancel()
 {
 #if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
 
@@ -166,8 +166,8 @@ bool Thread<T>::cancel()
   return false;
 }
 
-template<typename T>
-bool Thread<T>::wait()
+inline
+bool Thread::wait()
 {
 #if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
 
@@ -189,8 +189,8 @@ bool Thread<T>::wait()
   return false;
 }
 
-template<typename T>
-void Thread<T>::testCancel(void)
+inline
+void Thread::testCancel(void)
 {
 #if (defined(__OS_IRIX__) || defined(__OS_LINUX__) || defined(__OS_MACOSX__))
 

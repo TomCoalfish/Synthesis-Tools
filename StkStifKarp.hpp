@@ -119,15 +119,15 @@ inline T StifKarp<T>:: tick( unsigned int )
   // Moving average filter.
   temp = filter_.tick(temp);
 
-  lastFrame_[0] = delayLine_.tick(temp);
-  lastFrame_[0] = lastFrame_[0] - combDelay_.tick( lastFrame_[0] );
-  return lastFrame_[0];
+  this->lastFrame_[0] = delayLine_.tick(temp);
+  this->lastFrame_[0] = this->lastFrame_[0] - combDelay_.tick( this->lastFrame_[0] );
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& StifKarp<T>:: tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "StifKarp::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -145,7 +145,7 @@ inline StkFrames<T>& StifKarp<T>:: tick( StkFrames<T>& frames, unsigned int chan
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -184,7 +184,7 @@ StifKarp<T>:: StifKarp( T lowestFrequency )
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 
-  unsigned long nDelays = (unsigned long) ( Stk::sampleRate() / lowestFrequency );
+  unsigned long nDelays = (unsigned long) ( stk::sampleRate() / lowestFrequency );
   delayLine_.setMaximumDelay( nDelays + 1 );
   combDelay_.setMaximumDelay( nDelays + 1 );
 
@@ -224,7 +224,7 @@ void StifKarp<T>:: setFrequency( T frequency )
 #endif
 
   lastFrequency_ = frequency; 
-  lastLength_ = Stk::sampleRate() / lastFrequency_;
+  lastLength_ = stk::sampleRate() / lastFrequency_;
   T delay = lastLength_ - 0.5;
   delayLine_.setDelay( delay );
 
@@ -243,7 +243,7 @@ void StifKarp<T>:: setStretch( T stretch )
   stretching_ = stretch;
   T coefficient;
   T freq = lastFrequency_ * 2.0;
-  T dFreq = ( (0.5 * Stk::sampleRate()) - freq ) * 0.25;
+  T dFreq = ( (0.5 * stk::sampleRate()) - freq ) * 0.25;
   T temp = 0.5 + (stretch * 0.5);
   if ( temp > 0.99999 ) temp = 0.99999;
   for ( int i=0; i<4; i++ )	{
@@ -252,7 +252,7 @@ void StifKarp<T>:: setStretch( T stretch )
     biquad_[i].setB0( coefficient );
     biquad_[i].setB2( 1.0 );
 
-    coefficient = -2.0 * temp * cos(TWO_PI * freq / Stk::sampleRate());
+    coefficient = -2.0 * temp * cos(TWO_PI * freq / stk::sampleRate());
     biquad_[i].setA1( coefficient );
     biquad_[i].setB1( coefficient );
 
@@ -323,7 +323,7 @@ template<typename T>
 void StifKarp<T>:: controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( stk::inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Clarinet::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }

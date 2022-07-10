@@ -28,8 +28,8 @@ namespace stk {
 */
 /***************************************************/
 
-template<typename T>
-class TcpServer : public Socket<T>
+
+class TcpServer : public Socket
 {
  public:
   //! Default constructor creates a local socket server on port 2006 (or the specified port number).
@@ -85,8 +85,8 @@ class TcpServer : public Socket<T>
 /***************************************************/
 
 
-template<typename T>
-TcpServer<T>::TcpServer( int port )
+inline
+TcpServer::TcpServer( int port )
 {
   // Create a socket server.
 #if defined(__OS_WINDOWS__)  // windoze-only stuff
@@ -103,15 +103,15 @@ TcpServer<T>::TcpServer( int port )
   // Create the server-side socket
   this->soket_ = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
   if (this->soket_ < 0) {
-    this->oStream_ << "TcpServer: Couldn't create socket server!";
-    this->handleError( StkError::PROCESS_SOCKET );
+    oStream_ << "TcpServer: Couldn't create socket server!";
+    handleError( StkError::PROCESS_SOCKET );
   }
 
   int flag = 1;
   int result = setsockopt( this->soket_, IPPROTO_TCP, TCP_NODELAY, (char *)&flag, sizeof(int) );
   if (result < 0) {
-    this->oStream_ << "TcpServer: Error setting socket options!";
-    this->handleError( StkError::PROCESS_SOCKET );
+    oStream_ << "TcpServer: Error setting socket options!";
+    handleError( StkError::PROCESS_SOCKET );
   }
 
   struct sockaddr_in address;
@@ -121,39 +121,39 @@ TcpServer<T>::TcpServer( int port )
 
   // Bind socket to the appropriate port and interface (INADDR_ANY)
   if ( bind( this->soket_, (struct sockaddr *)&address, sizeof(address) ) < 0 ) {
-    this->oStream_ << "TcpServer: Couldn't bind socket!";
-    this->handleError( StkError::PROCESS_SOCKET );
+    oStream_ << "TcpServer: Couldn't bind socket!";
+    handleError( StkError::PROCESS_SOCKET );
   }
 
   // Listen for incoming connection(s)
   if ( listen( this->soket_, 1 ) < 0 ) {
-    this->oStream_ << "TcpServer: Couldn't start server listening!";
-    this->handleError( StkError::PROCESS_SOCKET );
+    oStream_ << "TcpServer: Couldn't start server listening!";
+    handleError( StkError::PROCESS_SOCKET );
   }
 
   this->port_ = port;
 }
 
-template<typename T>
-TcpServer<T>::~TcpServer()
+inline
+TcpServer::~TcpServer()
 {
 }
 
-template<typename T>
-int TcpServer<T>::accept( void )
+inline
+int TcpServer::accept( void )
 {
   return ::accept( this->soket_, NULL, NULL );
 }
 
-template<typename T>
-int TcpServer<T>::writeBuffer(const void *buffer, long bufferSize, int flags )
+inline
+int TcpServer::writeBuffer(const void *buffer, long bufferSize, int flags )
 {
   if ( !this->isValid( this->soket_ ) ) return -1;
   return send( this->soket_, (const char *)buffer, bufferSize, flags );
 }
 
-template<typename T>
-int TcpServer<T>::readBuffer(void *buffer, long bufferSize, int flags )
+inline
+int TcpServer::readBuffer(void *buffer, long bufferSize, int flags )
 {
   if ( !this->isValid( this->soket_ ) ) return -1;
   return recv( this->soket_, (char *)buffer, bufferSize, flags );

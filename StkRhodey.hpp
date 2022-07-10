@@ -76,30 +76,30 @@ inline T Rhodey<T>::tick( unsigned int )
 {
   T temp, temp2;
 
-  temp = gains_[1] * adsr_[1]->tick() * waves_[1]->tick();
-  temp = temp * control1_;
+  temp = this->gains_[1] * this->adsr_[1]->tick() * this->waves_[1]->tick();
+  temp = temp * this->control1_;
 
-  waves_[0]->addPhaseOffset( temp );
-  waves_[3]->addPhaseOffset( twozero_.lastOut() );
-  temp = gains_[3] * adsr_[3]->tick() * waves_[3]->tick();
-  twozero_.tick(temp);
+  this->waves_[0]->addPhaseOffset( temp );
+  this->waves_[3]->addPhaseOffset( this->twozero_.lastOut() );
+  temp = this->gains_[3] * this->adsr_[3]->tick() * this->waves_[3]->tick();
+  this->twozero_.tick(temp);
 
-  waves_[2]->addPhaseOffset( temp );
-  temp = ( 1.0 - (control2_ * 0.5)) * gains_[0] * adsr_[0]->tick() * waves_[0]->tick();
-  temp += control2_ * 0.5 * gains_[2] * adsr_[2]->tick() * waves_[2]->tick();
+  this->waves_[2]->addPhaseOffset( temp );
+  temp = ( 1.0 - (this->control2_ * 0.5)) * this->gains_[0] * this->adsr_[0]->tick() * this->waves_[0]->tick();
+  temp += this->control2_ * 0.5 * this->gains_[2] * this->adsr_[2]->tick() * this->waves_[2]->tick();
 
   // Calculate amplitude modulation and apply it to output.
-  temp2 = vibrato_.tick() * modDepth_;
+  temp2 = this->vibrato_.tick() * this->modDepth_;
   temp = temp * (1.0 + temp2);
     
-  lastFrame_[0] = temp * 0.5;
-  return lastFrame_[0];
+  this->lastFrame_[0] = temp * 0.5;
+  return this->lastFrame_[0];
 }
 
 template<typename T>
 inline StkFrames<T>& Rhodey<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Rhodey::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -117,7 +117,7 @@ inline StkFrames<T>& Rhodey<T>::tick( StkFrames<T>& frames, unsigned int channel
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -158,35 +158,37 @@ inline StkFrames<T>& Rhodey<T>::tick( StkFrames<T>& frames, unsigned int channel
 
 template<typename T>
 Rhodey<T>::Rhodey( void )
-  : FM()
+  : FM<T>()
 {
   // Concatenate the STK rawwave path to the rawwave files
   for ( unsigned int i=0; i<3; i++ )
-    waves_[i] = new FileLoop( (Stk::rawwavePath() + "sinewave.raw").c_str(), true );
-  waves_[3] = new FileLoop( (Stk::rawwavePath() + "fwavblnk.raw").c_str(), true );
+    this->waves_[i] = new FileLoop<T>( (stk::rawwavePath() + "sinewave.raw").c_str(), true );
+  this->waves_[3] = new FileLoop<T>( (stk::rawwavePath() + "fwavblnk.raw").c_str(), true );
 
   this->setRatio(0, 1.0);
   this->setRatio(1, 0.5);
   this->setRatio(2, 1.0);
   this->setRatio(3, 15.0);
 
-  gains_[0] = fmGains_[99];
-  gains_[1] = fmGains_[90];
-  gains_[2] = fmGains_[99];
-  gains_[3] = fmGains_[67];
+  this->gains_[0] = this->fmGains_[99];
+  this->gains_[1] = this->fmGains_[90];
+  this->gains_[2] = this->fmGains_[99];
+  this->gains_[3] = this->fmGains_[67];
 
-  adsr_[0]->setAllTimes( 0.001, 1.50, 0.0, 0.04);
-  adsr_[1]->setAllTimes( 0.001, 1.50, 0.0, 0.04);
-  adsr_[2]->setAllTimes( 0.001, 1.00, 0.0, 0.04);
-  adsr_[3]->setAllTimes( 0.001, 0.25, 0.0, 0.04);
+  this->adsr_[0]->setAllTimes( 0.001, 1.50, 0.0, 0.04);
+  this->adsr_[1]->setAllTimes( 0.001, 1.50, 0.0, 0.04);
+  this->adsr_[2]->setAllTimes( 0.001, 1.00, 0.0, 0.04);
+  this->adsr_[3]->setAllTimes( 0.001, 0.25, 0.0, 0.04);
 
-  twozero_.setGain( 1.0 );
+  this->twozero_.setGain( 1.0 );
 }
 
+template<typename T>
 Rhodey<T>::~Rhodey( void )
 {
 }
 
+template<typename T>
 void Rhodey<T>::setFrequency( T frequency )
 {
 #if defined(_STK_DEBUG_)
@@ -196,18 +198,19 @@ void Rhodey<T>::setFrequency( T frequency )
   }
 #endif
 
-  baseFrequency_ = frequency * 2.0;
+  this->baseFrequency_ = frequency * 2.0;
 
-  for (unsigned int i=0; i<nOperators_; i++ )
-    waves_[i]->setFrequency( baseFrequency_ * ratios_[i] );
+  for (unsigned int i=0; i<this->nOperators_; i++ )
+    this->waves_[i]->setFrequency( this->baseFrequency_ * this->ratios_[i] );
 }
 
+template<typename T>
 void Rhodey<T>::noteOn( T frequency, T amplitude )
 {
-  gains_[0] = amplitude * fmGains_[99];
-  gains_[1] = amplitude * fmGains_[90];
-  gains_[2] = amplitude * fmGains_[99];
-  gains_[3] = amplitude * fmGains_[67];
+  this->gains_[0] = amplitude * this->fmGains_[99];
+  this->gains_[1] = amplitude * this->fmGains_[90];
+  this->gains_[2] = amplitude * this->fmGains_[99];
+  this->gains_[3] = amplitude * this->fmGains_[67];
   this->setFrequency( frequency );
   this->keyOn();
 }

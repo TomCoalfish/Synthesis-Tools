@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Stk.h"
+#include "Stk.hpp"
 #include <cmath>
 
 namespace stk {
@@ -16,7 +16,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Vector3D : public Stk<T>
+class Vector3D : public Stk
 {
 
 public:
@@ -53,7 +53,8 @@ protected:
   T Z_;
 };
 
-inline T Vector3D :: getLength( void )
+template<typename T>
+inline T Vector3D<T> :: getLength( void )
 {
   T temp;
   temp = X_ * X_;
@@ -64,5 +65,3 @@ inline T Vector3D :: getLength( void )
 }
 
 } // stk namespace
-
-#endif

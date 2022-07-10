@@ -86,17 +86,17 @@ class Resonate : public Instrmnt<T>
 };
 
 template<typename T>
-inline T Resonante<T>::tick( unsigned int )
+inline T Resonate<T>::tick( unsigned int )
 {
-  lastFrame_[0] = filter_.tick( noise_.tick() );
-  lastFrame_[0] *= adsr_.tick();
-  return lastFrame_[0];
+  this->lastFrame_[0] = filter_.tick( noise_.tick() );
+  this->lastFrame_[0] *= adsr_.tick();
+  return this->lastFrame_[0];
 }
 
 template<typename T>
-inline StkFrames<T>& Resonante<T>::tick( StkFrames<T>& frames, unsigned int channel )
+inline StkFrames<T>& Resonate<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "Resonate::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -114,7 +114,7 @@ inline StkFrames<T>& Resonante<T>::tick( StkFrames<T>& frames, unsigned int chan
     for ( unsigned int i=0; i<frames.frames(); i++, samples += hop ) {
       *samples++ = tick();
       for ( j=1; j<nChannels; j++ )
-        *samples++ = lastFrame_[j];
+        *samples++ = this->lastFrame_[j];
     }
   }
 
@@ -143,7 +143,7 @@ inline StkFrames<T>& Resonante<T>::tick( StkFrames<T>& frames, unsigned int chan
 
 
 template<typename T>
-Resonante<T>::Resonate( void )
+Resonate<T>::Resonate( void )
 {
   poleFrequency_ = 4000.0;
   poleRadius_ = 0.95;
@@ -154,12 +154,12 @@ Resonante<T>::Resonate( void )
 }  
 
 template<typename T>
-Resonante<T>::~Resonate( void )
+Resonate<T>::~Resonate( void )
 {
 }
 
 template<typename T>
-void Resonante<T>::noteOn( T frequency, T amplitude )
+void Resonate<T>::noteOn( T frequency, T amplitude )
 {
   adsr_.setTarget( amplitude );
   this->keyOn();
@@ -167,13 +167,13 @@ void Resonante<T>::noteOn( T frequency, T amplitude )
 }
 
 template<typename T>
-void Resonante<T>::noteOff( T amplitude )
+void Resonate<T>::noteOff( T amplitude )
 {
   this->keyOff();
 }
 
 template<typename T>
-void Resonante<T>::setResonance( T frequency, T radius )
+void Resonate<T>::setResonance( T frequency, T radius )
 {
   if ( frequency < 0.0 ) {
     oStream_ << "Resonate::setResonance: frequency parameter is less than zero!";
@@ -192,7 +192,7 @@ void Resonante<T>::setResonance( T frequency, T radius )
 
 
 template<typename T>
-void Resonante<T>::setNotch( T frequency, T radius )
+void Resonate<T>::setNotch( T frequency, T radius )
 {
   if ( frequency < 0.0 ) {
     oStream_ << "Resonate::setNotch: frequency parameter is less than zero ... setting to 0.0!";
@@ -211,10 +211,10 @@ void Resonante<T>::setNotch( T frequency, T radius )
 
 
 template<typename T>
-void Resonante<T>::controlChange( int number, T value )
+void Resonate<T>::controlChange( int number, T value )
 {
 #if defined(_STK_DEBUG_)
-  if ( Stk::inRange( value, 0.0, 128.0 ) == false ) {
+  if ( stk::inRange( value, 0.0, 128.0 ) == false ) {
     oStream_ << "Resonate::controlChange: value (" << value << ") is out of range!";
     handleError( StkError::WARNING ); return;
   }
@@ -222,11 +222,11 @@ void Resonante<T>::controlChange( int number, T value )
 
   T normalizedValue = value * ONE_OVER_128;
   if (number == 2) // 2
-    setResonance( normalizedValue * Stk::sampleRate() * 0.5, poleRadius_ );
+    setResonance( normalizedValue * stk::sampleRate() * 0.5, poleRadius_ );
   else if (number == 4) // 4
     setResonance( poleFrequency_, normalizedValue * 0.9999 );
   else if (number == 11) // 11
-    this->setNotch( normalizedValue * Stk::sampleRate() * 0.5, zeroRadius_ );
+    this->setNotch( normalizedValue * stk::sampleRate() * 0.5, zeroRadius_ );
   else if (number == 1)
     this->setNotch( zeroFrequency_, normalizedValue );
   else if (number == __SK_AfterTouch_Cont_) // 128

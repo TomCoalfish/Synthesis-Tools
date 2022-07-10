@@ -1,6 +1,6 @@
 #pragma once
 #include "StkWvOut.hpp"
-#include "StkRtAudio.hpp"
+#include "RtAudio.h"
 #include "StkMutex.hpp"
 #include <cstring>
 
@@ -26,7 +26,7 @@ namespace stk {
 */
 /***************************************************/
 
-template<typenaem T>
+template<typename T>
 class RtWvOut : public WvOut<T>
 {
  public:
@@ -39,7 +39,7 @@ class RtWvOut : public WvOut<T>
     default buffer size of RT_BUFFER_SIZE is defined in Stk.h.  An
     StkError will be thrown if an error occurs duing instantiation.
   */
-  RtWvOut( unsigned int nChannels = 1, T sampleRate = Stk::sampleRate(),
+  RtWvOut( unsigned int nChannels = 1, T sampleRate = stk::sampleRate(),
            int device = 0, int bufferFrames = RT_BUFFER_SIZE, int nBuffers = 20 );
 
   //! Class destructor.
@@ -82,7 +82,7 @@ class RtWvOut : public WvOut<T>
  protected:
 
   RtAudio dac_;
-  Mutex<T> mutex_;
+  Mutex mutex_;
   bool stopped_;
   unsigned int readIndex_;
   unsigned int writeIndex_;
@@ -118,7 +118,7 @@ class RtWvOut : public WvOut<T>
 enum { RUNNING, EMPTYING, FINISHED };
 
 // This function is automatically called by RtAudio to get audio data for output.
-template<typenaem T>
+template<typename T>
 int write( void *outputBuffer, void *inputBuffer, unsigned int nBufferFrames,
            double streamTime, RtAudioStreamStatus status, void *dataPointer )
 {
@@ -128,12 +128,12 @@ int write( void *outputBuffer, void *inputBuffer, unsigned int nBufferFrames,
 // This function does not block.  If the user does not write output
 // data to the buffer fast enough, previous data will be re-output
 // (data underrun).
-template<typenaem T>
+template<typename T>
 int RtWvOut<T>::readBuffer( void *buffer, unsigned int frameCount )
 {
-  unsigned int nSamples, nChannels = data_.channels();
+  unsigned int nSamples, nChannels = this->data_.channels();
   unsigned int nFrames = frameCount;
-  T *input = (T *) &data_[ readIndex_ * nChannels ];
+  T *input = (T *) &this->data_[ readIndex_ * nChannels ];
   T *output = (T *) buffer;
   long counter;
 
@@ -145,8 +145,8 @@ int RtWvOut<T>::readBuffer( void *buffer, unsigned int frameCount )
 
     // Pre-increment read pointer and check bounds.
     readIndex_ += nFrames;
-    if ( readIndex_ >= data_.frames() ) {
-      counter -= readIndex_ - data_.frames();
+    if ( readIndex_ >= this->data_.frames() ) {
+      counter -= readIndex_ - this->data_.frames();
       readIndex_ = 0;
     }
 
@@ -183,7 +183,7 @@ int RtWvOut<T>::readBuffer( void *buffer, unsigned int frameCount )
 }
 
 
-template<typenaem T>
+template<typename T>
 RtWvOut<T>::RtWvOut( unsigned int nChannels, T sampleRate, int device, int bufferFrames, int nBuffers )
   : stopped_( true ), readIndex_( 0 ), writeIndex_( 0 ), framesFilled_( 0 ), status_(0)
 {
@@ -199,29 +199,29 @@ RtWvOut<T>::RtWvOut( unsigned int nChannels, T sampleRate, int device, int buffe
 
   // Open a stream and set the callback function.
   try {
-    dac_.openStream( &parameters, NULL, format, (unsigned int)Stk::sampleRate(), &size, &write, (void *)this );
+    dac_.openStream( &parameters, NULL, format, (unsigned int)stk::sampleRate(), &size, &this->write, (void *)this );
   }
   catch ( RtAudioError &error ) {
     handleError( error.what(), StkError::AUDIO_SYSTEM );
   }
 
-  data_.resize( size * nBuffers, nChannels );
+  this->data_.resize( size * nBuffers, nChannels );
 
   // Start writing half-way into buffer.
-  writeIndex_ = (unsigned int ) (data_.frames() / 2.0);
+  writeIndex_ = (unsigned int ) (this->data_.frames() / 2.0);
   framesFilled_ = writeIndex_;
 }
 
-template<typenaem T>
+template<typename T>
 RtWvOut<T>::~RtWvOut( void )
 {
   // Change status flag to signal callback to clear the buffer and close.
   status_ = EMPTYING;
-  while ( status_ != FINISHED && dac_.isStreamRunning() == true ) Stk::sleep( 100 );
+  while ( status_ != FINISHED && dac_.isStreamRunning() == true ) stk::sleep( 100 );
   dac_.closeStream();
 }
 
-template<typenaem T>
+template<typename T>
 void RtWvOut<T>::start( void )
 {
   if ( stopped_ ) {
@@ -230,7 +230,7 @@ void RtWvOut<T>::start( void )
   }
 }
 
-template<typenaem T>
+template<typename T>
 void RtWvOut<T>::stop( void )
 {
   if ( !stopped_ ) {
@@ -239,32 +239,32 @@ void RtWvOut<T>::stop( void )
   }
 }
 
-template<typenaem T>
+template<typename T>
 void RtWvOut<T>::tick( const T sample )
 {
   if ( stopped_ ) this->start();
 
-  // Block until we have room for at least one frame of output data.
-  while ( framesFilled_ == (long) data_.frames() ) Stk::sleep( 1 );
+  // Block until we have room for at least one frame of output this->data.
+  while ( framesFilled_ == (long) this->data_.frames() ) stk::sleep( 1 );
 
-  unsigned int nChannels = data_.channels();
+  unsigned int nChannels = this->data_.channels();
   T input = sample;
   clipTest( input );
   unsigned long index = writeIndex_ * nChannels;
   for ( unsigned int j=0; j<nChannels; j++ )
-    data_[index++] = input;
+    this->data_[index++] = input;
 
   mutex_.lock();
   framesFilled_++;
   mutex_.unlock();
-  frameCounter_++;
+  this->frameCounter_++;
   writeIndex_++;
-  if ( writeIndex_ == data_.frames() )
+  if ( writeIndex_ == this->data_.frames() )
     writeIndex_ = 0;
 }
 
 
-template<typenaem T>
+template<typename T>
 void RtWvOut<T>::tick( const StkFrames<T>& frames )
 {
 #if defined(_STK_DEBUG_)
@@ -280,33 +280,33 @@ void RtWvOut<T>::tick( const StkFrames<T>& frames )
   // still have samples left in the frames object, then wait and
   // repeat.
   unsigned int framesEmpty, nFrames, bytes, framesWritten = 0;
-  unsigned int nChannels = data_.channels();
+  unsigned int nChannels = this->data_.channels();
   while ( framesWritten < frames.frames() ) {
 
-    // Block until we have some room for output data.
-    while ( framesFilled_ == (long) data_.frames() ) Stk::sleep( 1 );
-    framesEmpty = data_.frames() - framesFilled_;
+    // Block until we have some room for output this->data.
+    while ( framesFilled_ == (long) this->data_.frames() ) stk::sleep( 1 );
+    framesEmpty = this->data_.frames() - framesFilled_;
 
-    // Copy data in one chunk up to the end of the data buffer.
+    // Copy this->data in one chunk up to the end of the this->data buffer.
     nFrames = framesEmpty;
-    if ( writeIndex_ + nFrames > data_.frames() )
-      nFrames = data_.frames() - writeIndex_;
+    if ( writeIndex_ + nFrames > this->data_.frames() )
+      nFrames = this->data_.frames() - writeIndex_;
     if ( nFrames > frames.frames() - framesWritten )
       nFrames = frames.frames() - framesWritten;
     bytes = nFrames * nChannels * sizeof( T );
-    T *samples = &data_[writeIndex_ * nChannels];
+    T *samples = &this->data_[writeIndex_ * nChannels];
     StkFrames<T> *ins = (StkFrames<T> *) &frames;
     memcpy( samples, &(*ins)[framesWritten * nChannels], bytes );
     for ( unsigned int i=0; i<nFrames * nChannels; i++ ) clipTest( *samples++ );
 
     writeIndex_ += nFrames;
-    if ( writeIndex_ == data_.frames() ) writeIndex_ = 0;
+    if ( writeIndex_ == this->data_.frames() ) writeIndex_ = 0;
 
     framesWritten += nFrames;
     mutex_.lock();
     framesFilled_ += nFrames;
     mutex_.unlock();
-    frameCounter_ += nFrames;
+    this->frameCounter_ += nFrames;
   }
 }
 

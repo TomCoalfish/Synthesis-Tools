@@ -87,7 +87,7 @@ class InetWvOut : public WvOut<T>
   void writeData( unsigned long frames );
 
   char *buffer_;
-  Socket<T> *soket_;
+  Socket *soket_;
   unsigned long bufferFrames_;
   unsigned long bufferBytes_;
   unsigned long bufferIndex_;
@@ -173,9 +173,9 @@ void InetWvOut<T>::connect( int port, ProtocolType protocol, std::string hostnam
     // the destination port, we will associate this socket instance
     // with a different port number (arbitrarily determined as port -
     // 1).
-    UdpSocket<T> *socket = new UdpSocket<T>( port - 1 );
+    UdpSocket *socket = new UdpSocket( port - 1 );
     socket->setDestination( port, hostname );
-    soket_ = (Socket<T>*) socket;
+    soket_ = (Socket*) socket;
   }
 
   // Allocate new memory if necessary.

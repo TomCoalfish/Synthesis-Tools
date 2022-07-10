@@ -28,8 +28,8 @@ namespace stk {
 */
 /***************************************************/
 
-template<typename T>
-class UdpSocket : public Socket<T>
+
+class UdpSocket : public Socket
 {
  public:
   //! Default constructor creates a local UDP socket on port 2006 (or the specified port number).
@@ -97,8 +97,8 @@ class UdpSocket : public Socket<T>
 
 
 
-template<typename T>
-UdpSocket<T>::UdpSocket(int port )
+inline
+UdpSocket::UdpSocket(int port )
 {
   validAddress_ = false;
 
@@ -134,20 +134,20 @@ UdpSocket<T>::UdpSocket(int port )
   this->port_ = port;
 }
 
-template<typename T>
-UdpSocket<T>::~UdpSocket()
+inline
+UdpSocket::~UdpSocket()
 {
 }
 
-template<typename T>
-void UdpSocket<T>::setDestination( int port, std::string hostname )
+inline
+void UdpSocket::setDestination( int port, std::string hostname )
 {
   this->setAddress( &address_, port, hostname );
   validAddress_ = true;
 }
 
-template<typename T>
-void UdpSocket<T>::setAddress( struct sockaddr_in *address, int port, std::string hostname )
+inline
+void UdpSocket::setAddress( struct sockaddr_in *address, int port, std::string hostname )
 {
   struct hostent *hostp;
   if ( (hostp = gethostbyname( hostname.c_str() )) == 0 ) {
@@ -161,22 +161,22 @@ void UdpSocket<T>::setAddress( struct sockaddr_in *address, int port, std::strin
   address->sin_port = htons( port );
 }
 
-template<typename T>
-int UdpSocket<T>::writeBuffer( const void *buffer, long bufferSize, int flags )
+inline
+int UdpSocket::writeBuffer( const void *buffer, long bufferSize, int flags )
 {
   if ( !isValid( this->soket_ ) || !validAddress_ ) return -1;
   return sendto( this->soket_, (const char *)buffer, bufferSize, flags, (struct sockaddr *)&address_, sizeof(address_) );
 }
 
-template<typename T>
-int UdpSocket<T>::readBuffer( void *buffer, long bufferSize, int flags )
+inline
+int UdpSocket::readBuffer( void *buffer, long bufferSize, int flags )
 {
   if ( !isValid( this->soket_ ) ) return -1;
   return recvfrom( this->soket_, (char *)buffer, bufferSize, flags, NULL, NULL );
 }
 
-template<typename T>
-int UdpSocket<T>::writeBufferTo( const void *buffer, long bufferSize, int port, std::string hostname, int flags )
+inline
+int UdpSocket::writeBufferTo( const void *buffer, long bufferSize, int port, std::string hostname, int flags )
 {
   if ( !isValid( this->soket_ ) ) return -1;
   struct sockaddr_in address;

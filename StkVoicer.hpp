@@ -1,7 +1,5 @@
-#ifndef STK_VOICER_H
-#define STK_VOICER_H
-
-#include "Instrmnt.h"
+#pragma once
+#include "StkInstrmnt.hpp"
 #include <vector>
 #include <cmath>
 
@@ -33,7 +31,7 @@ namespace stk {
 /***************************************************/
 
 template<typename T>
-class Voicer : public Stk<T>
+class Voicer : public Stk
 {
  public:
   //! Class constructor taking an optional note decay time (in seconds).
@@ -44,7 +42,7 @@ class Voicer : public Stk<T>
     A set of instruments can be grouped by group number and
     controlled via the functions that take a group number argument.
   */
-  void addInstrument( Instrmnt *instrument, int group=0 );
+  void addInstrument( Instrmnt<T> *instrument, int group=0 );
 
   //! Remove the given instrument pointer from the voice manager's control.
   /*!
@@ -52,7 +50,7 @@ class Voicer : public Stk<T>
     the user while the voice manager is running be first removed from
     the manager's control via this function!!
   */
-  void removeInstrument( Instrmnt *instrument );
+  void removeInstrument( Instrmnt<T> *instrument );
 
   //! Initiate a noteOn event with the given note number and amplitude and return a unique note tag.
   /*!
@@ -146,7 +144,7 @@ class Voicer : public Stk<T>
  protected:
 
   struct Voice {
-    Instrmnt *instrument;
+    Instrmnt<T> *instrument;
     long tag;
     T noteNumber;
     T frequency;
@@ -255,13 +253,13 @@ Voicer<T>::Voicer( T decayTime )
   }
 
   tags_ = 23456;
-  muteTime_ = (int) ( decayTime * Stk::sampleRate() );
+  muteTime_ = (int) ( decayTime * stk::sampleRate() );
   lastFrame_.resize( 1, 1, 0.0 );
 }
 
 
 template<typename T>
-void Voicer<T>::addInstrument( Instrmnt *instrument, int group )
+void Voicer<T>::addInstrument( Instrmnt<T> *instrument, int group )
 {
   Voicer::Voice voice;
   voice.instrument = instrument;
@@ -280,10 +278,10 @@ void Voicer<T>::addInstrument( Instrmnt *instrument, int group )
 
 
 template<typename T>
-void Voicer<T>::removeInstrument( Instrmnt *instrument )
+void Voicer<T>::removeInstrument( Instrmnt<T> *instrument )
 {
   bool found = false;
-  std::vector< Voicer::Voice >::iterator i;
+  typename std::vector< Voicer::Voice >::iterator i;
   for ( i=voices_.begin(); i!=voices_.end(); ++i ) {
     if ( (*i).instrument != instrument ) continue;
     voices_.erase( i );

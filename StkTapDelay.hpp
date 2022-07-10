@@ -63,31 +63,31 @@ class TapDelay : public Filter<T>
     defined during compilation, in which case an out-of-range value
     will trigger an StkError exception.
   */
-  StkFloat lastOut( unsigned int tap = 0 ) const;
+  T lastOut( unsigned int tap = 0 ) const;
 
   //! Input one sample to the delayline and return outputs at all tap positions.
   /*!
-    The StkFrames argument reference is returned.  The output
+    The StkFrames<T> argument reference is returned.  The output
     values are ordered according to the tap positions set using the
-    setTapDelays() function (no sorting is performed).  The StkFrames
+    setTapDelays() function (no sorting is performed).  The StkFrames<T>
     argument must contain at least as many channels as the number of
     taps.  However, range checking is only performed if _STK_DEBUG_ is
     defined during compilation, in which case an out-of-range value
     will trigger an StkError exception.
   */
-  StkFrames& tick( StkFloat input, StkFrames& outputs );
+  StkFrames<T>& tick( T input, StkFrames<T>& outputs );
 
-  //! Take a channel of the StkFrames object as inputs to the filter and write outputs back to the same object.
+  //! Take a channel of the StkFrames<T> object as inputs to the filter and write outputs back to the same object.
   /*!
-    The StkFrames argument reference is returned.  The output
+    The StkFrames<T> argument reference is returned.  The output
     values are ordered according to the tap positions set using the
-    setTapDelays() function (no sorting is performed).  The StkFrames
+    setTapDelays() function (no sorting is performed).  The StkFrames<T>
     argument must contain at least as many channels as the number of
     taps.  However, range checking is only performed if _STK_DEBUG_ is
     defined during compilation, in which case an out-of-range value
     will trigger an StkError exception.
   */
-  StkFrames& tick( StkFrames& frames, unsigned int channel = 0 );
+  StkFrames<T>& tick( StkFrames<T>& frames, unsigned int channel = 0 );
 
   //! Take a channel of the \c iFrames object as inputs to the filter and write outputs to the \c oFrames object.
   /*!
@@ -101,7 +101,7 @@ class TapDelay : public Filter<T>
     _STK_DEBUG_ is defined during compilation, in which case an
     out-of-range value will trigger an StkError exception.
   */
-  StkFrames& tick( StkFrames& iFrames, StkFrames &oFrames, unsigned int iChannel = 0 );
+  StkFrames<T>& tick( StkFrames<T>& iFrames, StkFrames<T> &oFrames, unsigned int iChannel = 0 );
 
  protected:
 
@@ -111,106 +111,113 @@ class TapDelay : public Filter<T>
 
 };
 
-inline StkFloat TapDelay :: lastOut( unsigned int tap ) const
+template<typename T>
+inline T TapDelay<T>::lastOut( unsigned int tap ) const
 {
 #if defined(_STK_DEBUG_)
-  if ( tap >= lastFrame_.size() ) {
+  if ( tap >= this->lastFrame_.size() ) {
     oStream_ << "TapDelay::lastOut(): tap argument and number of taps are incompatible!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
-  return lastFrame_[tap];
+  return this->lastFrame_[tap];
 }
 
-inline StkFrames& TapDelay :: tick( StkFloat input, StkFrames& outputs )
+
+template<typename T>
+inline StkFrames<T>& TapDelay<T>::tick( T input, StkFrames<T>& outputs )
 {
 #if defined(_STK_DEBUG_)
   if ( outputs.channels() < outPoint_.size() ) {
-    oStream_ << "TapDelay::tick(): number of taps > channels in StkFrames argument!";
+    oStream_ << "TapDelay::tick(): number of taps > channels in StkFrames<T> argument!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
-  inputs_[inPoint_++] = input * gain_;
+  this->inputs_[inPoint_++] = input * this->gain_;
 
   // Check for end condition
-  if ( inPoint_ == inputs_.size() )
+  if ( inPoint_ == this->inputs_.size() )
     inPoint_ = 0;
 
   // Read out next values
-  StkFloat *outs = &outputs[0];
+  T *outs = &outputs[0];
   for ( unsigned int i=0; i<outPoint_.size(); i++ ) {
-    *outs++ = inputs_[outPoint_[i]];
-    lastFrame_[i] = *outs;
-    if ( ++outPoint_[i] == inputs_.size() )
+    *outs++ = this->inputs_[outPoint_[i]];
+    this->lastFrame_[i] = *outs;
+    if ( ++outPoint_[i] == this->inputs_.size() )
       outPoint_[i] = 0;
   }
 
   return outputs;
 }
 
-inline StkFrames& TapDelay :: tick( StkFrames& frames, unsigned int channel )
+
+template<typename T>
+inline StkFrames<T>& TapDelay<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
 #if defined(_STK_DEBUG_)
   if ( channel >= frames.channels() ) {
-    oStream_ << "TapDelay::tick(): channel and StkFrames arguments are incompatible!";
+    oStream_ << "TapDelay::tick(): channel and StkFrames<T> arguments are incompatible!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
   if ( frames.channels() < outPoint_.size() ) {
-    oStream_ << "TapDelay::tick(): number of taps > channels in StkFrames argument!";
+    oStream_ << "TapDelay::tick(): number of taps > channels in StkFrames<T> argument!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
-  StkFloat *iSamples = &frames[channel];
-  StkFloat *oSamples = &frames[0];
+  T *iSamples = &frames[channel];
+  T *oSamples = &frames[0];
   std::size_t j;
   unsigned int iHop = frames.channels();
   std::size_t oHop = frames.channels() - outPoint_.size();
   for ( unsigned long i=0; i<frames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
-    inputs_[inPoint_++] = *iSamples * gain_;
-    if ( inPoint_ == inputs_.size() ) inPoint_ = 0;
+    this->inputs_[inPoint_++] = *iSamples * this->gain_;
+    if ( inPoint_ == this->inputs_.size() ) inPoint_ = 0;
     for ( j=0; j<outPoint_.size(); j++ ) {
-      *oSamples++ = inputs_[outPoint_[j]];
-      if ( ++outPoint_[j] == inputs_.size() ) outPoint_[j] = 0;
+      *oSamples++ = this->inputs_[outPoint_[j]];
+      if ( ++outPoint_[j] == this->inputs_.size() ) outPoint_[j] = 0;
     }
   }
 
   oSamples -= frames.channels();
-  for ( j=0; j<outPoint_.size(); j++ ) lastFrame_[j] = *oSamples++;
+  for ( j=0; j<outPoint_.size(); j++ ) this->lastFrame_[j] = *oSamples++;
   return frames;
 }
 
-inline StkFrames& TapDelay :: tick( StkFrames& iFrames, StkFrames& oFrames, unsigned int iChannel )
+
+template<typename T>
+inline StkFrames<T>& TapDelay<T>::tick( StkFrames<T>& iFrames, StkFrames<T>& oFrames, unsigned int iChannel )
 {
 #if defined(_STK_DEBUG_)
   if ( iChannel >= iFrames.channels() ) {
-    oStream_ << "TapDelay::tick(): channel and StkFrames arguments are incompatible!";
+    oStream_ << "TapDelay::tick(): channel and StkFrames<T> arguments are incompatible!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
   if ( oFrames.channels() < outPoint_.size() ) {
-    oStream_ << "TapDelay::tick(): number of taps > channels in output StkFrames argument!";
+    oStream_ << "TapDelay::tick(): number of taps > channels in output StkFrames<T> argument!";
     handleError( StkError::FUNCTION_ARGUMENT );
   }
 #endif
 
-  StkFloat *iSamples = &iFrames[iChannel];
-  StkFloat *oSamples = &oFrames[0];
+  T *iSamples = &iFrames[iChannel];
+  T *oSamples = &oFrames[0];
   std::size_t j;
   unsigned int iHop = iFrames.channels();
   std::size_t oHop = oFrames.channels() - outPoint_.size();
   for ( unsigned long i=0; i<iFrames.frames(); i++, iSamples += iHop, oSamples += oHop ) {
-    inputs_[inPoint_++] = *iSamples * gain_;
-    if ( inPoint_ == inputs_.size() ) inPoint_ = 0;
+    this->inputs_[inPoint_++] = *iSamples * this->gain_;
+    if ( inPoint_ == this->inputs_.size() ) inPoint_ = 0;
     for ( j=0; j<outPoint_.size(); j++ ) {
-      *oSamples++ = inputs_[outPoint_[j]];
-      if ( ++outPoint_[j] == inputs_.size() ) outPoint_[j] = 0;
+      *oSamples++ = this->inputs_[outPoint_[j]];
+      if ( ++outPoint_[j] == this->inputs_.size() ) outPoint_[j] = 0;
     }
   }
 
   oSamples -= oFrames.channels();
-  for ( j=0; j<outPoint_.size(); j++ ) lastFrame_[j] = *oSamples++;
+  for ( j=0; j<outPoint_.size(); j++ ) this->lastFrame_[j] = *oSamples++;
   return iFrames;
 }
 
@@ -230,11 +237,8 @@ inline StkFrames& TapDelay :: tick( StkFrames& iFrames, StkFrames& oFrames, unsi
 */
 /***************************************************/
 
-#include "TapDelay.h"
-
-namespace stk {
-
-TapDelay :: TapDelay( std::vector<unsigned long> taps, unsigned long maxDelay )
+template<typename T>
+TapDelay<T>::TapDelay( std::vector<unsigned long> taps, unsigned long maxDelay )
 {
   // Writing before reading allows delays from 0 to length-1. 
   // If we want to allow a delay of maxDelay, we need a
@@ -251,20 +255,22 @@ TapDelay :: TapDelay( std::vector<unsigned long> taps, unsigned long maxDelay )
     }
   }
 
-  if ( ( maxDelay + 1 ) > inputs_.size() )
-    inputs_.resize( maxDelay + 1, 1, 0.0 );
+  if ( ( maxDelay + 1 ) > this->inputs_.size() )
+    this->inputs_.resize( maxDelay + 1, 1, 0.0 );
 
   inPoint_ = 0;
   this->setTapDelays( taps );
 }
 
-TapDelay :: ~TapDelay()
+template<typename T>
+TapDelay<T>::~TapDelay()
 {
 }
 
-void TapDelay :: setMaximumDelay( unsigned long delay )
+template<typename T>
+void TapDelay<T>::setMaximumDelay( unsigned long delay )
 {
-  if ( delay < inputs_.size() ) return;
+  if ( delay < this->inputs_.size() ) return;
 
   for ( unsigned int i=0; i<delays_.size(); i++ ) {
     if ( delay < delays_[i] ) {
@@ -273,13 +279,14 @@ void TapDelay :: setMaximumDelay( unsigned long delay )
     }
   }
 
-  inputs_.resize( delay + 1 );
+  this->inputs_.resize( delay + 1 );
 }
 
-void TapDelay :: setTapDelays( std::vector<unsigned long> taps )
+template<typename T>
+void TapDelay<T>::setTapDelays( std::vector<unsigned long> taps )
 {
   for ( unsigned int i=0; i<taps.size(); i++ ) {
-    if ( taps[i] > inputs_.size() - 1 ) { // The value is too big.
+    if ( taps[i] > this->inputs_.size() - 1 ) { // The value is too big.
       oStream_ << "TapDelay::setTapDelay: argument (" << taps[i] << ") greater than maximum!\n";
       handleError( StkError::WARNING ); return;
     }
@@ -288,13 +295,13 @@ void TapDelay :: setTapDelays( std::vector<unsigned long> taps )
   if ( taps.size() != outPoint_.size() ) {
     outPoint_.resize( taps.size() );
     delays_.resize( taps.size() );
-    lastFrame_.resize( 1, (unsigned int)taps.size(), 0.0 );
+    this->lastFrame_.resize( 1, (unsigned int)taps.size(), 0.0 );
   }
 
   for ( unsigned int i=0; i<taps.size(); i++ ) {
     // read chases write
     if ( inPoint_ >= taps[i] ) outPoint_[i] = inPoint_ - taps[i];
-    else outPoint_[i] = inputs_.size() + inPoint_ - taps[i];
+    else outPoint_[i] = this->inputs_.size() + inPoint_ - taps[i];
     delays_[i] = taps[i];
   }
 }

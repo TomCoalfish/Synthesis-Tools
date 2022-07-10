@@ -1,6 +1,6 @@
 #pragma once
 #include "StkWvIn.hpp"
-#include "StkRtAudio.hpp"
+#include "RtAudio.h"
 #include "StkMutex.hpp"
 #include <cstring>
 
@@ -39,7 +39,7 @@ public:
     default buffer size of RT_BUFFER_SIZE is defined in Stk.h.  An
     StkError will be thrown if an error occurs duing instantiation.
   */
-  RtWvIn( unsigned int nChannels = 1, T sampleRate = Stk::sampleRate(),
+  RtWvIn( unsigned int nChannels = 1, T sampleRate = stk::sampleRate(),
           int device = 0, int bufferFrames = RT_BUFFER_SIZE, int nBuffers = 20 );
 
   //! Class destructor.
@@ -61,7 +61,7 @@ public:
 
   //! Return the specified channel value of the last computed frame.
   /*!
-    For multi-channel files, use the lastFrame() function to get
+    For multi-channel files, use the this->lastFrame() function to get
     all values from the last computed frame.  If the device is
     stopped, the returned value is 0.0.  The \c channel argument must
     be less than the number of channels in the audio stream (the first
@@ -73,7 +73,7 @@ public:
 
   //! Compute a sample frame and return the specified \c channel value.
   /*!
-    For multi-channel files, use the lastFrame() function to get
+    For multi-channel files, use the this->lastFrame() function to get
     all values from the computed frame.  If the device is "stopped",
     it is "started".  The \c channel argument must be less than the
     number of channels in the audio stream (the first channel is
@@ -101,7 +101,7 @@ public:
 protected:
 
   RtAudio adc_;
-  Mutex<T> mutex_;
+  Mutex mutex_;
   bool stopped_;
   unsigned int readIndex_;
   unsigned int writeIndex_;
@@ -119,7 +119,7 @@ inline T RtWvIn<T>::lastOut( unsigned int channel )
   }
 #endif
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 /***************************************************/
@@ -160,25 +160,25 @@ template<typename T>
 void RtWvIn<T>::fillBuffer( void *buffer, unsigned int nFrames )
 {
   T *samples = (T *) buffer;
-  unsigned int counter, iStart, nSamples = nFrames * data_.channels();
+  unsigned int counter, iStart, nSamples = nFrames * this->data_.channels();
 
   while ( nSamples > 0 ) {
 
     // I'm assuming that both the RtAudio and StkFrames<T> buffers
     // contain interleaved data.
-    iStart = writeIndex_ * data_.channels();
+    iStart = writeIndex_ * this->data_.channels();
     counter = nSamples;
 
     // Pre-increment write pointer and check bounds.
-    writeIndex_ += nSamples / data_.channels();
-    if ( writeIndex_ >= data_.frames() ) {
+    writeIndex_ += nSamples / this->data_.channels();
+    if ( writeIndex_ >= this->data_.frames() ) {
       writeIndex_ = 0;
-      counter = data_.size() - iStart;
+      counter = this->data_.size() - iStart;
     }
 
     // Copy data to the StkFrames<T> container.
     for ( unsigned int i=0; i<counter; i++ )
-      data_[iStart++] = *samples++;
+      this->data_[iStart++] = *samples++;
 
     nSamples -= counter;
   }
@@ -186,8 +186,8 @@ void RtWvIn<T>::fillBuffer( void *buffer, unsigned int nFrames )
   mutex_.lock();
   framesFilled_ += nFrames;
   mutex_.unlock();
-  if ( framesFilled_ > data_.frames() ) {
-    framesFilled_ = data_.frames();
+  if ( framesFilled_ > this->data_.frames() ) {
+    framesFilled_ = this->data_.frames();
     oStream_ << "RtWvIn: audio buffer overrun!";
     handleError( StkError::WARNING );
   }
@@ -208,14 +208,14 @@ RtWvIn<T>::RtWvIn( unsigned int nChannels, T sampleRate, int device, int bufferF
   RtAudioFormat format = ( sizeof(T) == 8 ) ? RTAUDIO_FLOAT64 : RTAUDIO_FLOAT32;
 
   try {
-    adc_.openStream( NULL, &parameters, format, (unsigned int)Stk::sampleRate(), &size, &read, (void *)this );
+    adc_.openStream( NULL, &parameters, format, (unsigned int)stk::sampleRate(), &size, &this->read, (void *)this );
   }
   catch ( RtAudioError &error ) {
     handleError( error.what(), StkError::AUDIO_SYSTEM );
   }
 
-  data_.resize( size * nBuffers, nChannels );
-  lastFrame_.resize( 1, nChannels );
+  this->data_.resize( size * nBuffers, nChannels );
+  this->lastFrame_.resize( 1, nChannels );
 }
 
 template<typename T>
@@ -241,7 +241,7 @@ void RtWvIn<T>::stop(
   if ( !stopped_ ) {
     adc_.stopStream();
     stopped_ = true;
-    for ( unsigned int i=0; i<lastFrame_.size(); i++ ) lastFrame_[i] = 0.0;
+    for ( unsigned int i=0; i<this->lastFrame_.size(); i++ ) this->lastFrame_[i] = 0.0;
   }
 }
 
@@ -258,26 +258,26 @@ T RtWvIn<T>::tick( unsigned int channel )
   if ( stopped_ ) this->start();
 
   // Block until at least one frame is available.
-  while ( framesFilled_ == 0 ) Stk::sleep( 1 );
+  while ( framesFilled_ == 0 ) stk::sleep( 1 );
 
-  unsigned long index = readIndex_ * lastFrame_.channels();
-  for ( unsigned int i=0; i<lastFrame_.size(); i++ )
-    lastFrame_[i] = data_[index++];
+  unsigned long index = readIndex_ * this->lastFrame_.channels();
+  for ( unsigned int i=0; i<this->lastFrame_.size(); i++ )
+    this->lastFrame_[i] = this->data_[index++];
 
   mutex_.lock();
   framesFilled_--;
   mutex_.unlock();
   readIndex_++;
-  if ( readIndex_ >= data_.frames() )
+  if ( readIndex_ >= this->data_.frames() )
     readIndex_ = 0;
 
-  return lastFrame_[channel];
+  return this->lastFrame_[channel];
 }
 
 template<typename T>
 StkFrames<T>& RtWvIn<T>::tick( StkFrames<T>& frames, unsigned int channel )
 {
-  unsigned int nChannels = lastFrame_.channels();
+  unsigned int nChannels = this->lastFrame_.channels();
 #if defined(_STK_DEBUG_)
   if ( channel > frames.channels() - nChannels ) {
     oStream_ << "RtWvIn::tick(): channel and StkFrames<T> arguments are incompatible!";
@@ -293,16 +293,16 @@ StkFrames<T>& RtWvIn<T>::tick( StkFrames<T>& frames, unsigned int channel )
   while ( framesRead < frames.frames() ) {
 
     // Block until we have some input data.
-    while ( framesFilled_ == 0 ) Stk::sleep( 1 );
+    while ( framesFilled_ == 0 ) stk::sleep( 1 );
 
     // Copy data in one chunk up to the end of the data buffer.
     nFrames = framesFilled_;
-    if ( readIndex_ + nFrames > data_.frames() )
-      nFrames = data_.frames() - readIndex_;
+    if ( readIndex_ + nFrames > this->data_.frames() )
+      nFrames = this->data_.frames() - readIndex_;
     if ( nFrames > frames.frames() - framesRead )
       nFrames = frames.frames() - framesRead;
     bytes = nFrames * nChannels * sizeof( T );
-    T *samples = &data_[readIndex_ * nChannels];
+    T *samples = &this->data_[readIndex_ * nChannels];
     unsigned int hop = frames.channels() - nChannels;
     if ( hop == 0 ) 
       memcpy( &frames[framesRead * nChannels], samples, bytes );
@@ -316,7 +316,7 @@ StkFrames<T>& RtWvIn<T>::tick( StkFrames<T>& frames, unsigned int channel )
     }
 
     readIndex_ += nFrames;
-    if ( readIndex_ == data_.frames() ) readIndex_ = 0;
+    if ( readIndex_ == this->data_.frames() ) readIndex_ = 0;
 
     framesRead += nFrames;
     mutex_.lock();
@@ -325,8 +325,8 @@ StkFrames<T>& RtWvIn<T>::tick( StkFrames<T>& frames, unsigned int channel )
   }
 
   unsigned long index = (frames.frames() - 1) * nChannels;
-  for ( unsigned int i=0; i<lastFrame_.size(); i++ )
-    lastFrame_[i] = frames[channel+index++];
+  for ( unsigned int i=0; i<this->lastFrame_.size(); i++ )
+    this->lastFrame_[i] = frames[channel+index++];
 
   return frames;
 }
