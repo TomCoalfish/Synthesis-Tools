@@ -6,13 +6,6 @@ Templated Synthesis Toolkit
 * Hopefully did not break anything converting it
 * Now will test stuff 
 
-# Gamma
-* Gamma has alot of useful functions some that Stk doesnt like STFT
-* I am making it to it will work with Stk like an extensions for algorithms
-* It is not really difficult as it's all mostly templates
-* It has a peculiar audio scheduler in it you can use as the audio system 
-
-
 # SIMD, Fixed point
 * The idea is that with the templates you can be able to use vectorizer classes
 * I have a fixed point class that is like a floating point number
@@ -49,3 +42,8 @@ Templated Synthesis Toolkit
 * Run octave scripts
 * Call octave functions
 
+# Gamma
+* Gamma has alot of useful functions some that Stk doesnt like STFT
+* I am making it to it will work with Stk like an extensions for algorithms
+* It is not really difficult as it's all mostly templates
+* It has a peculiar audio scheduler in it you can use as the audio system 
