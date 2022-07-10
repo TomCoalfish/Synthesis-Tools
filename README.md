@@ -1,6 +1,11 @@
 # TStk
 Templated Synthesis Toolkit
 
+# Conversion is finished
+* At least, it all compiles now
+* Hopefully did not break anything converting it
+* Now will test stuff 
+
 # SIMD, Fixed point
 * The idea is that with the templates you can be able to use vectorizer classes
 * I have a fixed point class that is like a floating point number
