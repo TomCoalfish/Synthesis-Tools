@@ -24,6 +24,14 @@ Syntehsis Tools
 * The goal is to modify VCV Rack to load headless
 * Can load patches and use them headless
 * It already can run headles sbut I want to embed it
+* There is already a plugin called Cardinal but I don't want plugins 
+
+# LV2 Plugin
+* Very rudimentated 
+* Very primitive
+* Can load them but there is no explanation of many things like the URID 
+* Don't know where in LV2 you start the GUI yet
+* Not very good examples anywhere
 
 # LuaJIT
 * Embedded command REPL
