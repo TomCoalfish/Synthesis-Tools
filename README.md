@@ -20,7 +20,7 @@ Syntehsis Tools
 * must set it to the audio size in the CSound file (default=256)
 * Finishing the MIDI input/output
 
-# VCV Rack
+# Embedded VCV Rack
 * The goal is to modify VCV Rack to load headless
 * Can load patches and use them headless
 * It already can run headles sbut I want to embed it
