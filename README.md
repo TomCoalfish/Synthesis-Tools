@@ -26,6 +26,12 @@ Syntehsis Tools
 * It already can run headles sbut I want to embed it
 * There is already a plugin called Cardinal but I don't want plugins 
 
+# Plugins
+* I don't really focus much effort on it but I have experimental things 
+* I don't use them alot but I have a million of them with my distrho
+* If you want to use them use Carla or Ingen a million times better
+* But I have them for experimental purposes
+
 # LV2 Plugin
 * Very rudimentated 
 * Very primitive
@@ -37,6 +43,7 @@ Syntehsis Tools
 * Much easier to load than LV2
 * Nobody makes them anymore
 * But historically there are still quite alot of them that can be useful
+
 
 
 
