@@ -1,0 +1,1 @@
+/usr/bin/c++ -O2 -fPIC -march=native -mavx2 -rdynamic CMakeFiles/pitchshifterpp.dir/src/pitchshifterpp.cpp.o -o pitchshifterpp  -lfftw3 -lsndfile 

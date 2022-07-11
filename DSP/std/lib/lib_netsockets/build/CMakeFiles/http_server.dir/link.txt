@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread  -rdynamic CMakeFiles/http_server.dir/examples/http_server.cc.o -o http_server  liblib_netsockets.a 

@@ -161,7 +161,7 @@ int main()
     std::cout << f.frames() << std::endl;
     std::cout << f.channels() << std::endl;
     StkFrames<float> l(1024,1);
-    f.getChannel(0,l,0);
+    f.getcdChannel(0,l,0);
     l.print();
     std::vector<float> right = f.GetVectorChannel(1);
     l = right;

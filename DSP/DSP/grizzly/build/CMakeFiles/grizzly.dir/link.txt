@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -fPIC -march=native -mavx2 -shared -Wl,-soname,libgrizzly.so -o libgrizzly.so CMakeFiles/grizzly.dir/FastFourierTransformBase.cpp.o CMakeFiles/grizzly.dir/Ooura/FastFourierTransformOoura.cpp.o CMakeFiles/grizzly.dir/Ooura/fftsg.cpp.o 

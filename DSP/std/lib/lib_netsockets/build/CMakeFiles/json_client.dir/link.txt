@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread  -rdynamic CMakeFiles/json_client.dir/examples/json_client.cc.o CMakeFiles/json_client.dir/examples/json_message.cc.o CMakeFiles/json_client.dir/external/gason/src/gason.cpp.o -o json_client  liblib_netsockets.a 

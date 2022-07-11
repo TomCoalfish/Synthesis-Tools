@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Volume>
+    <volume>
+        <Oscillator wave="cos">
+            <period>5000</period>
+            <min>0.0</min>
+            <max>1.0</max>
+        </Oscillator>
+    </volume>
+</Volume>

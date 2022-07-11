@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread  -rdynamic CMakeFiles/pub_sub_server.dir/examples/pub_sub_server.cc.o -o pub_sub_server  liblib_netsockets.a 

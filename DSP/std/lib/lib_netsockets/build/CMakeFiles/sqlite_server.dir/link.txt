@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread  -rdynamic CMakeFiles/sqlite_server.dir/examples/sqlite_server.cc.o "CMakeFiles/sqlite_server.dir/external/sqlite-3.18.0/sqlite3.c.o" CMakeFiles/sqlite_server.dir/external/gason/src/gason.cpp.o -o sqlite_server  liblib_netsockets.a -ldl 

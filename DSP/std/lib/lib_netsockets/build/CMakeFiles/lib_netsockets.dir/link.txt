@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblib_netsockets.a CMakeFiles/lib_netsockets.dir/src/socket.cc.o CMakeFiles/lib_netsockets.dir/src/http.cc.o CMakeFiles/lib_netsockets.dir/src/ftp.cc.o
+/usr/bin/ranlib liblib_netsockets.a

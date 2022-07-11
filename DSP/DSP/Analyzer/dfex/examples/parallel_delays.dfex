@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Parallel>
+    <processors>
+        <Delay>
+            <period>5333</period>
+            <num>3</num>
+            <granular />
+        </Delay>
+        <Delay>
+            <period>1920</period>
+            <num>5</num>
+            <granular />
+        </Delay>
+        <Delay>
+            <period>480</period>
+            <num>10</num>
+            <granular />
+        </Delay>
+    </processors>
+</Parallel>

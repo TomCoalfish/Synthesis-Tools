@@ -1,0 +1,7 @@
+feature.lo: feature.cc ../../src/config.h ../../lib/libcompat.h feature.h
+
+../../src/config.h:
+
+../../lib/libcompat.h:
+
+feature.h:

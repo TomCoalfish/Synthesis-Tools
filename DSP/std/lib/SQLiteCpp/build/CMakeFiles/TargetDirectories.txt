@@ -1,0 +1,15 @@
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/CMakeFiles/SQLiteCpp.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/CMakeFiles/SQLiteCpp_cpplint.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/CMakeFiles/edit_cache.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/CMakeFiles/rebuild_cache.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/CMakeFiles/list_install_components.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/CMakeFiles/install.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/CMakeFiles/install/local.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/CMakeFiles/install/strip.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/sqlite3/CMakeFiles/sqlite3.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/sqlite3/CMakeFiles/edit_cache.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/sqlite3/CMakeFiles/rebuild_cache.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/sqlite3/CMakeFiles/list_install_components.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/sqlite3/CMakeFiles/install.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/sqlite3/CMakeFiles/install/local.dir
+/home/quake/Projects/LuaJIT-Std/SQLiteCpp/SQLiteCpp/build/sqlite3/CMakeFiles/install/strip.dir

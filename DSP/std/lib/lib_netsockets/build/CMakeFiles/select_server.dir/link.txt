@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread  -rdynamic CMakeFiles/select_server.dir/examples/select_server.cc.o -o select_server  liblib_netsockets.a 

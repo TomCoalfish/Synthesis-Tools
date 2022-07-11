@@ -1,0 +1,7 @@
+module.lo: module.cc ../../src/config.h ../../lib/libcompat.h module.h
+
+../../src/config.h:
+
+../../lib/libcompat.h:
+
+module.h:
