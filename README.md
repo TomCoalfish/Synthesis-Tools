@@ -29,8 +29,8 @@ Syntehsis Tools
 * Embedded command REPL
 
 # GNU Octave
-* Embedded interpreter
-* Can calculate your DSP codes 
+* It is in DSP-1
+* You can use DSP-1 with Stk too
 
 
 
