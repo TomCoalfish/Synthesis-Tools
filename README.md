@@ -30,7 +30,7 @@ Syntehsis Tools
 * I don't really focus much effort on it but I have experimental things 
 * I don't use them alot but I have a million of them with my distrho
 * If you want to use them use Carla or Ingen a million times better
-* But I have them for experimental purposes
+* But I have loaders for them for experimental purposes
 
 # LV2 Plugin
 * Very rudimentated 
