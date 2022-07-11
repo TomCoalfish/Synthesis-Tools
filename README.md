@@ -33,6 +33,10 @@ Syntehsis Tools
 * Don't know where in LV2 you start the GUI yet
 * Not very good examples anywhere
 
+# Ladspa plugin
+* Much easier to load than LV2
+* Nobody makes them anymore
+* But historically there are still quite alot of them that can be useful
 
 
 
