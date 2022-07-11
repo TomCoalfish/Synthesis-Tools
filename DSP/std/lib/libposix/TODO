@@ -1,5 +1,0 @@
-- posix::file#uid()/owner()
-- posix::file#gid()/group()
-- posix::file#is_readable()
-- posix::file#is_writable()
-- posix::file#is_executable()

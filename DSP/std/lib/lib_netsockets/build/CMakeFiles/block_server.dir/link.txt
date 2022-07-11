@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread  -rdynamic CMakeFiles/block_server.dir/examples/block_server.cc.o -o block_server  liblib_netsockets.a 

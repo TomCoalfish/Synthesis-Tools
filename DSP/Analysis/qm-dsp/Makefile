@@ -1,7 +1,0 @@
-
-CFLAGS := -DNDEBUG -Wall -Wextra -O3 -fPIC -msse -msse2 -mfpmath=sse -ftree-vectorize -DUSE_PTHREADS
-
-CXXFLAGS := $(CFLAGS) -std=c++98
-
-include build/general/Makefile.inc
-
