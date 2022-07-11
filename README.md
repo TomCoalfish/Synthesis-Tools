@@ -23,6 +23,7 @@ Syntehsis Tools
 # VCV Rack
 * The goal is to modify VCV Rack to load headless
 * Can load patches and use them headless
+* It already can run headles sbut I want to embed it
 
 # LuaJIT
 * Embedded command REPL
