@@ -4,35 +4,11 @@ Syntehsis Tools
 # TStk
 * Experimental Templated version of Stk
 
-# Gamma
-* Useful functions 
+# Vectorclass version 2
+* Now experiment with using Stk with Vc Vec4f and Vc Vec8f
+* Might have to change some things 
+* That was the goal of templating it 
 
-# Marsyas
-* In theory it should just work
-
-# Essentia
-* In theory it will work just fine
-
-# Faust
-* Have a tiny Faust LLVM 
-* FaustGTK for effects with GTK gui
-* FaustPolyGTK for synthesizers with GTK gui
-* FaustEffect for no GUI
-* FaustPoly for no GUI
-
-# CSound
-* Use the Csound C/C++ API
-* can't figure out how to set ksmps from the C/API
-* must set it to the audio size in the CSound file (default=256)
-* Finishing the MIDI input/output
-
-# LuaJIT
-* Embedded command REPL
-
-# GNU Octave
-* It is in DSP-1
-* You can use DSP-1 with Stk too
-
-
-
-
+# Fixedpoint
+* I have some fixed point class but not everything is going to work
+* Not sure yet if it works
